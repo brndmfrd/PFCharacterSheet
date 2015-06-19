@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="NavigationBarModule.Views.NavigationBarModuleViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:NavigationBarModule.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="100" 
+             d:DataContext="{d:DesignInstance ViewModel:NavigationBarModuleViewModel}">
+    
+    <UserControl.Resources>
+        <!--<ResourceDictionary Source="pack:///NavigationStyles.xaml"/>-->
+        <ResourceDictionary Source="../Resources/NavigationStyles.xaml"/>
+        <!--<ResourceDictionary Source="/Resources/NavigationStyles.xaml" />  Why does this fail when debugging?-->
+    </UserControl.Resources>
+
+    <StackPanel  HorizontalAlignment="Left" VerticalAlignment="Center" MinHeight="400" Width="100" Background="Black">
+        <Button Name="BasicCharacterInformation_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToCharacter}">
+            <Label Content="Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
+        </Button>
+
+        <Button Name="Combat_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToCombat}">
+            <Label Content="Combat" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
+        </Button>
+
+        <Button Name="SpellsFeatsSkills_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToSpellsFeatsSkills}">
+            <Label Content="Spells Feats Skills" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
+        </Button>
+
+        <Button Name="GearWealth_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToGear}">
+            <Label Content="Gear and Wealth" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
+        </Button>
+    </StackPanel>
+</UserControl>

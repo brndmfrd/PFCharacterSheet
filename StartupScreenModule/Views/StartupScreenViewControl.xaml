@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="StartupScreenModule.Views.StartupScreenViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ViewModel="clr-namespace:StartupScreenModule.ViewModels" mc:Ignorable="d" 
+             d:DesignHeight="75"
+             d:DesignWidth="300"
+             d:DataContext="{d:DesignInstance ViewModel:StartupScreenViewModel}">
+
+    <UserControl.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding ConvertTextCommand}"/>
+    </UserControl.InputBindings>
+
+    <StackPanel Height="336">
+        <Button VerticalAlignment="Center" Command="{Binding ConvertTextCommand}" Margin="5">New Character</Button>
+        <Button Command="{Binding ConvertTextCommand}" Margin="5">Load Character</Button>
+    </StackPanel>
+
+</UserControl>

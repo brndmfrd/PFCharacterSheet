@@ -1,0 +1,29 @@
+﻿<Window x:Class="CharacterSheet.Shell"
+        xmlns:prism="http://www.codeplex.com/prism"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pathfinder Character Sheet" Height="700" Width="1200"
+        WindowStyle="None"
+        MouseDown="Window_MouseDown"
+        BorderBrush="White"
+        ResizeMode="NoResize"
+        BorderThickness="1">
+
+    <!--<ItemsControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" Height="336" Width="300"/>-->
+
+    <Grid HorizontalAlignment="Left" Height="700" VerticalAlignment="Top" Width="1200" Background="#222222">
+        <!-- Minimize and Close buttons -->
+        <Button x:Name="bttn_close" Content="X" Foreground="White" Margin="1165,0,10,675" Background="Black" Click="bttn_close_Click" Width="25" Height="25"/>
+        <Button x:Name="bttn_minimize" Content="-" Foreground="White" Margin="1135,0,40,675" Background="Black" Click="bttn_minimize_Click" Width="25" Height="25"/>
+        
+        <!-- Just a black rectangle region for looks -->
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="700" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+
+        <!-- Region for all the content -->
+        <ItemsControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" Margin="100,30,0,0" VerticalAlignment="Center"/>
+        
+        <!-- Navigation Bar Region-->
+        <ItemsControl Name="NavigationBarRegion" prism:RegionManager.RegionName="NavigationBarRegion" Width="100" Margin="0,0,900,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+    </Grid>
+
+</Window>
