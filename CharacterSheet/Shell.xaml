@@ -20,7 +20,7 @@
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="700" Stroke="Black" VerticalAlignment="Top" Width="100"/>
 
         <!-- Region for all the content -->
-        <ItemsControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" Margin="100,30,0,0" VerticalAlignment="Center"/>
+        <UserControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" Margin="100,30,0,0" VerticalAlignment="Center"/>
         
         <!-- Navigation Bar Region-->
         <ItemsControl Name="NavigationBarRegion" prism:RegionManager.RegionName="NavigationBarRegion" Width="100" Margin="0,0,900,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>

@@ -28,8 +28,8 @@ namespace CharacterSheet
             moduleCatalog.AddModule(typeof(NavigationBarModule.NavigationBarModule));
             moduleCatalog.AddModule(typeof(SpellsFeatsSkillsModule.SpellsFeatsSkillsModule));
             moduleCatalog.AddModule(typeof(GearModule.GearModule));
-            moduleCatalog.AddModule(typeof(CharacterModule.CharacterModule));
             moduleCatalog.AddModule(typeof(CombatModule.CombatModule));
+            moduleCatalog.AddModule(typeof(CharacterModule.CharacterModule));
         }
     }
 }

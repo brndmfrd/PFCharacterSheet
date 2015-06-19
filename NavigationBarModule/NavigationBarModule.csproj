@@ -77,6 +77,7 @@
       <DependentUpon>NavigationStyles.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\NavigationBarModuleViewModel.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
     <Compile Include="Views\NavigationBarModuleView.xaml.cs">
       <DependentUpon>NavigationBarModuleView.xaml</DependentUpon>
     </Compile>
@@ -104,6 +105,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CharacterModule\CharacterModule.csproj">
+      <Project>{53cd7a1b-b743-4605-8813-64227d0c7190}</Project>
+      <Name>CharacterModule</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

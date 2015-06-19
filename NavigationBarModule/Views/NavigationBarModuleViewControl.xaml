@@ -11,7 +11,7 @@
     <UserControl.Resources>
         <!--<ResourceDictionary Source="pack:///NavigationStyles.xaml"/>-->
         <ResourceDictionary Source="../Resources/NavigationStyles.xaml"/>
-        <!--<ResourceDictionary Source="/Resources/NavigationStyles.xaml" />  Why does this fail when debugging?-->
+        <!--<ResourceDictionary Source="/Resources/NavigationStyles.xaml" /> Fails when debugging?-->
     </UserControl.Resources>
 
     <StackPanel  HorizontalAlignment="Left" VerticalAlignment="Center" MinHeight="400" Width="100" Background="Black">

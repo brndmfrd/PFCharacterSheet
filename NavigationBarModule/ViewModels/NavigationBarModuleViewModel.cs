@@ -12,14 +12,18 @@ namespace NavigationBarModule.ViewModels
 {
     public class NavigationBarModuleViewModel : INavigationAware //, INotifyPropertyChanged
     {
-        private readonly IRegionManager rm;
-
         /// <summary>
         /// button press to navigate to Character
         /// </summary>
-        public ICommand NavigateToCharacter  
+        public ICommand NavigateToCharacter
         {
-            get { return null; }
+            get { return new RelayCommand(ToCharacter); }
+
+        }
+
+        private void ToCharacter()
+        {
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(CharacterModule.Views.CharacterView).FullName);
         }
 
 

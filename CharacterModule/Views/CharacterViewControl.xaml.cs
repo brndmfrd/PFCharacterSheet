@@ -16,13 +16,18 @@ using System.Windows.Shapes;
 namespace CharacterModule.Views
 {
     /// <summary>
-    /// Interaction logic for CharacterView.xaml
+    /// Interaction logic for CharacterViewControl.xaml
     /// </summary>
-    public partial class CharacterView
+    public partial class CharacterViewControl : UserControl
     {
-        public CharacterView()
+        public CharacterViewControl()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //this.Visibility = Visibility.Hidden;
         }
     }
 }
