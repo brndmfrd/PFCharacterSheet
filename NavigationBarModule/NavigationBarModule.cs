@@ -10,9 +10,8 @@ namespace NavigationBarModule
 {
     public class NavigationBarModule : IModule
     {
-        public static IRegionManager regionManager;      // hold refrence to region manager
+        public static IRegionManager regionManager;
 
-        // obtain a region manager instance through constructor dependency injection and store it in the regionManager instance variable
         public NavigationBarModule(IRegionManager _regionManager)
         {
           regionManager = _regionManager;
@@ -20,7 +19,6 @@ namespace NavigationBarModule
 
         public void Initialize()
         {
-            //  registers a region name with its associated view type in the region view registry
             regionManager.RegisterViewWithRegion("NavigationBarRegion", typeof(Views.NavigationBarModuleView));
         }
 

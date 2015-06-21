@@ -12,7 +12,6 @@ namespace CharacterModule
     {
         private readonly IRegionManager regionManager;      // hold refrence to region manager
 
-        // obtain a region manager instance through constructor dependency injection and store it in the regionManager instance variable
         public CharacterModule(IRegionManager regionManager)
         {
             this.regionManager = regionManager;
@@ -20,7 +19,6 @@ namespace CharacterModule
 
         public void Initialize()
         {
-            //  registers a region name with its associated view type in the region view registry
             regionManager.RegisterViewWithRegion("MainRegion", typeof(Views.CharacterView));
         }
     }
