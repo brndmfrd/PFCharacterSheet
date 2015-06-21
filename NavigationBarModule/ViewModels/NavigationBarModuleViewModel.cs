@@ -21,15 +21,15 @@ namespace NavigationBarModule.ViewModels
         {
             get { return new RelayCommand(ToCharacter); }
         }
-        public ICommand NavigateToCharacter
+        public ICommand NavigateToCombat
         {
             get { return new RelayCommand(ToCombat); }
         }
-        public ICommand NavigateToCharacter
+        public ICommand NavigateToGear
         {
             get { return new RelayCommand(ToGear); }
         }
-        public ICommand NavigateToCharacter
+        public ICommand NavigateToSpellsFeatsSkills
         {
             get { return new RelayCommand(ToSpellsFeatsAndSkills); }
         }

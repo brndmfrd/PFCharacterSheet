@@ -111,6 +111,18 @@
       <Project>{53cd7a1b-b743-4605-8813-64227d0c7190}</Project>
       <Name>CharacterModule</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CombatModule\CombatModule.csproj">
+      <Project>{8454f67a-6822-4b76-baa4-989367ae035a}</Project>
+      <Name>CombatModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GearModule\GearModule.csproj">
+      <Project>{4383310f-5998-4d74-972a-c55f1617df2f}</Project>
+      <Name>GearModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpellsFeatsSkillsModule\SpellsFeatsSkillsModule.csproj">
+      <Project>{56bf4c35-2bfb-4c17-ac6f-a8a51abcc64a}</Project>
+      <Name>SpellsFeatsSkillsModule</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
