@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CombatModule.Views
+namespace SpellsFeatsSkillsModule.Views
 {
     /// <summary>
-    /// Interaction logic for CombatView.xaml
+    /// Interaction logic for SpellsFeatsSkillsView.xaml
     /// </summary>
-    public partial class CombatView
+    public partial class SpellsFeatsSkillsView
     {
-        public CombatView()
+        public SpellsFeatsSkillsView()
         {
             InitializeComponent();
         }

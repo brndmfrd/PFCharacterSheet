@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CombatModule.Views
+namespace GearModule.Views
 {
     /// <summary>
-    /// Interaction logic for CombatView.xaml
+    /// Interaction logic for GearViewControl.xaml
     /// </summary>
-    public partial class CombatView
+    public partial class GearViewControl : UserControl
     {
-        public CombatView()
+        public GearViewControl()
         {
             InitializeComponent();
         }

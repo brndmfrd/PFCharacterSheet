@@ -43,15 +43,15 @@ namespace NavigationBarModule.ViewModels
         }
         private void ToCombat()
         {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(CombatModule.Views.CharacterView).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(CombatModule.Views.CombatView).FullName);
         }
         private void ToGear()
         {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(GearModule.Views.CharacterView).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(GearModule.Views.GearView).FullName);
         }
         private void ToSpellsFeatsAndSkills()
         {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(SpellsFeatsSkillsModule.Views.CharacterView).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(SpellsFeatsSkillsModule.Views.SpellsFeatsSkillsView).FullName);
         }
 
 

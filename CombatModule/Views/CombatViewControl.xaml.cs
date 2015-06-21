@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace CombatModule.Views
 {
     /// <summary>
-    /// Interaction logic for CombatView.xaml
+    /// Interaction logic for CombatViewControl.xaml
     /// </summary>
-    public partial class CombatView
+    public partial class CombatViewControl : UserControl
     {
-        public CombatView()
+        public CombatViewControl()
         {
             InitializeComponent();
         }
