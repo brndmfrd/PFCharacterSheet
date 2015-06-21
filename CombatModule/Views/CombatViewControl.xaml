@@ -6,6 +6,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel>
-        <Button>Hey</Button>
+        <Button>Combat</Button>
     </StackPanel>
 </UserControl>
