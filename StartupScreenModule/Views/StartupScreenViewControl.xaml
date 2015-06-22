@@ -13,8 +13,10 @@
     </UserControl.InputBindings>
 
     <StackPanel Height="336">
-        <Button VerticalAlignment="Center" Command="{Binding ConvertTextCommand}" Margin="5">New Character</Button>
+        <Button Command="{Binding ConvertTextCommand}" Margin="5">New Character</Button>
         <Button Command="{Binding ConvertTextCommand}" Margin="5">Load Character</Button>
+
+        <Label Background="Gray" Content="{Binding SomeText, UpdateSourceTrigger=PropertyChanged}" />
     </StackPanel>
 
 </UserControl>

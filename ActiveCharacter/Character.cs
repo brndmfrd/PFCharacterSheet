@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace ActiveCharacter
 {
-    public static class ActiveCharacter
+    public static class Character
     {
         // --- character information ---
         public static int ID = 0;
         public static string characterName = "noval";
         public static string playerName = "noval";
-        public static string race = "noval";
         public static string race = "noval";
         public static string size = "noval";
         public static string alignment = "noval";
@@ -51,8 +50,6 @@ namespace ActiveCharacter
         public static string equipment = "noval";
         public static string weapons = "noval";
         public static string armor = "noval";
-
-
 
 
     }
