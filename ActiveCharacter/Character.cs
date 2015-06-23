@@ -23,14 +23,16 @@ namespace ActiveCharacter
         public static string eyes = "noval";
         public static string hair = "noval";
         public static string homeland = "noval";
-        public static int strength = 0;
-        public static int dextarity = 0;
-        public static int constitution = 0;
-        public static int intelligence = 0;
-        public static int wisdom = 0;
-        public static int charisma = 0;
+        public static string strength = "0";
+        public static string dextarity = "0";
+        public static string constitution = "0";
+        public static string intelligence = "0";
+        public static string wisdom = "0";
+        public static string charisma = "0";
         public static string languages = "noval";
         public static string experiencePoints = "noval";
+        // public static List<string> classes = null;       TBD
+        // pubic static string background = "noval";        TDB
 
         // --- combat---
         public static string hitPoints = "noval";

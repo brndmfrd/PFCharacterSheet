@@ -23,6 +23,11 @@ namespace CharacterModule.Views
         public CharacterViewControl()
         {
             InitializeComponent();
+        }
+
+        private void Button_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
         }        
     }
 }

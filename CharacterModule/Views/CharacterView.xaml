@@ -6,9 +6,8 @@
              xmlns:ViewModel="clr-namespace:CharacterModule.ViewModels"
              xmlns:View="clr-namespace:CharacterModule.Views"
              mc:Ignorable="d"              
-             d:DesignHeight="700" d:DesignWidth="1100"             
-      >
-
+             d:DesignHeight="670" d:DesignWidth="1100" Margin="20,20,20,20">
+    
     <!-- Everything about this Grid is under the rule of our beloved ViewModel-->
     <Grid.DataContext>
         <ViewModel:CharacterViewModel/>

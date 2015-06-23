@@ -17,13 +17,13 @@
         <Button x:Name="bttn_minimize" Content="-" Foreground="White" Margin="1135,0,40,675" Background="Black" Click="bttn_minimize_Click" Width="25" Height="25"/>
         
         <!-- Just a black rectangle region for looks -->
-        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="700" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="700" Stroke="Black" Width="100"/>
 
-        <!-- Region for all the content -->
-        <UserControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" Margin="100,30,0,0" VerticalAlignment="Center"/>
+        <!-- Region for all the content :: width:1100 height:670-->
+        <UserControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" Margin="100,30,0,0" />
         
         <!-- Navigation Bar Region-->
-        <ItemsControl Name="NavigationBarRegion" prism:RegionManager.RegionName="NavigationBarRegion" Width="100" Margin="0,0,900,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <ItemsControl Name="NavigationBarRegion" prism:RegionManager.RegionName="NavigationBarRegion" Width="100" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
     </Grid>
 
 </Window>

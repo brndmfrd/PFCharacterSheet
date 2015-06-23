@@ -3,9 +3,123 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:CharacterModule.ViewModels"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
-    <StackPanel>
-        <Button>Character</Button>
-    </StackPanel>
+             d:DesignHeight="670" d:DesignWidth="1100"
+             d:DataContext="{d:DesignInstance ViewModel:CharacterViewModel}">
+    
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical" MinWidth="0" MaxWidth="550" Margin="0,0,30,0">
+            <Button Content="{Binding Strength, UpdateSourceTrigger=PropertyChanged}">
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeStrengthCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Dextarity, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeDextarityCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Constitution, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeConstitutionCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Intelligence, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeIntelligenceCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Wisdom, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeWisdomCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Charisma, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeCharismaCommand}" />
+                </Button.InputBindings>
+            </Button>
+        </StackPanel>
+        
+        <!-- Right Side of the Stack Panel-->
+        <StackPanel Orientation="Vertical" MinWidth="0" MaxWidth="550">
+            <Button Content="{Binding CharacterName, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeCharacterNameCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding PlayerName, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangePlayerNameCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Race, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeRaceCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Size, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeSizeCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Alignment, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeAlignmentCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Age, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeAgeCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Deity, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeDeityCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Gender, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeGenderCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Height, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeHeightCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Weight, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeWeightCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Eyes, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeEyesCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Hair, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeHairCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Homeland, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeHomelandCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding Languages, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeLanguagesCommand}" />
+                </Button.InputBindings>
+            </Button>
+            <Button Content="{Binding ExperiencePoints, UpdateSourceTrigger=PropertyChanged}" >
+                <Button.InputBindings>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeExperiencePointsCommand}" />
+                </Button.InputBindings>
+            </Button>
+        </StackPanel>
+
+    </StackPanel>    
 </UserControl>
