@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NavigationBarModule.Resources
+namespace ActiveCharacter.SharedResources
 {
     /// <summary>
     /// Interaction logic for NavigationStyles.xaml
