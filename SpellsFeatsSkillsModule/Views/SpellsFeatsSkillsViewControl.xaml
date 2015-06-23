@@ -7,6 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              d:DataContext="{d:DesignInstance ViewModel:SpellsFeatsSkillsViewModel}">
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
+    </UserControl.Resources>
+    
     <StackPanel>
         <Button Command="{Binding ConvertTextCommand}">Spells Feats and Skills</Button>
         <Label Background="Gray" Content="{Binding SomeText, UpdateSourceTrigger=PropertyChanged}" />
