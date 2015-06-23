@@ -7,14 +7,18 @@
              mc:Ignorable="d"
              d:DesignHeight="670" d:DesignWidth="1100"
              d:DataContext="{d:DesignInstance ViewModel:CharacterViewModel}">
-    
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
+    </UserControl.Resources>
+
     <StackPanel Orientation="Horizontal">
         <StackPanel Orientation="Vertical" MinWidth="0" MaxWidth="550" Margin="0,0,30,0">
-            <Button Content="{Binding Strength, UpdateSourceTrigger=PropertyChanged}">
-                <Button.InputBindings>
+            <Label Content="{Binding Strength, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
+                <Label.InputBindings>
                     <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeStrengthCommand}" />
-                </Button.InputBindings>
-            </Button>
+                </Label.InputBindings>
+            </Label>
             <Button Content="{Binding Dextarity, UpdateSourceTrigger=PropertyChanged}" >
                 <Button.InputBindings>
                     <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeDextarityCommand}" />
