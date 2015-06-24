@@ -26,20 +26,35 @@ namespace CharacterSheet
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Enable click 'n drag property of the application window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
 
-        private void bttn_close_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Closes the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bttn_close_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.Close();   // close the application
+            this.Close();  
         }
 
-        private void bttn_minimize_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Minimizes the application window to the task bar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bttn_minimize_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            WindowState = WindowState.Minimized;    // minimize the application
+            WindowState = WindowState.Minimized;    
         }        
     }
 }
