@@ -24,7 +24,7 @@ namespace ActiveCharacter
         public static string hair = "noval";
         public static string homeland = "noval";
         public static string strength = "0";
-        public static string dextarity = "0";
+        public static string dexterity = "0";
         public static string constitution = "0";
         public static string intelligence = "0";
         public static string wisdom = "0";

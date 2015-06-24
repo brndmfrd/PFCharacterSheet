@@ -54,7 +54,7 @@ namespace CharacterModule.ViewModels
 
         public string Alignment
         {
-            get { return "Alignment" + Character.alignment; }
+            get { return "Alignment: " + Character.alignment; }
             set
             {
                 Character.alignment = value;
@@ -152,13 +152,13 @@ namespace CharacterModule.ViewModels
             }
         }
 
-        public string Dextarity
+        public string Dexterity
         {
-            get { return "Dextarity: " + Character.dextarity; }
+            get { return "Dexterity: " + Character.dexterity; }
             set
             {
-                Character.dextarity = value;
-                RaisePropertyChangedEvent("Dextarity");
+                Character.dexterity = value;
+                RaisePropertyChangedEvent("Dexterity");
             }
         }
 
@@ -224,7 +224,7 @@ namespace CharacterModule.ViewModels
 
         // ---------------------------
         public ICommand ChangeStrengthCommand { get { return new DelegateCommand(ChangeStrength); } }
-        public ICommand ChangeDextarityCommand { get { return new DelegateCommand(ChangeDextarity); } }
+        public ICommand ChangeDexterityCommand { get { return new DelegateCommand(ChangeDexterity); } }
         public ICommand ChangeConstitutionCommand { get { return new DelegateCommand(ChangeConstitution); } }
         public ICommand ChangeIntelligenceCommand { get { return new DelegateCommand(ChangeIntelligence); } }
         public ICommand ChangeWisdomCommand { get { return new DelegateCommand(ChangeWisdom); } }
@@ -247,7 +247,7 @@ namespace CharacterModule.ViewModels
 
         // This block is temporary.  In the future we will have a dialog box for the user to enter the new value to assign.
         public void ChangeStrength() { Strength = "Over 9000!"; }
-        public void ChangeDextarity() { Dextarity = "Over 9000!"; }
+        public void ChangeDexterity() { Dexterity = "Over 9000!"; }
         public void ChangeConstitution() { Constitution = "Over 9000!"; }
         public void ChangeIntelligence() { Intelligence = "Over 9000!"; }
         public void ChangeWisdom() { Wisdom = "Over 9000!"; }
