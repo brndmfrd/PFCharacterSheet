@@ -11,26 +11,77 @@ using System.Windows.Input;
 namespace SpellsFeatsSkillsModule.ViewModels
 {
     public class SpellsFeatsSkillsViewModel : ObservableObject, INavigationAware
-    {      
-        public string SomeText
+    {
+        public string _amount = "0";
+
+        public string Gear
         {
-            get { return Character.characterName; }
+            get { return Character.gear; }
             set
             {
-                Character.characterName = value;
-                RaisePropertyChangedEvent("SomeText");
+                Character.gear = value;
+                RaisePropertyChangedEvent("Gear");
             }
         }
 
-        public ICommand ConvertTextCommand
+        public string Amount
         {
-            get { return new DelegateCommand(ConvertText); }
+            get { return _amount; }
+            set
+            {
+                _amount = value;
+                RaisePropertyChangedEvent("Amount");
+            }
         }
 
-        public void ConvertText()
+        public string Gold
         {
-            SomeText = "SpellsFeatsSkillsViewModel";
+            get { return Character.gold; }
+            set
+            {
+                Character.gold = value;
+                RaisePropertyChangedEvent("Gold");
+            }
         }
+
+        public string Weapons
+        {
+            get { return Character.weapons; }
+            set
+            {
+                Character.gold = value;
+                RaisePropertyChangedEvent("Weapons");
+            }
+        }
+
+        public string Armor
+        {
+            get { return Character.armor; }
+            set
+            {
+                Character.armor = value;
+                RaisePropertyChangedEvent("Armor");
+            }
+        }
+
+
+
+        // ---------------------------
+        public ICommand ChangeGearCommand { get { return new DelegateCommand(UpdateGear); } }
+        public ICommand ChangeAmountCommand { get { return new DelegateCommand(UpdateAmount); } }
+        public ICommand ChangeGoldCommand { get { return new DelegateCommand(UpdateGold); } }
+        public ICommand ChangeWeaponsCommand { get { return new DelegateCommand(UpdateWeapons); } }
+        public ICommand ChangeArmorCommand { get { return new DelegateCommand(UpdateArmor); } }
+
+
+        // ---------------------------
+        public void UpdateGear() { Gear = "Lizard Sabar of Justice"; }
+        public void UpdateAmount() { Amount = "42"; }
+        public void UpdateGold() {Gold = "1000" ; }
+        public void UpdateWeapons() { ; }
+        public void UpdateArmor() { ; }
+
+
 
         // ------- needed for INavigationAware -------
         public void OnNavigatedFrom(NavigationContext navigationContext)
@@ -38,13 +89,12 @@ namespace SpellsFeatsSkillsModule.ViewModels
         }
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-            // keep our view up to date, even when navigating between views
-            RaisePropertyChangedEvent("SomeText");
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
             return true;
-        }
-
+        }        
     }
+
+    
 }

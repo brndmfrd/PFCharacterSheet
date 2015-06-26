@@ -5,14 +5,119 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ViewModel="clr-namespace:SpellsFeatsSkillsModule.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300"
+             d:DesignHeight="670" d:DesignWidth="1100"
              d:DataContext="{d:DesignInstance ViewModel:SpellsFeatsSkillsViewModel}">
+
     <UserControl.Resources>
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
-    
-    <StackPanel>
-        <Button Command="{Binding ConvertTextCommand}">Spells Feats and Skills</Button>
-        <Label Background="Gray" Content="{Binding SomeText, UpdateSourceTrigger=PropertyChanged}" />
+
+    <StackPanel Orientation="Horizontal">
+        <!-- Left section -->
+        <StackPanel Orientation="Vertical" Margin="0,0,30,0" Width="409">
+
+            <!-- SKILLS -->
+            <Label Margin="10,10,10,0"  Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Skills"/>
+            <ListBox Height="632" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                <ListBoxItem>
+                    <Grid Width="409">
+
+                        <!-- Demonstration of one item with an associated amount -->
+                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Content="{Binding Gear, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
+                            <Label.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeGearCommand}" />
+                            </Label.InputBindings>
+                        </Label>
+                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Amount, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
+                            <Label.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeAmountCommand}" />
+                            </Label.InputBindings>
+                        </Label>
+
+                    </Grid>
+                </ListBoxItem>
+
+                <!-- Dummy filler items -->
+                <ListBoxItem>Knowledge Dungeoneering</ListBoxItem>
+                <ListBoxItem>333333</ListBoxItem>
+                <ListBoxItem>444444</ListBoxItem>
+                <ListBoxItem>555555</ListBoxItem>
+                <ListBoxItem>666666</ListBoxItem>
+                <ListBoxItem>777777</ListBoxItem>
+                <ListBoxItem>888888</ListBoxItem>
+            </ListBox>
+        </StackPanel>
+
+
+        <!-- Middle Section-->
+        <StackPanel Orientation="Vertical" Margin="0,0,30,0" Width="260">
+
+            <!-- FEATS -->
+            <Label Margin="10,10,10,0"  Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Feats"/>
+            <ListBox Height="636" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                <ListBoxItem>
+                    <Grid Width="490">
+
+                        <!-- Demonstration of one weapon with an associated amount -->
+                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Content="{Binding Gear, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
+                            <Label.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeGearCommand}" />
+                            </Label.InputBindings>
+                        </Label>
+                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Amount, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
+                            <Label.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeAmountCommand}" />
+                            </Label.InputBindings>
+                        </Label>
+
+                    </Grid>
+                </ListBoxItem>
+
+                <!-- Dummy filler weapons -->
+                <ListBoxItem>Craft Magical Arms and Armor</ListBoxItem>
+                <ListBoxItem>333333</ListBoxItem>
+                <ListBoxItem>444444</ListBoxItem>
+                <ListBoxItem>555555</ListBoxItem>
+                <ListBoxItem>666666</ListBoxItem>
+                <ListBoxItem>777777</ListBoxItem>
+                <ListBoxItem>888888</ListBoxItem>
+            </ListBox>
+        </StackPanel>
+
+        <!-- Right Section -->
+        <StackPanel Orientation="Vertical" Margin="0,0,30,0" Width="366">
+
+            <!-- SPELLS -->
+            <Label Margin="10,10,10,0"  Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Spells"/>
+            <ListBox Height="250" Width="500" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                <ListBoxItem Selector.IsSelected="False">
+                    <Grid Width="490">
+
+                        <!-- Demonstration of one weapon with an associated amount -->
+                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Content="{Binding Gear, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
+                            <Label.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeGearCommand}" />
+                            </Label.InputBindings>
+                        </Label>
+                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Amount, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
+                            <Label.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeAmountCommand}" />
+                            </Label.InputBindings>
+                        </Label>
+
+                    </Grid>
+                </ListBoxItem>
+
+                <!-- Dummy filler weapons -->
+                <ListBoxItem>Magic Circle against Chaos/Evil/Good/Law</ListBoxItem>
+                <ListBoxItem>333333</ListBoxItem>
+                <ListBoxItem>444444</ListBoxItem>
+                <ListBoxItem>555555</ListBoxItem>
+                <ListBoxItem>666666</ListBoxItem>
+                <ListBoxItem>777777</ListBoxItem>
+                <ListBoxItem>888888</ListBoxItem>
+            </ListBox>
+
+        </StackPanel>
     </StackPanel>
 </UserControl>
