@@ -13,16 +13,26 @@
     </UserControl.Resources>
     
     <StackPanel Orientation="Horizontal">
+        <!-- Left section -->
         <StackPanel Orientation="Vertical" Margin="0,0,30,0">
-            <Grid Margin="10,10,10,10">
+            
+            <!-- Gold amount -->
+            <Grid Margin="10,10,10,10" Width="490">
                 <Label Grid.Row="0" Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Gold"/>
-                <Label Grid.Row="0" Width="250" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Foreground="Teal" Content="0"/>
+                <Label Grid.Row="0" Width="250" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Gold, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
+                    <Label.InputBindings>
+                        <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeGoldCommand}" />
+                    </Label.InputBindings>
+                </Label>
             </Grid>
 
+            <!-- List of Gear -->
             <Label Margin="10,10,10,0"  Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Gear"/>
-            <ListBox Height="100" Width="500" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+            <ListBox Height="589" Width="500" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
                 <ListBoxItem>
                     <Grid Width="490">
+                        
+                        <!-- Demonstration of one item with an associated amount -->
                         <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Content="{Binding Gear, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
                             <Label.InputBindings>
                                 <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeGearCommand}" />
@@ -33,10 +43,79 @@
                                 <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeAmountCommand}" />
                             </Label.InputBindings>
                         </Label>
+                        
                     </Grid>
                 </ListBoxItem>
                 
+                <!-- Dummy filler items -->
+                <ListBoxItem>222222</ListBoxItem>
+                <ListBoxItem>333333</ListBoxItem>
+                <ListBoxItem>444444</ListBoxItem>
+                <ListBoxItem>555555</ListBoxItem>
+                <ListBoxItem>666666</ListBoxItem>
+                <ListBoxItem>777777</ListBoxItem>
+                <ListBoxItem>888888</ListBoxItem>
+            </ListBox>
+        </StackPanel>
 
+        
+        <!-- Top-Right Section-->
+        <StackPanel Orientation="Vertical" Margin="0,0,30,0">
+            
+            <!-- List of Weapons -->
+            <Label Margin="10,10,10,0"  Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Weapons"/>
+            <ListBox Height="250" Width="500" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                <ListBoxItem>
+                    <Grid Width="490">
+
+                        <!-- Demonstration of one weapon with an associated amount -->
+                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Content="{Binding Gear, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
+                            <Label.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeGearCommand}" />
+                            </Label.InputBindings>
+                        </Label>
+                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Amount, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
+                            <Label.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeAmountCommand}" />
+                            </Label.InputBindings>
+                        </Label>
+
+                    </Grid>
+                </ListBoxItem>
+
+                <!-- Dummy filler weapons -->
+                <ListBoxItem>222222</ListBoxItem>
+                <ListBoxItem>333333</ListBoxItem>
+                <ListBoxItem>444444</ListBoxItem>
+                <ListBoxItem>555555</ListBoxItem>
+                <ListBoxItem>666666</ListBoxItem>
+                <ListBoxItem>777777</ListBoxItem>
+                <ListBoxItem>888888</ListBoxItem>
+            </ListBox>
+            
+            <!-- Bottom-Right Section -->
+            <!-- List of Armor -->
+            <Label Margin="10,10,10,0"  Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Armor"/>
+            <ListBox Height="250" Width="500" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                <ListBoxItem Selector.IsSelected="False">
+                    <Grid Width="490">
+
+                        <!-- Demonstration of one weapon with an associated amount -->
+                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Content="{Binding Gear, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
+                            <Label.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeGearCommand}" />
+                            </Label.InputBindings>
+                        </Label>
+                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Amount, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
+                            <Label.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeAmountCommand}" />
+                            </Label.InputBindings>
+                        </Label>
+
+                    </Grid>
+                </ListBoxItem>
+
+                <!-- Dummy filler weapons -->
                 <ListBoxItem>222222</ListBoxItem>
                 <ListBoxItem>333333</ListBoxItem>
                 <ListBoxItem>444444</ListBoxItem>
