@@ -74,6 +74,8 @@
     <Compile Include="CombatModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CombatViewModel.cs" />
+    <Compile Include="ViewModels\DelegateCommand.cs" />
+    <Compile Include="ViewModels\ObservableObject.cs" />
     <Compile Include="Views\CombatView.xaml.cs">
       <DependentUpon>CombatView.xaml</DependentUpon>
     </Compile>

@@ -45,6 +45,8 @@ namespace ActiveCharacter
         public static string combatManeuverBonus = "noval";
         public static string combatManeuverDefence = "noval";
         public static string statusEffect = "noval";
+        public static string encumbrance = "noval";
+        public static string movement_combat = "noval";
 
         // --- gear and wealth ---
         public static string gold = "noval";
