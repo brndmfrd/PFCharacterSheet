@@ -8,13 +8,13 @@ using ActiveCharacter;
 using System.Windows.Input;
 
 
-namespace CharacterModule.ViewModels 
+namespace CharacterModule.ViewModels
 {
     public class CharacterViewModel : ObservableObject, INavigationAware
     {
         public string CharacterName
         {
-            get { return "Character Name: " + Character.characterName; }
+            get { return Character.characterName; }
             set
             {
                 Character.characterName = value;
@@ -24,7 +24,7 @@ namespace CharacterModule.ViewModels
 
         public string PlayerName
         {
-            get { return "Player Name: " + Character.playerName; }
+            get { return Character.playerName; }
             set
             {
                 Character.playerName = value;
@@ -34,7 +34,7 @@ namespace CharacterModule.ViewModels
 
         public string Race
         {
-            get { return "Race: " + Character.race; }
+            get { return Character.race; }
             set
             {
                 Character.race = value;
@@ -44,7 +44,7 @@ namespace CharacterModule.ViewModels
 
         public string Size
         {
-            get { return "Size: " + Character.size; }
+            get { return Character.size; }
             set
             {
                 Character.size = value;
@@ -54,7 +54,7 @@ namespace CharacterModule.ViewModels
 
         public string Alignment
         {
-            get { return "Alignment: " + Character.alignment; }
+            get { return Character.alignment; }
             set
             {
                 Character.alignment = value;
@@ -64,7 +64,7 @@ namespace CharacterModule.ViewModels
 
         public string Age
         {
-            get { return "Age: " + Character.age; }
+            get { return Character.age; }
             set
             {
                 Character.age = value;
@@ -74,7 +74,7 @@ namespace CharacterModule.ViewModels
 
         public string Deity
         {
-            get { return "Deity: " + Character.deity; }
+            get { return Character.deity; }
             set
             {
                 Character.deity = value;
@@ -84,7 +84,7 @@ namespace CharacterModule.ViewModels
 
         public string Gender
         {
-            get { return "Gender: " + Character.gender; }
+            get { return Character.gender; }
             set
             {
                 Character.gender = value;
@@ -94,7 +94,7 @@ namespace CharacterModule.ViewModels
 
         public string Height
         {
-            get { return "Height: " + Character.height; }
+            get { return Character.height; }
             set
             {
                 Character.height = value;
@@ -104,7 +104,7 @@ namespace CharacterModule.ViewModels
 
         public string Weight
         {
-            get { return "Weight: " + Character.weight; }
+            get { return Character.weight; }
             set
             {
                 Character.weight = value;
@@ -114,7 +114,7 @@ namespace CharacterModule.ViewModels
 
         public string Eyes
         {
-            get { return "Eyes: " + Character.eyes; }
+            get { return Character.eyes; }
             set
             {
                 Character.eyes = value;
@@ -124,7 +124,7 @@ namespace CharacterModule.ViewModels
 
         public string Hair
         {
-            get { return "Hair: " + Character.hair; }
+            get { return Character.hair; }
             set
             {
                 Character.hair = value;
@@ -134,7 +134,7 @@ namespace CharacterModule.ViewModels
 
         public string Homeland
         {
-            get { return "Homeland: " + Character.homeland; }
+            get { return Character.homeland; }
             set
             {
                 Character.homeland = value;
@@ -144,7 +144,7 @@ namespace CharacterModule.ViewModels
 
         public string Strength
         {
-            get { return "Strength: " + Character.strength; }
+            get { return Character.strength; }
             set
             {
                 Character.strength = value;
@@ -154,7 +154,7 @@ namespace CharacterModule.ViewModels
 
         public string Dexterity
         {
-            get { return "Dexterity: " + Character.dexterity; }
+            get { return Character.dexterity; }
             set
             {
                 Character.dexterity = value;
@@ -164,7 +164,7 @@ namespace CharacterModule.ViewModels
 
         public string Constitution
         {
-            get { return "Constitution: " + Character.constitution; }
+            get { return Character.constitution; }
             set
             {
                 Character.constitution = value;
@@ -174,7 +174,7 @@ namespace CharacterModule.ViewModels
 
         public string Intelligence
         {
-            get { return "Intelligence: " + Character.intelligence; }
+            get { return Character.intelligence; }
             set
             {
                 Character.intelligence = value;
@@ -184,7 +184,7 @@ namespace CharacterModule.ViewModels
 
         public string Wisdom
         {
-            get { return "Wisdom: " + Character.wisdom; }
+            get { return Character.wisdom; }
             set
             {
                 Character.wisdom = value;
@@ -194,7 +194,7 @@ namespace CharacterModule.ViewModels
 
         public string Charisma
         {
-            get { return "Charisma: " + Character.charisma; }
+            get { return Character.charisma; }
             set
             {
                 Character.charisma = value;
@@ -204,7 +204,7 @@ namespace CharacterModule.ViewModels
 
         public string Languages
         {
-            get { return "Languages: " + Character.languages; }
+            get { return Character.languages; }
             set
             {
                 Character.languages = value;
@@ -214,7 +214,7 @@ namespace CharacterModule.ViewModels
 
         public string ExperiencePoints
         {
-            get { return "Experience Points: " + Character.experiencePoints; }
+            get { return Character.experiencePoints; }
             set
             {
                 Character.experiencePoints = value;
