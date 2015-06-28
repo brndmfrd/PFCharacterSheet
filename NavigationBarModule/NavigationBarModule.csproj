@@ -121,6 +121,10 @@
       <Project>{56bf4c35-2bfb-4c17-ac6f-a8a51abcc64a}</Project>
       <Name>SpellsFeatsSkillsModule</Name>
     </ProjectReference>
+    <ProjectReference Include="..\StartupScreenModule\StartupScreenModule.csproj">
+      <Project>{04483dc1-300b-4efc-8a8f-33e7b07d1efb}</Project>
+      <Name>StartupScreenModule</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -33,7 +33,11 @@ namespace NavigationBarModule.ViewModels
         {
             get { return new RelayCommand(ToSpellsFeatsAndSkills); }
         }
-
+        public ICommand NavigateToStartUpScreen
+        {
+            get { return new RelayCommand(ToStartUpScreen); }
+        }
+        
         /// <summary>
         /// Command Actions
         /// </summary>
@@ -52,6 +56,10 @@ namespace NavigationBarModule.ViewModels
         private void ToSpellsFeatsAndSkills()
         {
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(SpellsFeatsSkillsModule.Views.SpellsFeatsSkillsView).FullName);
+        }
+        private void ToStartUpScreen()
+        {
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(StartupScreenModule.Views.StartupScreenView).FullName);
         }
 
 

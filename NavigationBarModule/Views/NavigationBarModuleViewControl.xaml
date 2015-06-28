@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ViewModel="clr-namespace:NavigationBarModule.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="100" 
+             d:DesignHeight="700" d:DesignWidth="100" 
              d:DataContext="{d:DesignInstance ViewModel:NavigationBarModuleViewModel}">
-    
+
     <UserControl.Resources>
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml"/>
     </UserControl.Resources>
@@ -27,6 +27,11 @@
 
         <Button Name="GearWealth_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToGear}">
             <Label Content="Gear and Wealth" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
+        </Button>        
+
+        <!--Start of the MINI buttons-->
+        <Button Margin="0,40" Name="CreateLoadCharacter_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle_Mini}" Command="{Binding NavigateToStartUpScreen}">
+            <Label Content="Create/Load" Style="{StaticResource ResourceKey=ButtonLabelStyle_Mini}" />
         </Button>
     </StackPanel>
 </UserControl>
