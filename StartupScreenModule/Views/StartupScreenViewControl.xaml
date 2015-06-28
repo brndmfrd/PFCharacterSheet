@@ -12,11 +12,17 @@
         <KeyBinding Key="Enter" Command="{Binding ConvertTextCommand}"/>
     </UserControl.InputBindings>
 
-    <StackPanel Height="336">
-        <Button Command="{Binding ConvertTextCommand}" Margin="5">New Character</Button>
-        <Button Command="{Binding ConvertTextCommand}" Margin="5">Load Character</Button>
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml"/>
+    </UserControl.Resources>
 
-        <Label Background="Gray" Content="{Binding SomeText, UpdateSourceTrigger=PropertyChanged}" />
+    <StackPanel Height="336">
+        <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding ConvertTextCommand}" Margin="5">
+            <Label Content="New Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
+        </Button>
+        <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding ConvertTextCommand}" Margin="5">
+            <Label Content="Load Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
+        </Button>
     </StackPanel>
 
 </UserControl>
