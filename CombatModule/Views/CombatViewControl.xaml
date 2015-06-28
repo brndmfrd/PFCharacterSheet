@@ -118,9 +118,9 @@
                 <ListBoxItem>
                     <Grid Width="490">
                         <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="BAB"/>
-                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding BAB, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
+                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding BaseAttackBonus, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
                             <Label.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateBaceAttackBonusCommand}" />
+                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateBaseAttackBonusCommand}" />
                             </Label.InputBindings>
                         </Label>
                     </Grid>

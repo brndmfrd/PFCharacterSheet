@@ -102,13 +102,13 @@ namespace CombatModule.ViewModels
             }
         }
 
-        public string BaceAttackBonus
+        public string BaseAttackBonus
         {
             get { return Character.baseAttackBonus; }
             set
             {
                 Character.baseAttackBonus = value;
-                RaisePropertyChangedEvent("BaceAttackBonus");
+                RaisePropertyChangedEvent("BaseAttackBonus");
             }
         }
 
@@ -172,7 +172,7 @@ namespace CombatModule.ViewModels
         public ICommand UpdateFortitudeCommand { get { return new DelegateCommand(UpdateFortitude); } }
         public ICommand UpdateReflexCommand { get { return new DelegateCommand(UpdateReflex); } }
         public ICommand UpdateWillCommand { get { return new DelegateCommand(UpdateWill); } }
-        public ICommand UpdateBaceAttackBonusCommand { get { return new DelegateCommand(UpdateBaceAttackBonus); } }
+        public ICommand UpdateBaseAttackBonusCommand { get { return new DelegateCommand(UpdateBaseAttackBonus); } }
         public ICommand UpdateCMBCommand { get { return new DelegateCommand(UpdateCMB); } }
         public ICommand UpdateCMDCommand { get { return new DelegateCommand(UpdateCMD); } }
         public ICommand UpdateStatusEffectCommand { get { return new DelegateCommand(UpdateStatusEffect); } }
@@ -189,7 +189,7 @@ namespace CombatModule.ViewModels
         public void UpdateFortitude() { ; }
         public void UpdateReflex() { ; }
         public void UpdateWill() { ; }
-        public void UpdateBaceAttackBonus() { ; }
+        public void UpdateBaseAttackBonus() { ; }
         public void UpdateCMB() { ; }
         public void UpdateCMD() { ; }
         public void UpdateStatusEffect() { ; }
