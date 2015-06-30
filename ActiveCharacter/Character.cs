@@ -55,6 +55,10 @@ namespace ActiveCharacter
         public static string weapons = "noval";
         public static string armor = "noval";
 
+        // --- Spells, feats, and skills ---
+        public static Dictionary<string, int> skills;
+
+
 
     }
 }
