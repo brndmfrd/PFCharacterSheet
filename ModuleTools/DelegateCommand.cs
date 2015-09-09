@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-
-namespace CombatModule.ViewModels
+namespace ModuleTools
 {
-    class DelegateCommand : ICommand
+    public class DelegateCommand : ICommand
     {
         private readonly Action _action;
 

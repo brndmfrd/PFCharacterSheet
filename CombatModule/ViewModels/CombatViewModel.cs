@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Practices.Prism.Regions;
 using ActiveCharacter;
 using System.Windows.Input;
+using ModuleTools;
 
 
 namespace CombatModule.ViewModels

@@ -8,6 +8,7 @@ using Microsoft.Practices.Prism.Regions;
 using ActiveCharacter;
 using System.Windows.Input;
 using SpellsFeatsSkillsModule.Models;
+using ModuleTools;
 
 namespace SpellsFeatsSkillsModule.ViewModels
 {

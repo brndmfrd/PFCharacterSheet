@@ -74,8 +74,6 @@
     <Compile Include="CharacterModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CharacterViewModel.cs" />
-    <Compile Include="ViewModels\DelegateCommand.cs" />
-    <Compile Include="ViewModels\ObservableObject.cs" />
     <Compile Include="Views\CharacterView.xaml.cs">
       <DependentUpon>CharacterView.xaml</DependentUpon>
     </Compile>
@@ -100,6 +98,10 @@
     <ProjectReference Include="..\ActiveCharacter\ActiveCharacter.csproj">
       <Project>{ea7669d4-1e0c-43f1-b95d-7cb546946ba1}</Project>
       <Name>ActiveCharacter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModuleTools\ModuleTools.csproj">
+      <Project>{6f33588c-d90a-440b-bb32-32289581c938}</Project>
+      <Name>ModuleTools</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

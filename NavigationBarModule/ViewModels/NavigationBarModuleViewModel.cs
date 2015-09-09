@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;                 // ICommand
 using Microsoft.Practices.Prism.Regions;    // INavigationAware
-
+using ModuleTools;
 
 namespace NavigationBarModule.ViewModels
 {
@@ -19,23 +19,23 @@ namespace NavigationBarModule.ViewModels
         /// </summary>
         public ICommand NavigateToCharacter
         {
-            get { return new RelayCommand(ToCharacter); }
+            get { return new DelegateCommand(ToCharacter); }
         }
         public ICommand NavigateToCombat
         {
-            get { return new RelayCommand(ToCombat); }
+            get { return new DelegateCommand(ToCombat); }
         }
         public ICommand NavigateToGear
         {
-            get { return new RelayCommand(ToGear); }
+            get { return new DelegateCommand(ToGear); }
         }
         public ICommand NavigateToSpellsFeatsSkills
         {
-            get { return new RelayCommand(ToSpellsFeatsAndSkills); }
+            get { return new DelegateCommand(ToSpellsFeatsAndSkills); }
         }
         public ICommand NavigateToStartUpScreen
         {
-            get { return new RelayCommand(ToStartUpScreen); }
+            get { return new DelegateCommand(ToStartUpScreen); }
         }
         
         /// <summary>

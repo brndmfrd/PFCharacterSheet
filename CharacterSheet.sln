@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpellsFeatsSkillsModule", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveCharacter", "ActiveCharacter\ActiveCharacter.csproj", "{EA7669D4-1E0C-43F1-B95D-7CB546946BA1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{E2ECAD2E-09AF-4DD3-8F32-C0C5595E26F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleTools", "ModuleTools\ModuleTools.csproj", "{6F33588C-D90A-440B-BB32-32289581C938}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,8 +60,15 @@ Global
 		{EA7669D4-1E0C-43F1-B95D-7CB546946BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA7669D4-1E0C-43F1-B95D-7CB546946BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA7669D4-1E0C-43F1-B95D-7CB546946BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F33588C-D90A-440B-BB32-32289581C938}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F33588C-D90A-440B-BB32-32289581C938}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F33588C-D90A-440B-BB32-32289581C938}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F33588C-D90A-440B-BB32-32289581C938}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F33588C-D90A-440B-BB32-32289581C938} = {E2ECAD2E-09AF-4DD3-8F32-C0C5595E26F3}
 	EndGlobalSection
 EndGlobal

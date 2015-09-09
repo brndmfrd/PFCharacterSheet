@@ -13,6 +13,7 @@ namespace ActiveCharacter
         public static string characterName = "noval";
         public static string playerName = "noval";
         public static string race = "noval";
+        public static string jobclass = "noval";
         public static string size = "noval";
         public static string alignment = "noval";
         public static string age = "noval";
@@ -55,8 +56,47 @@ namespace ActiveCharacter
         public static string weapons = "noval";
         public static string armor = "noval";
 
-        // --- Spells, feats, and skills ---
-        public static Dictionary<string, int> skills;
+        // --- Skills ---
+        public static int acrobatics;
+        public static int appraise;
+        public static int bluff;
+        public static int climb;
+        public static int craft;
+        public static int diplomacy;
+        public static int disableDevice;
+        public static int disguise;
+        public static int escapeArtist;
+        public static int fly;
+        public static int handleAnimal;
+        public static int heal;
+        public static int intimidate;
+        public static int knowledgeArcana;
+        public static int knowledgeDungeoneering;
+        public static int knowledgeEngineering;
+        public static int knowledgeGeography;
+        public static int knowledgeHistory;
+        public static int knowledgeLocal;
+        public static int knowledgeNature;
+        public static int knowledgeNobility;
+        public static int knowledgePlanes;
+        public static int knowledgeReligion;
+        public static int linguistics;
+        public static int perception;
+        public static int perform;
+        public static int profession;
+        public static int ride;
+        public static int senseMotive;
+        public static int sleightOfHand;
+        public static int spellcraft;
+        public static int stealth;
+        public static int survival;
+        public static int swim;
+        public static int useMagicDevice;
+
+        // --- Feats ---
+
+        // --- Spells ---
+
 
 
 

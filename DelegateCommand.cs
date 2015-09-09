@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-
-namespace SpellsFeatsSkillsModule.ViewModels
+namespace SharedModuleTools
 {
-    class DelegateCommand : ICommand
+    public class DelegateCommand : ICommand
     {
         private readonly Action _action;
 
