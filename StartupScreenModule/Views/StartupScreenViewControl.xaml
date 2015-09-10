@@ -12,6 +12,7 @@
     </UserControl.InputBindings>
 
     <UserControl.Resources>
+        <!--Link our button style-->
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml"/>
     </UserControl.Resources>
 
