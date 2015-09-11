@@ -103,6 +103,14 @@
       <Project>{ea7669d4-1e0c-43f1-b95d-7cb546946ba1}</Project>
       <Name>ActiveCharacter</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CreateNewCharacter\CreateNewCharacter.csproj">
+      <Project>{4e5ca459-e3cf-4efd-9985-06e9232516a9}</Project>
+      <Name>CreateNewCharacter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoadCharacter\LoadCharacter.csproj">
+      <Project>{321f21c8-0a10-4644-8a91-58fc9e685970}</Project>
+      <Name>LoadCharacter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ModuleTools\ModuleTools.csproj">
       <Project>{6f33588c-d90a-440b-bb32-32289581c938}</Project>
       <Name>ModuleTools</Name>

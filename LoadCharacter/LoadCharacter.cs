@@ -26,7 +26,7 @@ namespace LoadCharacter
         /// <summary>
         /// Return the fist pathfinder file in the cwd
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The full path of the first file with with a .pf extension, or a null string.</returns>
         private string GetFirstPfFile()
         {
             // We want the files that end with .pf

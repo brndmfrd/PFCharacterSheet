@@ -16,13 +16,20 @@
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml"/>
     </UserControl.Resources>
 
-    <StackPanel Height="336">
-        <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding ConvertTextCommand}" Margin="5">
-            <Label Content="New Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
-        </Button>
-        <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding ConvertTextCommand}" Margin="5">
-            <Label Content="Load Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
-        </Button>
+    <StackPanel Orientation="Horizontal" Height="336" HorizontalAlignment="Center">
+        <StackPanel Orientation="Vertical">
+            <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding CreateNewCharacterCommand}" Margin="5">
+                <Label Content="New Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
+            </Button>
+            <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding LoadNewCharacterCommand}" Margin="5">
+                <Label Content="Load Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
+            </Button>
+        </StackPanel>
+        
+        <StackPanel Width="400" Drop="File_Drop" AllowDrop="True">
+            <Label HorizontalAlignment="Center" Foreground="White">hey</Label>
+        </StackPanel>
+        
     </StackPanel>
 
 </UserControl>

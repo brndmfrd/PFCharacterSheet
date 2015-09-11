@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace StartupScreenModule.Views
 {
@@ -23,6 +24,15 @@ namespace StartupScreenModule.Views
         public StartupScreenViewControl()
         {
             InitializeComponent();
+        }
+
+
+        private void File_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, true))
+            {
+                string[] filePathOfDroppedFile = e.Data.GetData(DataFormats.FileDrop, true) as string[];
+            }
         }
     }
 }
