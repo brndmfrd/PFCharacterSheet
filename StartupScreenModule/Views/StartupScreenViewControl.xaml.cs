@@ -34,5 +34,25 @@ namespace StartupScreenModule.Views
                 string[] filePathOfDroppedFile = e.Data.GetData(DataFormats.FileDrop, true) as string[];
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Label filedroplbl = new Label();
+            filedroplbl.Name = "FileDropLabel";
+            filedroplbl.Width = 400;
+            filedroplbl.Height = 336;
+            filedroplbl.HorizontalContentAlignment = HorizontalAlignment.Center;
+            filedroplbl.Foreground = Brushes.GreenYellow;
+            filedroplbl.Content = "Drag/Drop a file here.";
+
+            if (Sp1FileDrop.Children.Contains(filedroplbl))
+            {
+                Sp1FileDrop.Children.Remove(filedroplbl);
+            }
+            else
+            {
+                Sp1FileDrop.Children.Add(filedroplbl);
+            }
+        }
     }
 }

@@ -21,13 +21,12 @@
             <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding CreateNewCharacterCommand}" Margin="5">
                 <Label Content="New Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
             </Button>
-            <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding LoadNewCharacterCommand}" Margin="5">
+            <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding LoadNewCharacterCommand}" Margin="5" Click="Button_Click">
                 <Label Content="Load Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
             </Button>
         </StackPanel>
         
-        <StackPanel Width="400" Drop="File_Drop" AllowDrop="True">
-            <Label HorizontalAlignment="Center" Foreground="White">hey</Label>
+        <StackPanel Name="Sp1FileDrop" Width="400" Drop="File_Drop" AllowDrop="True" Visibility="Visible">
         </StackPanel>
         
     </StackPanel>
