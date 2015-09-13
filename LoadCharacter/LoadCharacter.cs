@@ -10,9 +10,22 @@ namespace LoadCharacter
     public class LoadCharacter
     {
         // current working directory
-        string cdir;        // full path of our cwd
-        string file;        // our character file to load
-        string[] pfFiles;   // list of files in cwd
+        private string cdir;                        // full path of our cwd
+        private string characterFileAndPath;        // our character file to load
+        private string[] pfFiles;                   // list of files in cwd
+
+        public string CharacterfileAndPath
+        {
+            get { return characterFileAndPath; }
+            set { characterFileAndPath = value; }
+        }
+
+        public string[] PfFiles
+        {
+            get { return pfFiles; }
+            set { pfFiles = value; }
+        }
+
 
         /// <summary>
         /// Constructor. Sets the character file as the first pathfinder file in the CWD by default. 
@@ -20,8 +33,11 @@ namespace LoadCharacter
         public LoadCharacter()
         {
             cdir = Directory.GetCurrentDirectory();
-            file = GetFirstPfFile();
+            characterFileAndPath = GetFirstPfFile();
         }
+
+
+        
 
         /// <summary>
         /// Return the fist pathfinder file in the cwd

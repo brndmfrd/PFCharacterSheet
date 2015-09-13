@@ -25,8 +25,8 @@
                 <Label Content="Load Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
             </Button>
         </StackPanel>
-        
-        <StackPanel Name="Sp1FileDrop" Width="400" Drop="File_Drop" AllowDrop="True" Visibility="Visible">
+
+        <StackPanel Name="Sp1FileDrop" Drop="File_Drop" AllowDrop="True" Visibility="Visible">
         </StackPanel>
         
     </StackPanel>

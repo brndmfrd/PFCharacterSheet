@@ -4,33 +4,39 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using ActiveCharacter;
 using ModuleTools;
-using LoadCharacter;
-using CreateNewCharacter;
+using StartupScreenModule.Models;
 
 
 namespace StartupScreenModule.ViewModels
 {
     public class StartupScreenViewModel : ObservableObject
-    {
-        public ICommand CreateNewCharacterCommand
+    {       
+
+        public void LoadCharacterFileDrop(string loadThisFile)
         {
-            get { return new DelegateCommand(CreateNewCharacter); }
+            LoadCharacter.CharacterfileAndPath = loadThisFile;
         }
 
-        public ICommand LoadNewCharacterCommand
-        {
-            get { return new DelegateCommand(LoadNewCharacter); }
-        }
 
-        private void CreateNewCharacter()
-        {
-            
-        }
+        //public ICommand CreateNewCharacterCommand
+        //{
+        //    get { return new DelegateCommand(CreateNewCharacter); }
+        //}
 
-        private void LoadNewCharacter()
-        {
-            LoadCharacter.LoadCharacter lc = new LoadCharacter.LoadCharacter();
-            
-        }
+
+        //public ICommand LoadNewCharacterCommand
+        //{
+        //    get { return new DelegateCommand(LoadNewCharacter); }
+        //}
+
+
+        //private void CreateNewCharacter()
+        //{            
+        //}
+
+
+        //private void LoadNewCharacter()
+        //{          
+        //}
     }
 }
