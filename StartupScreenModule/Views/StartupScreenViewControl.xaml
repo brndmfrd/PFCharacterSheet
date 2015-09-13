@@ -26,8 +26,9 @@
             </Button>
         </StackPanel>
 
-        <StackPanel Name="Sp1FileDrop" Drop="File_Drop" AllowDrop="True" Visibility="Visible">
-        </StackPanel>
+        <!--Drag/drop a file and get the filename-->
+        <StackPanel Name="Sp1FileDrop" Drop="File_Drop" AllowDrop="True" Visibility="Visible"/>
+        
         
     </StackPanel>
 

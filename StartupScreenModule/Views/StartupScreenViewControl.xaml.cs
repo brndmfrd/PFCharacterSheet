@@ -47,12 +47,45 @@ namespace StartupScreenModule.Views
             {        
                 // Get the path of the dropped file
                 string[] filePathOfDroppedFile = e.Data.GetData(DataFormats.FileDrop, true) as string[];
-
-                // Tell Model what the path of the file dropped is
-                Models.LoadCharacter.CharacterfileAndPath = filePathOfDroppedFile[0];
-                
+                              
                 // Add path to filedroplbl to display path to user
                 uiElements.filedropTextBlock.Text += string.Format("Attempting to load file: \n {0}\n", filePathOfDroppedFile[0]);
+
+                if (ConfirmFileLoad(filePathOfDroppedFile[0]))
+                {
+                    // Tell Model what the path of the file dropped is
+                    Models.LoadCharacter.CharacterfileAndPath = filePathOfDroppedFile[0];
+                }
+                else
+                {
+                    uiElements.filedropTextBlock.Text += @"File load cancelled.  No action taken.";
+                }
+            }            
+        }
+
+        /// <summary>
+        /// Confirm with the user that the path they have provided is one they would like to attempt 
+        /// to load.
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        private bool ConfirmFileLoad(string path)
+        {
+            var result =
+                MessageBox.Show(string.Format("Load {0}?", path),
+                "Please Confirm File", 
+                MessageBoxButton.OKCancel, 
+                MessageBoxImage.Question, 
+                MessageBoxResult.Cancel
+                );
+
+            if (result == MessageBoxResult.OK)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }            
         }
 
