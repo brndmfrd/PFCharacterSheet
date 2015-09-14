@@ -14,7 +14,7 @@
 
     <StackPanel Orientation="Horizontal" Height="336" HorizontalAlignment="Center">
         <StackPanel Name="Sp0NewOrLoad" Orientation="Vertical">
-            <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding CreateNewCharacterCommand}" Margin="5">
+            <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding CreateNewCharacterCommand}" Margin="5" Click="Create_Character_Buttton_Click">
                 <Label Content="New Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
             </Button>
             <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding LoadNewCharacterCommand}" Margin="5" Click="Load_Character_Button_Click">

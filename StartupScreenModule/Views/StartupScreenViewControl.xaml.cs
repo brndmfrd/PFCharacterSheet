@@ -210,6 +210,15 @@ namespace StartupScreenModule.Views
         }
 
 
+        /// <summary>
+        /// Event handler that allows users to create a new character sheet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Create_Character_Buttton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
     }
 }
