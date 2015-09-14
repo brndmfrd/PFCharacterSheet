@@ -43,10 +43,30 @@ namespace StartupScreenModule.Views
             loadCharacterOptions.defaultLocationButton.Click += Load_Default_Button_Click;
             loadCharacterOptions.explorerButton.Click += Load_Explorer_Button_Click;
             loadCharacterOptions.fileDropButton.Click += Load_DragDrop_Button_Click;
+            loadCharacterOptions.fileListBox.MouseDoubleClick += fileListBox_MouseDoubleClick;
+            loadCharacterOptions.CreateFileDropTextBlock();
+            loadCharacterOptions.fileDropTextBlock.AllowDrop = true;  // important to add this explicitly.  Will be contained in a SP that sets this to false by default.
+        }
 
-            // Drag/Drop object
-            dragDropObject.CreateFileDropTextBlock();
-            dragDropObject.fileDropTextBlock.AllowDrop = true;  // important to add this explicitly.  Will be contained in a SP that sets this to false by default.
+        void fileListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selection = loadCharacterOptions.fileListBox.SelectedItem.ToString();
+
+            if (string.IsNullOrEmpty(selection))
+            {
+                loadCharacterOptions.fileDropTextBlock.Text += "File load failed.  No action taken.\n\n";
+                return;
+            }
+
+            // Open message box to confirm with user path is correct.
+            if (loadCharacterOptions.ConfirmFileLoad(selection))
+            {
+                Models.LoadCharacter.CharacterfileAndPath = selection;   // Tell our Model the path of the file dropped
+            }
+            else
+            {
+                loadCharacterOptions.fileDropTextBlock.Text += "File load cancelled.  No action taken.\n\n";
+            }
         }
 
 
@@ -64,7 +84,7 @@ namespace StartupScreenModule.Views
                     e.Data.GetData(DataFormats.FileDrop, true) as string[];
                               
                 // Add path to filedroplbl to display path to user
-                dragDropObject.fileDropTextBlock.Text += 
+                loadCharacterOptions.fileDropTextBlock.Text += 
                     string.Format("Attempting to load file: \n {0}\n", filePathOfDroppedFile[0]);
 
                 // Open message box to confirm with user path is correct.
@@ -74,7 +94,7 @@ namespace StartupScreenModule.Views
                 }
                 else
                 {
-                    dragDropObject.fileDropTextBlock.Text += "File load cancelled.  No action taken.\n\n";
+                    loadCharacterOptions.fileDropTextBlock.Text += "File load cancelled.  No action taken.\n\n";
                 }
             }            
         }
@@ -128,6 +148,7 @@ namespace StartupScreenModule.Views
 
             // add our listbox to the UI
             Sp2LoaderPanel.Children.Add(loadCharacterOptions.fileListBox);
+            Sp2LoaderPanel.Children.Add(loadCharacterOptions.fileDropTextBlock);
         }
 
 
@@ -145,7 +166,7 @@ namespace StartupScreenModule.Views
             //    Sp2LoaderPanel.Children.Add(dragDropObject.fileDropTextBlock);
             //}
             Sp2LoaderPanel.Children.Clear();
-            Sp2LoaderPanel.Children.Add(dragDropObject.fileDropTextBlock);
+            Sp2LoaderPanel.Children.Add(loadCharacterOptions.fileDropTextBlock);
 
             // -- Open windows file explorer --
             var ofd = new Microsoft.Win32.OpenFileDialog();
@@ -154,7 +175,7 @@ namespace StartupScreenModule.Views
             // -- Leave if failure in file explorer -- 
             if (success != true)
             {
-                dragDropObject.fileDropTextBlock.Text += "File load failed. No action taken.\n\n";
+                loadCharacterOptions.fileDropTextBlock.Text += "File load failed. No action taken.\n\n";
                 return;
             }
 
@@ -162,11 +183,11 @@ namespace StartupScreenModule.Views
             if (dragDropObject.ConfirmFileLoad(ofd.FileName))
             {
                 Models.LoadCharacter.CharacterfileAndPath = ofd.FileName;   // Tell our Model the path of the file dropped
-                dragDropObject.fileDropTextBlock.Text += "File load successfull!\n\n";
+                loadCharacterOptions.fileDropTextBlock.Text += "File load successfull!\n\n";
             }
             else
             {
-                dragDropObject.fileDropTextBlock.Text += "File load cancelled. No action taken.\n\n";
+                loadCharacterOptions.fileDropTextBlock.Text += "File load cancelled. No action taken.\n\n";
             }        
 
         }
@@ -185,7 +206,7 @@ namespace StartupScreenModule.Views
             //    Sp2LoaderPanel.Children.Add(dragDropObject.fileDropTextBlock);
             //}
             Sp2LoaderPanel.Children.Clear();
-            Sp2LoaderPanel.Children.Add(dragDropObject.fileDropTextBlock);
+            Sp2LoaderPanel.Children.Add(loadCharacterOptions.fileDropTextBlock);
         }
 
 

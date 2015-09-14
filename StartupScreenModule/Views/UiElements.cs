@@ -100,6 +100,7 @@ namespace StartupScreenModule.Views
             fileListBox = new ListBox();
             fileListBox.Background = null;
             fileListBox.Foreground = Brushes.GreenYellow;
+            
         }
 
 
