@@ -15,6 +15,7 @@ namespace CombatModule.ViewModels
     {
         private string _weaponAttacks = "noval";
 
+        #region getters_setters
         /// <summary>
         /// We get the list of weapons that a player has `EQUIPED` 
         /// We use this list of weapons (this includes hand-to-hand) to generate the list of WeaponAttacks
@@ -162,6 +163,7 @@ namespace CombatModule.ViewModels
                 RaisePropertyChangedEvent("Movement_Combat");
             }
         }
+        #endregion
 
 
         // ---------------------------

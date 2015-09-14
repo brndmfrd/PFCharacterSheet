@@ -8,6 +8,7 @@ namespace ActiveCharacter
 {
     public static class Character
     {
+        #region character_information
         // --- character information ---
         public static int ID = 0;
         public static string characterName = "noval";
@@ -34,7 +35,9 @@ namespace ActiveCharacter
         public static string experiencePoints = "noval";
         // public static List<string> classes = null;       TBD
         // pubic static string background = "noval";        TDB
+        #endregion
 
+        #region combat
         // --- combat---
         public static string hitPoints = "noval";
         public static string initiative = "noval";
@@ -48,14 +51,18 @@ namespace ActiveCharacter
         public static string statusEffect = "noval";
         public static string encumbrance = "noval";
         public static string movement_combat = "noval";
+        #endregion
 
+        #region gear_wealth
         // --- gear and wealth ---
         public static string gold = "noval";
         public static string gear = "noval";
         public static string equipment = "noval";
         public static string weapons = "noval";
         public static string armor = "noval";
+        #endregion
 
+        #region skills
         // --- Skills ---
         public static int acrobatics;
         public static int appraise;
@@ -93,11 +100,11 @@ namespace ActiveCharacter
         public static int swim;
         public static int useMagicDevice;
 
+        #endregion
+
         // --- Feats ---
 
         // --- Spells ---
-
-
 
 
     }

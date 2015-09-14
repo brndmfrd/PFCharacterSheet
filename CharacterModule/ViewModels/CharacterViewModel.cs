@@ -281,5 +281,7 @@ namespace CharacterModule.ViewModels
         {
             return true;
         }
+
+        
     }
 }
