@@ -22,7 +22,7 @@
             </Button>
         </StackPanel>
 
-        <!--Drag/drop a file and get the filename-->
+        <!--Navigation for character file loading-->
         <StackPanel Orientation="Vertical" Name="Sp1LoadOptions" Drop="File_Drop" AllowDrop="False" Visibility="Visible"/>
         <StackPanel Orientation="Vertical" Name="Sp2LoaderPanel" Drop="File_Drop" AllowDrop="False" Visibility="Visible"/>
         

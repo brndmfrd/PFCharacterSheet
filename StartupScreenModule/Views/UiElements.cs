@@ -69,22 +69,29 @@ namespace StartupScreenModule.Views
 
         internal void CreateButtons()
         {
+            ResourceDictionary rds = new ResourceDictionary();
+            rds.Source = new Uri("pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml");
+
             explorerButton = new Button();
             explorerButton.Content = "Select From Windows Explorer";
             explorerButton.Width = 200;
             explorerButton.Height = 80;
+            explorerButton.Style = (Style)rds["NavigationButtonStyle"];
 
             defaultLocationButton = new Button();
             defaultLocationButton.Content = "Select From Default Location";
             defaultLocationButton.Width = 200;
             defaultLocationButton.Height = 80;
+            defaultLocationButton.Style = (Style)rds["NavigationButtonStyle"];
 
             fileDropButton = new Button();
             fileDropButton.Content = "Drag/Drop File";
             fileDropButton.Width = 200;
             fileDropButton.Height = 80;
-
-
+            fileDropButton.Style = (Style)rds["NavigationButtonStyle"];          
         }
+
+
+
     }
 }

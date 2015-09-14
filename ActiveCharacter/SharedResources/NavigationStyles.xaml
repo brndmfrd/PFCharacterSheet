@@ -5,6 +5,7 @@
     <!--Primary style for navigation buttons-->
     <Style x:Key="NavigationButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Black"/>
+        <Setter Property="Foreground" Value="White"/>
         <Setter Property="Height" Value="100"/>
         <Setter Property="Width" Value="100"/>
         <Setter Property="Template">
