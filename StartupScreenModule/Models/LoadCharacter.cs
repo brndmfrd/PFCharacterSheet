@@ -28,10 +28,29 @@ namespace StartupScreenModule.Models
 
 
         /// <summary>
+        /// Look into the default dir and return all .pf files paths.
+        /// </summary>
+        /// <returns></returns>
+        public static string[] GetFilesFromDefaultDir()
+        {
+            cdir = Directory.GetCurrentDirectory();             // Target local directory
+
+            pfFiles = Directory.GetFiles(cdir, "*.pf");         // Target .pf files
+
+            if (pfFiles[0] == null)
+            {
+                pfFiles[0] = "No files could be found";
+            }
+
+            return pfFiles;
+        }
+
+
+        /// <summary>
         /// Return the fist pathfinder file in the cwd
         /// </summary>
         /// <returns>The full path of the first file with with a .pf extension, or a null string.</returns>
-        private static string GetFirstPfFile()
+        public static string GetFirstPfFile()
         {
             cdir = Directory.GetCurrentDirectory();             // Target local directory
 

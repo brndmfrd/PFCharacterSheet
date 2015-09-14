@@ -46,12 +46,12 @@ namespace StartupScreenModule.Views
 
             // Drag/Drop object
             dragDropObject.CreateFileDropTextBlock();
-            dragDropObject.fileDropTextBlock.AllowDrop = true;
+            dragDropObject.fileDropTextBlock.AllowDrop = true;  // important to add this explicitly.  Will be contained in a SP that sets this to false by default.
         }
 
 
         /// <summary>
-        /// Event handler for drag/drop objects in the stack panel "Sp1FileDrop"
+        /// Event handler for drag/drop objects in the stack panel "Sp2FileDrop"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>        
@@ -74,14 +74,14 @@ namespace StartupScreenModule.Views
                 }
                 else
                 {
-                    dragDropObject.fileDropTextBlock.Text += @"File load cancelled.  No action taken.\n\n";
+                    dragDropObject.fileDropTextBlock.Text += "File load cancelled.  No action taken.\n\n";
                 }
             }            
         }
 
 
         /// <summary>
-        /// Event handler to load objects into the character loader options panel.  
+        /// Event handler to load buttons into the character loader panel.  
         /// This panel propigates buttons for the user to select the method to load in their character file.
         /// </summary>
         /// <param name="sender"></param>
@@ -92,16 +92,15 @@ namespace StartupScreenModule.Views
                 Sp1LoadOptions.Children.Contains(loadCharacterOptions.defaultLocationButton) && 
                 Sp1LoadOptions.Children.Contains(loadCharacterOptions.fileDropButton))
             {
-                Sp1LoadOptions.Children.Remove(loadCharacterOptions.explorerButton);
-                Sp1LoadOptions.Children.Remove(loadCharacterOptions.defaultLocationButton);
-                Sp1LoadOptions.Children.Remove(loadCharacterOptions.fileDropButton);
+                Sp1LoadOptions.Children.Clear();    // Clear children
+                Sp2LoaderPanel.Children.Clear();    // Clear grandchildren
             }
             else
             {
                 Sp1LoadOptions.Children.Add(loadCharacterOptions.explorerButton);
                 Sp1LoadOptions.Children.Add(loadCharacterOptions.defaultLocationButton);
                 Sp1LoadOptions.Children.Add(loadCharacterOptions.fileDropButton);
-            }
+            }   
         }
 
 
@@ -114,14 +113,21 @@ namespace StartupScreenModule.Views
         /// <param name="e"></param>
         private void Load_Default_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (Sp2LoaderPanel.Children.Contains(dragDropObject.fileDropTextBlock))
+            // Clear any old data and start clean
+            loadCharacterOptions.fileListBox.Items.Clear();
+            Sp2LoaderPanel.Children.Clear();
+
+            // get files in default location
+            var allTheFiles = Models.LoadCharacter.GetFilesFromDefaultDir();
+
+            // fill our listbox
+            foreach (var f in allTheFiles)
             {
-                Sp2LoaderPanel.Children.Remove(dragDropObject.fileDropTextBlock);
+                loadCharacterOptions.fileListBox.Items.Add(f);
             }
-            else
-            {
-                Sp2LoaderPanel.Children.Add(dragDropObject.fileDropTextBlock);
-            }
+
+            // add our listbox to the UI
+            Sp2LoaderPanel.Children.Add(loadCharacterOptions.fileListBox);
         }
 
 
@@ -133,7 +139,36 @@ namespace StartupScreenModule.Views
         /// <param name="e"></param>
         private void Load_Explorer_Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            // -- Open panel if it is not already open --
+            //if (!Sp2LoaderPanel.Children.Contains(dragDropObject.fileDropTextBlock))
+            //{
+            //    Sp2LoaderPanel.Children.Add(dragDropObject.fileDropTextBlock);
+            //}
+            Sp2LoaderPanel.Children.Clear();
+            Sp2LoaderPanel.Children.Add(dragDropObject.fileDropTextBlock);
+
+            // -- Open windows file explorer --
+            var ofd = new Microsoft.Win32.OpenFileDialog();
+            var success = ofd.ShowDialog();                     // returns nullable bool
+
+            // -- Leave if failure in file explorer -- 
+            if (success != true)
+            {
+                dragDropObject.fileDropTextBlock.Text += "File load failed. No action taken.\n\n";
+                return;
+            }
+
+            // Open message box to confirm with user path is correct.
+            if (dragDropObject.ConfirmFileLoad(ofd.FileName))
+            {
+                Models.LoadCharacter.CharacterfileAndPath = ofd.FileName;   // Tell our Model the path of the file dropped
+                dragDropObject.fileDropTextBlock.Text += "File load successfull!\n\n";
+            }
+            else
+            {
+                dragDropObject.fileDropTextBlock.Text += "File load cancelled. No action taken.\n\n";
+            }        
+
         }
 
 
@@ -145,14 +180,12 @@ namespace StartupScreenModule.Views
         /// <param name="e"></param>
         private void Load_DragDrop_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (Sp2LoaderPanel.Children.Contains(dragDropObject.fileDropTextBlock))
-            {
-                Sp2LoaderPanel.Children.Remove(dragDropObject.fileDropTextBlock);
-            }
-            else
-            {
-                Sp2LoaderPanel.Children.Add(dragDropObject.fileDropTextBlock);
-            }
+            //if (!Sp2LoaderPanel.Children.Contains(dragDropObject.fileDropTextBlock))
+            //{
+            //    Sp2LoaderPanel.Children.Add(dragDropObject.fileDropTextBlock);
+            //}
+            Sp2LoaderPanel.Children.Clear();
+            Sp2LoaderPanel.Children.Add(dragDropObject.fileDropTextBlock);
         }
 
 

@@ -13,7 +13,7 @@
     </UserControl.Resources>
 
     <StackPanel Orientation="Horizontal" Height="336" HorizontalAlignment="Center">
-        <StackPanel Orientation="Vertical">
+        <StackPanel Name="Sp0NewOrLoad" Orientation="Vertical">
             <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding CreateNewCharacterCommand}" Margin="5">
                 <Label Content="New Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
             </Button>

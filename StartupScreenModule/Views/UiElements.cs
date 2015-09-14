@@ -16,6 +16,7 @@ namespace StartupScreenModule.Views
         public Button defaultLocationButton;
         public Button explorerButton;
         public Button fileDropButton;
+        public ListBox fileListBox;
 
 
         /// <summary>
@@ -72,23 +73,33 @@ namespace StartupScreenModule.Views
             ResourceDictionary rds = new ResourceDictionary();
             rds.Source = new Uri("pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml");
 
+            Thickness customMargin = new Thickness() { Bottom = 5, Right = 5, Left = 5, Top = 5 };
+
             explorerButton = new Button();
             explorerButton.Content = "Select From Windows Explorer";
             explorerButton.Width = 200;
             explorerButton.Height = 80;
+            explorerButton.Margin = customMargin;
             explorerButton.Style = (Style)rds["NavigationButtonStyle"];
 
             defaultLocationButton = new Button();
             defaultLocationButton.Content = "Select From Default Location";
             defaultLocationButton.Width = 200;
             defaultLocationButton.Height = 80;
+            defaultLocationButton.Margin = customMargin;
             defaultLocationButton.Style = (Style)rds["NavigationButtonStyle"];
 
             fileDropButton = new Button();
             fileDropButton.Content = "Drag/Drop File";
             fileDropButton.Width = 200;
             fileDropButton.Height = 80;
-            fileDropButton.Style = (Style)rds["NavigationButtonStyle"];          
+            fileDropButton.Margin = customMargin;
+            fileDropButton.Style = (Style)rds["NavigationButtonStyle"];    
+      
+            // Umm... I want this, too.  I'll find a better spot for it later.
+            fileListBox = new ListBox();
+            fileListBox.Background = null;
+            fileListBox.Foreground = Brushes.GreenYellow;
         }
 
 
