@@ -7,10 +7,6 @@
              d:DesignHeight="670" d:DesignWidth="1100"
              d:DataContext="{d:DesignInstance ViewModel:StartupScreenViewModel}">
 
-    <UserControl.InputBindings>
-        <KeyBinding Key="Enter" Command="{Binding ConvertTextCommand}"/>
-    </UserControl.InputBindings>
-
     <UserControl.Resources>
         <!--Link our button style-->
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml"/>
@@ -21,14 +17,14 @@
             <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding CreateNewCharacterCommand}" Margin="5">
                 <Label Content="New Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
             </Button>
-            <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding LoadNewCharacterCommand}" Margin="5" Click="Button_Click">
+            <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding LoadNewCharacterCommand}" Margin="5" Click="Load_Character_Button_Click">
                 <Label Content="Load Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
             </Button>
         </StackPanel>
 
         <!--Drag/drop a file and get the filename-->
-        <StackPanel Name="Sp1FileDrop" Drop="File_Drop" AllowDrop="True" Visibility="Visible"/>
-        
+        <StackPanel Orientation="Vertical" Name="Sp1LoadOptions" Drop="File_Drop" AllowDrop="False" Visibility="Visible"/>
+        <StackPanel Orientation="Vertical" Name="Sp2LoaderPanel" Drop="File_Drop" AllowDrop="False" Visibility="Visible"/>
         
     </StackPanel>
 
