@@ -12,10 +12,10 @@ namespace StartupScreenModule.ViewModels
     public class StartupScreenViewModel : ObservableObject
     {       
 
-        public void LoadCharacterFileDrop(string loadThisFile)
-        {
-            LoadCharacter.CharacterfileAndPath = loadThisFile;
-        }
+        //public void LoadCharacterFileDrop(string loadThisFile)
+        //{
+        //    LoadCharacter.CharacterfileAndPath = loadThisFile;
+        //}
 
 
         //public ICommand CreateNewCharacterCommand
