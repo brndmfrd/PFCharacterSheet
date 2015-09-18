@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Newtonsoft.Json;
+using System.Collections;
+using System.Collections.Specialized;
 
 namespace StartupScreenModule.Models
 {
@@ -14,19 +17,97 @@ namespace StartupScreenModule.Models
         private static string characterFileAndPath;        // our character file to load
         private static string[] pfFiles;                   // list of files in cwd
 
+
+        //todo: if the path fails to be set we must indicate it to the user.  Add some sort of message logging the user can ref. from where this value tries to get set (codebehind).
+        /// <summary>
+        /// Setting this value affirms loading of a new character file.
+        /// </summary>
         public static string CharacterfileAndPath
         {
             get { return characterFileAndPath; }
-            set { characterFileAndPath = value; }
+            set
+            {
+                if (ValidatePath(value))
+                {
+                    characterFileAndPath = value;
+                    BeginLoadCharacterFile(value);
+                }
+            }
         }
-
+        
+        
         public static string[] PfFiles
         {
             get { return pfFiles; }
             set { pfFiles = value; }
         }
 
+        /// <summary>
+        /// Begin loading the character file from disk.
+        /// </summary>
+        /// <param name="value">The verified character full file path.</param>
+        private static void BeginLoadCharacterFile(string value)
+        {
+            // !!! METHOD NOT YET READY FOR TESTING !!!
+            return;
+            // -------------------------------
 
+
+            var serial = new JsonSerializer();
+
+            // Try to get the file - It may be locked (in use)
+            try
+            {
+                using (var sr = new StreamReader(value))
+                using (var jtr = new JsonTextReader(sr))
+                {
+                    while (jtr.Read())
+                    {
+                        var x = jtr.Value;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                // log an error has occured in loading of charcter file
+            }
+
+            
+        }
+
+
+        /// <summary>
+        /// Validate a useable pathfinder character file to use
+        /// </summary>
+        /// <param name="value">Full path of a character file</param>
+        /// <returns>bool: validity</returns>
+        private static bool ValidatePath(string value)
+        {
+            // does the file exist
+            if (!File.Exists(value))
+            {
+                return false;
+            }
+
+            var lenFile = value.Length;
+
+            // If the file name length is stupid, reject it
+            if (lenFile <= 3 || lenFile >= 255)
+            {
+                return false;
+            }
+
+            // Check Prefix
+            if (value.Substring(lenFile - 3, 3) != ".pf")
+            {
+                return false;
+            }
+
+            return true;            
+        }
+
+        
         /// <summary>
         /// Look into the default dir and return all .pf files paths.
         /// </summary>
