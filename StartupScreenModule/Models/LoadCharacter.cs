@@ -48,22 +48,15 @@ namespace StartupScreenModule.Models
         /// <param name="value">The verified character full file path.</param>
         private static void BeginLoadCharacterFile(string value)
         {
-            // !!! METHOD NOT YET READY FOR TESTING !!!
-            return;
-            // -------------------------------
-
-
-            var serial = new JsonSerializer();
-
             // Try to get the file - It may be locked (in use)
             try
             {
-                using (var sr = new StreamReader(value))
+                using (StreamReader sr = File.OpenText(value))
                 using (var jtr = new JsonTextReader(sr))
                 {
                     while (jtr.Read())
                     {
-                        var x = jtr.Value;
+                        var x = jtr.Value;  // todo: use this to set values @ ActiveCharacter
                     }
                 }
 
