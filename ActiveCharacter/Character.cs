@@ -6,10 +6,53 @@ using System.Threading.Tasks;
 
 namespace ActiveCharacter
 {
+    /// <summary>
+    /// This class acts as the container, the model, for all the rest of the project to refrence.
+    /// Data is stored from the disk to this class to load a new character.
+    /// Data is stored to the disk from this class to save/update a character.
+    /// Data is filled in this class when creating a new character.
+    /// Only the foundational data needs to be stored here. For instance, we would store the number of ranks in a skill, but no the total value.
+    /// This is because the total value can be derived from other values (e.g. strength mod + ranks in swim = total swim check). This saves us from 
+    /// redundant data and less room for inconsistant data. 
+    /// </summary>
     public static class Character
     {
-        #region character_information
-        // --- character information ---
+        #region Character Information
+        public static IDictionary<string, string> Information = new Dictionary<string, string>(){
+            {"ID", "0"},
+            {"characterName", "0"},
+            {"playerName", "0"},
+            {"race", "0"},
+            {"size", "0"},
+            {"alignment", "0"},
+            {"age", "0"},
+            {"deity", "0"},
+            {"gender", "0"},
+            {"height", "0"},
+            {"weight", "0"},
+            {"eyes", "0"},
+            {"hair", "0"},
+            {"homeland", "0"},
+            {"strength", "0"},
+            {"dexterity", "0"},
+            {"constitution", "0"},
+            {"intelligence", "0"},
+            {"wisdom", "0"},
+            {"charisma", "0"},
+            {"common", "0"},
+            {"dwarven", "0"},
+            {"draconic", "0"},
+            {"experiencePoints", "0"},
+            {"Barbarian", "0"},
+            {"Bard", "0"},
+            {"Cleric", "0"},
+            {"Druid", "0"},
+            {"Fighter", "0"},
+            {"Ranger", "0"},
+            {"Sorcerer", "0"},
+            {"Wizard", "0"}
+        };
+
         public static int ID = 0;
         public static string characterName = "noval";
         public static string playerName = "noval";
@@ -34,11 +77,23 @@ namespace ActiveCharacter
         public static string languages = "noval";
         public static string experiencePoints = "noval";
         // public static List<string> classes = null;       TBD
-        // pubic static string background = "noval";        TDB
         #endregion
 
         #region combat
-        // --- combat---
+        public static IDictionary<string, string> Combat = new Dictionary<string, string>(){
+            {"hitPoints", "0"},
+            {"initiative", "0"},
+            {"armorClass", "0"},
+            {"fortitudeSave", "0"},
+            {"reflexSave", "0"},
+            {"willSave", "0"},
+            {"baseAttackBonus", "0"},
+            {"combatManeuverBonus", "0"},
+            {"combatManeuverDefence", "0"},
+            {"statusEffect", "0"},
+            {"encumbrance", "0"},
+            {"movement_combat", "0"}
+        };
         public static string hitPoints = "noval";
         public static string initiative = "noval";
         public static string armorClass = "noval";
