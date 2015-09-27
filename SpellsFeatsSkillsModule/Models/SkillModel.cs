@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ActiveCharacter;
+using ModuleTools;
 
 namespace SpellsFeatsSkillsModule.Models
 {
     public class SkillModel
     {
-        public static int Acrobatics { get { return Character.acrobatics; } set { Character.acrobatics = value; } }
+        public static int Acrobatics { get { return Character.Skills[Constants.acrobatics]; } set { Character.Skills[Constants.acrobatics] = value; } }
         public static int Appraise { get { return Character.appraise; } set { Character.appraise = value; } }
         public static int Bluff { get { return Character.bluff; } set { Character.bluff = value; } }
         public static int Climb { get { return Character.climb; } set { Character.climb = value; } }

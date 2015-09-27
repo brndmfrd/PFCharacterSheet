@@ -12,7 +12,7 @@ namespace UnitTests
         {
             SaveCharacterFile tester = new SaveCharacterFile();
             var output = tester.jsonSkill();
-            Assert.AreEqual("\"skills\":{\"acrobatics\":0,\"appraise\":0,\"bluff\":0,\"climb\":0,\"craft\":0,\"diplomacy\":0,\"disableDevice\":0,\"disguise\":0,\"escapeArtist\":0,\"fly\":0,\"handleAnimal\":0,\"heal\":0,\"intimidate\":0,\"knowledgeArcana\":0,\"knowledgeDungeoneering\":0,\"knowledgeEngineering\":0,\"knowledgeGeography\":0,\"knowledgeHistory\":0,\"knowledgeLocal\":0,\"knowledgeNature\":0,\"knowledgeNobility\":0,\"knowledgePlanes\":0,\"knowledgeReligion\":0,\"linguistics\":0,\"perception\":0,\"perform\":0,\"profession\":0,\"ride\":0,\"senseMotive\":0,\"sleightOfHand\":0,\"spellcraft\":0,\"stealth\":0,\"survival\":0,\"swim\":0,\"useMagicDevice\":0}", output);
+            Assert.AreEqual("{\"Acrobatics\":0,\"Appraise\":0,\"Bluff\":0,\"Climb\":0,\"Craft\":0,\"Diplomacy\":0,\"Disable Device\":0,\"Disguise\":0,\"Escape Artist\":0,\"Fly\":0,\"Handle Animal\":0,\"Heal\":0,\"Intimidate\":0,\"Knowledge Arcana\":0,\"Knowledge Dungeoneering\":0,\"Knowledge Engineering\":0,\"Knowledge Geography\":0,\"Knowledge History\":0,\"Knowledge Local\":0,\"Knowledge Nature\":0,\"Knowledge Nobility\":0,\"Knowledge Planes\":0,\"Knowledge Religion\":0,\"Linguistics\":0,\"Perception\":0,\"Perform\":0,\"Profession\":0,\"Ride\":0,\"Sense Motive\":0,\"Sleight of Hand\":0,\"Spellcraft\":0,\"Stealth\":0,\"Survival\":0,\"Swim\":0,\"Use Magic Device\":0}", output);
         }
 
         [TestMethod]

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ModuleTools;
 
 namespace ActiveCharacter
 {
@@ -122,42 +123,42 @@ namespace ActiveCharacter
 
         #region skills
         // --- Skills ---
-        public static IDictionary<string, string> Skills = new Dictionary<string, string>(){
-            {"acrobatics","ranks"},
-            {"appraise","ranks"},
-            {"bluff","ranks"},
-            {"climb","ranks"},
-            {"craft","ranks"},
-            {"diplomacy","ranks"},
-            {"disableDevice","ranks"},
-            {"disguise","ranks"},
-            {"escapeArtist","ranks"},
-            {"fly","ranks"},
-            {"handleAnimal","ranks"},
-            {"heal","ranks"},
-            {"intimidate","ranks"},
-            {"knowledgeArcana","ranks"},
-            {"knowledgeDungeoneering","ranks"},
-            {"knowledgeEngineering","ranks"},
-            {"knowledgeGeography","ranks"},
-            {"knowledgeHistory","ranks"},
-            {"knowledgeLocal","ranks"},
-            {"knowledgeNature","ranks"},
-            {"knowledgeNobility","ranks"},
-            {"knowledgePlanes","ranks"},
-            {"knowledgeReligion","ranks"},
-            {"linguistics","ranks"},
-            {"perception","ranks"},
-            {"perform","ranks"},
-            {"profession","ranks"},
-            {"ride","ranks"},
-            {"senseMotive","ranks"},
-            {"sleightOfHand","ranks"},
-            {"spellcraft","ranks"},
-            {"stealth","ranks"},
-            {"survival","ranks"},
-            {"swim","ranks"},
-            {"useMagicDevice","ranks"}
+        public static IDictionary<string, int> Skills = new Dictionary<string, int>(){
+            {Constants.acrobatics,0},
+            {Constants.appraise,0},
+            {Constants.bluff,0},
+            {Constants.climb,0},
+            {Constants.craft,0},
+            {Constants.diplomacy,0},
+            {Constants.disableDevice,0},
+            {Constants.disguise,0},
+            {Constants.escapeArtist,0},
+            {Constants.fly,0},
+            {Constants.handleAnimal,0},
+            {Constants.heal,0},
+            {Constants.intimidate,0},
+            {Constants.knowledgeArcana,0},
+            {Constants.knowledgeDungeoneering,0},
+            {Constants.knowledgeEngineering,0},
+            {Constants.knowledgeGeography,0},
+            {Constants.knowledgeHistory,0},
+            {Constants.knowledgeLocal,0},
+            {Constants.knowledgeNature,0},
+            {Constants.knowledgeNobility,0},
+            {Constants.knowledgePlanes,0},
+            {Constants.knowledgeReligion,0},
+            {Constants.linguistics,0},
+            {Constants.perception,0},
+            {Constants.perform,0},
+            {Constants.profession,0},
+            {Constants.ride,0},
+            {Constants.senseMotive,0},
+            {Constants.sleightOfHand,0},
+            {Constants.spellcraft,0},
+            {Constants.stealth,0},
+            {Constants.survival,0},
+            {Constants.swim,0},
+            {Constants.useMagicDevice,0}
         };
 
         public static int acrobatics;

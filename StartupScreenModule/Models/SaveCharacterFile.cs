@@ -8,6 +8,7 @@ using ActiveCharacter;
 using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Specialized;
+using ModuleTools;
 
 
 namespace StartupScreenModule.Models
@@ -26,17 +27,18 @@ namespace StartupScreenModule.Models
         /// <returns></returns>
         public bool SaveCharacter(string filename = "FACECAFE")
         {
-            string output = "{";
+            //string output = "{";
+            string output = string.Empty;
 
             output += jsonSkill();
-            output += ",\n";
+            output += "\n";
             output += jsonWealth();
-            output += ",\n";
+            output += "\n";
             output += jsonCharacterInfo();
-            output += ",\n";
+            output += "\n";
             output += jsonCombat();
 
-            output += "}";
+            //output += "}";
 
             StreamWriter writer = new StreamWriter(filename + ".pf");
 
@@ -45,53 +47,57 @@ namespace StartupScreenModule.Models
             writer.Close();
 
             return true;
-        }
-
-        
+        }        
 
         public string jsonSkill()
         {
             string output = string.Empty;
-            OrderedDictionary dict = new OrderedDictionary();
+            //OrderedDictionary dict = new OrderedDictionary();
 
-            dict.Add("acrobatics", Character.acrobatics);
-            dict.Add("appraise", Character.appraise);
-            dict.Add("bluff", Character.bluff);
-            dict.Add("climb", Character.climb);
-            dict.Add("craft", Character.craft);
-            dict.Add("diplomacy", Character.diplomacy);
-            dict.Add("disableDevice", Character.disableDevice);
-            dict.Add("disguise", Character.disguise);
-            dict.Add("escapeArtist", Character.escapeArtist);
-            dict.Add("fly", Character.fly);
-            dict.Add("handleAnimal", Character.handleAnimal);
-            dict.Add("heal", Character.heal);
-            dict.Add("intimidate", Character.intimidate);
-            dict.Add("knowledgeArcana", Character.knowledgeArcana);
-            dict.Add("knowledgeDungeoneering", Character.knowledgeDungeoneering);
-            dict.Add("knowledgeEngineering", Character.knowledgeEngineering);
-            dict.Add("knowledgeGeography", Character.knowledgeGeography);
-            dict.Add("knowledgeHistory", Character.knowledgeHistory);
-            dict.Add("knowledgeLocal", Character.knowledgeLocal);
-            dict.Add("knowledgeNature", Character.knowledgeNature);
-            dict.Add("knowledgeNobility", Character.knowledgeNobility);
-            dict.Add("knowledgePlanes", Character.knowledgePlanes);
-            dict.Add("knowledgeReligion", Character.knowledgeReligion);
-            dict.Add("linguistics", Character.linguistics);
-            dict.Add("perception", Character.perception);
-            dict.Add("perform", Character.perform);
-            dict.Add("profession", Character.profession);
-            dict.Add("ride", Character.ride);
-            dict.Add("senseMotive", Character.senseMotive);
-            dict.Add("sleightOfHand", Character.sleightOfHand);
-            dict.Add("spellcraft", Character.spellcraft);
-            dict.Add("stealth", Character.stealth);
-            dict.Add("survival", Character.survival);
-            dict.Add("swim", Character.swim);
-            dict.Add("useMagicDevice", Character.useMagicDevice);
+            //foreach (var elem in Character.Skills)
+            //{
+            //    dict.Add(elem.Key, elem.Value);
+            //}
 
-            output += "\"skills\":";
-            output += JsonConvert.SerializeObject(dict);
+            //dict.Add("acrobatics", Character.acrobatics);
+            //dict.Add("appraise", Character.appraise);
+            //dict.Add("bluff", Character.bluff);
+            //dict.Add("climb", Character.climb);
+            //dict.Add("craft", Character.craft);
+            //dict.Add("diplomacy", Character.diplomacy);
+            //dict.Add("disableDevice", Character.disableDevice);
+            //dict.Add("disguise", Character.disguise);
+            //dict.Add("escapeArtist", Character.escapeArtist);
+            //dict.Add("fly", Character.fly);
+            //dict.Add("handleAnimal", Character.handleAnimal);
+            //dict.Add("heal", Character.heal);
+            //dict.Add("intimidate", Character.intimidate);
+            //dict.Add("knowledgeArcana", Character.knowledgeArcana);
+            //dict.Add("knowledgeDungeoneering", Character.knowledgeDungeoneering);
+            //dict.Add("knowledgeEngineering", Character.knowledgeEngineering);
+            //dict.Add("knowledgeGeography", Character.knowledgeGeography);
+            //dict.Add("knowledgeHistory", Character.knowledgeHistory);
+            //dict.Add("knowledgeLocal", Character.knowledgeLocal);
+            //dict.Add("knowledgeNature", Character.knowledgeNature);
+            //dict.Add("knowledgeNobility", Character.knowledgeNobility);
+            //dict.Add("knowledgePlanes", Character.knowledgePlanes);
+            //dict.Add("knowledgeReligion", Character.knowledgeReligion);
+            //dict.Add("linguistics", Character.linguistics);
+            //dict.Add("perception", Character.perception);
+            //dict.Add("perform", Character.perform);
+            //dict.Add("profession", Character.profession);
+            //dict.Add("ride", Character.ride);
+            //dict.Add("senseMotive", Character.senseMotive);
+            //dict.Add("sleightOfHand", Character.sleightOfHand);
+            //dict.Add("spellcraft", Character.spellcraft);
+            //dict.Add("stealth", Character.stealth);
+            //dict.Add("survival", Character.survival);
+            //dict.Add("swim", Character.swim);
+            //dict.Add("useMagicDevice", Character.useMagicDevice);
+
+            //output += "\"skills\":";
+            //output += JsonConvert.SerializeObject(dict);
+            output += JsonConvert.SerializeObject(Character.Skills, Formatting.None);
 
             return output;
         }

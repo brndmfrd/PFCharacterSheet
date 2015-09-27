@@ -7,6 +7,7 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Specialized;
+using ActiveCharacter;
 
 namespace StartupScreenModule.Models
 {
@@ -44,26 +45,44 @@ namespace StartupScreenModule.Models
 
         /// <summary>
         /// Begin loading the character file from disk.
+        /// A valid file is of this format: Each new line represents a new dictionary; skills, wealth, character info, combat
+        /// todo: ensure this is accurate, since the file format may change.
         /// </summary>
         /// <param name="value">The verified character full file path.</param>
         private static void BeginLoadCharacterFile(string value)
         {
+            // food for thought
+            //Character.Skills = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(value));
+            //JsonConvert.SerializeObject(points, Formatting.Indented);
+
+            SaveCharacterFile savechar = new SaveCharacterFile();
+            savechar.SaveCharacter();
+
             // Try to get the file - It may be locked (in use)
             try
             {
                 using (StreamReader sr = File.OpenText(value))
-                using (var jtr = new JsonTextReader(sr))
                 {
-                    while (jtr.Read())
+                    while (!sr.EndOfStream)
                     {
-                        var x = jtr.Value;  // todo: use this to set values @ ActiveCharacter
+                        var line = sr.ReadLine();
+                        try
+                        {
+                            Character.Skills = JsonConvert.DeserializeObject<Dictionary<string, int>>(line);
+                        }
+                        catch (Exception ex)
+                        {
+                            // log that the file is not valid.  
+                            // notify user that the character data may be incomplete.
+                            // perhaps we can add some fault-tolerance, backup, and/or recovery later.
+                        }
                     }
                 }
-
             }
             catch (Exception ex)
             {
                 // log an error has occured in loading of charcter file
+                // notify user that the file may be locked and to close any currently open instance of the file
             }
 
             

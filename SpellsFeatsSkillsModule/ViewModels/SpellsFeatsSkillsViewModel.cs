@@ -15,6 +15,9 @@ namespace SpellsFeatsSkillsModule.ViewModels
     public class SpellsFeatsSkillsViewModel : ObservableObject, INavigationAware
     {
         // -- Skills --
+        // These skills represent the TOTAL VALUE for the representitive skill
+        // The Skill model does the work of deriving the values for us
+        // todo: These accessors are giant and imposing, there must be a better way to handle them and the raised events.
         public int Acrobatics { get { return SkillModel.Acrobatics; } set { SkillModel.Acrobatics = value; RaisePropertyChangedEvent("Acrobatics"); } }
         public int Appraise { get { return SkillModel.Appraise; } set { SkillModel.Appraise = value; RaisePropertyChangedEvent("Appraise");} }
         public int Bluff { get { return SkillModel.Bluff; } set { SkillModel.Bluff = value; RaisePropertyChangedEvent("Bluff"); } }
