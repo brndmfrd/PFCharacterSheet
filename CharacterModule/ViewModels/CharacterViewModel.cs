@@ -45,13 +45,19 @@ namespace CharacterModule.ViewModels
 
         public string Size
         {
-            get { return Character.size; }
-            set
-            {
-                Character.size = value;
-                RaisePropertyChangedEvent("Size");
-            }
+            get { return Character.Information["size"]; }
+            set { Character.Information["size"] = value; RaisePropertyChangedEvent("Size"); }
         }
+
+        //public string Size
+        //{
+        //    get { return Character.size; }
+        //    set
+        //    {
+        //        Character.size = value;
+        //        RaisePropertyChangedEvent("Size");
+        //    }
+        //}
 
         public string Alignment
         {

@@ -18,6 +18,7 @@ namespace ActiveCharacter
     public static class Character
     {
         #region Character Information
+        // Characteristics
         public static IDictionary<string, string> Information = new Dictionary<string, string>(){
             {"ID", "0"},
             {"characterName", "0"},
@@ -52,7 +53,7 @@ namespace ActiveCharacter
             {"Sorcerer", "0"},
             {"Wizard", "0"}
         };
-
+        
         public static int ID = 0;
         public static string characterName = "noval";
         public static string playerName = "noval";
@@ -94,6 +95,8 @@ namespace ActiveCharacter
             {"encumbrance", "0"},
             {"movement_combat", "0"}
         };
+
+
         public static string hitPoints = "noval";
         public static string initiative = "noval";
         public static string armorClass = "noval";
@@ -119,6 +122,44 @@ namespace ActiveCharacter
 
         #region skills
         // --- Skills ---
+        public static IDictionary<string, string> Skills = new Dictionary<string, string>(){
+            {"acrobatics","ranks"},
+            {"appraise","ranks"},
+            {"bluff","ranks"},
+            {"climb","ranks"},
+            {"craft","ranks"},
+            {"diplomacy","ranks"},
+            {"disableDevice","ranks"},
+            {"disguise","ranks"},
+            {"escapeArtist","ranks"},
+            {"fly","ranks"},
+            {"handleAnimal","ranks"},
+            {"heal","ranks"},
+            {"intimidate","ranks"},
+            {"knowledgeArcana","ranks"},
+            {"knowledgeDungeoneering","ranks"},
+            {"knowledgeEngineering","ranks"},
+            {"knowledgeGeography","ranks"},
+            {"knowledgeHistory","ranks"},
+            {"knowledgeLocal","ranks"},
+            {"knowledgeNature","ranks"},
+            {"knowledgeNobility","ranks"},
+            {"knowledgePlanes","ranks"},
+            {"knowledgeReligion","ranks"},
+            {"linguistics","ranks"},
+            {"perception","ranks"},
+            {"perform","ranks"},
+            {"profession","ranks"},
+            {"ride","ranks"},
+            {"senseMotive","ranks"},
+            {"sleightOfHand","ranks"},
+            {"spellcraft","ranks"},
+            {"stealth","ranks"},
+            {"survival","ranks"},
+            {"swim","ranks"},
+            {"useMagicDevice","ranks"}
+        };
+
         public static int acrobatics;
         public static int appraise;
         public static int bluff;
