@@ -173,6 +173,42 @@ namespace SpellsFeatsSkillsModule.ViewModels
         }
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
+            RaisePropertyChangedEvent("Acrobatics");
+            RaisePropertyChangedEvent("Appraise");
+            RaisePropertyChangedEvent("Bluff");
+            RaisePropertyChangedEvent("Climb");
+            RaisePropertyChangedEvent("Craft");
+            RaisePropertyChangedEvent("Diplomacy");
+            RaisePropertyChangedEvent("DisableDevice");
+            RaisePropertyChangedEvent("Disguise");
+            RaisePropertyChangedEvent("EscapeArtist");
+            RaisePropertyChangedEvent("Fly");
+            RaisePropertyChangedEvent("HandleAnimal");
+            RaisePropertyChangedEvent("Heal");
+            RaisePropertyChangedEvent("Intimidate");
+            RaisePropertyChangedEvent("KnowledgeArcana");
+            RaisePropertyChangedEvent("KnowledgeDungeoneering");
+            RaisePropertyChangedEvent("KnowledgeEngineering");
+            RaisePropertyChangedEvent("KnowledgeGeography");
+            RaisePropertyChangedEvent("KnowledgeHistory");
+            RaisePropertyChangedEvent("KnowledgeLocal");
+            RaisePropertyChangedEvent("KnowledgeNature");
+            RaisePropertyChangedEvent("KnowledgeNobility");
+            RaisePropertyChangedEvent("KnowledgePlanes");
+            RaisePropertyChangedEvent("KnowledgeReligion");
+            RaisePropertyChangedEvent("Linguistics");
+            RaisePropertyChangedEvent("Perception");
+            RaisePropertyChangedEvent("Perform");
+            RaisePropertyChangedEvent("Profession");
+            RaisePropertyChangedEvent("Ride");
+            RaisePropertyChangedEvent("SenseMotive");
+            RaisePropertyChangedEvent("SleightOfHand");
+            RaisePropertyChangedEvent("Spellcraft");
+            RaisePropertyChangedEvent("Stealth");
+            RaisePropertyChangedEvent("Survival");
+            RaisePropertyChangedEvent("Swim");
+            RaisePropertyChangedEvent("UseMagicDevice");
+
             FillFeats();
             FillSpells();
         }
