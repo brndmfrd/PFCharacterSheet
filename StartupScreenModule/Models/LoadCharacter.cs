@@ -45,18 +45,19 @@ namespace StartupScreenModule.Models
 
         /// <summary>
         /// Begin loading the character file from disk.
-        /// A valid file is of this format: Each new line represents a new dictionary; skills, wealth, character info, combat
-        /// todo: ensure this is accurate, since the file format may change.
+        /// A valid file is of this format: 
+        /// {"Acrobatics":0,"Appraise":0...}\n
+        /// "wealth":{"gold":"noval","gear":"noval"...}\n
+        /// "character":{"characterName":"noval",...}\n
+        /// "combat":{"hitPoints":"noval",...}\n
+        /// todo: ensure this is accurate, since the file format WILL change.
         /// </summary>
         /// <param name="value">The verified character full file path.</param>
         private static void BeginLoadCharacterFile(string value)
         {
-            // food for thought
-            //Character.Skills = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(value));
-            //JsonConvert.SerializeObject(points, Formatting.Indented);
-
-            SaveCharacterFile savechar = new SaveCharacterFile();
-            savechar.SaveCharacter();
+            // Bryan's snippit for debugging - ignorable
+            //SaveCharacterFile savechar = new SaveCharacterFile();
+            //savechar.SaveCharacter();
 
             // Try to get the file - It may be locked (in use)
             try
