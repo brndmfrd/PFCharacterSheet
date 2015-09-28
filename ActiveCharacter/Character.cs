@@ -20,64 +20,64 @@ namespace ActiveCharacter
     {
         #region Character Information
         // Characteristics
+        // todo: add more languages and classes
         public static IDictionary<string, string> Information = new Dictionary<string, string>(){
-            {"ID", "0"},
-            {"characterName", "0"},
-            {"playerName", "0"},
-            {"race", "0"},
-            {"size", "0"},
-            {"alignment", "0"},
-            {"age", "0"},
-            {"deity", "0"},
-            {"gender", "0"},
-            {"height", "0"},
-            {"weight", "0"},
-            {"eyes", "0"},
-            {"hair", "0"},
-            {"homeland", "0"},
-            {"strength", "0"},
-            {"dexterity", "0"},
-            {"constitution", "0"},
-            {"intelligence", "0"},
-            {"wisdom", "0"},
-            {"charisma", "0"},
-            {"common", "0"},
-            {"dwarven", "0"},
-            {"draconic", "0"},
-            {"experiencePoints", "0"},
-            {"Barbarian", "0"},
-            {"Bard", "0"},
-            {"Cleric", "0"},
-            {"Druid", "0"},
-            {"Fighter", "0"},
-            {"Ranger", "0"},
-            {"Sorcerer", "0"},
-            {"Wizard", "0"}
+            {Constants.characterName, "NONAME"},
+            {Constants.playerName, "NONAME"},
+            {Constants.race, "NONE"},
+            {Constants.size, "MEDIUM"},
+            {Constants.alignment, "NEUTRAL"},
+            {Constants.age, "0"},
+            {Constants.deity, "NONE"},
+            {Constants.gender, "NONE"},
+            {Constants.height, "0 METERS"},
+            {Constants.weight, "0 KILOGRAMS"},
+            {Constants.eyes, "NONE"},
+            {Constants.hair, "NONE"},
+            {Constants.homeland, "NONE"},
+            {Constants.strength, "0"},
+            {Constants.dexterity, "0"},
+            {Constants.constitution, "0"},
+            {Constants.intelligence, "0"},
+            {Constants.wisdom, "0"},
+            {Constants.charisma, "0"},
+            {Constants.common, "YES"},
+            {Constants.dwarven, "NO"},
+            {Constants.draconic, "NO"},
+            {Constants.experiencePoints, "0"},
+            {Constants.barbarian, "0"},
+            {Constants.bard, "0"},
+            {Constants.cleric, "0"},
+            {Constants.druid, "0"},
+            {Constants.fighter, "0"},
+            {Constants.ranger, "0"},
+            {Constants.sorcerer, "0"},
+            {Constants.wizard, "0"}
         };
         
-        public static int ID = 0;
-        public static string characterName = "noval";
-        public static string playerName = "noval";
-        public static string race = "noval";
-        public static string jobclass = "noval";
-        public static string size = "noval";
-        public static string alignment = "noval";
-        public static string age = "noval";
-        public static string deity = "noval";
-        public static string gender = "noval";
-        public static string height = "noval";
-        public static string weight = "noval";
-        public static string eyes = "noval";
-        public static string hair = "noval";
-        public static string homeland = "noval";
-        public static string strength = "0";
-        public static string dexterity = "0";
-        public static string constitution = "0";
-        public static string intelligence = "0";
-        public static string wisdom = "0";
-        public static string charisma = "0";
-        public static string languages = "noval";
-        public static string experiencePoints = "noval";
+        //public static int ID = 0;
+        //public static string characterName = "noval";
+        //public static string playerName = "noval";
+        //public static string race = "noval";
+        //public static string jobclass = "noval";
+        //public static string size = "noval";
+        //public static string alignment = "noval";
+        //public static string age = "noval";
+        //public static string deity = "noval";
+        //public static string gender = "noval";
+        //public static string height = "noval";
+        //public static string weight = "noval";
+        //public static string eyes = "noval";
+        //public static string hair = "noval";
+        //public static string homeland = "noval";
+        //public static string strength = "0";
+        //public static string dexterity = "0";
+        //public static string constitution = "0";
+        //public static string intelligence = "0";
+        //public static string wisdom = "0";
+        //public static string charisma = "0";
+        //public static string languages = "noval";
+        //public static string experiencePoints = "noval";
         // public static List<string> classes = null;       TBD
         #endregion
 
@@ -160,43 +160,6 @@ namespace ActiveCharacter
             {Constants.swim,0},
             {Constants.useMagicDevice,0}
         };
-
-        public static int acrobatics;
-        public static int appraise;
-        public static int bluff;
-        public static int climb;
-        public static int craft;
-        public static int diplomacy;
-        public static int disableDevice;
-        public static int disguise;
-        public static int escapeArtist;
-        public static int fly;
-        public static int handleAnimal;
-        public static int heal;
-        public static int intimidate;
-        public static int knowledgeArcana;
-        public static int knowledgeDungeoneering;
-        public static int knowledgeEngineering;
-        public static int knowledgeGeography;
-        public static int knowledgeHistory;
-        public static int knowledgeLocal;
-        public static int knowledgeNature;
-        public static int knowledgeNobility;
-        public static int knowledgePlanes;
-        public static int knowledgeReligion;
-        public static int linguistics;
-        public static int perception;
-        public static int perform;
-        public static int profession;
-        public static int ride;
-        public static int senseMotive;
-        public static int sleightOfHand;
-        public static int spellcraft;
-        public static int stealth;
-        public static int survival;
-        public static int swim;
-        public static int useMagicDevice;
-
         #endregion
 
         // --- Feats ---

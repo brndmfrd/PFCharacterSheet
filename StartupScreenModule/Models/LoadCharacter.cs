@@ -66,10 +66,26 @@ namespace StartupScreenModule.Models
                 {
                     while (!sr.EndOfStream)
                     {
+                        // First line expected to be Skills
                         var line = sr.ReadLine();
+
                         try
                         {
                             Character.Skills = JsonConvert.DeserializeObject<Dictionary<string, int>>(line);
+                        }
+                        catch (Exception ex)
+                        {
+                            // log that the file is not valid.  
+                            // notify user that the character data may be incomplete.
+                            // perhaps we can add some fault-tolerance, backup, and/or recovery later.
+                        }
+
+                        // Second line expected to be Character Information
+                        line = sr.ReadLine();
+
+                        try
+                        {
+                            Character.Information = JsonConvert.DeserializeObject<Dictionary<string, string>>(line);
                         }
                         catch (Exception ex)
                         {

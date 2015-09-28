@@ -32,9 +32,9 @@ namespace StartupScreenModule.Models
 
             output += jsonSkill();
             output += "\n";
-            output += jsonWealth();
+            output += jsonCharacterInfo(); 
             output += "\n";
-            output += jsonCharacterInfo();
+            output += jsonWealth();
             output += "\n";
             output += jsonCombat();
 
@@ -146,32 +146,34 @@ namespace StartupScreenModule.Models
         public string jsonCharacterInfo()
         {
             string output = string.Empty;
-            OrderedDictionary dict = new OrderedDictionary();
+            //OrderedDictionary dict = new OrderedDictionary();
 
-            dict.Add("characterName", Character.characterName);
-            dict.Add("playerName", Character.playerName);
-            dict.Add("race", Character.race);
-            dict.Add("jobclass", Character.jobclass);
-            dict.Add("size", Character.size);
-            dict.Add("alignment", Character.alignment);
-            dict.Add("age", Character.age);
-            dict.Add("deity", Character.deity);
-            dict.Add("gender", Character.gender);
-            dict.Add("height", Character.height);
-            dict.Add("weight", Character.weight);
-            dict.Add("eyes", Character.eyes);
-            dict.Add("hair", Character.hair);
-            dict.Add("homeland", Character.homeland);
-            dict.Add("strength", Character.strength);
-            dict.Add("dexterity", Character.dexterity);
-            dict.Add("constitution", Character.constitution);
-            dict.Add("intelligence", Character.intelligence);
-            dict.Add("wisdom", Character.wisdom);
-            dict.Add("charisma", Character.charisma);
-            dict.Add("languages", Character.languages);
-            dict.Add("experiencePoints", Character.experiencePoints);
-            output += "\"character\":";
-            output += JsonConvert.SerializeObject(dict);
+            //dict.Add("characterName", Character.characterName);
+            //dict.Add("playerName", Character.playerName);
+            //dict.Add("race", Character.race);
+            //dict.Add("jobclass", Character.jobclass);
+            //dict.Add("size", Character.size);
+            //dict.Add("alignment", Character.alignment);
+            //dict.Add("age", Character.age);
+            //dict.Add("deity", Character.deity);
+            //dict.Add("gender", Character.gender);
+            //dict.Add("height", Character.height);
+            //dict.Add("weight", Character.weight);
+            //dict.Add("eyes", Character.eyes);
+            //dict.Add("hair", Character.hair);
+            //dict.Add("homeland", Character.homeland);
+            //dict.Add("strength", Character.strength);
+            //dict.Add("dexterity", Character.dexterity);
+            //dict.Add("constitution", Character.constitution);
+            //dict.Add("intelligence", Character.intelligence);
+            //dict.Add("wisdom", Character.wisdom);
+            //dict.Add("charisma", Character.charisma);
+            //dict.Add("languages", Character.languages);
+            //dict.Add("experiencePoints", Character.experiencePoints);
+            //output += "\"character\":";
+            output += JsonConvert.SerializeObject(Character.Information, Formatting.None);
+
+            //output += JsonConvert.SerializeObject(dict);
 
             return output;
         }

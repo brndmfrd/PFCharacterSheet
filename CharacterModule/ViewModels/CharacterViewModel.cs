@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Practices.Prism.Regions;
 using ActiveCharacter;
 using System.Windows.Input;
+using CharacterModule.Model;
 using ModuleTools;
 
 
@@ -13,222 +14,40 @@ namespace CharacterModule.ViewModels
 {
     public class CharacterViewModel : ObservableObject, INavigationAware
     {
-        public string CharacterName
-        {
-            get { return Character.characterName; }
-            set
-            {
-                Character.characterName = value;
-                RaisePropertyChangedEvent("CharacterName");
-            }
-        }
 
-        public string PlayerName
-        {
-            get { return Character.playerName; }
-            set
-            {
-                Character.playerName = value;
-                RaisePropertyChangedEvent("PlayerName");
-            }
-        }
+        public string CharacterName { get { return CharacterModel.CharacterName; } set { CharacterModel.CharacterName = value; RaisePropertyChangedEvent("CharacterName"); } }
+        public string PlayerName { get { return CharacterModel.PlayerName; } set { CharacterModel.PlayerName = value; RaisePropertyChangedEvent("PlayerName"); } }
+        public string Race { get { return CharacterModel.Race; } set { CharacterModel.Race = value; RaisePropertyChangedEvent("Race"); } }
+        public string Size { get { return CharacterModel.Size; } set { CharacterModel.Size = value; RaisePropertyChangedEvent("Size"); } }
+        public string Alignment { get { return CharacterModel.Alignment; } set { CharacterModel.Alignment = value; RaisePropertyChangedEvent("Alignment"); } }
+        public string Age { get { return CharacterModel.Age; } set { CharacterModel.Age = value; RaisePropertyChangedEvent("Age"); } }
+        public string Deity { get { return CharacterModel.Deity; } set { CharacterModel.Deity = value; RaisePropertyChangedEvent("Diety"); } }
+        public string Gender { get { return CharacterModel.Gender; } set { CharacterModel.Gender = value; RaisePropertyChangedEvent("Gender"); } }
+        public string Height { get { return CharacterModel.Height; } set { CharacterModel.Height = value; RaisePropertyChangedEvent("Height"); } }
+        public string Weight { get { return CharacterModel.Weight; } set { CharacterModel.Weight = value; RaisePropertyChangedEvent("Weight"); } }
+        public string Eyes { get { return CharacterModel.Eyes; } set { CharacterModel.Eyes = value; RaisePropertyChangedEvent("Eyes"); } }
+        public string Hair { get { return CharacterModel.Hair; } set { CharacterModel.Hair = value; RaisePropertyChangedEvent("Hair"); } }
+        public string Homeland { get { return CharacterModel.Homeland; } set { CharacterModel.Homeland = value; RaisePropertyChangedEvent("Homeland"); } }
+        public string Strength { get { return CharacterModel.Strength; } set { CharacterModel.Strength = value; RaisePropertyChangedEvent("Strength"); } }
+        public string Dexterity { get { return CharacterModel.Dexterity; } set { CharacterModel.Dexterity = value; RaisePropertyChangedEvent("Dexterity"); } }
+        public string Constitution { get { return CharacterModel.Constitution; } set { CharacterModel.Constitution = value; RaisePropertyChangedEvent("Constitution"); } }
+        public string Intelligence { get { return CharacterModel.Intelligence; } set { CharacterModel.Intelligence = value; RaisePropertyChangedEvent("Intelligence"); } }
+        public string Wisdom { get { return CharacterModel.Wisdom; } set { CharacterModel.Wisdom = value; RaisePropertyChangedEvent("Wisdom"); } }
+        public string Charisma { get { return CharacterModel.Charisma; } set { CharacterModel.Charisma = value; RaisePropertyChangedEvent("Charisma"); } }
+        public string Common { get { return CharacterModel.Common; } set { CharacterModel.Common = value; RaisePropertyChangedEvent("Common"); } }
+        public string Dwarven { get { return CharacterModel.Dwarven; } set { CharacterModel.Dwarven = value; RaisePropertyChangedEvent("CharacterName"); } }
+        public string Draconic { get { return CharacterModel.Draconic; } set { CharacterModel.Draconic = value; RaisePropertyChangedEvent("Dwarven"); } }
+        public string ExperiencePoints { get { return CharacterModel.ExperiencePoints; } set { CharacterModel.ExperiencePoints = value; RaisePropertyChangedEvent("ExperiencePoints"); } }
+        public string Barbarian { get { return CharacterModel.Barbarian; } set { CharacterModel.Barbarian = value; RaisePropertyChangedEvent("Barbarian"); } }
+        public string Bard { get { return CharacterModel.Bard; } set { CharacterModel.Bard = value; RaisePropertyChangedEvent("Bard"); } }
+        public string Cleric { get { return CharacterModel.Cleric; } set { CharacterModel.Cleric = value; RaisePropertyChangedEvent("Cleric"); } }
+        public string Druid { get { return CharacterModel.Druid; } set { CharacterModel.Druid = value; RaisePropertyChangedEvent("Druid"); } }
+        public string Fighter { get { return CharacterModel.Fighter; } set { CharacterModel.Fighter = value; RaisePropertyChangedEvent("Fighter"); } }
+        public string Ranger { get { return CharacterModel.Ranger; } set { CharacterModel.Ranger = value; RaisePropertyChangedEvent("Ranger"); } }
+        public string Sorcerer { get { return CharacterModel.Sorcerer; } set { CharacterModel.Sorcerer = value; RaisePropertyChangedEvent("Sorcerer"); } }
+        public string Wizard { get { return CharacterModel.Wizard; } set { CharacterModel.Wizard = value; RaisePropertyChangedEvent("Wizard"); } }
 
-        public string Race
-        {
-            get { return Character.race; }
-            set
-            {
-                Character.race = value;
-                RaisePropertyChangedEvent("Race");
-            }
-        }
-
-        public string Size
-        {
-            get { return Character.Information["size"]; }
-            set { Character.Information["size"] = value; RaisePropertyChangedEvent("Size"); }
-        }
-
-        //public string Size
-        //{
-        //    get { return Character.size; }
-        //    set
-        //    {
-        //        Character.size = value;
-        //        RaisePropertyChangedEvent("Size");
-        //    }
-        //}
-
-        public string Alignment
-        {
-            get { return Character.alignment; }
-            set
-            {
-                Character.alignment = value;
-                RaisePropertyChangedEvent("Alignment");
-            }
-        }
-
-        public string Age
-        {
-            get { return Character.age; }
-            set
-            {
-                Character.age = value;
-                RaisePropertyChangedEvent("Age");
-            }
-        }
-
-        public string Deity
-        {
-            get { return Character.deity; }
-            set
-            {
-                Character.deity = value;
-                RaisePropertyChangedEvent("Deity");
-            }
-        }
-
-        public string Gender
-        {
-            get { return Character.gender; }
-            set
-            {
-                Character.gender = value;
-                RaisePropertyChangedEvent("Gender");
-            }
-        }
-
-        public string Height
-        {
-            get { return Character.height; }
-            set
-            {
-                Character.height = value;
-                RaisePropertyChangedEvent("Height");
-            }
-        }
-
-        public string Weight
-        {
-            get { return Character.weight; }
-            set
-            {
-                Character.weight = value;
-                RaisePropertyChangedEvent("Weight");
-            }
-        }
-
-        public string Eyes
-        {
-            get { return Character.eyes; }
-            set
-            {
-                Character.eyes = value;
-                RaisePropertyChangedEvent("Eyes");
-            }
-        }
-
-        public string Hair
-        {
-            get { return Character.hair; }
-            set
-            {
-                Character.hair = value;
-                RaisePropertyChangedEvent("Hair");
-            }
-        }
-
-        public string Homeland
-        {
-            get { return Character.homeland; }
-            set
-            {
-                Character.homeland = value;
-                RaisePropertyChangedEvent("Homeland");
-            }
-        }
-
-        public string Strength
-        {
-            get { return Character.strength; }
-            set
-            {
-                Character.strength = value;
-                RaisePropertyChangedEvent("Strength");
-            }
-        }
-
-        public string Dexterity
-        {
-            get { return Character.dexterity; }
-            set
-            {
-                Character.dexterity = value;
-                RaisePropertyChangedEvent("Dexterity");
-            }
-        }
-
-        public string Constitution
-        {
-            get { return Character.constitution; }
-            set
-            {
-                Character.constitution = value;
-                RaisePropertyChangedEvent("Constitution");
-            }
-        }
-
-        public string Intelligence
-        {
-            get { return Character.intelligence; }
-            set
-            {
-                Character.intelligence = value;
-                RaisePropertyChangedEvent("Intelligence");
-            }
-        }
-
-        public string Wisdom
-        {
-            get { return Character.wisdom; }
-            set
-            {
-                Character.wisdom = value;
-                RaisePropertyChangedEvent("Wisdom");
-            }
-        }
-
-        public string Charisma
-        {
-            get { return Character.charisma; }
-            set
-            {
-                Character.charisma = value;
-                RaisePropertyChangedEvent("Charisma");
-            }
-        }
-
-        public string Languages
-        {
-            get { return Character.languages; }
-            set
-            {
-                Character.languages = value;
-                RaisePropertyChangedEvent("Languages");
-            }
-        }
-
-        public string ExperiencePoints
-        {
-            get { return Character.experiencePoints; }
-            set
-            {
-                Character.experiencePoints = value;
-                RaisePropertyChangedEvent("ExperiencePoints");
-            }
-        }
-
+        
         // ---------------------------
         public ICommand ChangeStrengthCommand { get { return new DelegateCommand(ChangeStrength); } }
         public ICommand ChangeDexterityCommand { get { return new DelegateCommand(ChangeDexterity); } }
@@ -249,10 +68,11 @@ namespace CharacterModule.ViewModels
         public ICommand ChangeEyesCommand { get { return new DelegateCommand(ChangeEyes); } }
         public ICommand ChangeHairCommand { get { return new DelegateCommand(ChangeHair); } }
         public ICommand ChangeHomelandCommand { get { return new DelegateCommand(ChangeHomeland); } }
-        public ICommand ChangeLanguagesCommand { get { return new DelegateCommand(ChangeLanguages); } }
+        //public ICommand ChangeLanguagesCommand { get { return new DelegateCommand(ChangeLanguages); } }
         public ICommand ChangeExperiencePointsCommand { get { return new DelegateCommand(ChangeExperiencePoints); } }
 
         // This block is temporary.  In the future we will have a dialog box for the user to enter the new value to assign.
+        // todo: add additional for every acessor above
         public void ChangeStrength() { Strength = "Over 9000!"; }
         public void ChangeDexterity() { Dexterity = "Over 9000!"; }
         public void ChangeConstitution() { Constitution = "Over 9000!"; }
@@ -272,7 +92,7 @@ namespace CharacterModule.ViewModels
         public void ChangeEyes() { Eyes = "Over 9000!"; }
         public void ChangeHair() { Hair = "Over 9000!"; }
         public void ChangeHomeland() { Homeland = "Over 9000!"; }
-        public void ChangeLanguages() { Languages = "Over 9000!"; }
+        //public void ChangeLanguages() { Languages = "Over 9000!"; }
         public void ChangeExperiencePoints() { ExperiencePoints = "Over 9000!"; }
 
 
@@ -282,6 +102,37 @@ namespace CharacterModule.ViewModels
         }
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
+            RaisePropertyChangedEvent("CharacterName");
+            RaisePropertyChangedEvent("PlayerName");
+            RaisePropertyChangedEvent("Race");
+            RaisePropertyChangedEvent("Size");
+            RaisePropertyChangedEvent("Alignment");
+            RaisePropertyChangedEvent("Age");
+            RaisePropertyChangedEvent("Diety");
+            RaisePropertyChangedEvent("Gender");
+            RaisePropertyChangedEvent("Height");
+            RaisePropertyChangedEvent("Weight");
+            RaisePropertyChangedEvent("Eyes");
+            RaisePropertyChangedEvent("Hair");
+            RaisePropertyChangedEvent("Homeland");
+            RaisePropertyChangedEvent("Strength");
+            RaisePropertyChangedEvent("Dexterity");
+            RaisePropertyChangedEvent("Constitution");
+            RaisePropertyChangedEvent("Intelligence");
+            RaisePropertyChangedEvent("Wisdom");
+            RaisePropertyChangedEvent("Charisma");
+            RaisePropertyChangedEvent("Common");
+            RaisePropertyChangedEvent("CharacterName");
+            RaisePropertyChangedEvent("Dwarven");
+            RaisePropertyChangedEvent("ExperiencePoints");
+            RaisePropertyChangedEvent("Barbarian");
+            RaisePropertyChangedEvent("Bard");
+            RaisePropertyChangedEvent("Cleric");
+            RaisePropertyChangedEvent("Druid");
+            RaisePropertyChangedEvent("Fighter");
+            RaisePropertyChangedEvent("Ranger");
+            RaisePropertyChangedEvent("Sorcerer");
+            RaisePropertyChangedEvent("Wizard");
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
