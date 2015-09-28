@@ -54,31 +54,6 @@ namespace ActiveCharacter
             {Constants.sorcerer, "0"},
             {Constants.wizard, "0"}
         };
-        
-        //public static int ID = 0;
-        //public static string characterName = "noval";
-        //public static string playerName = "noval";
-        //public static string race = "noval";
-        //public static string jobclass = "noval";
-        //public static string size = "noval";
-        //public static string alignment = "noval";
-        //public static string age = "noval";
-        //public static string deity = "noval";
-        //public static string gender = "noval";
-        //public static string height = "noval";
-        //public static string weight = "noval";
-        //public static string eyes = "noval";
-        //public static string hair = "noval";
-        //public static string homeland = "noval";
-        //public static string strength = "0";
-        //public static string dexterity = "0";
-        //public static string constitution = "0";
-        //public static string intelligence = "0";
-        //public static string wisdom = "0";
-        //public static string charisma = "0";
-        //public static string languages = "noval";
-        //public static string experiencePoints = "noval";
-        // public static List<string> classes = null;       TBD
         #endregion
 
         #region combat
@@ -99,17 +74,18 @@ namespace ActiveCharacter
 
 
         public static string hitPoints = "noval";
-        public static string initiative = "noval";
-        public static string armorClass = "noval";
-        public static string fortitudeSave = "noval";
-        public static string reflexSave = "noval";
-        public static string willSave = "noval";
-        public static string baseAttackBonus = "noval";
-        public static string combatManeuverBonus = "noval";
-        public static string combatManeuverDefence = "noval";
-        public static string statusEffect = "noval";
-        public static string encumbrance = "noval";
-        public static string movement_combat = "noval";
+        public static string initiative = "noval"; // misc modifiers
+        public static string armorClass = "noval"; // misc modifiers
+        public static string fortitudeSave = "noval"; // misc modifiers
+        public static string reflexSave = "noval"; // misc modifiers
+        public static string willSave = "noval";  // misc modifiers
+        public static string baseAttackBonus = "noval"; // can probably remove this - derived from classes
+        public static string combatManeuverBonus = "noval"; // bonus from feats & misc
+        public static string combatManeuverDefence = "noval"; // bonus from feats & misc
+        public static string statusEffect = "noval"; 
+        public static string encumbrance = "noval"; // can probably remove this - derived from weight of all held gear
+        public static string movement_combat = "noval"; // can probably remove this - derived from weight of all held gear
+        public static string spellResistance = "noval"; 
         #endregion
 
         #region gear_wealth
@@ -123,6 +99,7 @@ namespace ActiveCharacter
 
         #region skills
         // --- Skills ---
+        // These represent ranks and misc bonus/penalty
         public static IDictionary<string, int> Skills = new Dictionary<string, int>(){
             {Constants.acrobatics,0},
             {Constants.appraise,0},
