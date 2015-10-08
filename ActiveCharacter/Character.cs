@@ -54,50 +54,67 @@ namespace ActiveCharacter
             {Constants.sorcerer, "0"},
             {Constants.wizard, "0"}
         };
-        #endregion
+        #endregion Character Information
 
-        #region combat
+        #region Combat
+        /// <summary>
+        /// The base values of combat.
+        /// What the values represent:
+        ///     hitPoints: max hit point value
+        ///     initiative: misc modifiers adding to initiative score
+        ///     armorClass: misc modifiers adding to the characters armor class
+        ///     fortitudeSave: misc modifiers adding to the characters fortitude score
+        ///     reflexSave: misc modifiers adding to the characters reflex score
+        ///     willSave: misc modifiers adding to the characters will score
+        ///     combatManeuverBonus: total bonus values from feats & misc
+        ///     combatManeuverDefence: total bonus values from feats & misc
+        ///     statusEffect: The list of currently active status effects effecting the character
+        ///     spellResistance: The characters total spell resistance
+        /// </summary>
         public static IDictionary<string, string> Combat = new Dictionary<string, string>(){
-            {"hitPoints", "0"},
-            {"initiative", "0"},
-            {"armorClass", "0"},
-            {"fortitudeSave", "0"},
-            {"reflexSave", "0"},
-            {"willSave", "0"},
-            {"baseAttackBonus", "0"},
-            {"combatManeuverBonus", "0"},
-            {"combatManeuverDefence", "0"},
-            {"statusEffect", "0"},
-            {"encumbrance", "0"},
-            {"movement_combat", "0"}
+            {Constants.hitPoints, "0"},
+            {Constants.initiative, "0"},
+            {Constants.armorClass, "0"},
+            {Constants.fortitudeSave, "0"},
+            {Constants.reflexSave, "0"},
+            {Constants.willSave, "0"},
+            {Constants.combatManeuverBonus, "0"},
+            {Constants.combatManeuverDefence, "0"},
+            {Constants.statusEffect, "0"},
+            {Constants.spellResistance, "0"}
+        };
+        #endregion Combat
+
+        #region Gear
+        /// <summary>
+        /// Collection of gold, armor, weapons, and all other possessions.
+        /// TODO: concider building from a generic list, a heirarchy of items
+        ///     items: name, amount, weight, value, description
+        ///         goods: description
+        ///         gear: size, special properties
+        ///             armor: armor properties
+        ///             weapon: weapon properties
+        ///         wearable magic: items slot, stat bonus
+        ///             ring: ring properties
+        ///             belt: belt properties
+        ///             ...
+        ///         magic tools: number of charges, spell emulated
+        ///             wand: special properties
+        ///             scroll: special properties
+        ///             wonderous item: special properties
+        /// </summary>
+        public static IDictionary<string, string> Gear = new Dictionary<string, string>(){
         };
 
 
-        public static string hitPoints = "noval";
-        public static string initiative = "noval"; // misc modifiers
-        public static string armorClass = "noval"; // misc modifiers
-        public static string fortitudeSave = "noval"; // misc modifiers
-        public static string reflexSave = "noval"; // misc modifiers
-        public static string willSave = "noval";  // misc modifiers
-        public static string baseAttackBonus = "noval"; // can probably remove this - derived from classes
-        public static string combatManeuverBonus = "noval"; // bonus from feats & misc
-        public static string combatManeuverDefence = "noval"; // bonus from feats & misc
-        public static string statusEffect = "noval"; 
-        public static string encumbrance = "noval"; // can probably remove this - derived from weight of all held gear
-        public static string movement_combat = "noval"; // can probably remove this - derived from weight of all held gear
-        public static string spellResistance = "noval"; 
-        #endregion
-
-        #region gear_wealth
-        // --- gear and wealth ---
         public static string gold = "noval";
         public static string gear = "noval";
         public static string equipment = "noval";
         public static string weapons = "noval";
         public static string armor = "noval";
-        #endregion
+        #endregion Gear
 
-        #region skills
+        #region Skills
         // --- Skills ---
         // These represent ranks and misc bonus/penalty
         public static IDictionary<string, int> Skills = new Dictionary<string, int>(){
@@ -137,12 +154,12 @@ namespace ActiveCharacter
             {Constants.swim,0},
             {Constants.useMagicDevice,0}
         };
-        #endregion
+        #endregion Skills
 
         // --- Feats ---
 
         // --- Spells ---
 
 
-    }
+    }   
 }

@@ -22,12 +22,7 @@ namespace CombatModule.ViewModels
         /// </summary>
         public string Weapons
         {
-            get { return Character.weapons; }
-            set
-            {
-                Character.weapons = value;
-                RaisePropertyChangedEvent("Weapons");
-            }
+           get;set;
         }
 
         /// <summary>
@@ -46,122 +41,63 @@ namespace CombatModule.ViewModels
 
         public string HitPoints
         {
-            get { return Character.hitPoints; }
-            set
-            {
-                Character.hitPoints = value;
-                RaisePropertyChangedEvent("HitPoints");
-            }
+            get;set;
         }
 
         public string Initiative
         {
-            get { return Character.initiative; }
-            set
-            {
-                Character.initiative = value;
-                RaisePropertyChangedEvent("Initiative");
-            }
+           get;set;
         }
 
         public string ArmorClass
         {
-            get { return Character.armorClass; }
-            set
-            {
-                Character.armorClass = value;
-                RaisePropertyChangedEvent("ArmorClass");
-            }
+            get;set;
         }
 
         public string Fortitude
         {
-            get { return Character.fortitudeSave; }
-            set
-            {
-                Character.fortitudeSave = value;
-                RaisePropertyChangedEvent("Fortitude");
-            }
+            get;set;
         }
 
         public string Reflex
         {
-            get { return Character.reflexSave; }
-            set
-            {
-                Character.reflexSave = value;
-                RaisePropertyChangedEvent("Reflex");
-            }
+           get;set;
         }
 
         public string Will
         {
-            get { return Character.willSave; }
-            set
-            {
-                Character.willSave = value;
-                RaisePropertyChangedEvent("Will");
-            }
+            get;set;
         }
 
         public string BaseAttackBonus
         {
-            get { return Character.baseAttackBonus; }
-            set
-            {
-                Character.baseAttackBonus = value;
-                RaisePropertyChangedEvent("BaseAttackBonus");
-            }
+           get;set;
         }
 
         public string CMB
         {
-            get { return Character.combatManeuverBonus; }
-            set
-            {
-                Character.combatManeuverBonus = value;
-                RaisePropertyChangedEvent("CMB");
-            }
+           get;set;
         }
 
         public string CMD
         {
-            get { return Character.combatManeuverDefence; }
-            set
-            {
-                Character.combatManeuverDefence = value;
-                RaisePropertyChangedEvent("CMD");
-            }
+           get;set;
         }
 
         public string StatusEffect
         {
-            get { return Character.statusEffect; }
-            set
-            {
-                Character.statusEffect = value;
-                RaisePropertyChangedEvent("StatusEffect");
-            }
+            get;set;
         }
 
         public string Encumbrance
         {
-            get { return Character.encumbrance; }
-            set
-            {
-                Character.encumbrance = value;
-                RaisePropertyChangedEvent("Encumbrance");
-            }
+           get;set;
         }
 
         public string Movement_Combat
         {
-            get { return Character.movement_combat; }
-            set
-            {
-                Character.movement_combat = value;
-                RaisePropertyChangedEvent("Movement_Combat");
-            }
+            get;
+            set;
         }
         #endregion
 

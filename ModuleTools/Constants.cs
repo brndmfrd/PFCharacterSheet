@@ -77,5 +77,17 @@ namespace ModuleTools
         public const string ranger = "Ranger Levels";
         public const string sorcerer = "Sorcerer Levels";
         public const string wizard = "Wizard Levels";
+
+        //-- Dat Kombat
+        public const string hitPoints = "Hit Points";
+        public const string initiative = "Initiative";
+        public const string armorClass = "Armor Class";
+        public const string fortitudeSave = "Fortitude Save";
+        public const string reflexSave = "Reflex Save";
+        public const string willSave = "Will Save";
+        public const string combatManeuverBonus = "CMB";
+        public const string combatManeuverDefence = "CMD";
+        public const string statusEffect = "Status Effects";
+        public const string spellResistance = "Spell Resistance";
     }
 }

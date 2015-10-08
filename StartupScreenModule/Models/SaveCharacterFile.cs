@@ -124,21 +124,22 @@ namespace StartupScreenModule.Models
             string output = string.Empty;
             OrderedDictionary dict = new OrderedDictionary();
 
+            output += JsonConvert.SerializeObject(Character.Combat, Formatting.None);
 
-            dict.Add("hitPoints", Character.hitPoints);
-            dict.Add("initiative", Character.initiative);
-            dict.Add("armorClass", Character.armorClass);
-            dict.Add("fortitudeSave", Character.fortitudeSave);
-            dict.Add("reflexSave", Character.reflexSave);
-            dict.Add("willSave", Character.willSave);
-            dict.Add("baseAttackBonus", Character.baseAttackBonus);
-            dict.Add("combatManeuverBonus", Character.combatManeuverBonus);
-            dict.Add("combatManeuverDefence", Character.combatManeuverDefence);
-            dict.Add("statusEffect", Character.statusEffect);
-            dict.Add("encumbrance", Character.encumbrance);
-            dict.Add("movement_combat", Character.movement_combat);
-            output += "\"combat\":";
-            output += JsonConvert.SerializeObject(dict);
+            //dict.Add("hitPoints", Character.hitPoints);
+            //dict.Add("initiative", Character.initiative);
+            //dict.Add("armorClass", Character.armorClass);
+            //dict.Add("fortitudeSave", Character.fortitudeSave);
+            //dict.Add("reflexSave", Character.reflexSave);
+            //dict.Add("willSave", Character.willSave);
+            //dict.Add("baseAttackBonus", Character.baseAttackBonus);
+            //dict.Add("combatManeuverBonus", Character.combatManeuverBonus);
+            //dict.Add("combatManeuverDefence", Character.combatManeuverDefence);
+            //dict.Add("statusEffect", Character.statusEffect);
+            //dict.Add("encumbrance", Character.encumbrance);
+            //dict.Add("movement_combat", Character.movement_combat);
+            //output += "\"combat\":";
+            //output += JsonConvert.SerializeObject(dict);
 
             return output;
         }
