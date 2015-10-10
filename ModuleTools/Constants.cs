@@ -79,7 +79,7 @@ namespace ModuleTools
         public const string wizard = "Wizard Levels";
 
         //-- Dat Kombat
-        public const string hitPoints = "Hit Points";
+        public const string additionalHitPoints = "Hit Points";
         public const string initiative = "Initiative";
         public const string armorClass = "Armor Class";
         public const string fortitudeSave = "Fortitude Save";
