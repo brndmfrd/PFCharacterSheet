@@ -19,8 +19,9 @@ namespace ActiveCharacter
     public static class Character
     {
         #region Character Information
-        // Characteristics
-        // todo: add more languages and classes
+        /// <summary>
+        /// The fundamental character information
+        /// </summary>
         public static IDictionary<string, string> Information = new Dictionary<string, string>(){
             {Constants.characterName, "NONAME"},
             {Constants.playerName, "NONAME"},
@@ -66,57 +67,34 @@ namespace ActiveCharacter
         ///     fortitudeSave: misc modifiers adding to the characters fortitude score
         ///     reflexSave: misc modifiers adding to the characters reflex score
         ///     willSave: misc modifiers adding to the characters will score
-        ///     combatManeuverBonus: total bonus values from feats & misc
-        ///     combatManeuverDefence: total bonus values from feats & misc
         ///     statusEffect: The list of currently active status effects effecting the character
         ///     spellResistance: The characters total spell resistance
         /// </summary>
-        public static IDictionary<string, string> Combat = new Dictionary<string, string>(){
-            {Constants.hitPoints, "0"},
-            {Constants.initiative, "0"},
-            {Constants.armorClass, "0"},
-            {Constants.fortitudeSave, "0"},
-            {Constants.reflexSave, "0"},
-            {Constants.willSave, "0"},
-            {Constants.combatManeuverBonus, "0"},
-            {Constants.combatManeuverDefence, "0"},
-            {Constants.statusEffect, "0"},
-            {Constants.spellResistance, "0"}
+        public static IDictionary<string, int> Combat = new Dictionary<string, int>(){
+            {Constants.hitPoints, 0},
+            {Constants.initiative, 0},
+            {Constants.armorClass, 0},
+            {Constants.fortitudeSave, 0},
+            {Constants.reflexSave, 0},
+            {Constants.willSave, 0},
+            {Constants.statusEffect, 0},
+            {Constants.spellResistance, 0}
         };
         #endregion Combat
 
         #region Gear
         /// <summary>
-        /// Collection of gold, armor, weapons, and all other possessions.
-        /// TODO: concider building from a generic list, a heirarchy of items
-        ///     items: name, amount, weight, value, description
-        ///         goods: description
-        ///         gear: size, special properties
-        ///             armor: armor properties
-        ///             weapon: weapon properties
-        ///         wearable magic: items slot, stat bonus
-        ///             ring: ring properties
-        ///             belt: belt properties
-        ///             ...
-        ///         magic tools: number of charges, spell emulated
-        ///             wand: special properties
-        ///             scroll: special properties
-        ///             wonderous item: special properties
+        /// The stuff you own, carry, and have equipped.
+        /// Gear.add(Item.name, Item)
         /// </summary>
-        public static IDictionary<string, string> Gear = new Dictionary<string, string>(){
-        };
-
-
-        public static string gold = "noval";
-        public static string gear = "noval";
-        public static string equipment = "noval";
-        public static string weapons = "noval";
-        public static string armor = "noval";
+        public static IDictionary<string, Item> Gear = new Dictionary<string, Item>(){};
         #endregion Gear
 
         #region Skills
-        // --- Skills ---
-        // These represent ranks and misc bonus/penalty
+        /// <summary>
+        /// Skills with their associated ranks.
+        /// The values only represent rank points spent per skill.
+        /// </summary>
         public static IDictionary<string, int> Skills = new Dictionary<string, int>(){
             {Constants.acrobatics,0},
             {Constants.appraise,0},
@@ -156,10 +134,14 @@ namespace ActiveCharacter
         };
         #endregion Skills
 
-        // --- Feats ---
+        /// <summary>
+        /// Feats
+        /// </summary>
+        public static IDictionary<string, Feat> Feats = new Dictionary<string, Feat>() { };
 
-        // --- Spells ---
-
-
+        /// <summary>
+        /// Spells
+        /// </summary>       
+        public static IDictionary<string, Spell> Spells = new Dictionary<string, Spell>() { };
     }   
 }

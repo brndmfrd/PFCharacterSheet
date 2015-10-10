@@ -93,6 +93,20 @@ namespace StartupScreenModule.Models
                             // notify user that the character data may be incomplete.
                             // perhaps we can add some fault-tolerance, backup, and/or recovery later.
                         }
+
+                        // Third line expected to be Gear
+                        line = sr.ReadLine();
+
+                        try
+                        {
+                            Character.Gear = JsonConvert.DeserializeObject<Dictionary<string, Item>>(line);
+                        }
+                        catch (Exception ex)
+                        {
+                            // log that the file is not valid.  
+                            // notify user that the character data may be incomplete.
+                            // perhaps we can add some fault-tolerance, backup, and/or recovery later.
+                        }
                     }
                 }
             }

@@ -105,16 +105,16 @@ namespace StartupScreenModule.Models
         public string jsonWealth()
         {   
             string output = string.Empty;
-            OrderedDictionary dict = new OrderedDictionary();
+            //OrderedDictionary dict = new OrderedDictionary();
             
-            dict.Add("gold", Character.gold);
-            dict.Add("gear", Character.gear);
-            dict.Add("equipment", Character.equipment);
-            dict.Add("weapons", Character.weapons);
-            dict.Add("armor", Character.armor);
-
-            output += "\"wealth\":";
-            output += JsonConvert.SerializeObject(dict);
+            //dict.Add("gold", Character.gold);
+            //dict.Add("gear", Character.gear);
+            //dict.Add("equipment", Character.equipment);
+            //dict.Add("weapons", Character.weapons);
+            //dict.Add("armor", Character.armor);
+            
+            output += JsonConvert.SerializeObject(Character.Gear, Formatting.None);
+            //output += JsonConvert.SerializeObject(dict);
 
             return output;
         }
