@@ -1,20 +1,16 @@
-﻿using System;
+﻿//using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ModuleTools;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+//using ModuleTools;
 
 namespace ActiveCharacter
 {
     /// <summary>
-    /// This class acts as the container, the model, for all the rest of the project to refrence.
-    /// Data is stored from the disk to this class to load a new character.
-    /// Data is stored to the disk from this class to save/update a character.
-    /// Data is filled in this class when creating a new character.
-    /// Only the foundational data needs to be stored here. For instance, we would store the number of ranks in a skill, but no the total value.
-    /// This is because the total value can be derived from other values (e.g. strength mod + ranks in swim = total swim check). This saves us from 
-    /// redundant data and less room for inconsistant data. 
+    /// Container for data objects read from external location.
+    /// Data contained is used to derive all other data and does not contain data that could be derived otherwise.
+    /// Access to the active character data (loaded character data) comes from this container.
     /// </summary>
     public static class Character
     {
@@ -23,11 +19,6 @@ namespace ActiveCharacter
         /// The player chosen characteristics of the character.
         /// </summary>        
         public static BasicInformation Information = new BasicInformation();
-
-        /// <summary>
-        /// Player chosen race of the given character.
-        /// </summary>
-        public static CharacterRace Race = new CharacterRace();
 
         /// <summary>
         /// Player rolled ability scores

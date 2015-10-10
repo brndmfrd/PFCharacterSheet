@@ -13,6 +13,7 @@ namespace ActiveCharacter
         public string size;
         public string alignment;
         public ushort age;
+        public string race;
         public string deity;
         public string gender;
         public double height;
