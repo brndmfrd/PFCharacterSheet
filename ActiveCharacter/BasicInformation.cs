@@ -14,16 +14,5 @@ namespace ActiveCharacter
 
         public string Key { get { return _key; } set { _key = value; RaisePropertyChanged("Key"); } }
         public string Value { get { return _value; } set { _value = value; RaisePropertyChanged("Value"); } }
-
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //private void RaisePropertyChanged(string propertyName)
-        //{
-        //    if (this.PropertyChanged != null)
-        //    {
-        //        this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        //    }
-        //}
     }
 }

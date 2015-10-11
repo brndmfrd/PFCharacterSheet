@@ -25,8 +25,7 @@ namespace CharacterModule.ViewModels
         }
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-            // get the data we are interested in from the model
-            //CharacterInformation = ActiveCharacter.Character.Information;
+            // If we have no character data load these defaults (for testing purposes only, remove later)
             if (ActiveCharacter.Character.Information.Count <= 0)
             {
                 Character.Information.Add(new BasicInformation() { Key = "Character Name", Value = "" });
@@ -43,6 +42,7 @@ namespace CharacterModule.ViewModels
                 Character.Information.Add(new BasicInformation() { Key = "Hair Color", Value = "" });
                 Character.Information.Add(new BasicInformation() { Key = "Homeland", Value = "" });
                 Character.Information.Add(new BasicInformation() { Key = "Experience Points", Value = "" });
+                Character.Information.Add(new BasicInformation() { Key = "Hit Points", Value = "" });
                 Character.Languages.Add("Common");
                 Character.AbilityScores.Add(new Abilities() { AbilityName = "Strength", Value = 10 });
                 Character.AbilityScores.Add(new Abilities() { AbilityName = "Dextarity", Value = 10 });
@@ -53,6 +53,7 @@ namespace CharacterModule.ViewModels
             }
             else
             {
+                Character.Information.Add(new BasicInformation() { Key = "Cool-Guy Points", Value = "" });
                 var item = BasicInformation.FirstOrDefault(i => i.Key == "Character Name");
                 if (item != null)
                 {
