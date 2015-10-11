@@ -14,413 +14,62 @@
 
     <Grid>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <!-- Left section -->
+            
+            <!-- SKILLS -->
             <StackPanel Orientation="Vertical" Margin="0,0,30,170" Width="409">
-
-
-                <!-- SKILLS -->
                 <Label Margin="10,10,10,0"  Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Skills"/>
-                <ListBox Height="462" Background="{x:Null}" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Acrobatics"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Acrobatics, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateAcrobaticsCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Appraise"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Appraise, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateAppraiseCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Bluff"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Bluff, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateBluffCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Climb"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Climb, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateClimbCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Diplomacy"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Diplomacy, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateDiplomacyCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="DisableDevice"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding DisableDevice, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateDisableDeviceCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Disguise"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Disguise, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateDisguiseCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="EscapeArtist"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding EscapeArtist, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateEscapeArtistCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Fly"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Fly, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateFlyCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="HandleAnimal"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding HandleAnimal, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateHandleAnimalCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Heal"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Heal, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateHealCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Intimidate"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Intimidate, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateIntimidateCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="KnowledgeArcana"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding KnowledgeArcana, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateKnowledgeArcanaCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="KnowledgeDungeoneering"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding KnowledgeDungeoneering, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateKnowledgeDungeoneeringCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="KnowledgeEngineering"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding KnowledgeEngineering, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateKnowledgeEngineeringCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="KnowledgeGeography"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding KnowledgeGeography, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateKnowledgeGeographyCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="KnowledgeHistory"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding KnowledgeHistory, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateKnowledgeHistoryCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="AcroKnowledgeLocalbatics"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding KnowledgeLocal, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateKnowledgeLocalCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="KnowledgeNature"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding KnowledgeNature, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateKnowledgeNatureCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="KnowledgeNobility"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding KnowledgeNobility, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateKnowledgeNobilityCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="KnowledgePlanes"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding KnowledgePlanes, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateKnowledgePlanesCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="KnowledgeReligion"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding KnowledgeReligion, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateKnowledgeReligionCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Linguistics"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Linguistics, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateLinguisticsCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Perception"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Perception, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdatePerceptionCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Perform"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Perform, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdatePerformCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Profession"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Profession, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateProfessionCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Ride"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Ride, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateRideCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="SenseMotive"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding SenseMotive, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateSenseMotiveCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="SleightOfHand"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding SleightOfHand, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateSleightOfHandCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Spellcraft"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Spellcraft, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateSpellcraftCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Stealth"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Stealth, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateStealthCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Survival"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Survival, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateSurvivalCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Swim"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Swim, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateSwimCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
-
-                    <ListBoxItem>
-                        <Grid Width="409">
-                            <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="UseMagicDevice"/>
-                            <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding UseMagicDevice, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                                <Label.InputBindings>
-                                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateUseMagicDeviceCommand}" />
-                                </Label.InputBindings>
-                            </Label>
-                        </Grid>
-                    </ListBoxItem>
+                <ListBox x:Name="SkillsListBox" ItemsSource="{Binding Skills}" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="Orange" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <TextBlock x:Name="Value" Text="{Binding Path=Ranks, Mode=OneWay}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                 </ListBox>
             </StackPanel>
 
-
-            <!-- Middle Section-->
-            <StackPanel Orientation="Vertical" Margin="0,0,30,170" Width="260">
-
-                <!-- FEATS -->
+            <!-- FEATS -->
+            <StackPanel Orientation="Vertical" Margin="0,0,30,170" Width="260">                
                 <Label Margin="10,10,10,0"  Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Feats"/>
-                <ListBox x:Name="featsListBox" Height="465" ItemsSource="{Binding FeatsName}" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                <ListBox x:Name="FeatsListBox" ItemsSource="{Binding Feats}" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="Orange" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                 </ListBox>
-                
             </StackPanel>
 
-            <!-- Right Section -->
+            <!-- SPELLS -->
             <StackPanel Orientation="Vertical" Margin="0,0,30,170" Width="371">
-
-                <!-- SPELLS -->
                 <Label Margin="10,10,10,0"  Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Spells"/>
-                <ListBox Height="250" Background="{x:Null}" ItemsSource="{Binding SpellsName}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">                    
+                <ListBox x:Name="SpellsListBox" ItemsSource="{Binding Spells}" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="Orange" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                 </ListBox>
-                    
             </StackPanel>
 
         </StackPanel>
-        <TextBlock Grid.Row="1" Foreground="AliceBlue" Text="{Binding SelectedValue, ElementName=featsListBox}" Margin="0,518,0,0"/>
+            <TextBlock Grid.Row="1" Foreground="AliceBlue" Text="{Binding SelectedValue.Description, ElementName=SkillsListBox}" Margin="0,518,0,0"/>
     </Grid>
 
     <!--Use this this add more feats to feats or spells to spells-->

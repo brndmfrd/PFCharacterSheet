@@ -8,9 +8,9 @@ namespace ActiveCharacter
 {
     public class Feat : MyPropertyChangedEventHandler
     {
-        public string fetName;
-        public string description;
-        public string featTraitAbility;     // indicate if this is a 'feat', 'racial trait', or 'ability' as granted by a spell or class
+        public string _name;
+        public string _description;
+        public string _featTraitAbility;     
         //todo: add some standard form for penalties & benifits
         // that can be parsed for combat action e.g.
         // <effected property>, <amount>, <duration>
@@ -22,5 +22,18 @@ namespace ActiveCharacter
         // Special defence/attack
         // <bonus>, <conditino>
         // +2, when grappling
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Name { get { return _name; } set { _name = value; RaisePropertyChanged("Name"); } }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Description { get { return _name; } set { _name = value; RaisePropertyChanged("Description"); } }
+        /// <summary>
+        /// indicate if this is a 'feat', 'racial trait', or 'ability' as granted by a spell or class
+        /// </summary>
+        public string FeatTraitAbility { get { return _name; } set { _name = value; RaisePropertyChanged("FeatTraitAbility"); } }
     }
 }
