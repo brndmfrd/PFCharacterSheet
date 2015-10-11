@@ -71,7 +71,7 @@ namespace StartupScreenModule.Models
 
                         try
                         {
-                            Character.Skills = JsonConvert.DeserializeObject<Dictionary<string, int>>(line);
+                            Character.Skills = JsonConvert.DeserializeObject<Dictionary<string, Skill>>(line);
                         }
                         catch (Exception ex)
                         {
@@ -85,7 +85,7 @@ namespace StartupScreenModule.Models
 
                         try
                         {
-                            Character.Information = JsonConvert.DeserializeObject<Dictionary<string, string>>(line);
+                            Character.Information = JsonConvert.DeserializeObject<BasicInformation>(line);
                         }
                         catch (Exception ex)
                         {
