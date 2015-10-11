@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ActiveCharacter
 {
-    public class Item
+    public class Item : MyPropertyChangedEventHandler
     {
         public string name;            // the name of the type of item e.g. short sword, crowbar, scroll of magic missle
         public double weight;          // weight per single instance of the item in kg

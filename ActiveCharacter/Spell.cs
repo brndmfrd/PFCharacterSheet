@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ActiveCharacter
 {
-    public class Spell
+    public class Spell : MyPropertyChangedEventHandler
     {
         public string name;
         public string decription;

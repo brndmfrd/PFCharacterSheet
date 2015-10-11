@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ActiveCharacter
 {
-    public class Abilities
+    public class Abilities : MyPropertyChangedEventHandler
     {
         public string AbilityName { get; set; }
         public ushort Value { get; set; }

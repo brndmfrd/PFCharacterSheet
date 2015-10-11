@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ActiveCharacter
 {
-    public class CharacterClass
+    public class CharacterClass : MyPropertyChangedEventHandler
     {
         public string classname;
         public ushort level;

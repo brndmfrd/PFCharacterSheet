@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace ActiveCharacter
 {
-    public class BasicInformation //: INotifyPropertyChanged
+    public class BasicInformation : MyPropertyChangedEventHandler
     {
-        public string Key { get; set; }
-        public string Value { get; set; }
+        private string _key;
+        private string _value;
+
+        public string Key { get { return _key; } set { _key = value; RaisePropertyChanged("Key"); } }
+        public string Value { get { return _value; } set { _value = value; RaisePropertyChanged("Value"); } }
 
 
         //public event PropertyChangedEventHandler PropertyChanged;

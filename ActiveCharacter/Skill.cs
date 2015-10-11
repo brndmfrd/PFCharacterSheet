@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ActiveCharacter
 {
-    public class Skill
+    public class Skill : MyPropertyChangedEventHandler
     {
         public string name;                 // The name of the skill
         public ushort ranks;                // The number of ranks the player has added to skill

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ActiveCharacter
 {
-    public class Feat
+    public class Feat : MyPropertyChangedEventHandler
     {
         public string fetName;
         public string description;
