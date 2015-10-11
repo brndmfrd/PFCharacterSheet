@@ -10,11 +10,49 @@
 
     <UserControl.Resources>
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
-    </UserControl.Resources>
+    </UserControl.Resources>    
 
     <StackPanel Orientation="Horizontal">
         <StackPanel Orientation="Vertical" Margin="0,0,30,0" Width="500">
+            
+            <!--<DataGrid Name="asdf" ItemsSource="{Binding BasicInformation}" HeadersVisibility="None" Background="Transparent" RowBackground="Transparent" BorderBrush="Transparent" IsReadOnly="True" GridLinesVisibility="None">
+                
+                <DataGrid.Columns>                    
+                    <DataGridTextColumn Binding="{Binding Key}" Foreground="Orange" Width="250">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Right" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>                        
+                </DataGrid.Columns>
+            </DataGrid>-->
+
+            <!--<ListBox x:Name="asdf"  ItemsSource="{Binding BasicInformation}" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18"/>-->
+            <ListBox x:Name="AbilityScoresListBox" ItemsSource="{Binding AbilityScores}" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                <ListBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding ChangeLanguagesCommand}"/>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeLanguagesCommand}"/>
+                </ListBox.InputBindings>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="AbilityName" Text="{Binding Path=AbilityName, Mode=OneWay}" Foreground="Orange" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>                                
+                            <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            
             <Grid>
+                <TextBlock Grid.Row="1" Background="Black" Foreground="AliceBlue" Text="{Binding SelectedValue.AbilityName, ElementName=AbilityScoresListBox}" Margin="0,0,0,0"/>
+            </Grid>
+
+            <!--Grid>
                 <Label Grid.Row="0" Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Strength" />
                 <Label Grid.Row="0" Width="250" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Strength, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
                     <Label.InputBindings>
@@ -61,12 +99,31 @@
                         <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeCharismaCommand}" />
                     </Label.InputBindings>
                 </Label>
-            </Grid>
+            </Grid>-->
         </StackPanel>
         
         <!-- Right Side of the Stack Panel-->
         <StackPanel Orientation="Vertical" Width="500">
-            <Grid>
+            <ListBox x:Name="InformationListBox" ItemsSource="{Binding BasicInformation}" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="Item" Text="{Binding Path=Key, Mode=OneWay}" Foreground="Orange" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                            <TextBlock x:Name="Check" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <ListBox x:Name="LanguageListBox" ItemsSource="{Binding Languages}" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                
+            </ListBox>
+            
+            <!--<Grid>
                 <Label Grid.Row="0" Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Character Name" />
                 <Label Grid.Row="0" Width="250" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding CharacterName, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
                     <Label.InputBindings>
@@ -199,7 +256,7 @@
                         <MouseBinding Gesture="LeftDoubleClick" Command="{Binding ChangeExperiencePointsCommand}" />
                     </Label.InputBindings>
                 </Label>
-            </Grid>
+            </Grid>-->
 
         </StackPanel>
 

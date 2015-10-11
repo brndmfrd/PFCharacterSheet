@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Specialized;
 using ActiveCharacter;
+using System.Collections.ObjectModel;
 
 namespace StartupScreenModule.Models
 {
@@ -71,7 +72,7 @@ namespace StartupScreenModule.Models
 
                         try
                         {
-                            Character.Skills = JsonConvert.DeserializeObject<Dictionary<string, Skill>>(line);
+                            Character.Skills = JsonConvert.DeserializeObject<ObservableCollection<Skill>>(line);
                         }
                         catch (Exception ex)
                         {
@@ -85,7 +86,7 @@ namespace StartupScreenModule.Models
 
                         try
                         {
-                            Character.Information = JsonConvert.DeserializeObject<BasicInformation>(line);
+                            Character.Information = JsonConvert.DeserializeObject<ObservableCollection<BasicInformation>>(line);
                         }
                         catch (Exception ex)
                         {
@@ -99,7 +100,7 @@ namespace StartupScreenModule.Models
 
                         try
                         {
-                            Character.Gear = JsonConvert.DeserializeObject<Dictionary<string, Item>>(line);
+                            Character.Gear = JsonConvert.DeserializeObject<ObservableCollection<Item>>(line);
                         }
                         catch (Exception ex)
                         {

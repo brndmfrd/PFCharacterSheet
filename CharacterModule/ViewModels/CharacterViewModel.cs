@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 using Microsoft.Practices.Prism.Regions;
 using ActiveCharacter;
 using System.Windows.Input;
-using CharacterModule.Model;
 using ModuleTools;
+using System.Collections.ObjectModel;
 
 
 namespace CharacterModule.ViewModels
 {
     public class CharacterViewModel : ObservableObject, INavigationAware
     {
+        public IEnumerable<BasicInformation> BasicInformation { get { return Character.Information; } }
+        public IEnumerable<Abilities> AbilityScores { get { return Character.AbilityScores; } }
+        public IEnumerable<string> Languages { get { return Character.Languages; } }
+        public IEnumerable<CharacterClass> Classes { get { return Character.Classes; } }
 
         //public string CharacterName { get { return CharacterModel.CharacterName; } set { CharacterModel.CharacterName = value; RaisePropertyChangedEvent("CharacterName"); } }
         //public string PlayerName { get { return CharacterModel.PlayerName; } set { CharacterModel.PlayerName = value; RaisePropertyChangedEvent("PlayerName"); } }
@@ -68,7 +72,7 @@ namespace CharacterModule.ViewModels
         //public ICommand ChangeEyesCommand { get { return new DelegateCommand(ChangeEyes); } }
         //public ICommand ChangeHairCommand { get { return new DelegateCommand(ChangeHair); } }
         //public ICommand ChangeHomelandCommand { get { return new DelegateCommand(ChangeHomeland); } }
-        ////public ICommand ChangeLanguagesCommand { get { return new DelegateCommand(ChangeLanguages); } }
+        public ICommand ChangeLanguagesCommand { get { return new DelegateCommand(ChangeLanguages); } }
         //public ICommand ChangeExperiencePointsCommand { get { return new DelegateCommand(ChangeExperiencePoints); } }
 
         // This block is temporary.  In the future we will have a dialog box for the user to enter the new value to assign.
@@ -92,7 +96,7 @@ namespace CharacterModule.ViewModels
         //public void ChangeEyes() { Eyes = "Over 9000!"; }
         //public void ChangeHair() { Hair = "Over 9000!"; }
         //public void ChangeHomeland() { Homeland = "Over 9000!"; }
-        ////public void ChangeLanguages() { Languages = "Over 9000!"; }
+        public void ChangeLanguages() { Character.Languages[0] = Character.Languages[0] == "Common" ? "Pig Latin" : "Common"; }
         //public void ChangeExperiencePoints() { ExperiencePoints = "Over 9000!"; }
 
 
@@ -102,37 +106,65 @@ namespace CharacterModule.ViewModels
         }
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-            RaisePropertyChangedEvent("CharacterName");
-            RaisePropertyChangedEvent("PlayerName");
-            RaisePropertyChangedEvent("Race");
-            RaisePropertyChangedEvent("Size");
-            RaisePropertyChangedEvent("Alignment");
-            RaisePropertyChangedEvent("Age");
-            RaisePropertyChangedEvent("Diety");
-            RaisePropertyChangedEvent("Gender");
-            RaisePropertyChangedEvent("Height");
-            RaisePropertyChangedEvent("Weight");
-            RaisePropertyChangedEvent("Eyes");
-            RaisePropertyChangedEvent("Hair");
-            RaisePropertyChangedEvent("Homeland");
-            RaisePropertyChangedEvent("Strength");
-            RaisePropertyChangedEvent("Dexterity");
-            RaisePropertyChangedEvent("Constitution");
-            RaisePropertyChangedEvent("Intelligence");
-            RaisePropertyChangedEvent("Wisdom");
-            RaisePropertyChangedEvent("Charisma");
-            RaisePropertyChangedEvent("Common");
-            RaisePropertyChangedEvent("CharacterName");
-            RaisePropertyChangedEvent("Dwarven");
-            RaisePropertyChangedEvent("ExperiencePoints");
-            RaisePropertyChangedEvent("Barbarian");
-            RaisePropertyChangedEvent("Bard");
-            RaisePropertyChangedEvent("Cleric");
-            RaisePropertyChangedEvent("Druid");
-            RaisePropertyChangedEvent("Fighter");
-            RaisePropertyChangedEvent("Ranger");
-            RaisePropertyChangedEvent("Sorcerer");
-            RaisePropertyChangedEvent("Wizard");
+            // get the data we are interested in from the model
+            //CharacterInformation = ActiveCharacter.Character.Information;
+            if (ActiveCharacter.Character.Information.Count <= 0)
+            {
+                Character.Information.Add(new BasicInformation() { Key = "Character Name", Value = "" });
+                Character.Information.Add(new BasicInformation() { Key = "Player Name", Value = "" });
+                Character.Information.Add(new BasicInformation() { Key = "Size",  Value = ""});
+                Character.Information.Add(new BasicInformation() { Key = "Alignment",  Value = ""});
+                Character.Information.Add(new BasicInformation() { Key = "Age",  Value = ""});
+                Character.Information.Add(new BasicInformation() { Key = "Race",  Value = ""});
+                Character.Information.Add(new BasicInformation() { Key = "Deity",  Value = ""});
+                Character.Information.Add(new BasicInformation() { Key = "Gender",  Value = ""});
+                Character.Information.Add(new BasicInformation() { Key = "Height",  Value = ""});
+                Character.Information.Add(new BasicInformation() { Key = "Weight",  Value = ""});
+                Character.Information.Add(new BasicInformation() { Key = "Eye Color",  Value = ""});
+                Character.Information.Add(new BasicInformation() { Key = "Hair Color",  Value = ""});
+                Character.Information.Add(new BasicInformation() { Key = "Homeland",  Value = ""});
+                Character.Information.Add(new BasicInformation() { Key = "Experience Points", Value = "" });
+                Character.Languages.Add("Common");
+                Character.AbilityScores.Add(new Abilities() { AbilityName = "Strength", Value = 10 });
+                Character.AbilityScores.Add(new Abilities() { AbilityName = "Dextarity", Value = 10 });
+                Character.AbilityScores.Add(new Abilities() { AbilityName = "Constitution", Value = 10 });
+                Character.AbilityScores.Add(new Abilities() { AbilityName = "Intelligence", Value = 10 });
+                Character.AbilityScores.Add(new Abilities() { AbilityName = "Wisdom", Value = 10 });
+                Character.AbilityScores.Add(new Abilities() { AbilityName = "Charisma", Value = 10 });
+            }
+            Character.Languages[0] = "Pig Latin";
+            //RaisePropertyChangedEvent("BasicInformation");
+            RaisePropertyChangedEvent("Languages");
+            //RaisePropertyChangedEvent("PlayerName");
+            //RaisePropertyChangedEvent("Race");
+            //RaisePropertyChangedEvent("Size");
+            //RaisePropertyChangedEvent("Alignment");
+            //RaisePropertyChangedEvent("Age");
+            //RaisePropertyChangedEvent("Diety");
+            //RaisePropertyChangedEvent("Gender");
+            //RaisePropertyChangedEvent("Height");
+            //RaisePropertyChangedEvent("Weight");
+            //RaisePropertyChangedEvent("Eyes");
+            //RaisePropertyChangedEvent("Hair");
+            //RaisePropertyChangedEvent("Homeland");
+            //RaisePropertyChangedEvent("Strength");
+            //RaisePropertyChangedEvent("Dexterity");
+            //RaisePropertyChangedEvent("Constitution");
+            //RaisePropertyChangedEvent("Intelligence");
+            //RaisePropertyChangedEvent("Wisdom");
+            //RaisePropertyChangedEvent("Charisma");
+            //RaisePropertyChangedEvent("Common");
+            //RaisePropertyChangedEvent("CharacterName");
+            //RaisePropertyChangedEvent("Dwarven");
+            //RaisePropertyChangedEvent("ExperiencePoints");
+            //RaisePropertyChangedEvent("Barbarian");
+            //RaisePropertyChangedEvent("Bard");
+            //RaisePropertyChangedEvent("Cleric");
+            //RaisePropertyChangedEvent("Druid");
+            //RaisePropertyChangedEvent("Fighter");
+            //RaisePropertyChangedEvent("Ranger");
+            //RaisePropertyChangedEvent("Sorcerer");
+            //RaisePropertyChangedEvent("Wizard");
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {

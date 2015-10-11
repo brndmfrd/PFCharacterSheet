@@ -8,11 +8,7 @@ namespace ActiveCharacter
 {
     public class Abilities
     {
-        public ushort Strength;
-        public ushort Dextarity;
-        public ushort Constitution;
-        public ushort Intelligence;
-        public ushort Wisdom;
-        public ushort Charisma;
+        public string AbilityName { get; set; }
+        public ushort Value { get; set; }
     }
 }
