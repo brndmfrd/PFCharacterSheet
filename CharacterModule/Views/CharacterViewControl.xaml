@@ -26,7 +26,7 @@
                                 <ColumnDefinition Width="200"/>
                                 <ColumnDefinition Width="100"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock x:Name="AbilityName" Text="{Binding Path=AbilityName, Mode=OneWay}" Foreground="Orange" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>                                
+                            <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="Orange" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>                                
                             <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
                         </Grid>
                     </DataTemplate>

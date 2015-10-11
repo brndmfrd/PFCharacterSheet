@@ -30,10 +30,10 @@ namespace ActiveCharacter
         /// <summary>
         /// 
         /// </summary>
-        public string Description { get { return _name; } set { _name = value; RaisePropertyChanged("Description"); } }
+        public string Description { get { return _description; } set { _description = value; RaisePropertyChanged("Description"); } }
         /// <summary>
         /// indicate if this is a 'feat', 'racial trait', or 'ability' as granted by a spell or class
         /// </summary>
-        public string FeatTraitAbility { get { return _name; } set { _name = value; RaisePropertyChanged("FeatTraitAbility"); } }
+        public string FeatTraitAbility { get { return _featTraitAbility; } set { _featTraitAbility = value; RaisePropertyChanged("FeatTraitAbility"); } }
     }
 }

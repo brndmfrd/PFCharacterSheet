@@ -13,39 +13,35 @@ namespace GearModule.ViewModels
 {
     public class GearViewModel : ObservableObject, INavigationAware
     {
-        public string _amount = "0";
-
-       
+        public IEnumerable<Item> Gear { get { return Character.Gear; }}
 
 
-
-        //// ---------------------------
-        //public ICommand ChangeGearCommand { get { return new DelegateCommand(UpdateGear); } }
-        //public ICommand ChangeAmountCommand { get { return new DelegateCommand(UpdateAmount); } }
-        //public ICommand ChangeGoldCommand { get { return new DelegateCommand(UpdateGold); } }
-        //public ICommand ChangeWeaponsCommand { get { return new DelegateCommand(UpdateWeapons); } }
-        //public ICommand ChangeArmorCommand { get { return new DelegateCommand(UpdateArmor); } }
-
-
-        //// ---------------------------
-        ////public void UpdateGear() { Gear = "Lizard Sabar of Justice"; }
-        ////public void UpdateAmount() { Amount = "42"; }
-        ////public void UpdateGold() {Gold = "1000" ; }
-        //public void UpdateWeapons() { ; }
-        //public void UpdateArmor() { ; }
-
-
-
-        // ------- needed for INavigationAware -------
+        #region Navigation
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
         }
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
+            // If we have no character data load these defaults (for testing purposes only, remove later)
+            if (ActiveCharacter.Character.Gear.Count <= 0)
+            {
+                Character.Gear.Add(new Item() { Name = "Item 1", Amount = 10, Description = "Item 1 description" });
+                Character.Gear.Add(new Item() { Name = "Item 2", Amount = 9, Description = "Item 2 description" });
+                Character.Gear.Add(new Item() { Name = "Item 3", Amount = 8, Description = "Item 3 description" });
+                Character.Gear.Add(new Item() { Name = "Item 4", Amount = 7, Description = "Item 4 description" });
+                Character.Gear.Add(new Item() { Name = "Item 5", Amount = 6, Description = "Item 5 description" });
+                Character.Gear.Add(new Item() { Name = "Item 6", Amount = 5, Description = "Item 6 description" });
+                Character.Gear.Add(new Item() { Name = "Item 7", Amount = 4, Description = "Item 7 description" });
+                Character.Gear.Add(new Item() { Name = "Item 8", Amount = 3, Description = "Item 8 description" });
+                Character.Gear.Add(new Item() { Name = "Item 9", Amount = 2, Description = "Item 9 description" });
+                Character.Gear.Add(new Item() { Name = "Item 10", Amount = 1, Description = "Item 10 description" });
+               
+            }
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
             return true;
-        }        
+        }
+        #endregion Navigation
     }
 }
