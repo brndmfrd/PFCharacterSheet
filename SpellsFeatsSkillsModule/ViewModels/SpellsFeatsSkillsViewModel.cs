@@ -38,8 +38,7 @@ namespace SpellsFeatsSkillsModule.ViewModels
                 Character.Spells.Add(new Spell() { Name = "Bigby's Crushing Fist", Description = "A big hand crushes it." });
                 Character.Spells.Add(new Spell() { Name = "Mordakeins Disjunktion", Description = "Totally fucks shit up, srsly." });
                 Character.Spells.Add(new Spell() { Name = "Teleport", Description = "Now you see me, now you don't.  Abracadabra, holmes." });
-            }
-            Character.Feats.Add(new Feat() { Name = "Dodge", Description = "Dodge bonus +2 AC." });
+            }            
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)

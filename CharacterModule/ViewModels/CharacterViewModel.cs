@@ -18,31 +18,34 @@ namespace CharacterModule.ViewModels
         public IEnumerable<Abilities> AbilityScores { get { return Character.AbilityScores; } }
         public IEnumerable<string> Languages { get { return Character.Languages; } }
         public IEnumerable<CharacterClass> Classes { get { return Character.Classes; } }
+        
+        
 
         #region Navigation
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
+            
         }
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
             // If we have no character data load these defaults (for testing purposes only, remove later)
             if (ActiveCharacter.Character.Information.Count <= 0)
             {
-                Character.Information.Add(new BasicInformation() { Key = "Character Name", Value = "Duraxis" });
-                Character.Information.Add(new BasicInformation() { Key = "Player Name", Value = "Bryan" });
-                Character.Information.Add(new BasicInformation() { Key = "Size", Value = "M" });
-                Character.Information.Add(new BasicInformation() { Key = "Alignment", Value = "NG" });
-                Character.Information.Add(new BasicInformation() { Key = "Age", Value = "30" });
-                Character.Information.Add(new BasicInformation() { Key = "Race", Value = "Human" });
-                Character.Information.Add(new BasicInformation() { Key = "Deity", Value = "Pelor" });
-                Character.Information.Add(new BasicInformation() { Key = "Gender", Value = "M" });
-                Character.Information.Add(new BasicInformation() { Key = "Height", Value = "6" });
-                Character.Information.Add(new BasicInformation() { Key = "Weight", Value = "220" });
-                Character.Information.Add(new BasicInformation() { Key = "Eye Color", Value = "Black" });
-                Character.Information.Add(new BasicInformation() { Key = "Hair Color", Value = "Black" });
-                Character.Information.Add(new BasicInformation() { Key = "Homeland", Value = "Where the heart is" });
-                Character.Information.Add(new BasicInformation() { Key = "Experience Points", Value = "220,000" });
-                Character.Information.Add(new BasicInformation() { Key = "Hit Points", Value = "179" });
+                Character.Information.Add(new BasicInformation() { Name = "Character Name", Value = "Duraxis" });
+                Character.Information.Add(new BasicInformation() { Name = "Player Name", Value = "Bryan" });
+                Character.Information.Add(new BasicInformation() { Name = "Size", Value = "M" });
+                Character.Information.Add(new BasicInformation() { Name = "Alignment", Value = "NG" });
+                Character.Information.Add(new BasicInformation() { Name = "Age", Value = "30" });
+                Character.Information.Add(new BasicInformation() { Name = "Race", Value = "Human" });
+                Character.Information.Add(new BasicInformation() { Name = "Deity", Value = "Pelor" });
+                Character.Information.Add(new BasicInformation() { Name = "Gender", Value = "M" });
+                Character.Information.Add(new BasicInformation() { Name = "Height", Value = "6" });
+                Character.Information.Add(new BasicInformation() { Name = "Weight", Value = "220" });
+                Character.Information.Add(new BasicInformation() { Name = "Eye Color", Value = "Black" });
+                Character.Information.Add(new BasicInformation() { Name = "Hair Color", Value = "Black" });
+                Character.Information.Add(new BasicInformation() { Name = "Homeland", Value = "Where the heart is" });
+                Character.Information.Add(new BasicInformation() { Name = "Experience Points", Value = "220,000" });
+                Character.Information.Add(new BasicInformation() { Name = "Hit Points", Value = "179" });
                 Character.Languages.Add("Common");
                 Character.AbilityScores.Add(new Abilities() { Name = "Strength", Value = 8 });
                 Character.AbilityScores.Add(new Abilities() { Name = "Dextarity", Value = 9 });
@@ -53,6 +56,7 @@ namespace CharacterModule.ViewModels
             }
             else
             {
+                Character.Information.Add(new BasicInformation() { Name = "Character Name", Value = "Duraxis" });
                 //Character.Information.Add(new BasicInformation() { Key = "Cool-Guy Points", Value = "" });
                 //var item = BasicInformation.FirstOrDefault(i => i.Key == "Character Name");
                 //if (item != null)
@@ -61,6 +65,7 @@ namespace CharacterModule.ViewModels
                 //}
                 
             }
+            
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
