@@ -13,7 +13,7 @@
 
     <StackPanel Orientation="Horizontal">
 
-        <!-- List of Gear -->
+        <!-- List of Feats -->
         <Grid>
             <ListBox Height="500" Width="500" Grid.Row="0" x:Name="FeatsListBox" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
                 <ListBox.Resources>
@@ -30,7 +30,7 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="250"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock x:Name="Name" Text="{Binding Path=Name, Mode=OneWay}" Foreground="#808080" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="FeatName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="#808080" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -40,7 +40,7 @@
         <!--Selected Item Description-->
         <TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Description, ElementName=FeatsListBox}"/>
 
-        <!-- Future site of Inventory management controls-->
+        <!-- Future site of Feat management controls-->
         <StackPanel Orientation="Vertical" Margin="0,0,30,0">
 
         </StackPanel>

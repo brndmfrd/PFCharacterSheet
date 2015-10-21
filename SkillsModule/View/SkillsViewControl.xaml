@@ -4,8 +4,47 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{d:DesignInstance ViewModel:SkillsViewModel}">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Horizontal">
+
+        <!-- List of Skills -->
+        <Grid>
+            <ListBox Height="500" Width="500" Grid.Row="0" x:Name="SkillsListBox" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                <ListBox.Resources>
+                    <CollectionViewSource x:Key="SKILLS" Source="{Binding Skills}"/>
+                </ListBox.Resources>
+                <ListBox.ItemsSource>
+                    <CompositeCollection>
+                        <CollectionContainer Collection="{Binding Source={StaticResource SKILLS}}"/>
+                    </CompositeCollection>
+                </ListBox.ItemsSource>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="250"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="SkillName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="#808080" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="SkillRanks" Text="{Binding Path=Ranks, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <!--Selected Item Description-->
+        <TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Description, ElementName=SkillsListBox}"/>
+
+        <!-- Future site of Skill management controls-->
+        <StackPanel Orientation="Vertical" Margin="0,0,30,0">
+
+        </StackPanel>
+    </StackPanel>
 </UserControl>

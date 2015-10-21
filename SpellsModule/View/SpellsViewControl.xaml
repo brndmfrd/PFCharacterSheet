@@ -4,8 +4,45 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{d:DesignInstance ViewModel:SpellsViewModel}">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Horizontal">
+
+        <!-- List of Spells -->
+        <Grid>
+            <ListBox Height="500" Width="500" Grid.Row="0" x:Name="SpellsListBox" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                <ListBox.Resources>
+                    <CollectionViewSource x:Key="SPELLS" Source="{Binding Spells}"/>
+                </ListBox.Resources>
+                <ListBox.ItemsSource>
+                    <CompositeCollection>
+                        <CollectionContainer Collection="{Binding Source={StaticResource SPELLS}}"/>
+                    </CompositeCollection>
+                </ListBox.ItemsSource>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="SpellName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="#808080" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <!--Selected Item Description-->
+        <TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Description, ElementName=SpellsListBox}"/>
+
+        <!-- Future site of Spell management controls-->
+        <StackPanel Orientation="Vertical" Margin="0,0,30,0">
+
+        </StackPanel>
+    </StackPanel>
 </UserControl>
