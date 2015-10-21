@@ -35,6 +35,16 @@ namespace GearModule.ViewModels
                 Character.Gear.Add(new Item() { Name = "Item 8", Amount = 3, Description = "Item 8 description" });
                 Character.Gear.Add(new Item() { Name = "Item 9", Amount = 2, Description = "Item 9 description" });
                 Character.Gear.Add(new Item() { Name = "Item 10", Amount = 1, Description = "Item 10 description" });
+                Character.Gear.Add(new Item() { Name = "Item 1", Amount = 10, Description = "Item 1 description" });
+                Character.Gear.Add(new Item() { Name = "Item 2", Amount = 9, Description = "Item 2 description" });
+                Character.Gear.Add(new Item() { Name = "Item 3", Amount = 8, Description = "Item 3 description" });
+                Character.Gear.Add(new Item() { Name = "Item 4", Amount = 7, Description = "Item 4 description" });
+                Character.Gear.Add(new Item() { Name = "Item 5", Amount = 6, Description = "Item 5 description" });
+                Character.Gear.Add(new Item() { Name = "Item 6", Amount = 5, Description = "Item 6 description" });
+                Character.Gear.Add(new Item() { Name = "Item 7", Amount = 4, Description = "Item 7 description" });
+                Character.Gear.Add(new Item() { Name = "Item 8", Amount = 3, Description = "Item 8 description" });
+                Character.Gear.Add(new Item() { Name = "Item 9", Amount = 2, Description = "Item 9 description" });
+                Character.Gear.Add(new Item() { Name = "Item 10", Amount = 1, Description = "Item 10 description" });
                
             }
         }
