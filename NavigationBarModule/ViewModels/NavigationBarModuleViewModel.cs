@@ -29,9 +29,21 @@ namespace NavigationBarModule.ViewModels
         {
             get { return new DelegateCommand(ToGear); }
         }
-        public ICommand NavigateToSpellsFeatsSkills
+        //public ICommand NavigateToSpellsFeatsSkills
+        //{
+        //    get { return new DelegateCommand(ToSpellsFeatsAndSkills); }
+        //}
+        public ICommand NavigateToSpells
         {
-            get { return new DelegateCommand(ToSpellsFeatsAndSkills); }
+            get { return new DelegateCommand(ToSpells); }
+        }
+        public ICommand NavigateToFeats
+        {
+            get { return new DelegateCommand(ToFeats); }
+        }
+        public ICommand NavigateToSkills
+        {
+            get { return new DelegateCommand(ToSkills); }
         }
         public ICommand NavigateToStartUpScreen
         {
@@ -53,9 +65,21 @@ namespace NavigationBarModule.ViewModels
         {
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(GearModule.Views.GearView).FullName);
         }
-        private void ToSpellsFeatsAndSkills()
+        //private void ToSpellsFeatsAndSkills()
+        //{
+        //    NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(SpellsFeatsSkillsModule.Views.SpellsFeatsSkillsView).FullName);
+        //}
+        private void ToSpells()
         {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(SpellsFeatsSkillsModule.Views.SpellsFeatsSkillsView).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(SpellsModule.View.SpellsView).FullName);
+        }
+        private void ToFeats()
+        {
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(FeatsModule.View.FeatsView).FullName);
+        }
+        private void ToSkills()
+        {
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(SkillsModule.View.SkillsView).FullName);
         }
         private void ToStartUpScreen()
         {

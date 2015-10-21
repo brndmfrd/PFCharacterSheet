@@ -26,10 +26,12 @@ namespace CharacterSheet
             ModuleCatalog moduleCatalog = (ModuleCatalog)this.ModuleCatalog;
             moduleCatalog.AddModule(typeof(StartupScreenModule.StartupScreenModule));
             moduleCatalog.AddModule(typeof(NavigationBarModule.NavigationBarModule));
-            moduleCatalog.AddModule(typeof(SpellsFeatsSkillsModule.SpellsFeatsSkillsModule));
             moduleCatalog.AddModule(typeof(GearModule.GearModule));
             moduleCatalog.AddModule(typeof(CombatModule.CombatModule));
             moduleCatalog.AddModule(typeof(CharacterModule.CharacterModule));
+            moduleCatalog.AddModule(typeof(SpellsModule.SpellsModule));
+            moduleCatalog.AddModule(typeof(FeatsModule.FeatsModule));
+            moduleCatalog.AddModule(typeof(SkillsModule.SkillsModule));
         }
     }
 }

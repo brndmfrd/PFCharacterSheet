@@ -152,6 +152,10 @@
       <Project>{8454f67a-6822-4b76-baa4-989367ae035a}</Project>
       <Name>CombatModule</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FeatsModule\FeatsModule.csproj">
+      <Project>{cf3363eb-89f9-4e99-a846-c83922e85854}</Project>
+      <Name>FeatsModule</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GearModule\GearModule.csproj">
       <Project>{4383310f-5998-4d74-972a-c55f1617df2f}</Project>
       <Name>GearModule</Name>
@@ -160,9 +164,13 @@
       <Project>{8c2f9833-4a94-4706-983e-2db738e88af3}</Project>
       <Name>NavigationBarModule</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SpellsFeatsSkillsModule\SpellsFeatsSkillsModule.csproj">
-      <Project>{56bf4c35-2bfb-4c17-ac6f-a8a51abcc64a}</Project>
-      <Name>SpellsFeatsSkillsModule</Name>
+    <ProjectReference Include="..\SkillsModule\SkillsModule.csproj">
+      <Project>{4dd8cd17-fd03-45f5-b980-379b27c22066}</Project>
+      <Name>SkillsModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpellsModule\SpellsModule.csproj">
+      <Project>{9db6fa74-c19f-402d-87ae-f423fa3719d6}</Project>
+      <Name>SpellsModule</Name>
     </ProjectReference>
     <ProjectReference Include="..\StartupScreenModule\StartupScreenModule.csproj">
       <Project>{04483dc1-300b-4efc-8a8f-33e7b07d1efb}</Project>

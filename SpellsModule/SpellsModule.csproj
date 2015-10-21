@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8C2F9833-4A94-4706-983E-2DB738E88AF3}</ProjectGuid>
+    <ProjectGuid>{9DB6FA74-C19F-402D-87AE-F423FA3719D6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NavigationBarModule</RootNamespace>
-    <AssemblyName>NavigationBarModule</AssemblyName>
+    <RootNamespace>SpellsModule</RootNamespace>
+    <AssemblyName>SpellsModule</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -71,71 +71,37 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NavigationBarModule.cs" />
+    <Compile Include="SpellsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\NavigationBarModuleViewModel.cs" />
-    <Compile Include="Views\NavigationBarModuleView.xaml.cs">
-      <DependentUpon>NavigationBarModuleView.xaml</DependentUpon>
+    <Compile Include="ViewModel\SpellsViewModel.cs" />
+    <Compile Include="View\SpellsView.xaml.cs">
+      <DependentUpon>SpellsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NavigationBarModuleViewControl.xaml.cs">
-      <DependentUpon>NavigationBarModuleViewControl.xaml</DependentUpon>
+    <Compile Include="View\SpellsViewControl.xaml.cs">
+      <DependentUpon>SpellsViewControl.xaml</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Resources\" />
-    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\NavigationBarModuleView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\NavigationBarModuleViewControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ActiveCharacter\ActiveCharacter.csproj">
       <Project>{ea7669d4-1e0c-43f1-b95d-7cb546946ba1}</Project>
       <Name>ActiveCharacter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CharacterModule\CharacterModule.csproj">
-      <Project>{53cd7a1b-b743-4605-8813-64227d0c7190}</Project>
-      <Name>CharacterModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CombatModule\CombatModule.csproj">
-      <Project>{8454f67a-6822-4b76-baa4-989367ae035a}</Project>
-      <Name>CombatModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FeatsModule\FeatsModule.csproj">
-      <Project>{cf3363eb-89f9-4e99-a846-c83922e85854}</Project>
-      <Name>FeatsModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GearModule\GearModule.csproj">
-      <Project>{4383310f-5998-4d74-972a-c55f1617df2f}</Project>
-      <Name>GearModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ModuleTools\ModuleTools.csproj">
-      <Project>{6f33588c-d90a-440b-bb32-32289581c938}</Project>
-      <Name>ModuleTools</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SkillsModule\SkillsModule.csproj">
-      <Project>{4dd8cd17-fd03-45f5-b980-379b27c22066}</Project>
-      <Name>SkillsModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SpellsModule\SpellsModule.csproj">
-      <Project>{9db6fa74-c19f-402d-87ae-f423fa3719d6}</Project>
-      <Name>SpellsModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\StartupScreenModule\StartupScreenModule.csproj">
-      <Project>{04483dc1-300b-4efc-8a8f-33e7b07d1efb}</Project>
-      <Name>StartupScreenModule</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\SpellsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SpellsViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
