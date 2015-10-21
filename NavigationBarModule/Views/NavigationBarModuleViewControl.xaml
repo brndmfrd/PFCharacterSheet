@@ -13,25 +13,21 @@
     </UserControl.Resources>
 
     <StackPanel  HorizontalAlignment="Left" VerticalAlignment="Center" MinHeight="400" Width="100" Background="Black">
-        <Button Name="BasicCharacterInformation_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToCharacter}">
-            <Label Content="Character" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
-        </Button>
+        <Button Name="BasicCharacterInformation_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToCharacter}" Content="Character" />
 
-        <Button Name="Combat_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToCombat}">
-            <Label Content="Combat" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
-        </Button>
+        <Button Name="Combat_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToCombat}" Content="Combat" />
 
-        <Button Name="SpellsFeatsSkills_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToSpellsFeatsSkills}">
-            <Label Content="Spells Feats Skills" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
-        </Button>
+        <!--<Button Name="SpellsFeatsSkills_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToSpellsFeatsSkills}" Content="Spells Feats Skills" />-->
 
-        <Button Name="GearWealth_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToGear}">
-            <Label Content="Gear and Wealth" Style="{StaticResource ResourceKey=ButtonLabelStyle}"/>
-        </Button>        
+        <Button Name="Spells_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToSpells}" Content="Spells" />
 
-        <!--Start of the MINI buttons-->
-        <Button Margin="0,40" Name="CreateLoadCharacter_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle_Mini}" Command="{Binding NavigateToStartUpScreen}">
-            <Label Content="Create/Load" Style="{StaticResource ResourceKey=ButtonLabelStyle_Mini}" />
-        </Button>
+        <Button Name="Feats_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToFeats}" Content="Feats" />
+
+        <Button Name="Skills_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToSkills}" Content="Skills" />
+
+        <Button Name="GearWealth_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToGear}" Content="Gear" />
+
+        <!--Start of the Utility buttons-->
+        <Button Margin="0,40" Name="CreateLoadCharacter_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToStartUpScreen}" Content="Create/Load" />
     </StackPanel>
 </UserControl>
