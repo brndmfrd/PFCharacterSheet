@@ -17,15 +17,6 @@ using System.IO;
 
 namespace StartupScreenModule.Views
 {
-    /// <summary>
-    /// Interaction logic for StartupScreenViewControl.xaml
-    /// Unlike many other models the code-behind is very full and the viewmodel is less full.
-    /// This is due to the inherent design of this view, the data is user-driven where the user tells the model 
-    /// what the new data is to be. This is contrary to traditional user interaction where the user is requesting data from 
-    /// the model to be presented.  
-    /// User -> Data -> Model => Code behind heavy
-    /// Model -> Data -> User => ViewModel heavy
-    /// </summary>
     public partial class StartupScreenViewControl : UserControl
     {
         // Deals with UI elements specific to loading a character

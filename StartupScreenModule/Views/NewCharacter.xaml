@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="StartupScreenModule.Views.NewCharacter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+             xmlns:ViewModel="clr-namespace:StartupScreenModule.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500"
+             d:DataContext="{d:DesignInstance ViewModel:NewCharacterViewModel}">
+    
+    <Grid>
+        <ListBox Height="500" Width="500" x:Name="NewCharacterListBox" Background="{x:Null}" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+            <ListBox.Resources>
+                <CollectionViewSource x:Key="NEWCHARACTER" Source="{Binding NewCharacterData}"/>
+            </ListBox.Resources>
+            <ListBox.ItemsSource>
+                <CompositeCollection>
+                    <CollectionContainer Collection="{Binding Source={StaticResource NEWCHARACTER}}"/>
+                </CompositeCollection>
+            </ListBox.ItemsSource>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="250"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="Label" Text="{Binding Path=Key, Mode=OneWay}" Foreground="#808080" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+
+</UserControl>
