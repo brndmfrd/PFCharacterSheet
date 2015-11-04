@@ -8,12 +8,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="1100">
 
-    <!-- Everything about this Grid is under the rule of our beloved ViewModel-->
     <Grid.DataContext>
         <ViewModel:StartupScreenViewModel/>
     </Grid.DataContext>
 
-    <!-- Look at me.  I am the content now.-->
     <View:StartupScreenViewControl/>
 
 </Grid>
