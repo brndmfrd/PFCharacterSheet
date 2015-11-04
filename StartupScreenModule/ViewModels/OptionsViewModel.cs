@@ -4,12 +4,12 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using ActiveCharacter;
 using ModuleTools;
-using StartupScreenModule.Models;
+using OptionsModule.Models;
 
 
-namespace StartupScreenModule.ViewModels
+namespace OptionsModule.ViewModels
 {
-    public class StartupScreenViewModel : ObservableObject
+    public class OptionsViewModel : ObservableObject
     {    
     }
 }

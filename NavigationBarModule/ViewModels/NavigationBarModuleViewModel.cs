@@ -28,11 +28,7 @@ namespace NavigationBarModule.ViewModels
         public ICommand NavigateToGear
         {
             get { return new DelegateCommand(ToGear); }
-        }
-        //public ICommand NavigateToSpellsFeatsSkills
-        //{
-        //    get { return new DelegateCommand(ToSpellsFeatsAndSkills); }
-        //}
+        }        
         public ICommand NavigateToSpells
         {
             get { return new DelegateCommand(ToSpells); }
@@ -45,9 +41,9 @@ namespace NavigationBarModule.ViewModels
         {
             get { return new DelegateCommand(ToSkills); }
         }
-        public ICommand NavigateToStartUpScreen
+        public ICommand NavigateToOptions
         {
-            get { return new DelegateCommand(ToStartUpScreen); }
+            get { return new DelegateCommand(ToOptions); }
         }
         
         /// <summary>
@@ -65,10 +61,6 @@ namespace NavigationBarModule.ViewModels
         {
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(GearModule.Views.GearView).FullName);
         }
-        //private void ToSpellsFeatsAndSkills()
-        //{
-        //    NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(SpellsFeatsSkillsModule.Views.SpellsFeatsSkillsView).FullName);
-        //}
         private void ToSpells()
         {
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(SpellsModule.View.SpellsView).FullName);
@@ -81,9 +73,9 @@ namespace NavigationBarModule.ViewModels
         {
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(SkillsModule.View.SkillsView).FullName);
         }
-        private void ToStartUpScreen()
+        private void ToOptions()
         {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(StartupScreenModule.Views.StartupScreenView).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(OptionsModule.Views.OptionsView).FullName);
         }
 
 

@@ -15,9 +15,9 @@ using System.Windows.Shapes;
 using System.IO;
 
 
-namespace StartupScreenModule.Views
+namespace OptionsModule.Views
 {
-    public partial class StartupScreenViewControl : UserControl
+    public partial class OptionsViewControl : UserControl
     {
         // Deals with UI elements specific to loading a character
         // todo:  do these need to be sepearate objects?
@@ -28,7 +28,7 @@ namespace StartupScreenModule.Views
         /// <summary>
         /// Initialize
         /// </summary>
-        public StartupScreenViewControl()
+        public OptionsViewControl()
         {
             InitializeComponent();
 
@@ -215,6 +215,16 @@ namespace StartupScreenModule.Views
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Create_Character_Buttton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Save_Character_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Config_Button_Click(object sender, RoutedEventArgs e)
         {
 
         }

@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace StartupScreenModule.Views
+namespace OptionsModule.Views
 {
     /// <summary>
     /// Elements of this class are assigned values and used in the dynamic creation and presentation of 

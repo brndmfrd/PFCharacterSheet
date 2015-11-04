@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace StartupScreenModule.Views
+namespace OptionsModule.Views
 {
     /// <summary>
     /// Interaction logic for StartupScreenView.xaml
     /// </summary>
-    public partial class StartupScreenView
+    public partial class OptionsView
     {
-        public StartupScreenView()
+        public OptionsView()
         {
             InitializeComponent();
         }

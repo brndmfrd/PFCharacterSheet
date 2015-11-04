@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Practices.Prism.Regions;
 using ActiveCharacter;
 
-namespace StartupScreenModule.ViewModels
+namespace OptionsModule.ViewModels
 {
     public class NewCharacterViewModel : INavigationAware
     {

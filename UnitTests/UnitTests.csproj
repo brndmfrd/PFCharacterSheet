@@ -34,6 +34,24 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
@@ -82,9 +100,9 @@
       <Project>{8c2f9833-4a94-4706-983e-2db738e88af3}</Project>
       <Name>NavigationBarModule</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StartupScreenModule\StartupScreenModule.csproj">
+    <ProjectReference Include="..\StartupScreenModule\OptionsModule.csproj">
       <Project>{04483dc1-300b-4efc-8a8f-33e7b07d1efb}</Project>
-      <Name>StartupScreenModule</Name>
+      <Name>OptionsModule</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

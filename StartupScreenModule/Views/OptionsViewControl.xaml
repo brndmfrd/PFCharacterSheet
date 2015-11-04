@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="StartupScreenModule.Views.StartupScreenViewControl"
+﻿<UserControl x:Class="OptionsModule.Views.OptionsViewControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:ViewModel="clr-namespace:StartupScreenModule.ViewModels" mc:Ignorable="d" 
+             xmlns:ViewModel="clr-namespace:OptionsModule.ViewModels" mc:Ignorable="d" 
              d:DesignHeight="670" d:DesignWidth="1100"
-             d:DataContext="{d:DesignInstance ViewModel:StartupScreenViewModel}">
+             d:DataContext="{d:DesignInstance ViewModel:OptionsViewModel}">
 
     <UserControl.Resources>
         <!--Link our button style-->
@@ -14,8 +14,10 @@
 
     <StackPanel Orientation="Horizontal" Height="336" HorizontalAlignment="Center">
         <StackPanel Name="Sp0NewOrLoad" Orientation="Vertical">
-            <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding CreateNewCharacterCommand}" Margin="5" Click="Create_Character_Buttton_Click" Content="New Character"/>
-            <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding LoadNewCharacterCommand}" Margin="5" Click="Load_Character_Button_Click" Content="Load Character" />
+            <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding CreateNewCharacterCommand}" Margin="5" Click="Create_Character_Buttton_Click" Content="Create"/>
+            <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding LoadNewCharacterCommand}" Margin="5" Click="Load_Character_Button_Click" Content="Load" />
+            <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding SaveCharacterCommand}" Margin="5" Click="Save_Character_Button_Click" Content="Save" />
+            <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding ConfigCommand}" Margin="5" Click="Config_Button_Click" Content="Config" />
         </StackPanel>
 
         <!--Navigation for character file loading-->

@@ -17,8 +17,6 @@
 
         <Button Name="Combat_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToCombat}" Content="Combat" />
 
-        <!--<Button Name="SpellsFeatsSkills_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToSpellsFeatsSkills}" Content="Spells Feats Skills" />-->
-
         <Button Name="Spells_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToSpells}" Content="Spells" />
 
         <Button Name="Feats_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToFeats}" Content="Feats" />
@@ -28,6 +26,6 @@
         <Button Name="GearWealth_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToGear}" Content="Gear" />
 
         <!--Start of the Utility buttons-->
-        <Button Margin="0,40" Name="CreateLoadCharacter_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToStartUpScreen}" Content="Create/Load" />
+        <Button Margin="0,40" Name="Options_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToOptions}" Content="Options" />
     </StackPanel>
 </UserControl>

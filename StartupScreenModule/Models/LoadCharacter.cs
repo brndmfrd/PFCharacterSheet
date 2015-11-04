@@ -10,7 +10,7 @@ using System.Collections.Specialized;
 using ActiveCharacter;
 using System.Collections.ObjectModel;
 
-namespace StartupScreenModule.Models
+namespace OptionsModule.Models
 {
     public static class LoadCharacter
     {

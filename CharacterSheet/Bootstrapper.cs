@@ -24,7 +24,7 @@ namespace CharacterSheet
         {
             base.ConfigureModuleCatalog();
             ModuleCatalog moduleCatalog = (ModuleCatalog)this.ModuleCatalog;
-            moduleCatalog.AddModule(typeof(StartupScreenModule.StartupScreenModule));
+            moduleCatalog.AddModule(typeof(OptionsModule.OptionsModule));
             moduleCatalog.AddModule(typeof(NavigationBarModule.NavigationBarModule));
             moduleCatalog.AddModule(typeof(GearModule.GearModule));
             moduleCatalog.AddModule(typeof(CombatModule.CombatModule));

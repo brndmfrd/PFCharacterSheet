@@ -11,7 +11,7 @@ using System.Collections.Specialized;
 using ModuleTools;
 
 
-namespace StartupScreenModule.Models
+namespace OptionsModule.Models
 {
     public class SaveCharacterFile
     {

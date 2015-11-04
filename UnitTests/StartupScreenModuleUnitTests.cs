@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StartupScreenModule.Models;
+using OptionsModule.Models;
 
 namespace UnitTests
 {
