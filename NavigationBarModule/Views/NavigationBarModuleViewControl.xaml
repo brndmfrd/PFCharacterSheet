@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ViewModel="clr-namespace:NavigationBarModule.ViewModels"
+             xmlns:Resources="clr-namespace:NavigationBarModule.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="100" 
              d:DataContext="{d:DesignInstance ViewModel:NavigationBarModuleViewModel}">
@@ -13,6 +14,10 @@
     </UserControl.Resources>
 
     <StackPanel  HorizontalAlignment="Left" VerticalAlignment="Center" MinHeight="400" Width="100" Background="Black">
+        <StackPanel.Resources>
+            <Resources:NavigationConverters x:Key="ConvertBackground"/>
+        </StackPanel.Resources>
+        <!--Background="{Binding ButtonColor, Converter={StaticResource ConvertBackground}, UpdateSourceTrigger=PropertyChanged}"-->
         <Button Name="BasicCharacterInformation_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToCharacter}" Content="Character" />
 
         <Button Name="Combat_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToCombat}" Content="Combat" />

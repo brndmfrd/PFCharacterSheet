@@ -22,6 +22,15 @@
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="#222222"/>
             </Trigger>
+
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Background" Value="#222222"/>
+            </Trigger>
+            
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="Gray"/>
+            </Trigger>
+            
         </Style.Triggers>
     </Style>
 

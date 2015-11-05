@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using System.Windows.Input;                 // ICommand
 using Microsoft.Practices.Prism.Regions;    // INavigationAware
 using ModuleTools;
+using System.ComponentModel;
 
 namespace NavigationBarModule.ViewModels
 {
     /// <summary>
     /// The controls for navigation
     /// </summary>
-    public class NavigationBarModuleViewModel : INavigationAware
+    public class NavigationBarModuleViewModel : ObservableObject, INavigationAware
     {
         /// <summary>
         /// button press Commands
@@ -46,6 +47,8 @@ namespace NavigationBarModule.ViewModels
             get { return new DelegateCommand(ToOptions); }
         }
         
+        private bool buttonColor;
+        public bool ButtonColor { get { return buttonColor; } set { buttonColor = value; RaisePropertyChangedEvent("buttonColor"); } }
         /// <summary>
         /// Command Actions
         /// </summary>
@@ -56,6 +59,8 @@ namespace NavigationBarModule.ViewModels
         private void ToCombat()
         {
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(CombatModule.Views.CombatView).FullName);
+            ButtonColor = !ButtonColor;
+
         }
         private void ToGear()
         {
