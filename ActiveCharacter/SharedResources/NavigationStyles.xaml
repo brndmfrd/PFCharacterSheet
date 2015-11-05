@@ -73,5 +73,5 @@
         <Setter Property="Foreground" Value="White" />
         <Setter Property="Margin" Value="0" />
     </Style>
-
+    
 </ResourceDictionary>

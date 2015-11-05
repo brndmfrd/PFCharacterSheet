@@ -14,7 +14,7 @@
     <!--Primary content panel (left)-->
         <StackPanel Orientation="Horizontal">
         <Grid>
-            <ListBox Height="500" Width="500" Grid.Row="0" x:Name="AbilityScoresListBox" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+            <ListBox Grid.Row="0" x:Name="AbilityScoresListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}">
                 <ListBox.Resources>
                     <CollectionViewSource x:Key="BI" Source="{Binding BasicInformation}"/>
                     <CollectionViewSource x:Key="AS" Source="{Binding AbilityScores}"/>
