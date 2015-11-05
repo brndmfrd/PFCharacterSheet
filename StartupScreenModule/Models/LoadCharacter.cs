@@ -161,7 +161,7 @@ namespace OptionsModule.Models
             cdir = Directory.GetCurrentDirectory();             // Target local directory
 
             pfFiles = Directory.GetFiles(cdir, "*.pf");         // Target .pf files
-
+            // todo: error handling needed if there are no *.pf files!
             if (pfFiles[0] == null)
             {
                 pfFiles[0] = "No files could be found";
