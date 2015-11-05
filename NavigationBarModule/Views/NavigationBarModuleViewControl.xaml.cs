@@ -24,6 +24,5 @@ namespace NavigationBarModule.Views
         {
             InitializeComponent();
         }
-
     }
 }
