@@ -26,5 +26,6 @@
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
         <Setter Property="FontSize" Value="18" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
     </Style>
 </ResourceDictionary>

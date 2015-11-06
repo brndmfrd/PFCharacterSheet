@@ -6,19 +6,19 @@ using System.Linq;
 using Microsoft.Practices.Prism.Regions;
 using ActiveCharacter;
 //using System.Windows.Input;
-//using ModuleTools;
+using ModuleTools;
 //using System.Collections.ObjectModel;
 
 
 namespace CharacterModule.ViewModels
 {
-    public class CharacterViewModel : INavigationAware
+    public class CharacterViewModel : ObservableObject, INavigationAware
     {
         public IEnumerable<BasicInformation> BasicInformation { get { return Character.Information; }}
         public IEnumerable<Abilities> AbilityScores { get { return Character.AbilityScores; } }
         public IEnumerable<string> Languages { get { return Character.Languages; } }
         public IEnumerable<CharacterClass> Classes { get { return Character.Classes; } }
-        
+        public int PrimaryDisplayCount{get; private set;}
         
 
         #region Navigation
@@ -30,7 +30,7 @@ namespace CharacterModule.ViewModels
         {
             // If we have no character data load these defaults (for testing purposes only, remove later)
             if (ActiveCharacter.Character.Information.Count <= 0)
-            {
+            {               
                 Character.Information.Add(new BasicInformation() { Name = "Character Name", Value = "Duraxis" });
                 Character.Information.Add(new BasicInformation() { Name = "Player Name", Value = "Bryan" });
                 Character.Information.Add(new BasicInformation() { Name = "Size", Value = "M" });
@@ -65,6 +65,10 @@ namespace CharacterModule.ViewModels
                 //}
                 
             }
+
+            // Keep the count up to date. 
+            PrimaryDisplayCount = Character.Information.Count + Character.AbilityScores.Count;
+            RaisePropertyChangedEvent("PrimaryDisplayCount");
             
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)

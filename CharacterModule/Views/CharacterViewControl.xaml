@@ -13,31 +13,43 @@
     </UserControl.Resources>
     <!--Primary content panel (left)-->
         <StackPanel Orientation="Horizontal">
-        <Grid>
-            <ListBox Grid.Row="0" x:Name="AbilityScoresListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}">
-                <ListBox.Resources>
+        <Grid>            
+            <Grid.Resources>
+                <Style x:Key="Bufftastic" TargetType="ListBoxItem">
+                    <Style.Triggers>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                            <Setter Property="Margin" Value="0,100,0,0"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Resources>
+
+            <ListBox x:Name="AbilityScoresListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" AlternationCount="{Binding PrimaryDisplayCount}" ItemContainerStyle="{StaticResource Bufftastic}">
+                <ListBox.Resources>                  
                     <CollectionViewSource x:Key="BI" Source="{Binding BasicInformation}"/>
                     <CollectionViewSource x:Key="AS" Source="{Binding AbilityScores}"/>
                 </ListBox.Resources>
-                <ListBox.ItemsSource>
+                
+                <ListBox.ItemsSource>                    
                     <CompositeCollection>
                         <CollectionContainer Collection="{Binding Source={StaticResource BI}}"/>
                         <CollectionContainer Collection="{Binding Source={StaticResource AS}}"/>                        
                     </CompositeCollection>
                 </ListBox.ItemsSource>
+
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                            <Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions>                                
                                 <ColumnDefinition Width="250"/>
                                 <ColumnDefinition Width="250"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="#808080" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-            </ListBox>            
+            </ListBox>
         </Grid>     
             
     <!--Prolly want to add this, or something like it, later-->
