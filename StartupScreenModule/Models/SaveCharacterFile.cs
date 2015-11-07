@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Threading.Tasks;
+﻿using System.IO;
 using ActiveCharacter;
 using Newtonsoft.Json;
-using System.Collections;
-using System.Collections.Specialized;
-using ModuleTools;
 
 
 namespace OptionsModule.Models

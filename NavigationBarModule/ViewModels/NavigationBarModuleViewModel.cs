@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;                 // ICommand
+﻿using System.Windows.Input;                 // ICommand
 using Microsoft.Practices.Prism.Regions;    // INavigationAware
 using ModuleTools;
-using System.ComponentModel;
 
 namespace NavigationBarModule.ViewModels
 {

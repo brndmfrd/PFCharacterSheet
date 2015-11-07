@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Practices.Prism.Regions;
-using ActiveCharacter;
-using System.Windows.Input;
-using ModuleTools;
+﻿using Microsoft.Practices.Prism.Regions;
 
 
 namespace CombatModule.ViewModels

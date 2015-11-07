@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Windows.Input;
-using ActiveCharacter;
-using ModuleTools;
-using OptionsModule.Models;
+﻿using ModuleTools;
 
 
 namespace OptionsModule.ViewModels

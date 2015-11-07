@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.UnityExtensions;
-using Microsoft.Practices.Unity;
 
 namespace CharacterSheet
 {
