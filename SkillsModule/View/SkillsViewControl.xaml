@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:SkillsModule.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              d:DataContext="{d:DesignInstance ViewModel:SkillsViewModel}">
@@ -14,8 +15,7 @@
     <StackPanel Orientation="Horizontal">
 
         <!-- List of Skills -->
-        <Grid>
-            <ListBox Height="500" Width="500" Grid.Row="0" x:Name="SkillsListBox" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+        <ListBox Height="500" Width="500" Grid.Row="0" x:Name="SkillsListBox" Background="{x:Null}" Foreground="Teal" BorderThickness="1" BorderBrush="LightCyan" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
                 <ListBox.Resources>
                     <CollectionViewSource x:Key="SKILLS" Source="{Binding Skills}"/>
                 </ListBox.Resources>
@@ -36,8 +36,30 @@
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-            </ListBox>
-        </Grid>
+        </ListBox>
+
+        <ListBox Height="500" Width="500" Grid.Row="0" x:Name="SkillsListBoxCont" Background="{x:Null}" Foreground="Teal" BorderThickness="1" BorderBrush="LightCyan" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+            <ListBox.Resources>
+                <CollectionViewSource x:Key="SKILLS" Source="{Binding Skills}"/>
+            </ListBox.Resources>
+            <ListBox.ItemsSource>
+                <CompositeCollection>
+                    <CollectionContainer Collection="{Binding Source={StaticResource SKILLS}}"/>
+                </CompositeCollection>
+            </ListBox.ItemsSource>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="250"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="SkillName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="#808080" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="SkillRanks" Text="{Binding Path=Ranks, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
         <!--Selected Item Description-->
         <TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Description, ElementName=SkillsListBox}"/>
