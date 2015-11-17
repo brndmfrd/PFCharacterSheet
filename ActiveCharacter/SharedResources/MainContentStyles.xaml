@@ -27,5 +27,13 @@
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
         <Setter Property="FontSize" Value="18" />
         <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Margin="0,100,0,200"/>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
+
 </ResourceDictionary>
