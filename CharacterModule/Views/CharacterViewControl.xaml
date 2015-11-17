@@ -19,13 +19,11 @@
         <ListBox x:Name="AbilityScoresListBox" BorderThickness="1,1,1,1" BorderBrush="LightCyan" Style="{StaticResource ResourceKey=PrimaryContentListBox}" AlternationCount="{Binding PrimaryDisplayCount}">
             <ListBox.Resources>                  
                 <CollectionViewSource x:Key="BI" Source="{Binding BasicInformation}"/>
-                <CollectionViewSource x:Key="AS" Source="{Binding AbilityScores}"/>
             </ListBox.Resources>
            
             <ListBox.ItemsSource>                    
                 <CompositeCollection>
                     <CollectionContainer Collection="{Binding Source={StaticResource BI}}"/>
-                    <CollectionContainer Collection="{Binding Source={StaticResource AS}}"/>                        
                 </CompositeCollection>
             </ListBox.ItemsSource>
 
@@ -48,13 +46,11 @@
 
         <ListBox x:Name="BasicInformationListBox" BorderThickness="1" BorderBrush="LightCyan" Style="{StaticResource ResourceKey=PrimaryContentListBox}" AlternationCount="{Binding PrimaryDisplayCount}">
             <ListBox.Resources>
-                <CollectionViewSource x:Key="BI" Source="{Binding BasicInformation}"/>
                 <CollectionViewSource x:Key="AS" Source="{Binding AbilityScores}"/>
             </ListBox.Resources>
 
             <ListBox.ItemsSource>
                 <CompositeCollection>
-                    <CollectionContainer Collection="{Binding Source={StaticResource BI}}"/>
                     <CollectionContainer Collection="{Binding Source={StaticResource AS}}"/>
                 </CompositeCollection>
             </ListBox.ItemsSource>
