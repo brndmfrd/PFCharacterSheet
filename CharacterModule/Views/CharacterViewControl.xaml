@@ -12,7 +12,6 @@
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
     
-    
     <!--Primary content panel (left)-->
     <StackPanel Orientation="Horizontal">
         
@@ -26,7 +25,32 @@
                     <CollectionContainer Collection="{Binding Source={StaticResource BI}}"/>
                 </CompositeCollection>
             </ListBox.ItemsSource>
+            
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="IsSelected" Value="{Binding Content.IsSelected, Mode=TwoWay, RelativeSource={RelativeSource Self}}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <ContentPresenter/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
 
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="AliceBlue"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="Foreground" Value="#808080"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Foreground" Value="AliceBlue"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -34,7 +58,7 @@
                             <ColumnDefinition Width="250"/>
                             <ColumnDefinition Width="250"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="#808080" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </Grid>
                 </DataTemplate>
@@ -55,6 +79,31 @@
                 </CompositeCollection>
             </ListBox.ItemsSource>
 
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="IsSelected" Value="{Binding Content.IsSelected, Mode=TwoWay, RelativeSource={RelativeSource Self}}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <ContentPresenter/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="AliceBlue"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="Foreground" Value="#808080"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Foreground" Value="AliceBlue"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
+
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -62,12 +111,14 @@
                             <ColumnDefinition Width="250"/>
                             <ColumnDefinition Width="250"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="#808080" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
+        <TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Name, ElementName=BasicInformationListBox}"/>
 
     </StackPanel>    
 </UserControl>

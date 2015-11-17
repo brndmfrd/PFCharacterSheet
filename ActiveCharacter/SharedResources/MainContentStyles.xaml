@@ -33,7 +33,7 @@
                     <StackPanel Margin="0,100,0,200"/>
                 </ItemsPanelTemplate>
             </Setter.Value>
-        </Setter>
+        </Setter>      
     </Style>
 
 </ResourceDictionary>
