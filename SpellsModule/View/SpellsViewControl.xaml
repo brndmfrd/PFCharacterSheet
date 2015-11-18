@@ -15,44 +15,48 @@
     <StackPanel Orientation="Horizontal">
 
         <!-- List of Spells -->
-        
-        <ListBox Height="500" Width="500" Grid.Row="0" x:Name="SpellsListBox" Background="{x:Null}" Foreground="Teal" BorderThickness="1" BorderBrush="LightCyan" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+
+        <ListBox x:Name="SpellsListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
                 <ListBox.Resources>
                     <CollectionViewSource x:Key="SPELLS" Source="{Binding Spells}"/>
                 </ListBox.Resources>
+            
                 <ListBox.ItemsSource>
                     <CompositeCollection>
                         <CollectionContainer Collection="{Binding Source={StaticResource SPELLS}}"/>
                     </CompositeCollection>
                 </ListBox.ItemsSource>
+            
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="250"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock x:Name="SpellName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="#808080" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="SpellName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListBox Height="500" Width="500" Grid.Row="0" x:Name="SpellsListBoxCont" Background="{x:Null}" Foreground="Teal" BorderThickness="1" BorderBrush="LightCyan" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+        <ListBox x:Name="SpellsListBoxCont" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
             <ListBox.Resources>
                 <CollectionViewSource x:Key="SPELLS" Source="{Binding Spells}"/>
             </ListBox.Resources>
+            
             <ListBox.ItemsSource>
                 <CompositeCollection>
                     <CollectionContainer Collection="{Binding Source={StaticResource SPELLS}}"/>
                 </CompositeCollection>
             </ListBox.ItemsSource>
+            
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="250"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="SpellName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="#808080" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="SpellName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

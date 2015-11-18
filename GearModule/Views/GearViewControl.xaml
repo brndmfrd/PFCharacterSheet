@@ -15,16 +15,18 @@
     <StackPanel Orientation="Horizontal">
 
         <!-- List of Gear -->
-        
-        <ListBox Height="500" Width="500" Grid.Row="0" x:Name="GearListBox" Background="{x:Null}" Foreground="Teal" BorderThickness="1" BorderBrush="LightCyan" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+
+        <ListBox x:Name="GearListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
             <ListBox.Resources>
                 <CollectionViewSource x:Key="GEAR" Source="{Binding Gear}"/>
             </ListBox.Resources>
+            
             <ListBox.ItemsSource>
                 <CompositeCollection>
                     <CollectionContainer Collection="{Binding Source={StaticResource GEAR}}"/>
                 </CompositeCollection>
             </ListBox.ItemsSource>
+            
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -32,22 +34,24 @@
                             <ColumnDefinition Width="250"/>
                             <ColumnDefinition Width="250"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="#808080" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListBox Height="500" Width="500" Grid.Row="0" x:Name="GearListBoxCont" Background="{x:Null}" Foreground="Teal" BorderThickness="1" BorderBrush="LightCyan" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+        <ListBox x:Name="GearListBoxCont" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
             <ListBox.Resources>
                 <CollectionViewSource x:Key="GEAR" Source="{Binding Gear}"/>
             </ListBox.Resources>
+            
             <ListBox.ItemsSource>
                 <CompositeCollection>
                     <CollectionContainer Collection="{Binding Source={StaticResource GEAR}}"/>
                 </CompositeCollection>
             </ListBox.ItemsSource>
+            
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -55,8 +59,8 @@
                             <ColumnDefinition Width="250"/>
                             <ColumnDefinition Width="250"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="#808080" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
