@@ -14,8 +14,8 @@
     
     <!--Primary content panel (left)-->
     <StackPanel Orientation="Horizontal">
-        
-        <ListBox x:Name="AbilityScoresListBox" BorderThickness="1,1,1,1" BorderBrush="LightCyan" Style="{StaticResource ResourceKey=PrimaryContentListBox}" AlternationCount="{Binding PrimaryDisplayCount}">
+
+        <ListBox x:Name="AbilityScoresListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
             <ListBox.Resources>                  
                 <CollectionViewSource x:Key="BI" Source="{Binding BasicInformation}"/>
             </ListBox.Resources>
@@ -25,31 +25,6 @@
                     <CollectionContainer Collection="{Binding Source={StaticResource BI}}"/>
                 </CompositeCollection>
             </ListBox.ItemsSource>
-            
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="ListBoxItem">
-                    <Setter Property="IsSelected" Value="{Binding Content.IsSelected, Mode=TwoWay, RelativeSource={RelativeSource Self}}"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="ListBoxItem">
-                                <ContentPresenter/>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="AliceBlue"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="False">
-                            <Setter Property="Foreground" Value="#808080"/>
-                        </Trigger>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Foreground" Value="AliceBlue"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </ListBox.ItemContainerStyle>
             
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -68,7 +43,7 @@
     <!--Prolly want to add this, or something like it, later-->
     <!--<TextBlock Grid.Row="1" Foreground="AliceBlue" Text="{Binding SelectedValue.Name, ElementName=AbilityScoresListBox}" Margin="0,0,0,0"/>-->
 
-        <ListBox x:Name="BasicInformationListBox" BorderThickness="1" BorderBrush="LightCyan" Style="{StaticResource ResourceKey=PrimaryContentListBox}" AlternationCount="{Binding PrimaryDisplayCount}">
+        <ListBox x:Name="BasicInformationListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}">
             <ListBox.Resources>
                 <CollectionViewSource x:Key="AS" Source="{Binding AbilityScores}"/>
             </ListBox.Resources>
@@ -78,31 +53,6 @@
                     <CollectionContainer Collection="{Binding Source={StaticResource AS}}"/>
                 </CompositeCollection>
             </ListBox.ItemsSource>
-
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="ListBoxItem">
-                    <Setter Property="IsSelected" Value="{Binding Content.IsSelected, Mode=TwoWay, RelativeSource={RelativeSource Self}}"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="ListBoxItem">
-                                <ContentPresenter/>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="AliceBlue"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="False">
-                            <Setter Property="Foreground" Value="#808080"/>
-                        </Trigger>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Foreground" Value="AliceBlue"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </ListBox.ItemContainerStyle>
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -118,7 +68,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Name, ElementName=BasicInformationListBox}"/>
+        <!--<TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Name, ElementName=BasicInformationListBox}"/>-->
 
     </StackPanel>    
 </UserControl>
