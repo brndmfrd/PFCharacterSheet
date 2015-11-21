@@ -31,6 +31,7 @@ namespace CharacterSheet
             moduleCatalog.AddModule(typeof(SpellsModule.SpellsModule));
             moduleCatalog.AddModule(typeof(FeatsModule.FeatsModule));
             moduleCatalog.AddModule(typeof(SkillsModule.SkillsModule));
+            moduleCatalog.AddModule(typeof(StatusBarModule.StatusBarModule));
         }
     }
 }

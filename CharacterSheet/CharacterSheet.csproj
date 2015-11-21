@@ -196,6 +196,10 @@
       <Project>{04483dc1-300b-4efc-8a8f-33e7b07d1efb}</Project>
       <Name>OptionsModule</Name>
     </ProjectReference>
+    <ProjectReference Include="..\StatusBarModule\StatusBarModule.csproj">
+      <Project>{c74e9b04-59d5-47cc-a560-d483039a928f}</Project>
+      <Name>StatusBarModule</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -15,13 +15,16 @@
         <!-- Minimize and Close buttons -->
         <Label x:Name="bttn_close" HorizontalContentAlignment="Center" Content="X" Foreground="White" Margin="1165,0,10,675" MouseDown="bttn_close_MouseDown" Background="Black" Width="25" Height="25"/>
         <Label x:Name="bttn_minimize" HorizontalContentAlignment="Center" Content="-" Foreground="White" Margin="1135,0,40,675" Background="Black" MouseDown="bttn_minimize_MouseDown" Width="25" Height="25"/>
-        
+
         <!-- Just a black rectangle region for looks -->
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="700" Stroke="Black" Width="100"/>
+        
+        <!--Status effects region-->
+        <UserControl Name="StatusEffectsRegion" prism:RegionManager.RegionName="StatusEffectsRegion" Width="1025" Height="50" Margin="105,30,0,620" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
         <!-- Region for all the content :: width:1100 height:670-->
         <UserControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" Margin="100,30,0,0" />
-        
+
         <!-- Navigation Bar Region-->
         <ItemsControl Name="NavigationBarRegion" prism:RegionManager.RegionName="NavigationBarRegion" Width="100" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
     </Grid>

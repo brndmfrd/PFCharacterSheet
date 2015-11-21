@@ -6,6 +6,7 @@
              xmlns:ViewModel="clr-namespace:OptionsModule.ViewModels"
              xmlns:View="clr-namespace:OptionsModule.Views"
              mc:Ignorable="d" 
+             Background="#222222"
              d:DesignHeight="700" d:DesignWidth="1100">
 
     <Grid.DataContext>
