@@ -3,11 +3,11 @@
 namespace FeatsModule.View
 {
     /// <summary>
-    /// Interaction logic for FeatsViewControl.xaml
+    /// Interaction logic for FeatsViewPrimary.xaml
     /// </summary>
-    public partial class FeatsViewControl : UserControl
+    public partial class FeatsViewPrimary : UserControl
     {
-        public FeatsViewControl()
+        public FeatsViewPrimary()
         {
             InitializeComponent();
         }

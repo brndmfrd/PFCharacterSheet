@@ -3,11 +3,11 @@
 namespace SkillsModule.View
 {
     /// <summary>
-    /// Interaction logic for SkillsViewControl.xaml
+    /// Interaction logic for SkillsViewPrimary.xaml
     /// </summary>
-    public partial class SkillsViewControl : UserControl
+    public partial class SkillsViewPrimary : UserControl
     {
-        public SkillsViewControl()
+        public SkillsViewPrimary()
         {
             InitializeComponent();
         }

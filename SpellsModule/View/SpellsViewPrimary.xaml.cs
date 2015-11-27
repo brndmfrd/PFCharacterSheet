@@ -3,11 +3,11 @@
 namespace SpellsModule.View
 {
     /// <summary>
-    /// Interaction logic for SpellsViewControl.xaml
+    /// Interaction logic for SpellsViewPrimary.xaml
     /// </summary>
-    public partial class SpellsViewControl : UserControl
+    public partial class SpellsViewPrimary : UserControl
     {
-        public SpellsViewControl()
+        public SpellsViewPrimary()
         {
             InitializeComponent();
         }

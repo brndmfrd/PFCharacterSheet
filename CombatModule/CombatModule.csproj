@@ -92,15 +92,15 @@
     <Compile Include="CombatModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CombatViewModel.cs" />
-    <Compile Include="Views\CombatViewControl.xaml.cs">
-      <DependentUpon>CombatViewControl.xaml</DependentUpon>
+    <Compile Include="Views\CombatViewPrimary.xaml.cs">
+      <DependentUpon>CombatViewPrimary.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\CombatViewControl.xaml">
+    <Page Include="Views\CombatViewPrimary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

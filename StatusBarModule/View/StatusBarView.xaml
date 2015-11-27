@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:View="clr-namespace:StatusBarModule.View"
              mc:Ignorable="d" 
-             Background="AliceBlue"
+             BorderBrush="AliceBlue"
              d:DesignHeight="50" d:DesignWidth="1025"
              >
     <!--<Border BorderBrush="AliceBlue">

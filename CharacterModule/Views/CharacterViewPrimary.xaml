@@ -1,36 +1,63 @@
-﻿<UserControl x:Class="GearModule.Views.GearViewControl"
+﻿<UserControl x:Class="CharacterModule.Views.CharacterViewPrimary"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:ViewModel="clr-namespace:GearModule.ViewModels"
-             mc:Ignorable="d" 
+             xmlns:ViewModel="clr-namespace:CharacterModule.ViewModels"
+             mc:Ignorable="d"
              d:DesignHeight="670" d:DesignWidth="1100"
-             d:DataContext="{d:DesignInstance ViewModel:GearViewModel}">
-    
+             d:DataContext="{d:DesignInstance ViewModel:CharacterViewModel}">
+
     <UserControl.DataContext>
-        <ViewModel:GearViewModel />
+        <ViewModel:CharacterViewModel/>
     </UserControl.DataContext>
     
     <UserControl.Resources>
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
     
+    <!--Primary content panel (left)-->
     <StackPanel Orientation="Horizontal">
 
-        <!-- List of Gear -->
-
-        <ListBox x:Name="GearListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
-            <ListBox.Resources>
-                <CollectionViewSource x:Key="GEAR" Source="{Binding Gear}"/>
+        <ListBox x:Name="AbilityScoresListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
+            <ListBox.Resources>                  
+                <CollectionViewSource x:Key="BI" Source="{Binding BasicInformation}"/>
             </ListBox.Resources>
-            
-            <ListBox.ItemsSource>
+           
+            <ListBox.ItemsSource>                    
                 <CompositeCollection>
-                    <CollectionContainer Collection="{Binding Source={StaticResource GEAR}}"/>
+                    <CollectionContainer Collection="{Binding Source={StaticResource BI}}"/>
                 </CompositeCollection>
             </ListBox.ItemsSource>
             
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>                                
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="250"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+            
+    <!--Prolly want to add this, or something like it, later-->
+    <!--<TextBlock Grid.Row="1" Foreground="AliceBlue" Text="{Binding SelectedValue.Name, ElementName=AbilityScoresListBox}" Margin="0,0,0,0"/>-->
+
+        <ListBox x:Name="BasicInformationListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}">
+            <ListBox.Resources>
+                <CollectionViewSource x:Key="AS" Source="{Binding AbilityScores}"/>
+            </ListBox.Resources>
+
+            <ListBox.ItemsSource>
+                <CompositeCollection>
+                    <CollectionContainer Collection="{Binding Source={StaticResource AS}}"/>
+                </CompositeCollection>
+            </ListBox.ItemsSource>
+
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -39,43 +66,13 @@
                             <ColumnDefinition Width="250"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListBox x:Name="GearListBoxCont" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
-            <ListBox.Resources>
-                <CollectionViewSource x:Key="GEAR" Source="{Binding Gear}"/>
-            </ListBox.Resources>
-            
-            <ListBox.ItemsSource>
-                <CompositeCollection>
-                    <CollectionContainer Collection="{Binding Source={StaticResource GEAR}}"/>
-                </CompositeCollection>
-            </ListBox.ItemsSource>
-            
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="250"/>
-                            <ColumnDefinition Width="250"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        
-        <!--Selected Item Description-->
-        <TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Description, ElementName=GearListBox}"/>
+        <!--<TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Name, ElementName=BasicInformationListBox}"/>-->
 
-        <!-- Future site of Inventory management controls-->
-        <StackPanel Orientation="Vertical" Margin="0,0,30,0">
-            
-        </StackPanel>
-    </StackPanel>
+    </StackPanel>    
 </UserControl>

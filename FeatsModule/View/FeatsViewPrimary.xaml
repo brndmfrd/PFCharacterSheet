@@ -1,15 +1,15 @@
-﻿<UserControl x:Class="SpellsModule.View.SpellsViewControl"
+﻿<UserControl x:Class="FeatsModule.View.FeatsViewPrimary"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:ViewModel="clr-namespace:SpellsModule.ViewModel"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:FeatsModule.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
-             d:DataContext="{d:DesignInstance ViewModel:SpellsViewModel}">
+             d:DataContext="{d:DesignInstance ViewModel:FeatsViewModel}">
     
     <UserControl.DataContext>
-        <ViewModel:SpellsViewModel/>
+        <ViewModel:FeatsViewModel/>
     </UserControl.DataContext>
     
     <UserControl.Resources>
@@ -18,16 +18,15 @@
 
     <StackPanel Orientation="Horizontal">
 
-        <!-- List of Spells -->
-
-        <ListBox x:Name="SpellsListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
+        <!-- List of Feats -->
+        <ListBox x:Name="FeatsListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
                 <ListBox.Resources>
-                    <CollectionViewSource x:Key="SPELLS" Source="{Binding Spells}"/>
+                    <CollectionViewSource x:Key="FEATS" Source="{Binding Feats}"/>
                 </ListBox.Resources>
             
                 <ListBox.ItemsSource>
                     <CompositeCollection>
-                        <CollectionContainer Collection="{Binding Source={StaticResource SPELLS}}"/>
+                        <CollectionContainer Collection="{Binding Source={StaticResource FEATS}}"/>
                     </CompositeCollection>
                 </ListBox.ItemsSource>
             
@@ -37,20 +36,20 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="250"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock x:Name="SpellName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="FeatName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListBox x:Name="SpellsListBoxCont" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
+        <ListBox x:Name="FeatsListBoxCont" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}">
             <ListBox.Resources>
-                <CollectionViewSource x:Key="SPELLS" Source="{Binding Spells}"/>
+                <CollectionViewSource x:Key="FEATS" Source="{Binding Feats}"/>
             </ListBox.Resources>
             
             <ListBox.ItemsSource>
                 <CompositeCollection>
-                    <CollectionContainer Collection="{Binding Source={StaticResource SPELLS}}"/>
+                    <CollectionContainer Collection="{Binding Source={StaticResource FEATS}}"/>
                 </CompositeCollection>
             </ListBox.ItemsSource>
             
@@ -60,16 +59,16 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="250"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="SpellName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="FeatName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-
+        
         <!--Selected Item Description-->
-        <TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Description, ElementName=SpellsListBox}"/>
+        <TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Description, ElementName=FeatsListBox}"/>
 
-        <!-- Future site of Spell management controls-->
+        <!-- Future site of Feat management controls-->
         <StackPanel Orientation="Vertical" Margin="0,0,30,0">
 
         </StackPanel>

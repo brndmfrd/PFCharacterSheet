@@ -15,8 +15,8 @@ namespace SkillsModule
         public void Initialize()
         {
             // --- Register the views for this module with the regions we want to associate them with
-            regionManager.RegisterViewWithRegion("PrimaryContentRegion", typeof(View.SkillsViewControl));
-            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(View.SkillsViewControl));
+            regionManager.RegisterViewWithRegion("PrimaryContentRegion", typeof(View.SkillsViewPrimary));
+            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(View.SkillsViewPrimary));
         }
     }
 }

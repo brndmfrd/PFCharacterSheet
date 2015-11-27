@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace CharacterModule.Views
 {
     /// <summary>
-    /// Interaction logic for CharacterViewControl.xaml
+    /// Interaction logic for CharacterViewPrimary.xaml
     /// </summary>
-    public partial class CharacterViewControl : UserControl
+    public partial class CharacterViewPrimary : UserControl
     {
-        public CharacterViewControl()
+        public CharacterViewPrimary()
         {
             InitializeComponent();
         }

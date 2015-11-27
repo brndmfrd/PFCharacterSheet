@@ -3,11 +3,11 @@
 namespace GearModule.Views
 {
     /// <summary>
-    /// Interaction logic for GearViewControl.xaml
+    /// Interaction logic for GearViewPrimary.xaml
     /// </summary>
-    public partial class GearViewControl : UserControl
+    public partial class GearViewPrimary : UserControl
     {
-        public GearViewControl()
+        public GearViewPrimary()
         {
             InitializeComponent();
         }

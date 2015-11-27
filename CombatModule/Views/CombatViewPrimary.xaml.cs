@@ -3,11 +3,11 @@
 namespace CombatModule.Views
 {
     /// <summary>
-    /// Interaction logic for CombatViewControl.xaml
+    /// Interaction logic for CombatViewPrimary.xaml
     /// </summary>
-    public partial class CombatViewControl : UserControl
+    public partial class CombatViewPrimary : UserControl
     {
-        public CombatViewControl()
+        public CombatViewPrimary()
         {
             InitializeComponent();
         }

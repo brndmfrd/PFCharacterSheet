@@ -92,15 +92,15 @@
     <Compile Include="CharacterModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CharacterViewModel.cs" />
-    <Compile Include="Views\CharacterViewControl.xaml.cs">
-      <DependentUpon>CharacterViewControl.xaml</DependentUpon>
+    <Compile Include="Views\CharacterViewPrimary.xaml.cs">
+      <DependentUpon>CharacterViewPrimary.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\CharacterViewControl.xaml">
+    <Page Include="Views\CharacterViewPrimary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
