@@ -24,8 +24,8 @@
 
         <!-- Region for all the content :: width:1100 height:670-->
         <UserControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" Margin="100,30,0,0" />
-        <UserControl Name="PrimaryContentRegion" prism:RegionManager.RegionName="PrimaryContentRegion" Margin="100,30,541,0" />
-        <UserControl Name="AuxContentRegion" prism:RegionManager.RegionName="AuxContentRegion" Margin="664,30,0,0" />
+        <UserControl Name="PrimaryContentRegion" prism:RegionManager.RegionName="PrimaryContentRegion" Margin="100,80,541,0" />
+        <UserControl Name="AuxContentRegion" prism:RegionManager.RegionName="AuxContentRegion" Margin="664,80,0,0" />
 
         <!-- Navigation Bar Region-->
         <ItemsControl Name="NavigationBarRegion" prism:RegionManager.RegionName="NavigationBarRegion" Width="100" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
