@@ -113,9 +113,6 @@
     <Compile Include="SpellsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\SpellsViewModel.cs" />
-    <Compile Include="View\SpellsView.xaml.cs">
-      <DependentUpon>SpellsView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\SpellsViewControl.xaml.cs">
       <DependentUpon>SpellsViewControl.xaml</DependentUpon>
     </Compile>
@@ -138,10 +135,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="View\SpellsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\SpellsViewControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

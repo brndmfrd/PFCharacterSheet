@@ -92,9 +92,6 @@
     <Compile Include="CharacterModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CharacterViewModel.cs" />
-    <Compile Include="Views\CharacterView.xaml.cs">
-      <DependentUpon>CharacterView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\CharacterViewControl.xaml.cs">
       <DependentUpon>CharacterViewControl.xaml</DependentUpon>
     </Compile>
@@ -103,10 +100,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\CharacterView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\CharacterViewControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

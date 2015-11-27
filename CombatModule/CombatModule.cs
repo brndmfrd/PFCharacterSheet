@@ -14,7 +14,7 @@ namespace CombatModule
 
         public void Initialize()
         {
-            regionManager.RegisterViewWithRegion("MainRegion", typeof(Views.CombatView));
+            regionManager.RegisterViewWithRegion("MainRegion", typeof(Views.CombatViewControl));
         }
     }
 }

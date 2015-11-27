@@ -92,9 +92,6 @@
     <Compile Include="SkillsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\SkillsViewModel.cs" />
-    <Compile Include="View\SkillsView.xaml.cs">
-      <DependentUpon>SkillsView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\SkillsViewControl.xaml.cs">
       <DependentUpon>SkillsViewControl.xaml</DependentUpon>
     </Compile>
@@ -112,10 +109,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="View\SkillsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\SkillsViewControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

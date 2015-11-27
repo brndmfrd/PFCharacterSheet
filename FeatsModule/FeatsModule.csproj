@@ -92,9 +92,6 @@
     <Compile Include="FeatsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\FeatsViewModel.cs" />
-    <Compile Include="View\FeatsView.xaml.cs">
-      <DependentUpon>FeatsView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\FeatsViewControl.xaml.cs">
       <DependentUpon>FeatsViewControl.xaml</DependentUpon>
     </Compile>
@@ -112,10 +109,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="View\FeatsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\FeatsViewControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
