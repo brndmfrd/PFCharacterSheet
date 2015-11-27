@@ -14,7 +14,9 @@ namespace FeatsModule
 
         public void Initialize()
         {
-            regionManager.RegisterViewWithRegion("MainRegion", typeof(View.FeatsView));
+            // --- Register the views for this module with the regions we want to associate them with
+            regionManager.RegisterViewWithRegion("PrimaryContentRegion", typeof(View.FeatsViewControl));
+            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(View.FeatsViewControl));
         }
     }
 }

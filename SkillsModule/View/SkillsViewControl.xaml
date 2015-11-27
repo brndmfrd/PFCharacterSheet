@@ -7,7 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              d:DataContext="{d:DesignInstance ViewModel:SkillsViewModel}">
-
+    
+    <UserControl.DataContext>
+        <ViewModel:SkillsViewModel/>
+    </UserControl.DataContext>
+    
     <UserControl.Resources>
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>

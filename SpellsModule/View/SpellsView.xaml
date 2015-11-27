@@ -12,11 +12,6 @@
     <Grid.DataContext>
         <ViewModel:SpellsViewModel/>
     </Grid.DataContext>
-
-    <Grid.RowDefinitions>
-        <RowDefinition />
-        <RowDefinition />
-    </Grid.RowDefinitions>
         
     <View:SpellsViewControl />
 </Grid>

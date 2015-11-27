@@ -42,36 +42,49 @@ namespace NavigationBarModule.ViewModels
         }
         
         /// <summary>
-        /// Command Actions
+        /// This is the heart of our navigation. We 'navigate' by changing the views in the registered regions. 
         /// </summary>
         private void ToCharacter()
         {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(CharacterModule.Views.CharacterView).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);          // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(CharacterModule.Views.CharacterViewControl).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(CharacterModule.Views.CharacterViewControl).FullName);
         }
         private void ToCombat()
         {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(CombatModule.Views.CombatView).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);         // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(CombatModule.Views.CombatViewControl).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(CombatModule.Views.CombatViewControl).FullName);
         }
         private void ToGear()
         {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(GearModule.Views.GearView).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);         // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(GearModule.Views.GearViewControl).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(GearModule.Views.GearViewControl).FullName);
         }
         private void ToSpells()
         {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(SpellsModule.View.SpellsView).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);         // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(SpellsModule.View.SpellsViewControl).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(SpellsModule.View.SpellsViewControl).FullName);
         }
         private void ToFeats()
         {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(FeatsModule.View.FeatsView).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);         // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(FeatsModule.View.FeatsViewControl).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(FeatsModule.View.FeatsViewControl).FullName);
         }
         private void ToSkills()
         {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(SkillsModule.View.SkillsView).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);         // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(SkillsModule.View.SkillsViewControl).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(SkillsModule.View.SkillsViewControl).FullName);
         }
         private void ToOptions()
         {
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(OptionsModule.Views.OptionsView).FullName);
-            
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(System.Windows.Controls.UserControl).FullName);    // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(System.Windows.Controls.UserControl).FullName);        // blank content for region
         }
 
 

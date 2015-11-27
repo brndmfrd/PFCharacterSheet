@@ -14,7 +14,9 @@ namespace SpellsModule
 
         public void Initialize()
         {
-            regionManager.RegisterViewWithRegion("MainRegion", typeof(View.SpellsView));
+            // --- Register the views for this module with the regions we want to associate them with
+            regionManager.RegisterViewWithRegion("PrimaryContentRegion", typeof(View.SpellsViewControl));
+            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(View.SpellsViewControl));
         }
     }
 }

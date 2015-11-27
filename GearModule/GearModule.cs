@@ -14,7 +14,9 @@ namespace GearModule
 
         public void Initialize()
         {
-           regionManager.RegisterViewWithRegion("MainRegion", typeof(Views.GearView));
+            // --- Register the views for this module with the regions we want to associate them with
+            regionManager.RegisterViewWithRegion("PrimaryContentRegion", typeof(Views.GearViewControl));
+            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(Views.GearViewControl));
         }
     }
 }

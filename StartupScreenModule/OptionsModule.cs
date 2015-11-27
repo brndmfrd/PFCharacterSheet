@@ -20,7 +20,7 @@ namespace OptionsModule
 
         public void Initialize()
         {
-            //  registers a region name with its associated view type in the region view registry
+            // --- Register the views for this module with the regions we want to associate them with
             regionManager.RegisterViewWithRegion("MainRegion", typeof(Views.OptionsView));
         }
 
