@@ -72,7 +72,7 @@ namespace NavigationBarModule.ViewModels
         {
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);         // blank content for region
             NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(FeatsModule.View.FeatsViewPrimary).FullName);
-            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(FeatsModule.View.FeatsViewPrimary).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(FeatsModule.View.FeatsViewAux).FullName);
         }
         private void ToSkills()
         {

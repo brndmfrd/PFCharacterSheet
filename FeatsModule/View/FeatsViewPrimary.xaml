@@ -19,11 +19,13 @@
     <StackPanel Orientation="Horizontal">
 
         <!-- List of Feats -->
-        <ListBox x:Name="FeatsListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
+        <ListBox x:Name="FeatsListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" SelectedItem="{Binding Path=MySelectedItem}">
                 <ListBox.Resources>
                     <CollectionViewSource x:Key="FEATS" Source="{Binding Feats}"/>
                 </ListBox.Resources>
-            
+            <ListBox.InputBindings>
+                <MouseBinding Gesture="LeftClick" Command="{Binding ListBoxSelected}"></MouseBinding>
+            </ListBox.InputBindings>
                 <ListBox.ItemsSource>
                     <CompositeCollection>
                         <CollectionContainer Collection="{Binding Source={StaticResource FEATS}}"/>
@@ -41,36 +43,6 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
         </ListBox>
-
-        <ListBox x:Name="FeatsListBoxCont" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}">
-            <ListBox.Resources>
-                <CollectionViewSource x:Key="FEATS" Source="{Binding Feats}"/>
-            </ListBox.Resources>
-            
-            <ListBox.ItemsSource>
-                <CompositeCollection>
-                    <CollectionContainer Collection="{Binding Source={StaticResource FEATS}}"/>
-                </CompositeCollection>
-            </ListBox.ItemsSource>
-            
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="250"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="FeatName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        
-        <!--Selected Item Description-->
-        <TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Description, ElementName=FeatsListBox}"/>
-
-        <!-- Future site of Feat management controls-->
-        <StackPanel Orientation="Vertical" Margin="0,0,30,0">
-
-        </StackPanel>
+ 
     </StackPanel>
 </UserControl>
