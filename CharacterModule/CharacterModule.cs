@@ -16,7 +16,7 @@ namespace CharacterModule
         {
             // --- Register the views for this module with the regions we want to associate them with
             regionManager.RegisterViewWithRegion("PrimaryContentRegion", typeof(Views.CharacterViewPrimary));
-            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(Views.CharacterViewPrimary));
+            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(Views.CharacterViewAux));
         }
     }
 }

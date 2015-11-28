@@ -48,7 +48,7 @@ namespace NavigationBarModule.ViewModels
         {
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);          // blank content for region
             NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(CharacterModule.Views.CharacterViewPrimary).FullName);
-            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(CharacterModule.Views.CharacterViewPrimary).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(CharacterModule.Views.CharacterViewAux).FullName);
         }
         private void ToCombat()
         {

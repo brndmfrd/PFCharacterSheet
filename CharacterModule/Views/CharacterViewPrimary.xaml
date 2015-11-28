@@ -47,30 +47,7 @@
     <!--Prolly want to add this, or something like it, later-->
     <!--<TextBlock Grid.Row="1" Foreground="AliceBlue" Text="{Binding SelectedValue.Name, ElementName=AbilityScoresListBox}" Margin="0,0,0,0"/>-->
 
-        <ListBox x:Name="BasicInformationListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}">
-            <ListBox.Resources>
-                <CollectionViewSource x:Key="AS" Source="{Binding AbilityScores}"/>
-            </ListBox.Resources>
-
-            <ListBox.ItemsSource>
-                <CompositeCollection>
-                    <CollectionContainer Collection="{Binding Source={StaticResource AS}}"/>
-                </CompositeCollection>
-            </ListBox.ItemsSource>
-
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="250"/>
-                            <ColumnDefinition Width="250"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        
 
         <!--<TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Name, ElementName=BasicInformationListBox}"/>-->
 

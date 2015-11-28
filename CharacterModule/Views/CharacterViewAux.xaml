@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="CharacterModule.Views.CharacterViewAux"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:CharacterModule.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="670" d:DesignWidth="1100"
+             d:DataContext="{d:DesignInstance ViewModel:CharacterViewModel}">
+
+    <UserControl.DataContext>
+        <ViewModel:CharacterViewModel/>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
+    </UserControl.Resources>
+
+    <ListBox x:Name="BasicInformationListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}">
+        <ListBox.Resources>
+            <CollectionViewSource x:Key="AS" Source="{Binding AbilityScores}"/>
+        </ListBox.Resources>
+
+        <ListBox.ItemsSource>
+            <CompositeCollection>
+                <CollectionContainer Collection="{Binding Source={StaticResource AS}}"/>
+            </CompositeCollection>
+        </ListBox.ItemsSource>
+
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
+
+</UserControl>
