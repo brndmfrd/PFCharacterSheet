@@ -20,32 +20,7 @@
 
         <!-- List of Gear -->
 
-        <ListBox x:Name="GearListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
-            <ListBox.Resources>
-                <CollectionViewSource x:Key="GEAR" Source="{Binding Gear}"/>
-            </ListBox.Resources>
-            
-            <ListBox.ItemsSource>
-                <CompositeCollection>
-                    <CollectionContainer Collection="{Binding Source={StaticResource GEAR}}"/>
-                </CompositeCollection>
-            </ListBox.ItemsSource>
-            
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="250"/>
-                            <ColumnDefinition Width="250"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-
-        <ListBox x:Name="GearListBoxCont" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
+        <ListBox x:Name="GearListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" SelectedItem="{Binding Path=MySelectedItem}">
             <ListBox.Resources>
                 <CollectionViewSource x:Key="GEAR" Source="{Binding Gear}"/>
             </ListBox.Resources>
@@ -70,12 +45,5 @@
             </ListBox.ItemTemplate>
         </ListBox>
         
-        <!--Selected Item Description-->
-        <TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Description, ElementName=GearListBox}"/>
-
-        <!-- Future site of Inventory management controls-->
-        <StackPanel Orientation="Vertical" Margin="0,0,30,0">
-            
-        </StackPanel>
     </StackPanel>
 </UserControl>

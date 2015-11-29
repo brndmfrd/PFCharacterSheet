@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using ActiveCharacter;
 
-namespace FeatsModule.Model
+namespace GearModule.Model
 {
     public static class SelectedState
     {
-        public static Feat CurrentSelectedFeat = new Feat();
+        public static Item CurrentSelectedFeat = new Item();
+        
     }
 }

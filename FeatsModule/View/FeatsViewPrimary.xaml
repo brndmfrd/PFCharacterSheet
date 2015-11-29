@@ -23,9 +23,7 @@
                 <ListBox.Resources>
                     <CollectionViewSource x:Key="FEATS" Source="{Binding Feats}"/>
                 </ListBox.Resources>
-            <ListBox.InputBindings>
-                <MouseBinding Gesture="LeftClick" Command="{Binding ListBoxSelected}"></MouseBinding>
-            </ListBox.InputBindings>
+            
                 <ListBox.ItemsSource>
                     <CompositeCollection>
                         <CollectionContainer Collection="{Binding Source={StaticResource FEATS}}"/>

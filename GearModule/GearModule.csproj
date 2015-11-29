@@ -90,8 +90,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GearModule.cs" />
+    <Compile Include="Model\SelectedState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\GearViewModel.cs" />
+    <Compile Include="Views\GearViewAux.xaml.cs">
+      <DependentUpon>GearViewAux.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\GearViewPrimary.xaml.cs">
       <DependentUpon>GearViewPrimary.xaml</DependentUpon>
     </Compile>
@@ -100,6 +104,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\GearViewAux.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\GearViewPrimary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -2,6 +2,8 @@
 using Microsoft.Practices.Prism.Regions;
 using ActiveCharacter;
 using ModuleTools;
+using GearModule.Model;
+using GearModule.Views;
 
 
 namespace GearModule.ViewModels
@@ -10,6 +12,18 @@ namespace GearModule.ViewModels
     {
         public IEnumerable<Item> Gear { get { return Character.Gear; }}
 
+        // Listbox in primary view uses this accessor for what is has currently selected
+        // Navigation allows the Aux view to 'refresh' and update based on the selected value
+        public Item MySelectedItem
+        {
+            get { return SelectedState.CurrentSelectedFeat; }
+            set
+            {
+                SelectedState.CurrentSelectedFeat = value;
+                RaisePropertyChangedEvent("MySelectedItem");
+                GearModule.regionManager.RequestNavigate("AuxContentRegion", typeof(Views.GearViewAux).FullName);
+            }
+        }
 
         #region Navigation
         public void OnNavigatedFrom(NavigationContext navigationContext)
@@ -42,6 +56,8 @@ namespace GearModule.ViewModels
                 Character.Gear.Add(new Item() { Name = "Item 10", Amount = 1, Description = "Item 10 description" });
                
             }
+            RaisePropertyChangedEvent("MySelectedItem");
+
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {

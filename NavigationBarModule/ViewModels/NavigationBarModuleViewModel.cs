@@ -60,7 +60,7 @@ namespace NavigationBarModule.ViewModels
         {
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);         // blank content for region
             NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(GearModule.Views.GearViewPrimary).FullName);
-            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(GearModule.Views.GearViewPrimary).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(GearModule.Views.GearViewAux).FullName);
         }
         private void ToSpells()
         {

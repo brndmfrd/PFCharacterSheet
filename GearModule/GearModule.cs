@@ -5,18 +5,18 @@ namespace GearModule
 {
     public class GearModule : IModule
     {
-        private readonly IRegionManager regionManager;      // hold refrence to region manager
+        public static IRegionManager regionManager;      // hold refrence to region manager
 
-        public GearModule(IRegionManager regionManager)
+        public GearModule(IRegionManager _regionManager)
         {
-            this.regionManager = regionManager;
+            regionManager = _regionManager;
         }
 
         public void Initialize()
         {
             // --- Register the views for this module with the regions we want to associate them with
             regionManager.RegisterViewWithRegion("PrimaryContentRegion", typeof(Views.GearViewPrimary));
-            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(Views.GearViewPrimary));
+            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(Views.GearViewAux));
         }
     }
 }
