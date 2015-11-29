@@ -20,7 +20,7 @@
 
         <!-- List of Spells -->
 
-        <ListBox x:Name="SpellsListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
+        <ListBox x:Name="SpellsListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" SelectedItem="{Binding Path=MySelectedItem}">
                 <ListBox.Resources>
                     <CollectionViewSource x:Key="SPELLS" Source="{Binding Spells}"/>
                 </ListBox.Resources>
@@ -43,35 +43,5 @@
                 </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListBox x:Name="SpellsListBoxCont" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
-            <ListBox.Resources>
-                <CollectionViewSource x:Key="SPELLS" Source="{Binding Spells}"/>
-            </ListBox.Resources>
-            
-            <ListBox.ItemsSource>
-                <CompositeCollection>
-                    <CollectionContainer Collection="{Binding Source={StaticResource SPELLS}}"/>
-                </CompositeCollection>
-            </ListBox.ItemsSource>
-            
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="250"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="SpellName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-
-        <!--Selected Item Description-->
-        <TextBlock Foreground="AliceBlue" Text="{Binding SelectedValue.Description, ElementName=SpellsListBox}"/>
-
-        <!-- Future site of Spell management controls-->
-        <StackPanel Orientation="Vertical" Margin="0,0,30,0">
-
-        </StackPanel>
     </StackPanel>
 </UserControl>
