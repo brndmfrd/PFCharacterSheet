@@ -10,12 +10,12 @@ namespace OptionsModule
 {
     public class OptionsModule : IModule
     {
-        private readonly IRegionManager regionManager;      // hold refrence to region manager
+        public static IRegionManager regionManager;      // hold refrence to region manager
 
         // obtain a region manager instance through constructor dependency injection and store it in the regionManager instance variable
-        public OptionsModule(IRegionManager regionManager)
+        public OptionsModule(IRegionManager _regionManager)
         {
-            this.regionManager = regionManager;
+            regionManager = _regionManager;
         }
 
         public void Initialize()

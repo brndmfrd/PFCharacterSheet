@@ -164,6 +164,10 @@
       <Project>{ea7669d4-1e0c-43f1-b95d-7cb546946ba1}</Project>
       <Name>ActiveCharacter</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CharacterCreationModule\CharacterCreationModule.csproj">
+      <Project>{91faeee9-ca20-453d-a8ba-247b5afbbaac}</Project>
+      <Name>CharacterCreationModule</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CharacterModule\CharacterModule.csproj">
       <Project>{53cd7a1b-b743-4605-8813-64227d0c7190}</Project>
       <Name>CharacterModule</Name>
