@@ -2,11 +2,24 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+             xmlns:ViewModel="clr-namespace:CharacterCreationModule.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Label Content="BASIC INFO!" Foreground="AliceBlue"></Label>
+        <!--<Label Content="BASIC INFO!" Foreground="AliceBlue"/>-->
 
-    </Grid>
+    <UserControl.DataContext>
+        <ViewModel:CharacterCreation/>
+    </UserControl.DataContext>
+    
+
+    <DataGrid FontSize="20" ItemsSource="{Binding BasicInformation}" AutoGenerateColumns="False" Background="{x:Null}" RowBackground="Black" AlternatingRowBackground="#222222" AlternationCount="2" IsReadOnly="False" CanUserAddRows="True">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
+            <DataGridTextColumn Header="Value" Binding="{Binding Value}" Foreground="Teal"/>
+        </DataGrid.Columns>
+    </DataGrid>
+
+
+    
 </UserControl>
