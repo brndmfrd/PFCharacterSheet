@@ -40,6 +40,10 @@ namespace NavigationBarModule.ViewModels
         {
             get { return new DelegateCommand(ToOptions); }
         }
+        public ICommand NavigateToCharacterCreation
+        {
+            get { return new DelegateCommand(ToCharacterCreation); }
+        }
         
         /// <summary>
         /// This is the heart of our navigation. We 'navigate' by changing the views in the registered regions. 
@@ -85,6 +89,13 @@ namespace NavigationBarModule.ViewModels
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(OptionsModule.Views.OptionsView).FullName);
             NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(System.Windows.Controls.UserControl).FullName);    // blank content for region
             NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(System.Windows.Controls.UserControl).FullName);        // blank content for region
+        }
+        private void ToCharacterCreation()
+        {
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(CharacterCreationModule.Views.Setup).FullName);              // new character setup view
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(System.Windows.Controls.UserControl).FullName);    // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(System.Windows.Controls.UserControl).FullName);        // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("NavigationBarRegion", typeof(Views.CharacterCreationNavigation).FullName);       // char create nav bar
         }
 
 

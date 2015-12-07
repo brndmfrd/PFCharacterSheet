@@ -91,7 +91,11 @@
   <ItemGroup>
     <Compile Include="NavigationBarModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CharacterCreation.cs" />
     <Compile Include="ViewModels\NavigationBarModuleViewModel.cs" />
+    <Compile Include="Views\CharacterCreationNavigation.xaml.cs">
+      <DependentUpon>CharacterCreationNavigation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\NavigationBarModuleView.xaml.cs">
       <DependentUpon>NavigationBarModuleView.xaml</DependentUpon>
     </Compile>
@@ -105,6 +109,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\CharacterCreationNavigation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\NavigationBarModuleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -118,6 +126,10 @@
     <ProjectReference Include="..\ActiveCharacter\ActiveCharacter.csproj">
       <Project>{ea7669d4-1e0c-43f1-b95d-7cb546946ba1}</Project>
       <Name>ActiveCharacter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CharacterCreationModule\CharacterCreationModule.csproj">
+      <Project>{91faeee9-ca20-453d-a8ba-247b5afbbaac}</Project>
+      <Name>CharacterCreationModule</Name>
     </ProjectReference>
     <ProjectReference Include="..\CharacterModule\CharacterModule.csproj">
       <Project>{53cd7a1b-b743-4605-8813-64227d0c7190}</Project>

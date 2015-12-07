@@ -5,11 +5,11 @@ namespace CharacterCreationModule
 {
     public class CharacterCreationModule : IModule
     {
-        private readonly IRegionManager regionManager;      // hold refrence to region manager
+        public static IRegionManager regionManager;      // hold refrence to region manager
 
-        public CharacterCreationModule(IRegionManager regionManager)
+        public CharacterCreationModule(IRegionManager _regionManager)
         {
-            this.regionManager = regionManager;
+            regionManager = _regionManager;
         }
 
         public void Initialize()

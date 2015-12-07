@@ -28,6 +28,7 @@
         <Button Name="GearWealth_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToGear}" Content="Gear" />
 
         <!--Start of the Utility buttons-->
-        <Button Margin="0,40" Name="Options_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToOptions}" Content="Options" />
+        <Button Margin="0,40,0,0" Name="Options_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToOptions}" Content="Options" />
+        <Button Margin="0,0" Name="CharacterCreation_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToCharacterCreation}" Content="Create" />
     </StackPanel>
 </UserControl>

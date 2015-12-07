@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="NavigationBarModule.Views.CharacterCreationNavigation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:NavigationBarModule.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="100" 
+             d:DataContext="{d:DesignInstance ViewModel:CharacterCreation}"
+             >
+    <UserControl.DataContext>
+        <ViewModel:CharacterCreation/>
+    </UserControl.DataContext>
+    
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml"/>
+    </UserControl.Resources>
+
+    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" MinHeight="400" Width="100" Background="Black" FocusManager.IsFocusScope="True">
+        <!--Background="{Binding ButtonColor, Converter={StaticResource ConvertBackground}, UpdateSourceTrigger=PropertyChanged}"-->
+        <Button Name="BasicCharacterInformation_bttn" Foreground="Aqua" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToCharacter}" Content="Character" />
+
+        <Button Name="Spells_bttn" Foreground="Aqua" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToSpells}" Content="Spells" />
+
+        <Button Name="Feats_bttn" Foreground="Aqua" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToFeats}" Content="Feats" />
+
+        <Button Name="Skills_bttn" Foreground="Aqua" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToSkills}" Content="Skills" />
+
+        <Button Name="GearWealth_bttn" Foreground="Aqua" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToGear}" Content="Gear" />
+
+        <!--Start of the Utility buttons-->
+        <Button Margin="0,40" Name="LeaveCharacterCreation_bttn" Foreground="Aqua" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding LeaveCharacterCreation}" Content="Leave" />
+    </StackPanel>
+</UserControl>

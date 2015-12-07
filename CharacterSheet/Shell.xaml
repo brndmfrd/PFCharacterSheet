@@ -28,7 +28,7 @@
         <UserControl Name="AuxContentRegion" prism:RegionManager.RegionName="AuxContentRegion" Margin="664,80,0,0" />
 
         <!-- Navigation Bar Region-->
-        <ItemsControl Name="NavigationBarRegion" prism:RegionManager.RegionName="NavigationBarRegion" Width="100" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <UserControl Name="NavigationBarRegion" prism:RegionManager.RegionName="NavigationBarRegion" Width="100" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
     </Grid>
 
 </Window>

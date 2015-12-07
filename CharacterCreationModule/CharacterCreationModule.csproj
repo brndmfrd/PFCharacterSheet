@@ -128,6 +128,16 @@
   <ItemGroup>
     <Folder Include="ViewModels\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ActiveCharacter\ActiveCharacter.csproj">
+      <Project>{ea7669d4-1e0c-43f1-b95d-7cb546946ba1}</Project>
+      <Name>ActiveCharacter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModuleTools\ModuleTools.csproj">
+      <Project>{6f33588c-d90a-440b-bb32-32289581c938}</Project>
+      <Name>ModuleTools</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

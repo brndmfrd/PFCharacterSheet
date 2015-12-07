@@ -16,6 +16,7 @@ namespace NavigationBarModule
         {
             // Navigation bar view - register with navigation region
             regionManager.RegisterViewWithRegion("NavigationBarRegion", typeof(Views.NavigationBarModuleView));
+            regionManager.RegisterViewWithRegion("NavigationBarRegion", typeof(Views.CharacterCreationNavigation));
 
             // --- Non-specific empty views -- register with associated regions
             // When we just don't want content in a region for certain views
