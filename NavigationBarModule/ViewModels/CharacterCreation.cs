@@ -33,46 +33,52 @@ namespace NavigationBarModule.ViewModels
         {
             get { return new DelegateCommand(ToPrimaryNavigation); }
         }
+        public ICommand NavigateToSetup
+        {
+            get { return new DelegateCommand(ToSetup); }
+        }
 
         /// <summary>
         /// This is the heart of our navigation. We 'navigate' by changing the views in the registered regions. 
         /// </summary>
         private void ToCharacter()
         {
-            //CharacterCreationModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);          // blank content for region
-            //CharacterCreationModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(CharacterCreationModule.Views.CharacterViewPrimary).FullName);
-            //CharacterCreationModule.regionManager.RequestNavigate("AuxContentRegion", typeof(CharacterCreationModule.Views.CharacterViewAux).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(CharacterCreationModule.Views.BasicInfo).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(System.Windows.Controls.UserControl).FullName);    // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(System.Windows.Controls.UserControl).FullName);        // blank content for region
         }
         private void ToGear()
         {
-            //CharacterCreationModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);         // blank content for region
-            //CharacterCreationModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(CharacterCreationModule.Views.GearViewPrimary).FullName);
-            //CharacterCreationModule.regionManager.RequestNavigate("AuxContentRegion", typeof(CharacterCreationModule.Views.GearViewAux).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(CharacterCreationModule.Views.Gear).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(System.Windows.Controls.UserControl).FullName);    // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(System.Windows.Controls.UserControl).FullName);        // blank content for region
         }
         private void ToSpells()
         {
-            //CharacterCreationModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);         // blank content for region
-            //CharacterCreationModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(CharacterCreationModule.View.SpellsViewPrimary).FullName);
-            //CharacterCreationModule.regionManager.RequestNavigate("AuxContentRegion", typeof(CharacterCreationModule.View.SpellsViewAux).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(CharacterCreationModule.Views.Spells).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(System.Windows.Controls.UserControl).FullName);    // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(System.Windows.Controls.UserControl).FullName);        // blank content for region
         }
         private void ToFeats()
         {
-            //CharacterCreationModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);         // blank content for region
-            //CharacterCreationModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(CharacterCreationModule.View.FeatsViewPrimary).FullName);
-            //CharacterCreationModule.regionManager.RequestNavigate("AuxContentRegion", typeof(CharacterCreationModule.View.FeatsViewAux).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(CharacterCreationModule.Views.Feats).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(System.Windows.Controls.UserControl).FullName);    // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(System.Windows.Controls.UserControl).FullName);        // blank content for region
         }
         private void ToSkills()
         {
-            //CharacterCreationModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);         // blank content for region
-            //CharacterCreationModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(CharacterCreationModule.View.SkillsViewPrimary).FullName);
-            //CharacterCreationModule.regionManager.RequestNavigate("AuxContentRegion", typeof(CharacterCreationModule.View.SkillsViewAux).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(CharacterCreationModule.Views.Skills).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(System.Windows.Controls.UserControl).FullName);    // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(System.Windows.Controls.UserControl).FullName);        // blank content for region
+        }
+        private void ToSetup()
+        {
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(CharacterCreationModule.Views.Setup).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(System.Windows.Controls.UserControl).FullName);    // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(System.Windows.Controls.UserControl).FullName);        // blank content for region
         }
         private void ToPrimaryNavigation()
         {
-            //CharacterCreationModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);
-            //CharacterCreationModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(System.Windows.Controls.UserControl).FullName);    // blank content for region
-            //CharacterCreationModule.regionManager.RequestNavigate("AuxContentRegion", typeof(System.Windows.Controls.UserControl).FullName);        // blank content for region
-
             NavigationBarModule.regionManager.RequestNavigate("NavigationBarRegion", typeof(Views.NavigationBarModuleView).FullName);
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(OptionsModule.Views.OptionsView).FullName);
             NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(System.Windows.Controls.UserControl).FullName);    // blank content for region
