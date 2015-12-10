@@ -3,9 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:CharacterCreationModule.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Label Content="SETUP!" Foreground="AliceBlue"></Label>
-    </Grid>
+
+    <UserControl.DataContext>
+        <ViewModel:CharacterCreation/>
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
+    </UserControl.Resources>
+
+    <!--<StackPanel Orientation="Horizontal">
+        <DataGrid Style="{StaticResource InputDataGridStyle}" 
+                  ItemsSource="{Binding BasicInformation}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
+                <DataGridTextColumn Header="Value" Binding="{Binding Value}" Foreground="Teal"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>-->
 </UserControl>

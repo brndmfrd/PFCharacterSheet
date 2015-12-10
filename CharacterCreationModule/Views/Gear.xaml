@@ -3,10 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:CharacterCreationModule.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Label Content="GEAR!" Foreground="AliceBlue"></Label>
 
-    </Grid>
+    <UserControl.DataContext>
+        <ViewModel:CharacterCreation/>
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Horizontal">
+        <DataGrid Style="{StaticResource InputDataGridStyle}" 
+                  ItemsSource="{Binding Items}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
+                <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Value" Binding="{Binding Value}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Slot" Binding="{Binding Slot}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Unique" Binding="{Binding Unique}" Foreground="Teal"/>
+                <DataGridTextColumn Header="DmgMultiplier" Binding="{Binding DmgMultiplier}" Foreground="Teal"/>
+                <DataGridTextColumn Header="DmgAmount" Binding="{Binding DmgAmount}" Foreground="Teal"/>
+                <DataGridTextColumn Header="CrtMultiplier" Binding="{Binding CrtMultiplier}" Foreground="Teal"/>
+                <DataGridTextColumn Header="DmgType" Binding="{Binding DmgType}" Foreground="Teal"/>
+                <DataGridTextColumn Header="WepFeatures" Binding="{Binding WepFeatures}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Equipped" Binding="{Binding Equipped}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Material" Binding="{Binding Material}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Masterwork" Binding="{Binding Masterwork}" Foreground="Teal"/>
+                <DataGridTextColumn Header="ArmorBonus" Binding="{Binding ArmorBonus}" Foreground="Teal"/>
+                <DataGridTextColumn Header="MaxDex" Binding="{Binding MaxDex}" Foreground="Teal"/>
+                <DataGridTextColumn Header="ArmorPenalty" Binding="{Binding ArmorPenalty}" Foreground="Teal"/>
+                <DataGridTextColumn Header="ArcSpellFail" Binding="{Binding ArcSpellFail}" Foreground="Teal"/>
+                <DataGridTextColumn Header="SpeedPenalty" Binding="{Binding SpeedPenalty}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Dependancy" Binding="{Binding Dependancy}" Foreground="Teal"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
 </UserControl>

@@ -3,10 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:CharacterCreationModule.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Label Content="SPELLS!" Foreground="AliceBlue"></Label>
 
-    </Grid>
+    <UserControl.DataContext>
+        <ViewModel:CharacterCreation/>
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Horizontal">
+        <DataGrid Style="{StaticResource InputDataGridStyle}" 
+                  ItemsSource="{Binding Spells}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Foreground="Teal"/>
+                <DataGridTextColumn Header="School" Binding="{Binding School}" Foreground="Teal"/>
+                <DataGridTextColumn Header="CastingTime" Binding="{Binding CastingTime}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Components" Binding="{Binding Components}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Target" Binding="{Binding Target}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Range" Binding="{Binding Range}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Area" Binding="{Binding Area}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Duration" Binding="{Binding Duration}" Foreground="Teal"/>
+                <DataGridTextColumn Header="SavingThrow" Binding="{Binding SavingThrow}" Foreground="Teal"/>
+                <DataGridTextColumn Header="SpellResistance" Binding="{Binding SpellResistance}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Level" Binding="{Binding Level}" Foreground="Teal"/>
+                <DataGridTextColumn Header="CasterLevel" Binding="{Binding CasterLevel}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Charges" Binding="{Binding Charges}" Foreground="Teal"/>
+                <DataGridTextColumn Header="Aura" Binding="{Binding Aura}" Foreground="Teal"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+    
 </UserControl>

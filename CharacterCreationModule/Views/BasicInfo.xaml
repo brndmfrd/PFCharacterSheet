@@ -6,7 +6,6 @@
              xmlns:ViewModel="clr-namespace:CharacterCreationModule.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-        <!--<Label Content="BASIC INFO!" Foreground="AliceBlue"/>-->
 
     <UserControl.DataContext>
         <ViewModel:CharacterCreation/>
@@ -25,4 +24,5 @@
             </DataGrid.Columns>
         </DataGrid>
     </StackPanel>
+    
 </UserControl>
