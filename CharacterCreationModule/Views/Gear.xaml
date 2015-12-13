@@ -25,13 +25,11 @@
                 <DataGridTextColumn Header="Description" Binding="{Binding Description}" Foreground="Teal"/>
                 <DataGridTextColumn Header="Slot" Binding="{Binding Slot}" Foreground="Teal"/>
                 <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Foreground="Teal"/>
-                <DataGridTextColumn Header="Unique" Binding="{Binding Unique}" Foreground="Teal"/>
                 <DataGridTextColumn Header="DmgMultiplier" Binding="{Binding DmgMultiplier}" Foreground="Teal"/>
                 <DataGridTextColumn Header="DmgAmount" Binding="{Binding DmgAmount}" Foreground="Teal"/>
                 <DataGridTextColumn Header="CrtMultiplier" Binding="{Binding CrtMultiplier}" Foreground="Teal"/>
                 <DataGridTextColumn Header="DmgType" Binding="{Binding DmgType}" Foreground="Teal"/>
                 <DataGridTextColumn Header="WepFeatures" Binding="{Binding WepFeatures}" Foreground="Teal"/>
-                <DataGridTextColumn Header="Equipped" Binding="{Binding Equipped}" Foreground="Teal"/>
                 <DataGridTextColumn Header="Material" Binding="{Binding Material}" Foreground="Teal"/>
                 <DataGridTextColumn Header="Masterwork" Binding="{Binding Masterwork}" Foreground="Teal"/>
                 <DataGridTextColumn Header="ArmorBonus" Binding="{Binding ArmorBonus}" Foreground="Teal"/>
@@ -39,7 +37,6 @@
                 <DataGridTextColumn Header="ArmorPenalty" Binding="{Binding ArmorPenalty}" Foreground="Teal"/>
                 <DataGridTextColumn Header="ArcSpellFail" Binding="{Binding ArcSpellFail}" Foreground="Teal"/>
                 <DataGridTextColumn Header="SpeedPenalty" Binding="{Binding SpeedPenalty}" Foreground="Teal"/>
-                <DataGridTextColumn Header="Dependancy" Binding="{Binding Dependancy}" Foreground="Teal"/>
             </DataGrid.Columns>
         </DataGrid>
     </StackPanel>
