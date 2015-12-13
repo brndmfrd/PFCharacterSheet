@@ -31,31 +31,32 @@ namespace ActiveCharacter
         public short _arcSpellFail;     // arcain spell failure chance when 'equipped'
         public string _speedPenalty;    // 'none', 'light', or 'heavy combat movement speed penalty
         public string _dependancy;      // e.g. to use armor spikes the armor must be equipped
+        public string _itemType;        // generic item, weapon, armor, wonderous
 
-        public string Name { get { return _name; } set { _name = value; RaisePropertyChanged("Key"); } }
-        public double Weight { get { return _weight; } set { _weight = value; RaisePropertyChanged("Key"); } }
-        public double Value { get { return _value; } set { _value = value; RaisePropertyChanged("Key"); } }
-        public string Description { get { return _description; } set { _description = value; RaisePropertyChanged("Key"); } }
-        public string Slot { get { return _slot; } set { _slot = value; RaisePropertyChanged("Key"); } }
-        public List<Spell> Spells  { get { return _spells; } set { _spells = value; RaisePropertyChanged("Key"); } }
-        public uint Amount { get { return _amount; } set { _amount = value; RaisePropertyChanged("Key"); } }
-        public bool Unique { get { return _unique; } set { _unique = value; RaisePropertyChanged("Key"); } }
-        public ushort DmgMultiplier { get { return _dmgMultiplier; } set { _dmgMultiplier = value; RaisePropertyChanged("Key"); } }
-        public ushort DmgAmount { get { return _dmgAmount; } set { _dmgAmount = value; RaisePropertyChanged("Key"); } }
-        public ushort CrtMultiplier { get { return _crtMultiplier; } set { _crtMultiplier = value; RaisePropertyChanged("Key"); } }
-        public uint Range { get { return _range; } set { _range = value; RaisePropertyChanged("Key"); } }
-        public char DmgType { get { return _dmgType; } set { _dmgType = value; RaisePropertyChanged("Key"); } }
-        public string WepFeatures { get { return _wepFeatures; } set { _wepFeatures = value; RaisePropertyChanged("Key"); } }
-        public bool Equipped { get { return _equipped; } set { _equipped = value; RaisePropertyChanged("Key"); } }
-        public string Material { get { return _material; } set { _material = value; RaisePropertyChanged("Key"); } }
-        public bool Masterwork { get { return _masterwork; } set { _masterwork = value; RaisePropertyChanged("Key"); } }
-        public ushort ArmorBonus { get { return _armorBonus; } set { _armorBonus = value; RaisePropertyChanged("Key"); } }
-        public ushort MaxDex{ get { return _maxDex; } set { _maxDex = value; RaisePropertyChanged("Key"); } }
-        public short ArmorPenalty{ get { return _armorPenalty; } set { _armorPenalty = value; RaisePropertyChanged("Key"); } }
-        public short ArcSpellFail{ get { return _arcSpellFail; } set { _arcSpellFail = value; RaisePropertyChanged("Key"); } }
-        public string SpeedPenalty{ get { return _speedPenalty; } set { _speedPenalty = value; RaisePropertyChanged("Key"); } }
-        public string Dependancy{ get { return _dependancy; } set { _dependancy = value; RaisePropertyChanged("Key"); } }
-
+        public string Name { get { return _name; } set { _name = value; RaisePropertyChanged("Name"); } }
+        public double Weight { get { return _weight; } set { _weight = value; RaisePropertyChanged("Weight"); } }
+        public double Value { get { return _value; } set { _value = value; RaisePropertyChanged("Value"); } }
+        public string Description { get { return _description; } set { _description = value; RaisePropertyChanged("Description"); } }
+        public string Slot { get { return _slot; } set { _slot = value; RaisePropertyChanged("Slot"); } }
+        public List<Spell> Spells { get { return _spells; } set { _spells = value; RaisePropertyChanged("Spells"); } }
+        public uint Amount { get { return _amount; } set { _amount = value; RaisePropertyChanged("Amount"); } }
+        public bool Unique { get { return _unique; } set { _unique = value; RaisePropertyChanged("Unique"); } }
+        public ushort DmgMultiplier { get { return _dmgMultiplier; } set { _dmgMultiplier = value; RaisePropertyChanged("DmgMultiplier"); } }
+        public ushort DmgAmount { get { return _dmgAmount; } set { _dmgAmount = value; RaisePropertyChanged("DmgAmount"); } }
+        public ushort CrtMultiplier { get { return _crtMultiplier; } set { _crtMultiplier = value; RaisePropertyChanged("CrtMultiplier"); } }
+        public uint Range { get { return _range; } set { _range = value; RaisePropertyChanged("Range"); } }
+        public char DmgType { get { return _dmgType; } set { _dmgType = value; RaisePropertyChanged("DmgType"); } }
+        public string WepFeatures { get { return _wepFeatures; } set { _wepFeatures = value; RaisePropertyChanged("WepFeatures"); } }
+        public bool Equipped { get { return _equipped; } set { _equipped = value; RaisePropertyChanged("Equipped"); } }
+        public string Material { get { return _material; } set { _material = value; RaisePropertyChanged("Material"); } }
+        public bool Masterwork { get { return _masterwork; } set { _masterwork = value; RaisePropertyChanged("Masterwork"); } }
+        public ushort ArmorBonus { get { return _armorBonus; } set { _armorBonus = value; RaisePropertyChanged("ArmorBonus"); } }
+        public ushort MaxDex { get { return _maxDex; } set { _maxDex = value; RaisePropertyChanged("MaxDex"); } }
+        public short ArmorPenalty { get { return _armorPenalty; } set { _armorPenalty = value; RaisePropertyChanged("ArmorPenalty"); } }
+        public short ArcSpellFail { get { return _arcSpellFail; } set { _arcSpellFail = value; RaisePropertyChanged("ArcSpellFail"); } }
+        public string SpeedPenalty { get { return _speedPenalty; } set { _speedPenalty = value; RaisePropertyChanged("SpeedPenalty"); } }
+        public string Dependancy { get { return _dependancy; } set { _dependancy = value; RaisePropertyChanged("Dependancy"); } }
+        public string ItemType { get { return _itemType; } set { _itemType = value; RaisePropertyChanged("ItemType"); } }
 
     }
 }

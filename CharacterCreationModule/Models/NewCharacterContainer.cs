@@ -41,6 +41,9 @@ namespace CharacterCreationModule.Models
         /// The stuff you carry or have equipped.
         /// </summary>
         public static ObservableCollection<Item> Gear = new ObservableCollection<Item>() { };
+        public static ObservableCollection<Item> Weapons = new ObservableCollection<Item>() { };
+        public static ObservableCollection<Item> Armor = new ObservableCollection<Item>() { };
+        public static ObservableCollection<Item> Wonderous = new ObservableCollection<Item>() { };
         #endregion Gear
 
         #region Skills

@@ -7,21 +7,27 @@ using ActiveCharacter;
 using ModuleTools;
 using Microsoft.Practices.Prism.Regions;
 using System.Windows.Input;
+using CharacterCreationModule.Models;
 
 namespace CharacterCreationModule.ViewModels
 {
     public class CharacterCreation : ObservableObject, INavigationAware
     {
-        public IEnumerable<BasicInformation> BasicInformation { get { return Models.NewCharacterContainer.Information; } }
-        public IEnumerable<Abilities> Abilities { get { return Models.NewCharacterContainer.AbilityScores; } }
-        public IEnumerable<string> Languages { get { return Models.NewCharacterContainer.Languages; } }
-        public IEnumerable<CharacterClass> CharacterClasses { get { return Models.NewCharacterContainer.Classes; } }
-        public IEnumerable<Item> Items { get { return Models.NewCharacterContainer.Gear; } }
-        public IEnumerable<Skill> Skills { get { return Models.NewCharacterContainer.Skills; } }
-        public IEnumerable<Feat> Feats { get { return Models.NewCharacterContainer.Feats; } }
-        public IEnumerable<Spell> Spells { get { return Models.NewCharacterContainer.Spells; } }
+        public IEnumerable<BasicInformation> BasicInformation { get { return NewCharacterContainer.Information; }  }
+        public IEnumerable<Abilities> Abilities { get { return NewCharacterContainer.AbilityScores; }  }
+        public IEnumerable<string> Languages { get { return NewCharacterContainer.Languages; }  }
+        public IEnumerable<CharacterClass> CharacterClasses { get { return NewCharacterContainer.Classes; }  }
+        public IEnumerable<Item> Gear { get { return NewCharacterContainer.Gear; } }
+        public IEnumerable<Item> Weapons { get { return NewCharacterContainer.Weapons; } }
+        public IEnumerable<Item> Armor { get { return NewCharacterContainer.Armor; } }
+        public IEnumerable<Item> Wonderous { get { return NewCharacterContainer.Wonderous; } }
+        public IEnumerable<Skill> Skills { get { return NewCharacterContainer.Skills; } }
+        public IEnumerable<Feat> Feats { get { return NewCharacterContainer.Feats; }  }
+        public IEnumerable<Spell> Spells { get { return NewCharacterContainer.Spells; }  }
 
-        // ---- save character ----
+
+        // todo: put this save character block in a class of its own
+        // ---- save character ---- save character ---- save character ---- save character ----
         private string saveFileName = "Default Name";
         private string saveFilePath = "Default Path";
         private string saveConfirmation;
@@ -77,7 +83,7 @@ namespace CharacterCreationModule.ViewModels
                 }
             }
         }
-        // ----------------------------------
+        //  save character ---- save character ---- save character ---- save character ----
 
 
         #region Navigation
@@ -95,6 +101,7 @@ namespace CharacterCreationModule.ViewModels
                 Models.NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Size", Value = "M" });
                 Models.NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Alignment", Value = "NG" });
                 Models.NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Age", Value = "30" });
+                Models.NewCharacterContainer.Gear.Add(new Item() { Name = "Cool Weapon", ItemType = "Weapon" });
             }
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)

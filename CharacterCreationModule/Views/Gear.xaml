@@ -16,28 +16,93 @@
     </UserControl.Resources>
 
     <StackPanel Orientation="Horizontal">
-        <DataGrid Style="{StaticResource InputDataGridStyle}" 
-                  ItemsSource="{Binding Items}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
-                <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Foreground="Teal"/>
-                <DataGridTextColumn Header="Value" Binding="{Binding Value}" Foreground="Teal"/>
-                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Foreground="Teal"/>
-                <DataGridTextColumn Header="Slot" Binding="{Binding Slot}" Foreground="Teal"/>
-                <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Foreground="Teal"/>
-                <DataGridTextColumn Header="DmgMultiplier" Binding="{Binding DmgMultiplier}" Foreground="Teal"/>
-                <DataGridTextColumn Header="DmgAmount" Binding="{Binding DmgAmount}" Foreground="Teal"/>
-                <DataGridTextColumn Header="CrtMultiplier" Binding="{Binding CrtMultiplier}" Foreground="Teal"/>
-                <DataGridTextColumn Header="DmgType" Binding="{Binding DmgType}" Foreground="Teal"/>
-                <DataGridTextColumn Header="WepFeatures" Binding="{Binding WepFeatures}" Foreground="Teal"/>
-                <DataGridTextColumn Header="Material" Binding="{Binding Material}" Foreground="Teal"/>
-                <DataGridTextColumn Header="Masterwork" Binding="{Binding Masterwork}" Foreground="Teal"/>
-                <DataGridTextColumn Header="ArmorBonus" Binding="{Binding ArmorBonus}" Foreground="Teal"/>
-                <DataGridTextColumn Header="MaxDex" Binding="{Binding MaxDex}" Foreground="Teal"/>
-                <DataGridTextColumn Header="ArmorPenalty" Binding="{Binding ArmorPenalty}" Foreground="Teal"/>
-                <DataGridTextColumn Header="ArcSpellFail" Binding="{Binding ArcSpellFail}" Foreground="Teal"/>
-                <DataGridTextColumn Header="SpeedPenalty" Binding="{Binding SpeedPenalty}" Foreground="Teal"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <StackPanel Orientation="Vertical">
+            <Label Content="INVENTORY" Foreground="AliceBlue"/>
+            <DataGrid Style="{StaticResource InputDataGridStyle}" IsReadOnly="True">
+                <DataGrid.Resources>
+                    <CollectionViewSource x:Key="GEAR" Source="{Binding Gear}"/>
+                    <CollectionViewSource x:Key="WEAPONS" Source="{Binding Weapons}"/>
+                    <CollectionViewSource x:Key="ARMOR" Source="{Binding Armor}"/>
+                    <CollectionViewSource x:Key="WONDEROUS" Source="{Binding Wonderous}"/>
+                </DataGrid.Resources>
+                
+                <DataGrid.ItemsSource>
+                    <CompositeCollection>
+                        <CollectionContainer Collection="{Binding Source={StaticResource GEAR}}"/>
+                        <CollectionContainer Collection="{Binding Source={StaticResource WEAPONS}}"/>
+                        <CollectionContainer Collection="{Binding Source={StaticResource ARMOR}}"/>
+                        <CollectionContainer Collection="{Binding Source={StaticResource WONDEROUS}}"/>
+                    </CompositeCollection>
+                </DataGrid.ItemsSource>
+                
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray" />
+                    <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Foreground="Gray" />
+                    <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Foreground="Gray" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical">
+            <Label Content="GEAR" Foreground="AliceBlue"/>
+            <DataGrid Style="{StaticResource InputDataGridStyle}" 
+                    ItemsSource="{Binding Gear}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Amount" Binding="{Binding Slot}" Foreground="Gray"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            
+            <Label Content="WEAPONS" Foreground="AliceBlue"/>
+            <DataGrid Style="{StaticResource InputDataGridStyle}" 
+                    ItemsSource="{Binding Weapons}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Slot" Binding="{Binding Slot}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="DmgMultiplier" Binding="{Binding DmgMultiplier}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="DmgAmount" Binding="{Binding DmgAmount}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="CrtMultiplier" Binding="{Binding CrtMultiplier}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="DmgType" Binding="{Binding DmgType}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="WepFeatures" Binding="{Binding WepFeatures}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Material" Binding="{Binding Material}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Masterwork" Binding="{Binding Masterwork}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="ItemType" Binding="{Binding ItemType}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+            <Label Content="ARMOR" Foreground="AliceBlue" />
+            <DataGrid Style="{StaticResource InputDataGridStyle}" 
+                    ItemsSource="{Binding Armor}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Slot" Binding="{Binding Slot}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Material" Binding="{Binding Material}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Masterwork" Binding="{Binding Masterwork}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="ArmorBonus" Binding="{Binding ArmorBonus}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="MaxDex" Binding="{Binding MaxDex}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="ArmorPenalty" Binding="{Binding ArmorPenalty}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="ArcSpellFail" Binding="{Binding ArcSpellFail}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="SpeedPenalty" Binding="{Binding SpeedPenalty}" Foreground="Gray"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Label Content="WONDEROUS" Foreground="AliceBlue" />
+            <DataGrid Style="{StaticResource InputDataGridStyle}" 
+                    ItemsSource="{Binding Wonderous}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Slot" Binding="{Binding Slot}" Foreground="Gray"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <!--The verticle one-->                     
+            
     </StackPanel>
+    <!--The horozontal one-->
 </UserControl>
