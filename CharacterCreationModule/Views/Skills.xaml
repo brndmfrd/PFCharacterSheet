@@ -16,16 +16,20 @@
     </UserControl.Resources>
 
     <StackPanel Orientation="Horizontal">
-        <DataGrid Style="{StaticResource InputDataGridStyle}" 
-                  ItemsSource="{Binding Skills}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
-                <DataGridTextColumn Header="Ranks" Binding="{Binding Ranks}" Foreground="Teal"/>
-                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Foreground="Teal"/>
-                <DataGridTextColumn Header="Untrained" Binding="{Binding Untrained}" Foreground="Teal"/>
-                <DataGridTextColumn Header="Ability" Binding="{Binding Ability}" Foreground="Teal"/>
-                <DataGridTextColumn Header="ArmorCheckPenalty" Binding="{Binding ArmorCheckPenalty}" Foreground="Teal"/>
-            </DataGrid.Columns>
-        </DataGrid>
+
+        <StackPanel Orientation="Vertical">
+            <Label Content="SKILLS" Foreground="AliceBlue"/>
+            <DataGrid Style="{StaticResource InputDataGridStyle}" ItemsSource="{Binding Skills}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Ranks" Binding="{Binding Ranks}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Untrained" Binding="{Binding Untrained}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Ability" Binding="{Binding Ability}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="ArmorCheckPenalty" Binding="{Binding ArmorCheckPenalty}" Foreground="Gray"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        
     </StackPanel>
 </UserControl>

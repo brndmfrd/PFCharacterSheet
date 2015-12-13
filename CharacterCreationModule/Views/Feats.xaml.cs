@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ActiveCharacter;
+using CharacterCreationModule.Models;
 
 namespace CharacterCreationModule.Views
 {
@@ -23,6 +25,21 @@ namespace CharacterCreationModule.Views
         public Feats()
         {
             InitializeComponent();
+        }
+
+        private void FeatsGrid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.OemPlus)
+            {
+                NewCharacterContainer.Feats.Add(new Feat { Name = "", Description = "" });
+                e.Handled = true;
+            }
+
+            //if (e.Key == Key.OemMinus)
+            //{                
+            //    // if at least one element--
+            //    NewCharacterContainer.Feats.RemoveAt(NewCharacterContainer.Feats.Count - 1);
+            //}
         }
     }
 }

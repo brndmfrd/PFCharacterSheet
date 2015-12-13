@@ -14,15 +14,19 @@
     <UserControl.Resources>
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
-    
+
     <StackPanel Orientation="Horizontal">
-        <DataGrid Style="{StaticResource InputDataGridStyle}" 
-                  ItemsSource="{Binding BasicInformation}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
-                <DataGridTextColumn Header="Value" Binding="{Binding Value}" Foreground="Teal"/>
-            </DataGrid.Columns>
-        </DataGrid>
+
+        <StackPanel Orientation="Vertical">
+            <Label Content="CHARACTER INFORMATION" Foreground="AliceBlue" />
+            <DataGrid Style="{StaticResource InputDataGridStyle}" ItemsSource="{Binding BasicInformation}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Value" Binding="{Binding Value}" Foreground="Gray"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        
     </StackPanel>
     
 </UserControl>

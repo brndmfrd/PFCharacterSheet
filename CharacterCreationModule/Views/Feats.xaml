@@ -16,13 +16,31 @@
     </UserControl.Resources>
 
     <StackPanel Orientation="Horizontal">
-        <DataGrid Style="{StaticResource InputDataGridStyle}" 
-                  ItemsSource="{Binding Feats}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
-                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Foreground="Teal"/>
-            </DataGrid.Columns>
-        </DataGrid>
+
+        <StackPanel Orientation="Vertical">
+            <Label Content="FEATS" Foreground="AliceBlue" />
+            <DataGrid x:Name="FeatsGrid" Style="{StaticResource InputDataGridStyle}" ItemsSource="{Binding Feats}" KeyDown="FeatsGrid_KeyDown">
+                <DataGrid.Columns>                    
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Foreground="Gray" MinWidth="200">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="TextWrapping" Value="Wrap" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                        <DataGridTextColumn.EditingElementStyle>
+                            <Style TargetType="TextBox">
+                                <Setter Property="TextWrapping" Value="Wrap" />
+                                <Setter Property="AcceptsReturn" Value="True" />
+                            </Style>
+                        </DataGridTextColumn.EditingElementStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        
+        
+        
     </StackPanel>
     
 </UserControl>

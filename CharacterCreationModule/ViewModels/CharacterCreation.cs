@@ -94,14 +94,26 @@ namespace CharacterCreationModule.ViewModels
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
             // If we have no character data load these defaults (for testing purposes only, remove later)
-            if (Models.NewCharacterContainer.Information.Count <= 0)
+            if (NewCharacterContainer.Information.Count <= 0)
             {
-                Models.NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Character Name", Value = "Duraxis" });
-                Models.NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Player Name", Value = "Bryan" });
-                Models.NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Size", Value = "M" });
-                Models.NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Alignment", Value = "NG" });
-                Models.NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Age", Value = "30" });
-                Models.NewCharacterContainer.Gear.Add(new Item() { Name = "Cool Weapon", ItemType = "Weapon" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Character Name", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Player Name", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Size", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Alignment", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Age", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Diety", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Height", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Weight", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Homeland", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Experience Points", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Hit Points", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Strength", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Dextarity", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Constitution", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Intelligence", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Wisdom", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Charisma", Value = "" });
+
             }
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)

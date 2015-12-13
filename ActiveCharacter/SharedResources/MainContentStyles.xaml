@@ -83,7 +83,7 @@
         </Style.Resources>
 
         <Setter Property="SelectionUnit" Value="Cell"/>
-        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="AutoGenerateColumns" Value="False"/>
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="RowBackground" Value="Black"/>
