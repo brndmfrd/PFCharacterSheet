@@ -16,14 +16,14 @@
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
 
-    <StackPanel Orientation="Vertical">
+    <ListBox x:Name="FeatsAuxListBox" 
+             Style="{StaticResource ResourceKey=AuxContentListBox}" 
+             ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
+             DataContext="{Binding MySelectedItem}">
 
-        <!--Selected Item Description-->       
-        <StackPanel DataContext="{Binding MySelectedItem}">
-            <TextBlock Foreground="#01C5BB" Text="{Binding Name}" FontSize="16" FontWeight="Bold"/>
-            <TextBlock Foreground="Teal" Text="{Binding Description}" FontSize="14"/>
-        </StackPanel>
-        
-    </StackPanel>
+        <!--Selected Item Description-->
+        <TextBlock Foreground="#01C5BB" Text="{Binding Name}" FontSize="16" FontWeight="Bold" />
+        <TextBlock Foreground="Teal" Text="{Binding Description}" FontSize="14"/>
+    </ListBox>
 
 </UserControl>

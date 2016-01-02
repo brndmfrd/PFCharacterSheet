@@ -15,7 +15,9 @@
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
 
-    <ListBox x:Name="BasicInformationListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}">
+    <ListBox x:Name="BasicInformationListBox" 
+             Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+             ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}">
         <ListBox.Resources>
             <CollectionViewSource x:Key="AS" Source="{Binding AbilityScores}"/>
         </ListBox.Resources>

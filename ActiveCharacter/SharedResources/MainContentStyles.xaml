@@ -26,7 +26,7 @@
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
         <Setter Property="FontSize" Value="18" />
         <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
-        
+
         <!--A buffer of whitespace on the top and bottom of our Item Panels-->
         <Setter Property="ItemsPanel">
             <Setter.Value>
@@ -34,9 +34,9 @@
                     <StackPanel Margin="0,100,0,200"/>
                 </ItemsPanelTemplate>
             </Setter.Value>
-        </Setter>      
+        </Setter>
     </Style>
-    
+
 
     <Style x:Key="PrimaryContentListBoxItem" TargetType="{x:Type ListBoxItem}">
         <!--This little piggy removes the system selection highlighting-->
@@ -63,7 +63,18 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
+
+
+    <Style x:Key="AuxContentListBox" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="Teal" />
+        <!--<Setter Property="BorderBrush" Value="{x:Null}" />-->
+        <Setter Property="BorderBrush" Value="CornflowerBlue" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+    </Style>
 
     <!--DataGrid used for user input when creating a new character-->
     <Style x:Key="InputDataGridStyle" TargetType="{x:Type DataGrid}">
