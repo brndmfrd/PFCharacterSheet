@@ -16,10 +16,10 @@
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
     
-    <!--Primary content panel (left)-->
     <StackPanel Orientation="Horizontal">
 
-        <ListBox x:Name="AbilityScoresListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
+        <ListBox x:Name="AbilityScoresListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+                 ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
             <ListBox.Resources>                  
                 <CollectionViewSource x:Key="BI" Source="{Binding BasicInformation}"/>
             </ListBox.Resources>

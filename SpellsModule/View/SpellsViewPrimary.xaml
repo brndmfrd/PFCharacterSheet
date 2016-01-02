@@ -34,9 +34,10 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="250"/>
-                            </Grid.ColumnDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="250"/>
+                        </Grid.ColumnDefinitions>
                             <TextBlock x:Name="SpellName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         </Grid>
                     </DataTemplate>

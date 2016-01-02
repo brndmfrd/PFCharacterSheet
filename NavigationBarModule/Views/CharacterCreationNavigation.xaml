@@ -31,6 +31,6 @@
         <Button Name="Setup_bttn" Foreground="Aqua" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NavigateToSetup}" Content="Setup" />
 
         <!--Start of the Utility buttons-->
-        <Button Margin="0,40" Name="LeaveCharacterCreation_bttn" Foreground="Aqua" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding LeaveCharacterCreation}" Content="Leave" />
+        <Button Margin="0,40" Name="LeaveCharacterCreation_bttn" Foreground="Aqua" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding LeaveCharacterCreation}" Content="Return" />
     </StackPanel>
 </UserControl>
