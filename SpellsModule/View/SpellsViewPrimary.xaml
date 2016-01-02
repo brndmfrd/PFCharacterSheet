@@ -20,7 +20,9 @@
 
         <!-- List of Spells -->
 
-        <ListBox x:Name="SpellsListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" SelectedItem="{Binding Path=MySelectedItem}">
+        <ListBox x:Name="SpellsListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+                 ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
+                 SelectedItem="{Binding Path=MySelectedItem}">
                 <ListBox.Resources>
                     <CollectionViewSource x:Key="SPELLS" Source="{Binding Spells}"/>
                 </ListBox.Resources>

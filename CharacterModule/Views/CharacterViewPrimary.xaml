@@ -33,7 +33,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <Grid.ColumnDefinitions>                                
+                        <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="250"/>
                             <ColumnDefinition Width="250"/>
                         </Grid.ColumnDefinitions>
