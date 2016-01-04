@@ -22,7 +22,7 @@
             <DataGrid x:Name="FeatsGrid" Style="{StaticResource InputDataGridStyle}" ItemsSource="{Binding Feats}" KeyDown="FeatsGrid_KeyDown">
                 <DataGrid.Columns>                    
                     <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
-                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Foreground="Gray" MinWidth="200">
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Foreground="Gray" MinWidth="500">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
                                 <Setter Property="TextWrapping" Value="Wrap" />

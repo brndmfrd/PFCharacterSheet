@@ -68,7 +68,6 @@
     <Style x:Key="AuxContentListBox" TargetType="{x:Type ListBox}">
         <Setter Property="Background" Value="{x:Null}" />
         <Setter Property="Foreground" Value="Teal" />
-        <!--<Setter Property="BorderBrush" Value="{x:Null}" />-->
         <Setter Property="BorderBrush" Value="CornflowerBlue" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
@@ -78,8 +77,7 @@
 
     <!--DataGrid used for user input when creating a new character-->
     <Style x:Key="InputDataGridStyle" TargetType="{x:Type DataGrid}">
-        <Style.Resources>
-            
+        <Style.Resources>            
             <!--Selected unit highlight color while row is active-->
             <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Red" Opacity="0.4" />
             
@@ -91,7 +89,7 @@
 
             <Style TargetType="{x:Type DataGridColumnHeader}">
                 <Setter Property="Background" Value="Transparent" />
-                <Setter Property="Margin" Value="5,0,5,0" />
+                <Setter Property="Margin" Value="5,0,5,0" />                
             </Style>
         </Style.Resources>
 

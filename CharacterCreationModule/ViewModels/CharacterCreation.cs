@@ -14,8 +14,9 @@ namespace CharacterCreationModule.ViewModels
     public class CharacterCreation : ObservableObject, INavigationAware
     {
         public IEnumerable<BasicInformation> BasicInformation { get { return NewCharacterContainer.Information; }  }
-        public IEnumerable<Abilities> Abilities { get { return NewCharacterContainer.AbilityScores; }  }
-        public IEnumerable<string> Languages { get { return NewCharacterContainer.Languages; }  }
+        public IEnumerable<Abilities> Abilities { get { return NewCharacterContainer.AbilityScores; } }
+        public IEnumerable<Language> Languages { get { return NewCharacterContainer.Languages; } }
+        public IEnumerable<Race> Race { get { return NewCharacterContainer.Race; } }
         public IEnumerable<CharacterClass> CharacterClasses { get { return NewCharacterContainer.Classes; }  }
         public IEnumerable<Item> Gear { get { return NewCharacterContainer.Gear; } }
         public IEnumerable<Item> Weapons { get { return NewCharacterContainer.Weapons; } }
@@ -96,24 +97,32 @@ namespace CharacterCreationModule.ViewModels
             // If we have no character data load these defaults (for testing purposes only, remove later)
             if (NewCharacterContainer.Information.Count <= 0)
             {
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Character Name", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Player Name", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Size", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Alignment", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Age", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Diety", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Height", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Weight", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Homeland", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Experience Points", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Hit Points", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Strength", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Dextarity", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Constitution", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Intelligence", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Wisdom", Value = "" });
-                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Charisma", Value = "" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Character Name", Value = "Bryan" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Player Name", Value = "Duraxis" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Size", Value = "M" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Alignment", Value = "NN" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Age", Value = "31" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Diety", Value = "Pelor" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Height", Value = "6'4''" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Weight", Value = "260 lbs" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Homeland", Value = "Muskegon" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Experience Points", Value = "0 xp" });
+                NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Hit Points", Value = "23" });
 
+
+                NewCharacterContainer.AbilityScores.Add(new Abilities() { Name = "Strength", Value = 10 });
+                NewCharacterContainer.AbilityScores.Add(new Abilities() { Name = "Dextarity", Value = 10 });
+                NewCharacterContainer.AbilityScores.Add(new Abilities() { Name = "Strength", Value = 10 });
+                NewCharacterContainer.AbilityScores.Add(new Abilities() { Name = "Dextarity", Value = 10 });
+                NewCharacterContainer.AbilityScores.Add(new Abilities() { Name = "Strength", Value = 10 });
+                NewCharacterContainer.AbilityScores.Add(new Abilities() { Name = "Dextarity", Value = 10 });
+
+
+                NewCharacterContainer.Classes.Add(new CharacterClass() { Name = "" });
+
+                NewCharacterContainer.Race.Add(new Race() { Name = "" });
+
+                NewCharacterContainer.Languages.Add(new Language() { Name = "Common" });
             }
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)

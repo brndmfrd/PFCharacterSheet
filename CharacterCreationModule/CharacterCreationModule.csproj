@@ -76,6 +76,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterCreationModule.cs" />
+    <Compile Include="Enums\CharacterClasses.cs" />
+    <Compile Include="Enums\Races.cs" />
     <Compile Include="Models\NewCharacterContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CharacterCreation.cs" />

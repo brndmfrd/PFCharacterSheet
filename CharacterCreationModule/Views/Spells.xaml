@@ -14,14 +14,14 @@
     <UserControl.Resources>
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
-
+   
     <StackPanel Orientation="Horizontal">
 
         <StackPanel Orientation="Vertical">
             <Label Content="SPELLS" Foreground="AliceBlue"/>
-            <DataGrid Style="{StaticResource InputDataGridStyle}" ItemsSource="{Binding Spells}">
+            <DataGrid Style="{StaticResource InputDataGridStyle}" ItemsSource="{Binding Spells}" GridLinesVisibility="Vertical" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray" />
                     <DataGridTextColumn Header="Description" Binding="{Binding Description}" Foreground="Gray"/>
                     <DataGridTextColumn Header="School" Binding="{Binding School}" Foreground="Gray"/>
                     <DataGridTextColumn Header="CastingTime" Binding="{Binding CastingTime}" Foreground="Gray"/>

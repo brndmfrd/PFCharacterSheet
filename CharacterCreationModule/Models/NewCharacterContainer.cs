@@ -26,8 +26,15 @@ namespace CharacterCreationModule.Models
         /// <summary>
         /// Player chosen languages the character can speak fluently.
         /// </summary>
-        public static ObservableCollection<string> Languages = new ObservableCollection<string>() { };
+        public static ObservableCollection<Language> Languages = new ObservableCollection<Language>() { };
         #endregion Languages
+
+        #region Race
+        /// <summary>
+        /// Player chosen languages the character can speak fluently.
+        /// </summary>
+        public static ObservableCollection<Race> Race = new ObservableCollection<Race>() { };
+        #endregion Race
 
         #region Classes
         /// <summary>
