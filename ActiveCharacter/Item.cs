@@ -11,7 +11,7 @@ namespace ActiveCharacter
         public double _weight;          // weight per single instance of the item in kg
         public double _value;           // market value in gold; lesser denominations as decimal values
         public string _description;     // short description of refrence info about the item
-        public string _slot;            // item slot used when the item is active/'equipped' (head, left hand, feet). 
+        public GearSlots _slot;            // item slot used when the item is active/'equipped' (head, left hand, feet). 
         public List<Spell> _spells      // spell, magical ability, aura, CL, number of charges 
             = new List<Spell>();
         public uint _amount;            // number of copies that are 'stacked' with this item
@@ -37,7 +37,7 @@ namespace ActiveCharacter
         public double Weight { get { return _weight; } set { _weight = value; RaisePropertyChanged("Weight"); } }
         public double Value { get { return _value; } set { _value = value; RaisePropertyChanged("Value"); } }
         public string Description { get { return _description; } set { _description = value; RaisePropertyChanged("Description"); } }
-        public string Slot { get { return _slot; } set { _slot = value; RaisePropertyChanged("Slot"); } }
+        public GearSlots Slot { get { return _slot; } set { _slot = value; RaisePropertyChanged("Slot"); } }
         public List<Spell> Spells { get { return _spells; } set { _spells = value; RaisePropertyChanged("Spells"); } }
         public uint Amount { get { return _amount; } set { _amount = value; RaisePropertyChanged("Amount"); } }
         public bool Unique { get { return _unique; } set { _unique = value; RaisePropertyChanged("Unique"); } }

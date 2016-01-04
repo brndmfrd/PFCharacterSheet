@@ -50,7 +50,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
                     <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Foreground="Gray"/>
-                    <DataGridTextColumn Header="Amount" Binding="{Binding Slot}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Foreground="Gray"/>
                 </DataGrid.Columns>
             </DataGrid>
             
@@ -61,14 +61,11 @@
                     <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
                     <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Foreground="Gray"/>
                     <DataGridTextColumn Header="Slot" Binding="{Binding Slot}" Foreground="Gray"/>
-                    <DataGridTextColumn Header="DmgMultiplier" Binding="{Binding DmgMultiplier}" Foreground="Gray"/>
-                    <DataGridTextColumn Header="DmgAmount" Binding="{Binding DmgAmount}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Dmg Roll" Binding="{Binding DmgMultiplier}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Dmg Die" Binding="{Binding DmgAmount}" Foreground="Gray"/>
                     <DataGridTextColumn Header="CrtMultiplier" Binding="{Binding CrtMultiplier}" Foreground="Gray"/>
                     <DataGridTextColumn Header="DmgType" Binding="{Binding DmgType}" Foreground="Gray"/>
-                    <DataGridTextColumn Header="WepFeatures" Binding="{Binding WepFeatures}" Foreground="Gray"/>
-                    <DataGridTextColumn Header="Material" Binding="{Binding Material}" Foreground="Gray"/>
                     <DataGridTextColumn Header="Masterwork" Binding="{Binding Masterwork}" Foreground="Gray"/>
-                    <DataGridTextColumn Header="ItemType" Binding="{Binding ItemType}" />
                 </DataGrid.Columns>
             </DataGrid>
 

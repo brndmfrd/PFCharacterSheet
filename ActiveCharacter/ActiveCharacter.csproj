@@ -65,6 +65,7 @@
     <Compile Include="BasicInformation.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CharacterClass.cs" />
+    <Compile Include="Enums\GearSlots.cs" />
     <Compile Include="Feat.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Language.cs" />

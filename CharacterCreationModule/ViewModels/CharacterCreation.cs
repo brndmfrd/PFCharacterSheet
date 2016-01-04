@@ -97,6 +97,7 @@ namespace CharacterCreationModule.ViewModels
             // If we have no character data load these defaults (for testing purposes only, remove later)
             if (NewCharacterContainer.Information.Count <= 0)
             {
+                //Character
                 NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Character Name", Value = "Bryan" });
                 NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Player Name", Value = "Duraxis" });
                 NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Size", Value = "M" });
@@ -109,20 +110,184 @@ namespace CharacterCreationModule.ViewModels
                 NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Experience Points", Value = "0 xp" });
                 NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Hit Points", Value = "23" });
 
-
                 NewCharacterContainer.AbilityScores.Add(new Abilities() { Name = "Strength", Value = 10 });
                 NewCharacterContainer.AbilityScores.Add(new Abilities() { Name = "Dextarity", Value = 10 });
                 NewCharacterContainer.AbilityScores.Add(new Abilities() { Name = "Strength", Value = 10 });
                 NewCharacterContainer.AbilityScores.Add(new Abilities() { Name = "Dextarity", Value = 10 });
                 NewCharacterContainer.AbilityScores.Add(new Abilities() { Name = "Strength", Value = 10 });
                 NewCharacterContainer.AbilityScores.Add(new Abilities() { Name = "Dextarity", Value = 10 });
-
 
                 NewCharacterContainer.Classes.Add(new CharacterClass() { Name = "" });
-
                 NewCharacterContainer.Race.Add(new Race() { Name = "" });
-
                 NewCharacterContainer.Languages.Add(new Language() { Name = "Common" });
+
+                //Gear
+                NewCharacterContainer.Gear.Add(new Item() { Name = "Rations", Weight = 1, Amount = 14 });
+                NewCharacterContainer.Gear.Add(new Item() { Name = "Tunic and Trousers", Weight = 5, Amount = 1 });
+                NewCharacterContainer.Weapons.Add(new Item() { 
+                    Name = "Dagger", 
+                    Weight = 3, 
+                    Amount = 2, 
+                    Slot = GearSlots.PrimaryHand,
+                    DmgMultiplier = 1,
+                    DmgAmount = 4,
+                    CrtMultiplier = 2,
+                    DmgType = 'P'
+                });
+                NewCharacterContainer.Armor.Add(new Item() {                     
+                    Name = "Leather", 
+                    Weight = 15, 
+                    Amount = 1, 
+                    Slot = GearSlots.Body, 
+                    Material = "Leather", 
+                    Masterwork = false, 
+                    ArmorBonus = 2, 
+                    MaxDex = 20,
+                    ArmorPenalty = 0,
+                    ArcSpellFail = 10,
+                    SpeedPenalty = "0"
+                });
+                NewCharacterContainer.Wonderous.Add(new Item() { 
+                    Name = "Ring of Three Wishes", 
+                    Weight = 0, 
+                    Amount = 1,
+                    Description = "Ring with three mounted rubys that each allow the wearer one wish.",
+                    Slot = GearSlots.FingerL
+                });
+
+                //Skills
+                NewCharacterContainer.Skills.Add(new Skill()
+                {
+                    Name = "Swim",
+                    Ranks = 4,
+                    Description = "Keeping your head above water",
+                    Untrained = true,
+                    Ability = "Strength",
+                    ArmorCheckPenalty = false
+                });
+                NewCharacterContainer.Skills.Add(new Skill()
+                {
+                    Name = "Swim",
+                    Ranks = 4,
+                    Description = "Keeping your head above water",
+                    Untrained = true,
+                    Ability = "Strength",
+                    ArmorCheckPenalty = false
+                });
+                NewCharacterContainer.Skills.Add(new Skill()
+                {
+                    Name = "Swim",
+                    Ranks = 4,
+                    Description = "Keeping your head above water",
+                    Untrained = true,
+                    Ability = "Strength",
+                    ArmorCheckPenalty = false
+                });
+                NewCharacterContainer.Skills.Add(new Skill()
+                {
+                    Name = "Swim",
+                    Ranks = 4,
+                    Description = "Keeping your head above water",
+                    Untrained = true,
+                    Ability = "Strength",
+                    ArmorCheckPenalty = false
+                });
+                NewCharacterContainer.Skills.Add(new Skill()
+                {
+                    Name = "Swim",
+                    Ranks = 4,
+                    Description = "Keeping your head above water",
+                    Untrained = true,
+                    Ability = "Strength",
+                    ArmorCheckPenalty = false
+                });
+                NewCharacterContainer.Skills.Add(new Skill()
+                {
+                    Name = "Swim",
+                    Ranks = 4,
+                    Description = "Keeping your head above water",
+                    Untrained = true,
+                    Ability = "Strength",
+                    ArmorCheckPenalty = false
+                });
+                NewCharacterContainer.Skills.Add(new Skill()
+                {
+                    Name = "Swim",
+                    Ranks = 4,
+                    Description = "Keeping your head above water",
+                    Untrained = true,
+                    Ability = "Strength",
+                    ArmorCheckPenalty = false
+                });
+
+                //Feats
+                NewCharacterContainer.Feats.Add(new Feat()
+                {
+                    Name = "Dodge",
+                    Description = "Dodge bonus to AC (+2)",
+                });
+                NewCharacterContainer.Feats.Add(new Feat()
+                {
+                    Name = "Evasion",
+                    Description = "Reflex saves for half-damage are for full damage",
+                });
+                NewCharacterContainer.Feats.Add(new Feat()
+                {
+                    Name = "Power Attack",
+                    Description = "Bonus to melee damage (+4). Penalty to accuracy (-2)",
+                });
+                NewCharacterContainer.Feats.Add(new Feat()
+                {
+                    Name = "Mobility",
+                    Description = "Move before and after an attack",
+                });
+                NewCharacterContainer.Feats.Add(new Feat()
+                {
+                    Name = "Maximize Spell",
+                    Description = "Max roll value on a spell. Uses one slot higher.",
+                });
+                NewCharacterContainer.Feats.Add(new Feat()
+                {
+                    Name = "Acrobatics",
+                    Description = "Bonus to tumble and balance skills (+2)",
+                });
+
+                //Spells
+                NewCharacterContainer.Spells.Add(new Spell()
+                {
+                    Name = "Magic Missle",
+                    Description = "Bonus to tumble and balance skills (+2)",
+                });
+                NewCharacterContainer.Spells.Add(new Spell()
+                {
+                    Name = "Magic Missle",
+                    Description = "Bonus to tumble and balance skills (+2)",
+                });
+                NewCharacterContainer.Spells.Add(new Spell()
+                {
+                    Name = "Magic Missle",
+                    Description = "Bonus to tumble and balance skills (+2)",
+                });
+                NewCharacterContainer.Spells.Add(new Spell()
+                {
+                    Name = "Magic Missle",
+                    Description = "Bonus to tumble and balance skills (+2)",
+                });
+                NewCharacterContainer.Spells.Add(new Spell()
+                {
+                    Name = "Magic Missle",
+                    Description = "Bonus to tumble and balance skills (+2)",
+                });
+                NewCharacterContainer.Spells.Add(new Spell()
+                {
+                    Name = "Magic Missle",
+                    Description = "Bonus to tumble and balance skills (+2)",
+                });
+
+
+
+            
+            
             }
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)
