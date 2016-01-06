@@ -16,10 +16,11 @@
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
 
-    <StackPanel Orientation="Horizontal">
-
-        <!-- List of Feats -->
-        <ListBox x:Name="FeatsListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" SelectedItem="{Binding Path=MySelectedItem}">
+    <StackPanel Orientation="Horizontal">        
+        <ListBox x:Name="FeatsListBox" 
+                 Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+                 ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
+                 SelectedItem="{Binding Path=MySelectedItem}">
                 <ListBox.Resources>
                     <CollectionViewSource x:Key="FEATS" Source="{Binding Feats}"/>
                 </ListBox.Resources>
@@ -42,6 +43,6 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
         </ListBox>
- 
+
     </StackPanel>
 </UserControl>

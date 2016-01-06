@@ -16,14 +16,26 @@
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
 
-    <ListBox x:Name="SpellsAuxListBox" 
+    <StackPanel>
+        <ListBox x:Name="SpellsAuxListBox" Height="475"
              Style="{StaticResource ResourceKey=AuxContentListBox}" 
              ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
              DataContext="{Binding MySelectedItem}">
 
-        <!--Selected Item Description-->
-        <TextBlock Foreground="#01C5BB" Text="{Binding Name}" FontSize="16" FontWeight="Bold" />
-        <TextBlock Foreground="Teal" Text="{Binding Description}" FontSize="14"/>
-    </ListBox>
-    
+            <!--Selected Item Description-->
+            <TextBlock Foreground="#01C5BB" Text="{Binding Name}" FontSize="16" FontWeight="Bold" />
+            <TextBlock Foreground="Teal" Text="{Binding Description}" FontSize="14"/>
+        </ListBox>
+
+
+        <StackPanel Orientation="Horizontal">
+            <StackPanel.Resources>
+                <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml"/>
+            </StackPanel.Resources>
+
+            <Button Name="Edit_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding nocommand}" Content="Add/Edit"/>
+            <Button Name="Delete_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding nocommand}" Content="Remove" />
+            <Button Name="Misc_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding nocommand}" Content="Misc" />
+        </StackPanel>
+    </StackPanel>
 </UserControl>

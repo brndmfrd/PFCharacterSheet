@@ -11,11 +11,13 @@
     <UserControl.DataContext>
         <ViewModel:CharacterViewModel/>
     </UserControl.DataContext>
+    
     <UserControl.Resources>
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
 
-    <ListBox x:Name="BasicInformationListBox" 
+    <StackPanel>        
+        <ListBox x:Name="BasicInformationListBox" Height="475"
              Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
              ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}">
         <ListBox.Resources>
@@ -40,6 +42,18 @@
                 </Grid>
             </DataTemplate>
         </ListBox.ItemTemplate>
-    </ListBox>
+        </ListBox>
+
+
+        <StackPanel Orientation="Horizontal">
+            <StackPanel.Resources>
+                <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml"/>
+            </StackPanel.Resources>
+
+            <Button Name="Edit_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding nocommand}" Content="Add/Edit"/>
+            <Button Name="Delete_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding nocommand}" Content="Remove" />
+            <Button Name="Misc_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding nocommand}" Content="Misc" />
+        </StackPanel>
+    </StackPanel>
 
 </UserControl>
