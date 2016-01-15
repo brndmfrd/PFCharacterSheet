@@ -80,9 +80,9 @@ namespace NavigationBarModule.ViewModels
         private void ToPrimaryNavigation()
         {
             NavigationBarModule.regionManager.RequestNavigate("NavigationBarRegion", typeof(Views.NavigationBarModuleView).FullName);
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(OptionsModule.Views.OptionsView).FullName);
-            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(System.Windows.Controls.UserControl).FullName);    // blank content for region
-            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(System.Windows.Controls.UserControl).FullName);        // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);              // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(OptionsModule.Views.OptionsViewPrimary).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(OptionsModule.Views.OptionsViewAux).FullName);        
         }
 
 

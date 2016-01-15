@@ -21,7 +21,11 @@ namespace OptionsModule
         public void Initialize()
         {
             // --- Register the views for this module with the regions we want to associate them with
-            regionManager.RegisterViewWithRegion("MainRegion", typeof(Views.OptionsView));
+            regionManager.RegisterViewWithRegion("PrimaryContentRegion", typeof(Views.OptionsViewPrimary));
+            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(Views.OptionsViewAux));
+            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(Views.LoadCharacter));
+            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(Views.SaveCharacter));
+            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(Views.Configuration));
         }
 
 

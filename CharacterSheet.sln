@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatusBarModule", "StatusBa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterCreationModule", "CharacterCreationModule\CharacterCreationModule.csproj", "{91FAEEE9-CA20-453D-A8BA-247B5AFBBAAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archivist", "Archivist\Archivist.csproj", "{16F70C24-FE0D-40F7-8DB2-71142A023973}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,6 +153,12 @@ Global
 		{91FAEEE9-CA20-453D-A8BA-247B5AFBBAAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91FAEEE9-CA20-453D-A8BA-247B5AFBBAAC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{91FAEEE9-CA20-453D-A8BA-247B5AFBBAAC}.Release|x86.ActiveCfg = Release|Any CPU
+		{16F70C24-FE0D-40F7-8DB2-71142A023973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16F70C24-FE0D-40F7-8DB2-71142A023973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16F70C24-FE0D-40F7-8DB2-71142A023973}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{16F70C24-FE0D-40F7-8DB2-71142A023973}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16F70C24-FE0D-40F7-8DB2-71142A023973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16F70C24-FE0D-40F7-8DB2-71142A023973}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

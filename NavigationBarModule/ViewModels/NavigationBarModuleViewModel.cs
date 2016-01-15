@@ -86,9 +86,9 @@ namespace NavigationBarModule.ViewModels
         }
         private void ToOptions()
         {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(OptionsModule.Views.OptionsView).FullName);
-            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(System.Windows.Controls.UserControl).FullName);    // blank content for region
-            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(System.Windows.Controls.UserControl).FullName);        // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);
+            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(OptionsModule.Views.OptionsViewPrimary).FullName);    // blank content for region
+            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(OptionsModule.Views.OptionsViewAux).FullName);        // blank content for region
         }
         private void ToCharacterCreation()
         {
