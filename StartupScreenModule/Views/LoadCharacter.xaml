@@ -17,48 +17,22 @@
     </UserControl.Resources>
 
     <StackPanel>
-        <Label Name="Title" Content="{Binding TitleContent}" Foreground="Wheat"/>
-
-        <Label Name="Status" Content="{Binding StatusContent}" />
-
-        <Label Name="Alert" Content="{Binding AlertContent}" />
-
-        <!--<ListBox x:Name="SaveFileListBox" 
-                 ItemsSource="{Binding FileList}" 
-                 SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-                 Background="{x:Null}" 
-                 Foreground="Teal" 
-                 BorderBrush="{x:Null}" 
-                 ScrollViewer.VerticalScrollBarVisibility="Hidden" 
-                 ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
-                 FontSize="10" 
-                 >
-        </ListBox>-->
-
-
-        <ListBox x:Name="GearListBox" 
+        <ListBox x:Name="LoadCharacterListBox" 
                  Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
                  ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
-                 SelectedItem="{Binding Path=SelectedItem}">
-            
+                 SelectedItem="{Binding Path=SelectedItem}">            
             
             <ListBox.InputBindings>
                 <KeyBinding Key="Enter" Command="{Binding SelectFileCommand}"/>
-                <!--<MouseBinding Gesture="LeftDoubleClick" Command="{Binding SelectFileCommand}"/>-->
-            </ListBox.InputBindings>
-            
+            </ListBox.InputBindings>            
             
             <ListBox.Resources>
-                <!--<InputBindingCollection x:Key="MOUSE">
-                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding SelectFileCommand}"/>
-                </InputBindingCollection>-->
-                <CollectionViewSource x:Key="GEAR" Source="{Binding FileList}"/>
+                <CollectionViewSource x:Key="FILES" Source="{Binding FileList}"/>
             </ListBox.Resources>
 
             <ListBox.ItemsSource>
                 <CompositeCollection>
-                    <CollectionContainer Collection="{Binding Source={StaticResource GEAR}}"/>
-                    <!--<CollectionContainer Collection="{Binding Source={StaticResource MOUSE}}"/>-->
+                    <CollectionContainer Collection="{Binding Source={StaticResource FILES}}"/>
                 </CompositeCollection>
             </ListBox.ItemsSource>
 
@@ -66,7 +40,9 @@
                 <DataTemplate>
                     <ContentPresenter Content="{Binding}">
                         <ContentPresenter.InputBindings>
-                            <MouseBinding Gesture="LeftDoubleClick" Command="{Binding DataContext.SelectFileCommand, ElementName=GearListBox}" CommandParameter="{Binding ElementName=GearListBox,Path=SelectedItem}"/>
+                            <MouseBinding Gesture="LeftDoubleClick" 
+                                          Command="{Binding DataContext.SelectFileCommand, ElementName=LoadCharacterListBox}" 
+                                          CommandParameter="{Binding ElementName=LoadCharacterListBox,Path=SelectedItem}"/>
                         </ContentPresenter.InputBindings>
                     </ContentPresenter>
                 </DataTemplate>

@@ -4,31 +4,46 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Archivist
 {
+    //RaisePropertyChangedEvent
     public static class DirectoryMaster
     {
-        public static string DefaultDirectory = "";
-        public static ObservableCollection<string> DirectoryFileList { get { return GetFilesFromDefaultDir(); } set { } }
+        private const string filenamePattern = @"[^\\]+\.pf$";
+        private static Regex rgx;
+        private static ObservableCollection<string> directoryFileList = new ObservableCollection<string>();
+
+
+        public static string DefaultDirectory = "";        
+        public static ObservableCollection<string> DirectoryFileList { get { GetFilesFromDefaultDir(); return directoryFileList; } }
 
         /// <summary>
-        /// Look into the default dir and return all .pf files paths.
+        /// Look into the default dir and return all .pf files.
         /// </summary>
         /// <returns></returns>
-        private static ObservableCollection<string> GetFilesFromDefaultDir()
+        private static void GetFilesFromDefaultDir()
         {
             var cdir = Directory.GetCurrentDirectory();             // Target local directory
 
             var pfFiles = Directory.GetFiles(cdir, "*.pf");         // Target .pf files
-            // todo: error handling needed if there are no *.pf files!
-            if (pfFiles[0] == null)
+
+            directoryFileList.Clear();
+
+            // There are no *.pf files!
+            if (pfFiles.Length == 0)
             {
-                pfFiles[0] = "No files could be found";
+                directoryFileList.Insert(0, "No files could be found");
             }
 
-            return new ObservableCollection<string>(pfFiles);
+            rgx = new Regex(filenamePattern, RegexOptions.RightToLeft);
+
+            for (int i = 0; i < pfFiles.Length; i++)
+            {
+                directoryFileList.Insert(i, rgx.Match(pfFiles[i]).Value);
+            }
         }
 
     }
