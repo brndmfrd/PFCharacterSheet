@@ -18,13 +18,13 @@ namespace Archivist
 
 
         public static string DefaultDirectory = "";        
-        public static ObservableCollection<string> DirectoryFileList { get { GetFilesFromDefaultDir(); return directoryFileList; } }
+        public static ObservableCollection<string> DirectoryFileList { get { return directoryFileList; } }
 
         /// <summary>
         /// Look into the default dir and return all .pf files.
         /// </summary>
         /// <returns></returns>
-        private static void GetFilesFromDefaultDir()
+        public static void GetFilesFromDefaultDir()
         {
             var cdir = Directory.GetCurrentDirectory();             // Target local directory
 

@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,10 +49,17 @@
     <Compile Include="SaveCharacterFile.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ActiveCharacter\ActiveCharacter.csproj">
+      <Project>{ea7669d4-1e0c-43f1-b95d-7cb546946ba1}</Project>
+      <Name>ActiveCharacter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ModuleTools\ModuleTools.csproj">
       <Project>{6f33588c-d90a-440b-bb32-32289581c938}</Project>
       <Name>ModuleTools</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

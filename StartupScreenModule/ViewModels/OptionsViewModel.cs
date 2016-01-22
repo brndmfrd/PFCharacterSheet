@@ -9,32 +9,24 @@ namespace OptionsModule.ViewModels
 {
     public class OptionsViewModel : ObservableObject, INavigationAware
     {
-        private string selectedItem = "noItem";
-
-
+        public string SelectedItem { get; set; }
         public IEnumerable<string> FileList { get { return DirectoryMaster.DirectoryFileList; } }
-        
-        public ICommand LoadNewCharacterCommand
-        {
-            get { return new DelegateCommand(PresentLoadCharacter); }
-        }
 
-        public ICommand SaveCharacterCommand
-        {
-            get { return new DelegateCommand(PresentSaveCharacter); }
-        }
+        #region Commands
+        public ICommand LoadNewCharacterCommand { get { return new DelegateCommand(PresentLoadCharacter); } }
 
-        public ICommand ConfigCommand
-        {
-            get { return new DelegateCommand(PresentConfiguration); }
-        }
+        public ICommand SaveCharacterCommand { get { return new DelegateCommand(PresentSaveCharacter); } }
 
+        public ICommand ConfigCommand { get { return new DelegateCommand(PresentConfiguration); } }
+
+        // User double-clicked a file name
+        public ICommand SelectFileCommand { get { return new DelegateCommand(SelectFile); } }
+        #endregion Commands
+
+        #region Command Methods
         private void PresentLoadCharacter()
         {
-
-            // used to invoke the get on FileList
-            var x = FileList;
-
+            DirectoryMaster.GetFilesFromDefaultDir();
             OptionsModule.regionManager.RequestNavigate("AuxContentRegion", typeof(Views.LoadCharacter).FullName);
         }
 
@@ -47,24 +39,15 @@ namespace OptionsModule.ViewModels
         {
             OptionsModule.regionManager.RequestNavigate("AuxContentRegion", typeof(Views.Configuration).FullName);
         }
-
-        public ICommand SelectFileCommand
-        {
-            get
-            {
-                return new DelegateCommand(SelectFile);
-            }
-        }
+        #endregion Command Methods
 
         private void SelectFile()
         {
-            var x = SelectedItem;
+            // todo: check if SelectedItem is null or irregular.
+            LoadCharacterFile.BeginLoadCharacterFile(SelectedItem);
         }
 
-        public string SelectedItem { 
-            get { return selectedItem; }
-            set { selectedItem = value; } 
-        }
+        
 
         #region Navigation
         public void OnNavigatedFrom(NavigationContext navigationContext)
