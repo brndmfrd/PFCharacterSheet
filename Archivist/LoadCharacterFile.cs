@@ -4,20 +4,24 @@ using System.IO;
 using Newtonsoft.Json;
 using ActiveCharacter;
 using System.Collections.ObjectModel;
+using log4net;
 
 namespace Archivist
 {
     public static class LoadCharacterFile
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(LoadCharacterFile));
+
         public static void BeginLoadCharacterFile(string value)
         {
+            log.DebugFormat("I am a DEBUG.");
+            log.ErrorFormat("I am an ERROR.");
+            log.InfoFormat("I am an INFO.");
+
+            return;
             // Try to get the file - It may be locked (in use)
             try
             {
-                // debugging!!!
-                return;
-
-
                 using (StreamReader sr = File.OpenText(value))
                 {
                     while (!sr.EndOfStream)

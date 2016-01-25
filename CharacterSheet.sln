@@ -35,6 +35,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterCreationModule", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archivist", "Archivist\Archivist.csproj", "{16F70C24-FE0D-40F7-8DB2-71142A023973}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GlobalConfig", "GlobalConfig", "{0036F228-1243-4AF7-A944-CD8EAD40570D}"
+	ProjectSection(SolutionItems) = preProject
+		log4net.xml = log4net.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
