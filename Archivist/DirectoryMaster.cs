@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 
 namespace Archivist
 {
-    //RaisePropertyChangedEvent
+    /// <summary>
+    /// Use this class for any manipulation of the host directory structure.
+    /// For information specific to directory configuration, see: Archivist.CurrentActiveConfig.cs.
+    /// </summary>
     public static class DirectoryMaster
     {
         private const string filenamePattern = @"[^\\]+\.pf$";
@@ -17,7 +20,6 @@ namespace Archivist
         private static ObservableCollection<string> directoryFileList = new ObservableCollection<string>();
 
 
-        public static string DefaultDirectory = "";        
         public static ObservableCollection<string> DirectoryFileList { get { return directoryFileList; } }
 
         /// <summary>

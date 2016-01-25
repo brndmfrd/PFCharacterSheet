@@ -32,6 +32,17 @@ namespace OptionsModule.ViewModels
 
         private void PresentSaveCharacter()
         {
+            var currentFilename = CurrentActiveConfig.filename;
+
+            if (string.IsNullOrEmpty(currentFilename))
+            {
+                SaveCharacterFile.SaveCharacter();
+            }
+            else
+            {
+                SaveCharacterFile.SaveCharacter(currentFilename);
+            }
+
             OptionsModule.regionManager.RequestNavigate("AuxContentRegion", typeof(Views.SaveCharacter).FullName);
         }
 

@@ -12,13 +12,12 @@ namespace Archivist
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(LoadCharacterFile));
 
+        /// <summary>
+        /// Reads serialized json character information from file and stores information in the Active Character.
+        /// </summary>
+        /// <param name="value">Pathfinder file name. File name sanitation is assumed to be checked at this point.</param>
         public static void BeginLoadCharacterFile(string value)
         {
-            log.DebugFormat("I am a DEBUG.");
-            log.ErrorFormat("I am an ERROR.");
-            log.InfoFormat("I am an INFO.");
-
-            return;
             // Try to get the file - It may be locked (in use)
             try
             {
@@ -31,13 +30,26 @@ namespace Archivist
 
                         try
                         {
-                            Character.Skills = JsonConvert.DeserializeObject<ObservableCollection<Skill>>(line);
+                            // Out with the old...
+                            Character.Skills.Clear();
+
+                            // create a temp container
+                            var x = new ObservableCollection<Skill>();
+
+                            // fill our temp container
+                            x = JsonConvert.DeserializeObject<ObservableCollection<Skill>>(line);
+
+                            // worth noting that ObservableCollections will 'auto update' this way and not if you 
+                            // directly assign to it; i.e.  Character.Skills = JsonConvert.DeserializeObject<ObservableCollection<Skill>>(line);
+                            // we want to change our collection container, not replace it.
+                            foreach(var elem in x){
+                                Character.Skills.Add(elem);
+                            }
                         }
                         catch (Exception ex)
                         {
-                            // log that the file is not valid.  
+                            log.ErrorFormat("Error when parsing line for SKILLS. \n{0}\n{1}", line, ex);
                             // notify user that the character data may be incomplete.
-                            // perhaps we can add some fault-tolerance, backup, and/or recovery later.
                         }
 
                         // Second line expected to be Character Information
@@ -45,13 +57,18 @@ namespace Archivist
 
                         try
                         {
-                            Character.Information = JsonConvert.DeserializeObject<ObservableCollection<BasicInformation>>(line);
+                            Character.Information.Clear();
+                            var x = new ObservableCollection<BasicInformation>();
+                            x = JsonConvert.DeserializeObject<ObservableCollection<BasicInformation>>(line);
+                            foreach (var elem in x)
+                            {
+                                Character.Information.Add(elem);
+                            }
                         }
                         catch (Exception ex)
                         {
-                            // log that the file is not valid.  
+                            log.ErrorFormat("Error when parsing line for BASIC INFORMATION. \n{0}\n{1}", line, ex);
                             // notify user that the character data may be incomplete.
-                            // perhaps we can add some fault-tolerance, backup, and/or recovery later.
                         }
 
                         // Third line expected to be Gear
@@ -59,19 +76,25 @@ namespace Archivist
 
                         try
                         {
-                            Character.Gear = JsonConvert.DeserializeObject<ObservableCollection<Item>>(line);
+                            Character.Gear.Clear();
+                            var x = new ObservableCollection<Item>();
+                            x = JsonConvert.DeserializeObject<ObservableCollection<Item>>(line);
+                            foreach (var elem in x)
+                            {
+                                Character.Gear.Add(elem);
+                            }
                         }
                         catch (Exception ex)
                         {
-                            // log that the file is not valid.  
+                            log.ErrorFormat("Error when parsing line for GEAR. \n{0}\n{1}", line, ex);
                             // notify user that the character data may be incomplete.
-                            // perhaps we can add some fault-tolerance, backup, and/or recovery later.
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
+                log.ErrorFormat("Failure to read from selected character file.\n{0}", ex);
                 // log an error has occured in loading of charcter file
                 // notify user that the file may be locked and to close any currently open instance of the file
             }

@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CurrentActiveConfig.cs" />
     <Compile Include="DirectoryMaster.cs" />
     <Compile Include="LoadCharacterFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
