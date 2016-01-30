@@ -21,7 +21,9 @@
             <ListBox x:Name="SkillsAuxListBox" 
                      Style="{StaticResource ResourceKey=AuxContentListBox}" 
                      ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
-                     DataContext="{Binding MySelectedItem}">
+                     DataContext="{Binding MySelectedItem}"
+                     DockPanel.Dock="Top"
+                     VerticalAlignment="Top">
                 <TextBlock Foreground="#01C5BB" Text="{Binding Name}" FontSize="16" FontWeight="Bold" />
                 <TextBlock Foreground="Teal" Text="{Binding Description}" FontSize="14"/>
             </ListBox>
