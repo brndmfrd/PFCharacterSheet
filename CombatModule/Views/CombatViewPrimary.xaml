@@ -11,188 +11,38 @@
     <UserControl.DataContext>
         <ViewModel:CombatViewModel />
     </UserControl.DataContext>
-    
+
     <UserControl.Resources>
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
 
-    <StackPanel Orientation="Horizontal">
-        <!-- Left section -->
-        <StackPanel Orientation="Vertical" Margin="0,0,30,0" Width="500">
+    <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">
+        <DockPanel>
+            <ListBox x:Name="AbilityScoresListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+                 ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
+                <ListBox.Resources>
+                    <CollectionViewSource x:Key="CB" Source="{Binding COMBAT}"/>
+                </ListBox.Resources>
 
-            <!-- This is where the attacks go. -->
-            <!--Choose your weapon-->
-            <Label Margin="10,10,10,0" Width="490" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="-- SELECT A WEAPON --"/>
-            <ListBox Height="632" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
-                <ListBoxItem>
-                    <Grid Width="490">
+                <ListBox.ItemsSource>
+                    <CompositeCollection>
+                        <CollectionContainer Collection="{Binding Source={StaticResource CB}}"/>
+                    </CompositeCollection>
+                </ListBox.ItemsSource>
 
-                        <!-- Weapon attacks -->
-                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Content="{Binding WeaponAttacks, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                            <Label.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateWeaponAttacksCommand}" />
-                            </Label.InputBindings>
-                        </Label>
-
-                    </Grid>
-                </ListBoxItem>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="250"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="Name" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
             </ListBox>
-        </StackPanel>
-
-
-        <!-- Right Section-->
-        <StackPanel Orientation="Vertical" Margin="0,0,30,0" Width="500">
-
-            <!-- Combat related properties -->
-            <ListBox Height="636" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
-                
-                <!--Hit Points-->
-                <ListBoxItem>
-                    <Grid Width="490">
-                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Hit Points"/>
-                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding HitPoints, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                            <Label.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateHitPointsCommand}" />
-                            </Label.InputBindings>
-                        </Label>
-                    </Grid>
-                </ListBoxItem>
-
-                <!--Initiative-->
-                <ListBoxItem>
-                    <Grid Width="490">
-                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Initiative"/>
-                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Initiative, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                            <Label.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateInitiativeCommand}" />
-                            </Label.InputBindings>
-                        </Label>
-                    </Grid>
-                </ListBoxItem>
-
-                <!--Armor Class-->
-                <ListBoxItem>
-                    <Grid Width="490">
-                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Armor Class"/>
-                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding ArmorClass, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                            <Label.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateArmorClassCommand}" />
-                            </Label.InputBindings>
-                        </Label>
-                    </Grid>
-                </ListBoxItem>
-
-                <!--Fortitude-->
-                <ListBoxItem>
-                    <Grid Width="490">
-                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Fortitude"/>
-                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Fortitude, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                            <Label.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateFortitudeCommand}" />
-                            </Label.InputBindings>
-                        </Label>
-                    </Grid>
-                </ListBoxItem>
-
-                <!--Reflex-->
-                <ListBoxItem>
-                    <Grid Width="490">
-                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Reflex"/>
-                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Reflex, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                            <Label.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateReflexCommand}" />
-                            </Label.InputBindings>
-                        </Label>
-                    </Grid>
-                </ListBoxItem>
-
-                <!--Will-->
-                <ListBoxItem>
-                    <Grid Width="490">
-                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Will"/>
-                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Will, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                            <Label.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateWillCommand}" />
-                            </Label.InputBindings>
-                        </Label>
-                    </Grid>
-                </ListBoxItem>
-
-                <!--BAB-->
-                <ListBoxItem>
-                    <Grid Width="490">
-                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="BAB"/>
-                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding BaseAttackBonus, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                            <Label.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateBaseAttackBonusCommand}" />
-                            </Label.InputBindings>
-                        </Label>
-                    </Grid>
-                </ListBoxItem>
-
-                <!--CMB-->
-                <ListBoxItem>
-                    <Grid Width="490">
-                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="CMB"/>
-                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding CMB, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                            <Label.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateCMBCommand}" />
-                            </Label.InputBindings>
-                        </Label>
-                    </Grid>
-                </ListBoxItem>
-
-                <!--CMD-->
-                <ListBoxItem>
-                    <Grid Width="490">
-                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="CMD"/>
-                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding CMD, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                            <Label.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateCMDCommand}" />
-                            </Label.InputBindings>
-                        </Label>
-                    </Grid>
-                </ListBoxItem>
-
-                <!--Status Effects-->
-                <ListBoxItem>
-                    <Grid Width="490">
-                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Status Effects"/>
-                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding StatusEffect, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                            <Label.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateStatusEffectCommand}" />
-                            </Label.InputBindings>
-                        </Label>
-                    </Grid>
-                </ListBoxItem>
-
-                <!--Encumbrance-->
-                <ListBoxItem>
-                    <Grid Width="490">
-                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Encumbrance"/>
-                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Encumbrance, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                            <Label.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateEncumbranceCommand}" />
-                            </Label.InputBindings>
-                        </Label>
-                    </Grid>
-                </ListBoxItem>
-
-                <!--Movement-->
-                <ListBoxItem>
-                    <Grid Width="490">
-                        <Label Grid.Row="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Movement"/>
-                        <Label Grid.Row="0" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="{Binding Movement_Combat, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ResourceKey=MainContentButtonStyle}">
-                            <Label.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding UpdateMovement_CombatCommand}" />
-                            </Label.InputBindings>
-                        </Label>
-                    </Grid>
-                </ListBoxItem>
-
-            </ListBox>
-        </StackPanel>
-
-        
-    </StackPanel>
+        </DockPanel>
+    </Border>
 </UserControl>

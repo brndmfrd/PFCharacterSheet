@@ -1,35 +1,35 @@
-﻿<UserControl x:Class="CharacterModule.Views.CharacterViewPrimary"
+﻿<UserControl x:Class="CombatModule.Views.CombatViewAux"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:ViewModel="clr-namespace:CharacterModule.ViewModels"
-             mc:Ignorable="d"
+             xmlns:ViewModel="clr-namespace:CombatModule.ViewModels"
+             mc:Ignorable="d" 
              d:DesignHeight="670" d:DesignWidth="1100"
-             d:DataContext="{d:DesignInstance ViewModel:CharacterViewModel}">
+             d:DataContext="{d:DesignInstance ViewModel:CombatViewModel}">
 
     <UserControl.DataContext>
-        <ViewModel:CharacterViewModel/>
+        <ViewModel:CombatViewModel/>
     </UserControl.DataContext>
-    
+
     <UserControl.Resources>
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
 
     <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">
         <DockPanel>
-            <ListBox x:Name="AbilityScoresListBox" 
+            <ListBox x:Name="BasicInformationListBox"
                      Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
-                     ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
+                     ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}"
                      DockPanel.Dock="Top"
                      VerticalAlignment="Top">
                 <ListBox.Resources>
-                    <CollectionViewSource x:Key="BI" Source="{Binding BasicInformation}"/>
+                    <CollectionViewSource x:Key="AB" Source="{Binding AUXBOX}"/>
                 </ListBox.Resources>
 
                 <ListBox.ItemsSource>
                     <CompositeCollection>
-                        <CollectionContainer Collection="{Binding Source={StaticResource BI}}"/>
+                        <CollectionContainer Collection="{Binding Source={StaticResource AB}}"/>
                     </CompositeCollection>
                 </ListBox.ItemsSource>
 
@@ -40,12 +40,22 @@
                                 <ColumnDefinition Width="250"/>
                                 <ColumnDefinition Width="250"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="Name" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                             <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+                <StackPanel.Resources>
+                    <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml"/>
+                </StackPanel.Resources>
+
+                <Button Name="Edit_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NOCOMMAND}" Content="Add/Edit"/>
+                <Button Name="Delete_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NOCOMMAND}" Content="Remove" />
+                <Button Name="Misc_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding NOCOMMAND}" Content="Misc" />
+            </StackPanel>
         </DockPanel>
     </Border>
 </UserControl>

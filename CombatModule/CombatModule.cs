@@ -16,7 +16,7 @@ namespace CombatModule
         {
             // --- Register the views for this module with the regions we want to associate them with
             regionManager.RegisterViewWithRegion("PrimaryContentRegion", typeof(Views.CombatViewPrimary));
-            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(Views.CombatViewPrimary));
+            regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(Views.CombatViewAux));
         }
     }
 }

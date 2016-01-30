@@ -16,35 +16,36 @@
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
 
-    <StackPanel Orientation="Horizontal">
-
-        <!-- List of Spells -->
-
-        <ListBox x:Name="SpellsListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
-                 ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
-                 SelectedItem="{Binding Path=MySelectedItem}">
+    <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">
+        <DockPanel>
+            <ListBox x:Name="SpellsListBox" 
+                     Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+                     ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
+                     SelectedItem="{Binding Path=MySelectedItem}" 
+                     DockPanel.Dock="Top"
+                     VerticalAlignment="Top">
                 <ListBox.Resources>
                     <CollectionViewSource x:Key="SPELLS" Source="{Binding Spells}"/>
                 </ListBox.Resources>
-            
+
                 <ListBox.ItemsSource>
                     <CompositeCollection>
                         <CollectionContainer Collection="{Binding Source={StaticResource SPELLS}}"/>
                     </CompositeCollection>
                 </ListBox.ItemsSource>
-            
+
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="250"/>
-                            <ColumnDefinition Width="250"/>
-                        </Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="250"/>
+                            </Grid.ColumnDefinitions>
                             <TextBlock x:Name="SpellName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-        </ListBox>
-
-    </StackPanel>
+            </ListBox>
+        </DockPanel>
+    </Border>
 </UserControl>

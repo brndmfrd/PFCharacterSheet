@@ -13,16 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CharacterModule.Views
+namespace CombatModule.Views
 {
     /// <summary>
-    /// Interaction logic for CharacterViewPrimary.xaml
+    /// Interaction logic for CombatViewAux.xaml
     /// </summary>
-    public partial class CharacterViewPrimary : UserControl
+    public partial class CombatViewAux : UserControl
     {
-        public CharacterViewPrimary()
+        public CombatViewAux()
         {
             InitializeComponent();
-        }      
+        }
     }
 }

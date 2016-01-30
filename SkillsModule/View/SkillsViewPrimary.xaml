@@ -16,33 +16,36 @@
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
 
-    <StackPanel Orientation="Horizontal">
-
-        <ListBox x:Name="SkillsListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
-                 ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
-                 SelectedItem="{Binding Path=MySelectedItem}">
-            <ListBox.Resources>
-                <CollectionViewSource x:Key="SKILLS" Source="{Binding Skills}"/>
-            </ListBox.Resources>
+    <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">
+        <DockPanel>
+            <ListBox x:Name="SkillsListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+                     ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
+                     SelectedItem="{Binding Path=MySelectedItem}"
+                     DockPanel.Dock="Top"
+                     VerticalAlignment="Top">
+                <ListBox.Resources>
+                    <CollectionViewSource x:Key="SKILLS" Source="{Binding Skills}"/>
+                </ListBox.Resources>
             
-            <ListBox.ItemsSource>
-                <CompositeCollection>
-                    <CollectionContainer Collection="{Binding Source={StaticResource SKILLS}}"/>
-                </CompositeCollection>
-            </ListBox.ItemsSource>
+                <ListBox.ItemsSource>
+                    <CompositeCollection>
+                        <CollectionContainer Collection="{Binding Source={StaticResource SKILLS}}"/>
+                    </CompositeCollection>
+                </ListBox.ItemsSource>
             
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="250"/>
-                            <ColumnDefinition Width="250"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="SkillName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                        <TextBlock x:Name="SkillRanks" Text="{Binding Path=Ranks, Mode=OneWay}" Grid.Column="1" Foreground="#01C5BB" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-    </StackPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="250"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="SkillName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="SkillRanks" Text="{Binding Path=Ranks, Mode=OneWay}" Grid.Column="1" Foreground="#01C5BB" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+    </Border>
 </UserControl>

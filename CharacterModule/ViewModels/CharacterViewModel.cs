@@ -2,6 +2,7 @@
 using Microsoft.Practices.Prism.Regions;
 using ActiveCharacter;
 using ModuleTools;
+using System.Linq; // keep 
 
 
 namespace CharacterModule.ViewModels
@@ -50,19 +51,30 @@ namespace CharacterModule.ViewModels
             }
             else
             {
-                Character.Information.Add(new BasicInformation() { Name = "Character Name", Value = "Duraxis" });
+                //Character.Information.Add(new BasicInformation() { Name = "Character Name", Value = "Duraxis" });
                 //Character.Information.Add(new BasicInformation() { Key = "Cool-Guy Points", Value = "" });
-                //var item = BasicInformation.FirstOrDefault(i => i.Key == "Character Name");
-                //if (item != null)
-                //{
-                //    item.Value = "Duraxis";
-                //}
+                // For testing!!!
+                var item = BasicInformation.FirstOrDefault(i => i.Name == "Character Name");
+                if (item != null)
+                {
+                    System.Random r = new System.Random();
+
+                    if (0 == r.Next(0, 2))
+                    {
+                        item.Value = "Duraxis";
+                    }
+                    else
+                    {
+                        item.Value = "pappy";
+                    }
+
+                }
                 
             }
 
             // Keep the count up to date. 
-            PrimaryDisplayCount = Character.Information.Count + Character.AbilityScores.Count;
-            RaisePropertyChangedEvent("PrimaryDisplayCount");
+            //PrimaryDisplayCount = Character.Information.Count + Character.AbilityScores.Count;
+            //RaisePropertyChangedEvent("PrimaryDisplayCount");
             
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)

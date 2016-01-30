@@ -9,13 +9,30 @@ namespace OptionsModule.ViewModels
 {
     public class OptionsViewModel : ObservableObject, INavigationAware
     {
+        public string _filename = "something";
+
         public string SelectedItem { get; set; }
         public IEnumerable<string> FileList { get { return DirectoryMaster.DirectoryFileList; } }
+        public string CurrentFile
+        {
+            get { return _filename; }
+            set
+            {
+                _filename = value;
+                RaisePropertyChangedEvent("CurrentFile");             
+            }
+        }
+
+        public string CurrentDirectory { get { return CurrentActiveConfig.saveDirectory; } }
+
+        public string LastSaveTimestamp { get { return CurrentActiveConfig.lastSave.ToString(); } }
 
         #region Commands
         public ICommand LoadNewCharacterCommand { get { return new DelegateCommand(PresentLoadCharacter); } }
 
-        public ICommand SaveCharacterCommand { get { return new DelegateCommand(PresentSaveCharacter); } }
+        public ICommand ShowSaveCharacterCommand { get { return new DelegateCommand(PresentSaveCharacter); } }
+
+        public ICommand SaveCharacterCommand { get { return new DelegateCommand(SaveCharacter); } }
 
         public ICommand ConfigCommand { get { return new DelegateCommand(PresentConfiguration); } }
 
@@ -32,18 +49,21 @@ namespace OptionsModule.ViewModels
 
         private void PresentSaveCharacter()
         {
-            var currentFilename = CurrentActiveConfig.filename;
+            OptionsModule.regionManager.RequestNavigate("AuxContentRegion", typeof(Views.SaveCharacter).FullName);
+        }
 
-            if (string.IsNullOrEmpty(currentFilename))
+        private void SaveCharacter()
+        {
+            CurrentFile = "yo!";
+            return;
+            if (string.IsNullOrEmpty(CurrentFile))
             {
                 SaveCharacterFile.SaveCharacter();
             }
             else
             {
-                SaveCharacterFile.SaveCharacter(currentFilename);
+                SaveCharacterFile.SaveCharacter(CurrentFile);
             }
-
-            OptionsModule.regionManager.RequestNavigate("AuxContentRegion", typeof(Views.SaveCharacter).FullName);
         }
 
         private void PresentConfiguration()

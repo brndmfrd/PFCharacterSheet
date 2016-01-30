@@ -20,8 +20,8 @@
     <Style x:Key="PrimaryContentListBox" TargetType="{x:Type ListBox}">
         <Setter Property="Background" Value="{x:Null}" />
         <Setter Property="Foreground" Value="Teal" />
-        <!--<Setter Property="BorderBrush" Value="{x:Null}" />-->
-        <Setter Property="BorderBrush" Value="CornflowerBlue" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <!--<Setter Property="BorderBrush" Value="CornflowerBlue" />-->
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
         <Setter Property="FontSize" Value="18" />
@@ -68,7 +68,8 @@
     <Style x:Key="AuxContentListBox" TargetType="{x:Type ListBox}">
         <Setter Property="Background" Value="{x:Null}" />
         <Setter Property="Foreground" Value="Teal" />
-        <Setter Property="BorderBrush" Value="CornflowerBlue" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <!--<Setter Property="BorderBrush" Value="CornflowerBlue" />-->
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
         <Setter Property="FontSize" Value="18" />

@@ -21,7 +21,7 @@
     
     <StackPanel Name="Sp0NewOrLoad" Orientation="Vertical" HorizontalAlignment="Right">
         <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding LoadNewCharacterCommand}" Margin="5" Content="Load" />
-        <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding SaveCharacterCommand}" Margin="5" Content="Save" />
+        <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding ShowSaveCharacterCommand}" Margin="5" Content="Save" />
         <Button Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding ConfigCommand}" Margin="5" Content="Config" />
 
 

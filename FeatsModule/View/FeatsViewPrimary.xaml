@@ -7,42 +7,45 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              d:DataContext="{d:DesignInstance ViewModel:FeatsViewModel}">
-    
+
     <UserControl.DataContext>
         <ViewModel:FeatsViewModel/>
     </UserControl.DataContext>
-    
+
     <UserControl.Resources>
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
 
-    <StackPanel Orientation="Horizontal">        
-        <ListBox x:Name="FeatsListBox" 
-                 Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
-                 ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
-                 SelectedItem="{Binding Path=MySelectedItem}">
+    <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">
+        <DockPanel>
+            <ListBox x:Name="FeatsListBox" 
+                     Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+                     ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
+                     SelectedItem="{Binding Path=MySelectedItem}"
+                     DockPanel.Dock="Top"
+                     VerticalAlignment="Top">
                 <ListBox.Resources>
                     <CollectionViewSource x:Key="FEATS" Source="{Binding Feats}"/>
                 </ListBox.Resources>
-            
+
                 <ListBox.ItemsSource>
                     <CompositeCollection>
                         <CollectionContainer Collection="{Binding Source={StaticResource FEATS}}"/>
                     </CompositeCollection>
                 </ListBox.ItemsSource>
-            
+
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="250"/>
-                            <ColumnDefinition Width="250"/>
-                        </Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="250"/>
+                            </Grid.ColumnDefinitions>
                             <TextBlock x:Name="FeatName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-        </ListBox>
-
-    </StackPanel>
+            </ListBox>
+        </DockPanel>
+    </Border>
 </UserControl>
