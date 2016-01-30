@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:ViewModel="clr-namespace:OptionsModule.ViewModels" mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
-             d:DataContext="{d:DesignInstance ViewModel:OptionsViewModel}"
-             >
+             d:DataContext="{d:DesignInstance ViewModel:OptionsViewModel}">
 
     <UserControl.DataContext>
         <ViewModel:OptionsViewModel />
@@ -15,43 +14,67 @@
     <UserControl.Resources>
         <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
     </UserControl.Resources>
+    
+    <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">
+        <DockPanel>
+            <ListBox x:Name="LoadCharacterListBox" 
+                     Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+                     ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
+                     SelectedItem="{Binding Path=SelectedItem}"
+                     DockPanel.Dock="Top"
+                     VerticalAlignment="Top">
 
-    <StackPanel>
-        <ListBox x:Name="LoadCharacterListBox" 
-                 Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
-                 ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
-                 SelectedItem="{Binding Path=SelectedItem}">            
-            
-            <ListBox.InputBindings>
-                <KeyBinding Key="Enter" Command="{Binding SelectFileCommand}"/>
-            </ListBox.InputBindings>            
-            
-            <ListBox.Resources>
-                <CollectionViewSource x:Key="FILES" Source="{Binding FileList}"/>
-            </ListBox.Resources>
+                <ListBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding SelectFileCommand}"/>
+                </ListBox.InputBindings>
 
-            <ListBox.ItemsSource>
-                <CompositeCollection>
-                    <CollectionContainer Collection="{Binding Source={StaticResource FILES}}"/>
-                </CompositeCollection>
-            </ListBox.ItemsSource>
+                <ListBox.Resources>
+                    <CollectionViewSource x:Key="FILES" Source="{Binding FileList}"/>
+                </ListBox.Resources>
 
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <ContentPresenter Content="{Binding}">
-                        <ContentPresenter.InputBindings>
-                            <MouseBinding Gesture="LeftDoubleClick" 
+                <ListBox.ItemsSource>
+                    <CompositeCollection>
+                        <CollectionContainer Collection="{Binding Source={StaticResource FILES}}"/>
+                    </CompositeCollection>
+                </ListBox.ItemsSource>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <ContentPresenter Content="{Binding}">
+                            <ContentPresenter.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick" 
                                           Command="{Binding DataContext.SelectFileCommand, ElementName=LoadCharacterListBox}" 
                                           CommandParameter="{Binding ElementName=LoadCharacterListBox,Path=SelectedItem}"/>
-                        </ContentPresenter.InputBindings>
-                    </ContentPresenter>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        
-        
-        
+                            </ContentPresenter.InputBindings>
+                        </ContentPresenter>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
 
-    </StackPanel>
-    
+            <Grid DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+                <Grid.Resources>
+                    <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml"/>
+                </Grid.Resources>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Button Name="ConfirmLoadButton" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" 
+                        Style="{StaticResource ResourceKey=NavigationButtonStyle}" 
+                        Content="Comfirm Load" 
+                        Command="{Binding ConfirmLoadCommand}"
+                        IsEnabled="{Binding LoadButtonToggle}"/>
+                <Button Name="SaveBeforeLoadButton" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Width="200"
+                        Style="{StaticResource ResourceKey=NavigationButtonStyle}" 
+                        Content="Save Current Character" 
+                        Command="{Binding SaveBeforeLoadCommand}"
+                        IsEnabled="{Binding SaveBeforeLoadToggle}"/>
+            </Grid>
+        </DockPanel>
+    </Border>
 </UserControl>

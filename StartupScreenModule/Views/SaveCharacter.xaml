@@ -18,14 +18,15 @@
 
     <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">
         <DockPanel>
-            <ListBox x:Name="AbilityScoresListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+            <ListBox x:Name="AbilityScoresListBox" 
+                     Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
                      ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
                      DockPanel.Dock="Top"
                      VerticalAlignment="Top">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="250"/>
-                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="350"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -35,7 +36,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="FileName" Text="Current File" Grid.Column="0"  Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <TextBlock x:Name="FileNameVal" Text="{Binding CurrentFile}" Grid.Column="1" Grid.Row="0"  Foreground="#01C5BB" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBox x:Name="FileNameVal" Text="{Binding CurrentFile}" Background="{x:Null}" CaretBrush="Red" Grid.Column="1" Grid.Row="0"  Foreground="#01C5BB" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     <TextBlock x:Name="CurrentDir" Text="Current Directory" Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
                     <TextBlock x:Name="CurrentDirVal" Text="{Binding CurrentDirectory}" Grid.Column="1" Grid.Row="1"  Foreground="#01C5BB" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     <TextBlock x:Name="LastSave" Text="Last Save" Grid.Column="0" Grid.Row="2"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
@@ -58,9 +59,9 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-
-                <Button Name="ConfirmSaveButton" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Content="Confirm Save" Command="{Binding SaveCharacterCommand}"/>
-                <Button Name="UndoSaveButton" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Content="Confirm Save" Command="{Binding UndoCharacterCommand}"/>
+                
+                <Button Name="UndoSaveButton" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Content="Revert" Command="{Binding UndoCharacterCommand}"/>
+                <Button Name="ConfirmSaveButton" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Content="Confirm Save" Command="{Binding SaveCharacterCommand}"/>
             </Grid>
         </DockPanel>
     </Border>
