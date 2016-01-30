@@ -21,7 +21,7 @@
             <ListBox x:Name="GearListBox" 
                      Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
                      ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
-                     SelectedItem="{Binding Path=MySelectedItem}"
+                     SelectedItem="{Binding MySelectedItem}"
                      DockPanel.Dock="Top"
                      VerticalAlignment="Top">
                 <ListBox.Resources>

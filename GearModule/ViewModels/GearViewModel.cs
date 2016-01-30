@@ -19,8 +19,7 @@ namespace GearModule.ViewModels
             get { return SelectedState.CurrentSelectedFeat; }
             set
             {
-                SelectedState.CurrentSelectedFeat = value;
-                RaisePropertyChangedEvent("MySelectedItem");
+                SelectedState.CurrentSelectedFeat = value;   
                 GearModule.regionManager.RequestNavigate("AuxContentRegion", typeof(Views.GearViewAux).FullName);
             }
         }
@@ -56,6 +55,8 @@ namespace GearModule.ViewModels
                 Character.Gear.Add(new Item() { Name = "Item 10", Amount = 1, Description = "Item 10 description" });
                
             }
+
+            // Needed for MySelectedItem to update when item selection changes. 
             RaisePropertyChangedEvent("MySelectedItem");
 
         }

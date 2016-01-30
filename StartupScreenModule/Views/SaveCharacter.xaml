@@ -6,8 +6,7 @@
              xmlns:ViewModel="clr-namespace:OptionsModule.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
-             d:DataContext="{d:DesignInstance ViewModel:OptionsViewModel}"
-             >
+             d:DataContext="{d:DesignInstance ViewModel:OptionsViewModel}">
 
     <UserControl.DataContext>
         <ViewModel:OptionsViewModel/>
