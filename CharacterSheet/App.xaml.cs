@@ -13,8 +13,8 @@ namespace CharacterSheet
         {
             base.OnStartup(e);
 
-            // Configure logging !!! Find a better path.
-            XmlConfigurator.Configure(new System.IO.FileInfo(@"..\..\..\log4net.xml"));  
+            // This is where our ever important logger config file lives
+            XmlConfigurator.Configure(new System.IO.FileInfo(@"..\..\..\Configurations\log4net.xml"));  
 
             Bootstrapper bootstrapper = new Bootstrapper();
             bootstrapper.Run();
