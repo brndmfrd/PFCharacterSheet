@@ -22,7 +22,20 @@ namespace CharacterDataObjects.CharacterDataConstants
         internal const string Fortitude = "Fortitude";
         internal const string Reflex = "Reflex";
         internal const string Will = "Will";
-
+                
         internal const string BaseAttackBonus = "Base Attack Bonus";
+
+        internal const string CMB = "Combat Maneuver Bonus";
+        internal const string CMD = "Combat Maneuver Defence";
+
+        internal const string Colossal = "Colossal";
+        internal const string Gargantuan = "Gargantuan";
+        internal const string Huge = "Huge";
+        internal const string Large = "Large";
+        internal const string Medium = "Medium";
+        internal const string Small = "Small";
+        internal const string Tiny = "Tiny";
+        internal const string Diminutive = "Diminutive";
+        internal const string Fine = "Fine";
     }
 }

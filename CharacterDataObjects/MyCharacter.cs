@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CharacterDataObjects.CharacterDataConstants;
-using CharacterDataObjects.CharacterDataObjects;
+using CharacterDataObjects.CharacterDataElements;
 
 namespace CharacterDataObjects
 {
@@ -19,15 +19,20 @@ namespace CharacterDataObjects
     {
 
         //todo: separate out the default data assignments from the variables and have them 
-        // assign value at some loading time (app load, new char load?)
+        //      assign value at some loading time (app load, new char load?)
 
         #region Private
+        //These private fields are accessed only for their total value. 
+        // The values of these fields are completely derived from other values
+        // Nothing needs to be assigned to them to be used.
         private static BaseAttackBonus bab = new BaseAttackBonus();
+        private static CombatManeuver cmb = new CombatManeuver(Constants.CMB);
+        private static CombatManeuver cmd = new CombatManeuver(Constants.CMD);
         #endregion Private
 
         #region Public
         /// <summary>
-        /// Simple character information such as the character's name, race, and age.
+        /// Simple character information such as the character's name, alignment, and age.
         /// </summary>
         public static Dictionary<string, string> BasicCharacterInfo = new Dictionary<string, string>
         {
@@ -35,6 +40,8 @@ namespace CharacterDataObjects
             {Constants.PlayerName, string.Empty },
             {Constants.Alignment, string.Empty },
         };
+
+        public static List<string> Languages = new List<string>();
 
         public static Dictionary<string, Ability> AbilityScores = new Dictionary<string, Ability>
         {
@@ -46,6 +53,10 @@ namespace CharacterDataObjects
             {Constants.Charisma, new Ability()}
         };
 
+        public static RacialTraits Race = new RacialTraits();
+
+        public static SizeClass Size = new SizeClass();
+        
         public static ArmorClass AC = new ArmorClass();
 
         public static HitPoints HP = new HitPoints();
@@ -75,7 +86,41 @@ namespace CharacterDataObjects
         {
             get { return bab.GetBaseAttackBonus(); }
         }
+
+        public static int Cmb
+        {
+            get { return cmb.GetCombatManeuverValue(); }
+        }
+
+        public static int Cmd
+        {
+            get { return cmd.GetCombatManeuverValue(); }
+        }
+
+        public static List<Weapon> Weapons = new List<Weapon>();
+
+        public static List<ArmorClassItems> Armor = new List<ArmorClassItems>();
+
+        public static List<Skill> Skills = new List<Skill>();
+
+        public static List<Feat> Feats = new List<Feat>();
+
+        public static List<Item> Gear = new List<Item>();
+
+        public static Dictionary<Enums.Coins, uint> Money = new Dictionary<Enums.Coins, uint>
+        {
+            { Enums.Coins.CP, 0 },
+            { Enums.Coins.SP, 0 },
+            { Enums.Coins.GP, 0 },
+            { Enums.Coins.PP, 0 },
+        };
+
+        // todo: special abilities (lump in with feats?)
+        // todo: spells known
+        // todo: spells per day (include in class?) (add way to keep track of usages/charges)
+
         #endregion Public
+
 
     }
 }

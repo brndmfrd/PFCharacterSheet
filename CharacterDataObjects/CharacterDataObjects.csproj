@@ -41,13 +41,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterDataConstants\Constants.cs" />
+    <Compile Include="CharacterDataConstants\Enums.cs" />
     <Compile Include="CharacterDataElements\Ability.cs" />
     <Compile Include="CharacterDataElements\ArmorClass.cs" />
+    <Compile Include="CharacterDataElements\ArmorClassItems.cs" />
     <Compile Include="CharacterDataElements\BaseAttackBonus.cs" />
+    <Compile Include="CharacterDataElements\CombatManeuver.cs" />
+    <Compile Include="CharacterDataElements\Feat.cs" />
     <Compile Include="CharacterDataElements\HitPoints.cs" />
+    <Compile Include="CharacterDataElements\Item.cs" />
     <Compile Include="CharacterDataElements\JobClass.cs" />
     <Compile Include="CharacterDataElements\Movement.cs" />
+    <Compile Include="CharacterDataElements\RacialTraits.cs" />
     <Compile Include="CharacterDataElements\Save.cs" />
+    <Compile Include="CharacterDataElements\SizeClass.cs" />
+    <Compile Include="CharacterDataElements\Skill.cs" />
+    <Compile Include="CharacterDataElements\Weapon.cs" />
     <Compile Include="MyCharacter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

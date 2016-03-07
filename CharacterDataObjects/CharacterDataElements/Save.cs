@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CharacterDataObjects.CharacterDataObjects
+namespace CharacterDataObjects.CharacterDataElements
 {
     public class Save
     {
