@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace CharacterDataObjects.CharacterDataConstants
 {
-    public class Constants
+    internal class Constants
     {
-        public const string CharacterName = "Character Name";
-        public const string PlayerName = "Player Name";
-        public const string Alignment = "Alignment";
+        internal const string CharacterName = "Character Name";
+        internal const string PlayerName = "Player Name";
+        internal const string Alignment = "Alignment";
 
-        public const string Strength = "Strength";
-        public const string Dextarity = "Dextarity";
-        public const string Consistution = "Consistution";
-        public const string Intelligence = "Intelligence";
-        public const string Wisdom = "Wisdom";
-        public const string Charisma = "Charisma";
+        internal const string Strength = "Strength";
+        internal const string Dextarity = "Dextarity";
+        internal const string Consistution = "Consistution";
+        internal const string Intelligence = "Intelligence";
+        internal const string Wisdom = "Wisdom";
+        internal const string Charisma = "Charisma";
 
-        public const string Fortitude = "Fortitude";
-        public const string Reflex = "Reflex";
-        public const string Will = "Will";
+        internal const string Fortitude = "Fortitude";
+        internal const string Reflex = "Reflex";
+        internal const string Will = "Will";
 
-        public const string BaseAttackBonus = "Base Attack Bonus";
+        internal const string BaseAttackBonus = "Base Attack Bonus";
     }
 }

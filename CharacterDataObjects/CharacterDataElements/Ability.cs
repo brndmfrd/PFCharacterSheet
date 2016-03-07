@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CharacterDataObjects.CharacterDataObjects
 {
-    public class AbilityScore
+    public class Ability
     {
         private string name;
         private int value;

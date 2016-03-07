@@ -8,8 +8,27 @@ using CharacterDataObjects.CharacterDataObjects;
 
 namespace CharacterDataObjects
 {
+    /// <summary>
+    /// The primary container for the current, active, character data.
+    /// Access to all character data elements is done through this class.
+    /// This class does no logic calculation or data processing, it is just the 
+    /// container for other objects that may do processing to derive the correct value.
+    /// It should be trusted that all data refrenced from these objects is current.
+    /// </summary>
     public class MyCharacter
     {
+
+        //todo: separate out the default data assignments from the variables and have them 
+        // assign value at some loading time (app load, new char load?)
+
+        #region Private
+        private static BaseAttackBonus bab = new BaseAttackBonus();
+        #endregion Private
+
+        #region Public
+        /// <summary>
+        /// Simple character information such as the character's name, race, and age.
+        /// </summary>
         public static Dictionary<string, string> BasicCharacterInfo = new Dictionary<string, string>
         {
             {Constants.CharacterName, string.Empty },
@@ -17,14 +36,14 @@ namespace CharacterDataObjects
             {Constants.Alignment, string.Empty },
         };
 
-        public static Dictionary<string, AbilityScore> AbilityScores = new Dictionary<string, AbilityScore>
+        public static Dictionary<string, Ability> AbilityScores = new Dictionary<string, Ability>
         {
-            {Constants.Strength, new AbilityScore()},
-            {Constants.Dextarity, new AbilityScore()},
-            {Constants.Consistution, new AbilityScore()},
-            {Constants.Intelligence , new AbilityScore()},
-            {Constants.Wisdom, new AbilityScore() },
-            {Constants.Charisma, new AbilityScore()}
+            {Constants.Strength, new Ability()},
+            {Constants.Dextarity, new Ability()},
+            {Constants.Consistution, new Ability()},
+            {Constants.Intelligence , new Ability()},
+            {Constants.Wisdom, new Ability() },
+            {Constants.Charisma, new Ability()}
         };
 
         public static ArmorClass AC = new ArmorClass();
@@ -48,12 +67,15 @@ namespace CharacterDataObjects
 
         };
 
-        private static BaseAttackBonus bab = new BaseAttackBonus();
-
-        private static int Bab
+        /// <summary>
+        /// The character's total base attack bonus is a 
+        /// completely derived value and is not set externally.
+        /// </summary>
+        public static int Bab
         {
             get { return bab.GetBaseAttackBonus(); }
         }
+        #endregion Public
 
     }
 }
