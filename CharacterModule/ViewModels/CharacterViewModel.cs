@@ -81,7 +81,7 @@ namespace CharacterModule.ViewModels
         {
             return true;
         }
-        #endregion Navigation
+        #endregion Navigation0
 
 
     }
