@@ -13,7 +13,7 @@
     </UserControl.DataContext>
     
     <UserControl.Resources>
-        <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ModuleTools;component/NavigationStyles.xaml"/>
     </UserControl.Resources>
 
     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" MinHeight="400" Width="100" Background="Black" FocusManager.IsFocusScope="True">

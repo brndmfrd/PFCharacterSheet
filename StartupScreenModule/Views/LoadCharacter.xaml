@@ -12,7 +12,7 @@
     </UserControl.DataContext>
 
     <UserControl.Resources>
-        <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ModuleTools;component/MainContentStyles.xaml"/>
     </UserControl.Resources>
     
     <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">
@@ -53,7 +53,7 @@
 
             <Grid DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
                 <Grid.Resources>
-                    <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/ModuleTools;component/NavigationStyles.xaml"/>
                 </Grid.Resources>
 
                 <Grid.ColumnDefinitions>

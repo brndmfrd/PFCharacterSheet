@@ -16,7 +16,7 @@
     </UserControl.DataContext>
 
     <UserControl.Resources>
-        <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/NavigationStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ModuleTools;component/NavigationStyles.xaml"/>
     </UserControl.Resources>
     
     <StackPanel Name="Sp0NewOrLoad" Orientation="Vertical" HorizontalAlignment="Right">
