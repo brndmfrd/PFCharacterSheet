@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using CharacterDataObjects.CharacterDataConstants;
 using CharacterDataObjects.CharacterDataElements;
 
@@ -22,7 +18,7 @@ namespace CharacterDataObjects
         //      assign value at some loading time (app load, new char load?)
 
         #region Private
-        //These private fields are accessed only for their total value. 
+        // These private fields are accessed only for their total value. 
         // The values of these fields are completely derived from other values
         // Nothing needs to be assigned to them to be used.
         private static BaseAttackBonus bab = new BaseAttackBonus();
@@ -35,7 +31,7 @@ namespace CharacterDataObjects
         /// Simple character information such as the character's name, alignment, and age.
         /// </summary>
         public static Dictionary<string, string> BasicCharacterInfo = new Dictionary<string, string>
-        {
+        {            
             {Constants.CharacterName, string.Empty },
             {Constants.PlayerName, string.Empty },
             {Constants.Alignment, string.Empty },
@@ -72,6 +68,7 @@ namespace CharacterDataObjects
 
         // Spell Resistance?
         // Probably a static refrence named spellResistance of type: SpellResistance
+        // Dictionary<Enums.Magic.Something, int>
 
         public static Dictionary<string, JobClass> JobClasses = new Dictionary<string, JobClass>
         {
@@ -115,10 +112,9 @@ namespace CharacterDataObjects
             { Enums.Coins.PP, 0 },
         };
 
-        // todo: special abilities (lump in with feats?)
-        // todo: spells known
-        // todo: spells per day (include in class?) (add way to keep track of usages/charges)
-
+        public static List<Spell> Spells = new List<Spell>();
+        public static int[] SpellsPerDay = new[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };     // SpellsPerDay[0] => level 1 spells per day
+        public static int[] SpellsKnown = new[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };      // SpellsKnown[8] => level 9 spells known 
         #endregion Public
 
 
