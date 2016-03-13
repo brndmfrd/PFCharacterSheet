@@ -12,5 +12,15 @@ namespace CharacterDataObjects.CharacterDataElements
         private int current;
         private int temporaryHitPoints;
         private int nonleathalDamage;
+
+
+        public int Total
+        {
+            get { return total; }
+            set { total = value; }
+        }
+        public int Current;
+        public int TemporaryHitPoints;
+        public int NonleathalDamage;
     }
 }

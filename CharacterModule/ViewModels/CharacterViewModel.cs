@@ -38,7 +38,7 @@ namespace CharacterModule.ViewModels
                 Character.Information.Add(new BasicInformation() { Name = "Weight", Value = "220" });
                 Character.Information.Add(new BasicInformation() { Name = "Eye Color", Value = "Black" });
                 Character.Information.Add(new BasicInformation() { Name = "Hair Color", Value = "Black" });
-                Character.Information.Add(new BasicInformation() { Name = "Homeland", Value = "Where the heart is" });
+                Character.Information.Add(new BasicInformation() { Name = "Homeland", Value = "Where the heartland is" });
                 Character.Information.Add(new BasicInformation() { Name = "Experience Points", Value = "220,000" });
                 Character.Information.Add(new BasicInformation() { Name = "Hit Points", Value = "179" });
                 Character.Languages.Add("Common");

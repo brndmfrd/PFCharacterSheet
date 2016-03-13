@@ -18,10 +18,18 @@
 
     <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">
         <DockPanel>
-            <ListBox x:Name="AbilityScoresListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
-                 ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" >
+            <ListBox x:Name="AbilityScoresListBox" 
+                     Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+                     ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
+                     SelectedItem="{Binding MySelectedObject}"  
+                     >
+                <ListBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding RollCheck}"/>
+                    <MouseBinding Gesture="LeftDoubleClick" Command="{Binding RollCheck}"/>                    
+                </ListBox.InputBindings>
+                
                 <ListBox.Resources>
-                    <CollectionViewSource x:Key="CB" Source="{Binding COMBAT}"/>
+                    <CollectionViewSource x:Key="CB" Source="{Binding VmDisplayObjects}"/>
                 </ListBox.Resources>
 
                 <ListBox.ItemsSource>
@@ -37,8 +45,13 @@
                                 <ColumnDefinition Width="250"/>
                                 <ColumnDefinition Width="250"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock x:Name="Name" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Name="Name" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left"/>
+                            <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="0" Grid.Row="1"  Foreground="#01C5BB" HorizontalAlignment="Left" Margin="50,0,0,10" />
+                            <TextBlock x:Name="Result" Text="{Binding Path=Result, Mode=OneWay}" Grid.Column="1" Grid.Row="0" Foreground="Red" HorizontalAlignment="Right"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

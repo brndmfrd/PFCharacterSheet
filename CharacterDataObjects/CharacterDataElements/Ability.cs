@@ -8,16 +8,16 @@ namespace CharacterDataObjects.CharacterDataElements
 {
     public class Ability
     {
-        private string name;
-        private int value;
-        private int abilityModifier;
-        private int tempAdjustment;
-        private int tempModifier;
+        private string _name;
+        private int _value = 0;
+        private int _abilityModifier;
+        private int _tempAdjustment;
+        private int _tempModifier;
 
-        public string Name;
-        public int Value;
-        public int AbilityModifier;
-        public int TempAdjustment;
-        public int TempModifier;
+        public string Name { get { return _name; } set { _name = value; } }
+        public int Value { get { return _value; } set { _value = value; } }
+        public int AbilityModifier { get { return _abilityModifier; } set { _abilityModifier = value; } }
+        public int TempAdjustment { get { return _tempAdjustment; } set { _tempAdjustment = value; } }
+        public int TempModifier { get { return _tempModifier; } set { _tempModifier = value; } }
     }
 }

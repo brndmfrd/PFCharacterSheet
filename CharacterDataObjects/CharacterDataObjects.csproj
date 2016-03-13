@@ -57,6 +57,7 @@
     <Compile Include="CharacterDataElements\Save.cs" />
     <Compile Include="CharacterDataElements\SizeClass.cs" />
     <Compile Include="CharacterDataElements\Skill.cs" />
+    <Compile Include="CharacterDataElements\Spell.cs" />
     <Compile Include="CharacterDataElements\Weapon.cs" />
     <Compile Include="MyCharacter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
