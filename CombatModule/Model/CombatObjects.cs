@@ -39,6 +39,7 @@ namespace CombatModule.Model
             new DisplayObject { Name = "Will", Value = MyCharacter.SavingThrows["Will"].Total.ToString() },
         };
         
+        // The object that is currently selected in the view 
         public static DisplayObject CurrentSelectedObject = new DisplayObject();
 
     }

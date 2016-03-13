@@ -13,9 +13,8 @@ namespace CombatModule.ViewModels
 {
     public class CombatViewModel : ObservableObject, INavigationAware
     {
+        // The primary display list of combat elements
         public IEnumerable<DisplayObject> VmDisplayObjects { get { return CombatObjects.displayObjects; } }
-        
-        public ICommand RollCheck { get { return new DelegateCommand(PerformRollCheck); } }
 
         public DisplayObject MySelectedObject
         {
@@ -23,6 +22,11 @@ namespace CombatModule.ViewModels
             set { CombatObjects.CurrentSelectedObject = value; }
         }
 
+        #region Commands
+        public ICommand RollCheck { get { return new DelegateCommand(PerformRollCheck); } }
+        #endregion Commands
+
+        #region Private Methods
         private void PerformRollCheck()
         {
             var targetItem = VmDisplayObjects.FirstOrDefault(i => i.Name == MySelectedObject.Name);
@@ -43,6 +47,7 @@ namespace CombatModule.ViewModels
             var x = CombatObjects.displayObjects;
             var y = VmDisplayObjects;
         }
+        #endregion Private Methods
 
         #region Navigaion
         public void OnNavigatedFrom(NavigationContext navigationContext)
