@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CharacterDataObjects;
 using System.Collections.ObjectModel;
 using ModuleTools;
+using CharacterDataObjects.CharacterDataConstants;
 
 namespace CombatModule.Model
 {
@@ -31,16 +32,59 @@ namespace CombatModule.Model
         // 'Result' is the placeholder value representing the last rolled result, such as the result of a fortitude save
         public static ObservableCollection<DisplayObject> displayObjects = new ObservableCollection<DisplayObject>
         {
-            new DisplayObject { Name = "Hit Points", Value = MyCharacter.HP.Total.ToString() },
-            new DisplayObject { Name = "Base Attack Bonus", Value = MyCharacter.Bab.ToString() },
-            new DisplayObject { Name = "Bull Rush", Value = MyCharacter.AbilityScores["Strength"].Value.ToString() },
-            new DisplayObject { Name = "Fortitude", Value = MyCharacter.SavingThrows["Fortitude"].Total.ToString()},
-            new DisplayObject { Name = "Reflex", Value = MyCharacter.SavingThrows["Reflex"].Total.ToString() },
-            new DisplayObject { Name = "Will", Value = MyCharacter.SavingThrows["Will"].Total.ToString() },
+            new DisplayObject { Name = Constants.Hitpoints, Value = MyCharacter.HP.Total.ToString() },
+
+            new DisplayObject { Name = Constants.FullMeleeAttack, Value = GetFullAttackValues() },
+
+            new DisplayObject { Name = Constants.BullRush, Value = MyCharacter.Cmb.ToString()},
+            new DisplayObject { Name = Constants.Trip, Value = MyCharacter.Cmb.ToString() },
+            new DisplayObject { Name = Constants.Disarm, Value = MyCharacter.Cmb.ToString() },
+            new DisplayObject { Name = Constants.Sunder, Value = MyCharacter.Cmb.ToString() },
+            new DisplayObject { Name = Constants.Reposition, Value = MyCharacter.Cmb.ToString() },
+
+            new DisplayObject { Name = Constants.Fortitude, Value = MyCharacter.SavingThrows[Constants.Fortitude].Total.ToString()},
+            new DisplayObject { Name = Constants.Reflex, Value = MyCharacter.SavingThrows[Constants.Reflex].Total.ToString() },
+            new DisplayObject { Name = Constants.Will, Value = MyCharacter.SavingThrows[Constants.Will].Total.ToString() },
         };
         
         // The object that is currently selected in the view 
         public static DisplayObject CurrentSelectedObject = new DisplayObject();
+
+        private static string GetFullAttackValues()
+        {
+            var attacks = new List<int>();
+
+            // derive bonus attacks for high bab score
+            var babValue = MyCharacter.Bab;
+
+            do
+            {
+                attacks.Add(babValue);
+                babValue -= 5;
+            }
+            while (babValue > 5);
+
+            // Check if we apply st or dex to attack
+            var abilityBonus = MyCharacter.AbilityScores[Constants.Strength].AbilityModifier;
+            foreach (var feat in MyCharacter.Feats)
+            {
+                if(feat.Name == Constants.WeaponFiness)
+                {
+                    abilityBonus = MyCharacter.AbilityScores[Constants.Dextarity].AbilityModifier;
+                    break;
+                }
+            }
+
+            // Appply ability bonus
+            for(int i = 0; i < attacks.Count; i++)
+            {
+                attacks[i] += abilityBonus;
+            }
+
+            // Check for character enchantments
+
+            // Check for equipped weapon enchantments
+        }
 
     }
 }
