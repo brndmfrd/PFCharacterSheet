@@ -50,7 +50,7 @@ namespace CombatModule.Model
         // The object that is currently selected in the view 
         public static DisplayObject CurrentSelectedObject = new DisplayObject();
 
-        private static string GetFullAttackValues()
+        public static string GetFullAttackValues()
         {
             var attacks = new List<int>();
 
@@ -68,7 +68,7 @@ namespace CombatModule.Model
             var abilityBonus = MyCharacter.AbilityScores[Constants.Strength].AbilityModifier;
             foreach (var feat in MyCharacter.Feats)
             {
-                if(feat.Name == Constants.WeaponFiness)
+                if (feat.Name == Constants.WeaponFiness)
                 {
                     abilityBonus = MyCharacter.AbilityScores[Constants.Dextarity].AbilityModifier;
                     break;
@@ -76,7 +76,7 @@ namespace CombatModule.Model
             }
 
             // Appply ability bonus
-            for(int i = 0; i < attacks.Count; i++)
+            for (int i = 0; i < attacks.Count; i++)
             {
                 attacks[i] += abilityBonus;
             }
@@ -84,6 +84,55 @@ namespace CombatModule.Model
             // Check for character enchantments
 
             // Check for equipped weapon enchantments
+
+            var retval = attacks.Select(x => string.Format($"+{x}")).ToArray();
+            return string.Join("/", retval);
+        }
+
+        public static string GetFullAttackRollValues()
+        {
+            var attacks = new List<int>();
+
+            // derive bonus attacks for high bab score
+            var babValue = MyCharacter.Bab;
+
+            do
+            {
+                attacks.Add(babValue);
+                babValue -= 5;
+            }
+            while (babValue > 5);
+
+            // Check if we apply st or dex to attack
+            var abilityBonus = MyCharacter.AbilityScores[Constants.Strength].AbilityModifier;
+            foreach (var feat in MyCharacter.Feats)
+            {
+                if (feat.Name == Constants.WeaponFiness)
+                {
+                    abilityBonus = MyCharacter.AbilityScores[Constants.Dextarity].AbilityModifier;
+                    break;
+                }
+            }
+
+            // Appply ability bonus
+            for (int i = 0; i < attacks.Count; i++)
+            {
+                attacks[i] += abilityBonus;
+            }
+
+            var randy = new Random();
+            // Appply d20 roll bonus
+            for (int i = 0; i < attacks.Count; i++)
+            {
+                attacks[i] += randy.Next(0, 20);
+            }
+
+            // Check for character enchantments
+
+            // Check for equipped weapon enchantments
+
+            var retval = attacks.Select(x => string.Format($"+{x}")).ToArray();
+            return string.Join("/", retval);
         }
 
     }

@@ -29,25 +29,58 @@ namespace CombatModule.ViewModels
         #region Private Methods
         private void PerformRollCheck()
         {
+            // Get whatever object the user selected
             var targetItem = VmDisplayObjects.FirstOrDefault(i => i.Name == MySelectedObject.Name);
-            var result = 0;
-            // todo: expand this to all cases of all elements in the VmDisplayObjects
+
+            var result = "0";
+                        
             // todo: use a Constants file
             // todo: error checking for nullz
+            // Check the object for specific modifiers
             switch (targetItem.Name)
             {
+                case "Full Melee Attack":
+                    // Should we change from "Full Melee Attack" to "Full Attack"?
+                    result = CombatObjects.GetFullAttackRollValues();
+                    break;
+                case "Bull Rush":
+                    // Should we change from "Full Melee Attack" to "Full Attack"?
+                    result = (new Random().Next(0, 20) + MyCharacter.Cmb).ToString();
+                    break;
+                case "Trip":
+                    result = (new Random().Next(0, 20) + MyCharacter.Cmb).ToString();
+                    break;
+                case "Disarm":
+                    result = (new Random().Next(0, 20) + MyCharacter.Cmb).ToString();
+                    break;
+                case "Sunder":
+                    result = (new Random().Next(0, 20) + MyCharacter.Cmb).ToString();
+                    break;
+                case "Reposition":
+                    result = (new Random().Next(0, 20) + MyCharacter.Cmb).ToString();
+                    break;
                 case "Fortitude":
-                    result = new Random().Next(0, 20) + MyCharacter.SavingThrows["Fortitude"].Total;
+                    result = (new Random().Next(0, 20) + MyCharacter.SavingThrows["Fortitude"].Total).ToString();
+                    break;
+                case "Reflex":
+                    result = (new Random().Next(0, 20) + MyCharacter.SavingThrows["Reflex"].Total).ToString();
+                    break;
+                case "Will":
+                    result = (new Random().Next(0, 20) + MyCharacter.SavingThrows["Will"].Total).ToString();
                     break;
                 default:
                     break;
             }
 
             targetItem.Result = result.ToString();
-            var x = CombatObjects.displayObjects;
-            var y = VmDisplayObjects;
         }
         #endregion Private Methods
+
+        // Called by other classes when we need up update something in the combat module
+        public void RaisePropertyChangedInCombat()
+        {
+            RaisePropertyChangedEvent("VmDisplayObjects");
+        }
 
         #region Navigaion
         public void OnNavigatedFrom(NavigationContext navigationContext)

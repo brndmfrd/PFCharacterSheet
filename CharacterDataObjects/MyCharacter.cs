@@ -72,7 +72,7 @@ namespace CharacterDataObjects
 
         public static Dictionary<string, JobClass> JobClasses = new Dictionary<string, JobClass>
         {
-
+            {"Demo Knight", new JobClass { Level = 12 } }
         };
 
         /// <summary>
