@@ -45,28 +45,28 @@ namespace CombatModule.ViewModels
                     break;
                 case "Bull Rush":
                     // Should we change from "Full Melee Attack" to "Full Attack"?
-                    result = (new Random().Next(0, 20) + MyCharacter.Cmb).ToString();
+                    result = (new Random().Next(1, 21) + MyCharacter.Cmb).ToString();
                     break;
                 case "Trip":
-                    result = (new Random().Next(0, 20) + MyCharacter.Cmb).ToString();
+                    result = (new Random().Next(1, 21) + MyCharacter.Cmb).ToString();
                     break;
                 case "Disarm":
-                    result = (new Random().Next(0, 20) + MyCharacter.Cmb).ToString();
+                    result = (new Random().Next(1, 21) + MyCharacter.Cmb).ToString();
                     break;
                 case "Sunder":
-                    result = (new Random().Next(0, 20) + MyCharacter.Cmb).ToString();
+                    result = (new Random().Next(1, 21) + MyCharacter.Cmb).ToString();
                     break;
                 case "Reposition":
-                    result = (new Random().Next(0, 20) + MyCharacter.Cmb).ToString();
+                    result = (new Random().Next(1, 21) + MyCharacter.Cmb).ToString();
                     break;
                 case "Fortitude":
-                    result = (new Random().Next(0, 20) + MyCharacter.SavingThrows["Fortitude"].Total).ToString();
+                    result = (new Random().Next(1, 21) + MyCharacter.SavingThrows["Fortitude"].Total).ToString();
                     break;
                 case "Reflex":
-                    result = (new Random().Next(0, 20) + MyCharacter.SavingThrows["Reflex"].Total).ToString();
+                    result = (new Random().Next(1, 21) + MyCharacter.SavingThrows["Reflex"].Total).ToString();
                     break;
                 case "Will":
-                    result = (new Random().Next(0, 20) + MyCharacter.SavingThrows["Will"].Total).ToString();
+                    result = (new Random().Next(1, 21) + MyCharacter.SavingThrows["Will"].Total).ToString();
                     break;
                 default:
                     break;

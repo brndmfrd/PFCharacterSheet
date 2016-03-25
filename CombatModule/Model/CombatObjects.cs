@@ -124,7 +124,7 @@ namespace CombatModule.Model
             // Appply d20 roll bonus
             for (int i = 0; i < attacks.Count; i++)
             {
-                attacks[i] += randy.Next(0, 20);
+                attacks[i] += randy.Next(1, 21);
             }
 
             // Check for character enchantments
