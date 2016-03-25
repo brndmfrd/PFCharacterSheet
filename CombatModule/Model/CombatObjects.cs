@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using CharacterDataObjects;
 using System.Collections.ObjectModel;
-using ModuleTools;
+using SharedResources;
+using SharedResources.EventHandlers;
 using CharacterDataObjects.CharacterDataConstants;
 
 namespace CombatModule.Model

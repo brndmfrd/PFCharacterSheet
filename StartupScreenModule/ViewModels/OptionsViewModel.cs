@@ -1,5 +1,7 @@
 ﻿using Microsoft.Practices.Prism.Regions;
-using ModuleTools;
+using SharedResources;
+using SharedResources.Delegates;
+using SharedResources.EventHandlers;
 using System.Windows.Input;                 // ICommand
 using Archivist;
 using System.Collections.Generic;

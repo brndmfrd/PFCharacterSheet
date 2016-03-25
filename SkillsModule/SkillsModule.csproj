@@ -109,9 +109,9 @@
       <Project>{ea7669d4-1e0c-43f1-b95d-7cb546946ba1}</Project>
       <Name>ActiveCharacter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ModuleTools\ModuleTools.csproj">
-      <Project>{6f33588c-d90a-440b-bb32-32289581c938}</Project>
-      <Name>ModuleTools</Name>
+    <ProjectReference Include="..\SharedResources\SharedResources.csproj">
+      <Project>{40aa4a26-d0c1-40f5-a8f1-09a12969b0f1}</Project>
+      <Name>SharedResources</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

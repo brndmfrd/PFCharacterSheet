@@ -1,9 +1,8 @@
 ﻿using Microsoft.Practices.Prism.Regions;
 using System.Linq;
-using System.Timers;
-using System.Threading.Tasks;
 using System;
-using ModuleTools;
+using SharedResources.Delegates;
+using SharedResources.EventHandlers;
 using System.Collections.Generic;
 using CharacterDataObjects;
 using CombatModule.Model;
@@ -13,14 +12,27 @@ namespace CombatModule.ViewModels
 {
     public class CombatViewModel : ObservableObject, INavigationAware
     {
-        // The primary display list of combat elements
-        public IEnumerable<DisplayObject> VmDisplayObjects { get { return CombatObjects.displayObjects; } }
+        #region Properties
+        /// <summary>
+        /// The assembled list of all objects used for this module.
+        /// These values are derived from the values contained in 'MyCharacter.cs', the current character data.
+        /// </summary>
+        public IEnumerable<DisplayObject> VmDisplayObjects
+        {
+            get { return CombatObjects.displayObjects; }
+        }
 
+        /// <summary>
+        /// Assumed to be the user-selected object in the Combat view screen.
+        /// These are the 'VmDisplayObjects' presented to the user.
+        /// i.e. HP, Bull Rush, Fortitude, etc.
+        /// </summary>
         public DisplayObject MySelectedObject
         {
             get { return CombatObjects.CurrentSelectedObject; }
             set { CombatObjects.CurrentSelectedObject = value; }
         }
+        #endregion Properties
 
         #region Commands
         public ICommand RollCheck { get { return new DelegateCommand(PerformRollCheck); } }
@@ -34,9 +46,9 @@ namespace CombatModule.ViewModels
 
             var result = "0";
                         
-            // todo: use a Constants file
+            // todo: Use Constants
             // todo: error checking for nullz
-            // Check the object for specific modifiers
+            // Check the object for specific modifiers (enchantments, feats, etc)
             switch (targetItem.Name)
             {
                 case "Full Melee Attack":
@@ -44,7 +56,6 @@ namespace CombatModule.ViewModels
                     result = CombatObjects.GetFullAttackRollValues();
                     break;
                 case "Bull Rush":
-                    // Should we change from "Full Melee Attack" to "Full Attack"?
                     result = (new Random().Next(1, 21) + MyCharacter.Cmb).ToString();
                     break;
                 case "Trip":
@@ -76,11 +87,17 @@ namespace CombatModule.ViewModels
         }
         #endregion Private Methods
 
-        // Called by other classes when we need up update something in the combat module
+        #region Public Methods
+        /// <summary>
+        /// Tell the combat module to update the objects that are displayed. 
+        /// This should be invoked when a dependant value changes and needs to be updated immediatly
+        /// in the Combat UI.
+        /// </summary>
         public void RaisePropertyChangedInCombat()
         {
             RaisePropertyChangedEvent("VmDisplayObjects");
         }
+        #endregion Public Methods
 
         #region Navigaion
         public void OnNavigatedFrom(NavigationContext navigationContext)
@@ -96,7 +113,6 @@ namespace CombatModule.ViewModels
             return true;
         }
         #endregion Navigaion
-
     }
 
    

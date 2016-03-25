@@ -12,12 +12,12 @@
     </UserControl.DataContext>
 
     <UserControl.Resources>
-        <ResourceDictionary Source="pack://application:,,,/ModuleTools;component/MainContentStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SharedResources;component/Styles/MainContentStyles.xaml"/>
     </UserControl.Resources>
 
     <StackPanel MaxWidth="200">
         <StackPanel.Resources>
-            <ResourceDictionary Source="pack://application:,,,/ModuleTools;component/NavigationStyles.xaml"/>
+            <ResourceDictionary Source="pack://application:,,,/SharedResources;component/Styles/NavigationStyles.xaml"/>
         </StackPanel.Resources>
         
         <ItemsControl Margin="0,10" />

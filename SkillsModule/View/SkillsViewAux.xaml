@@ -13,7 +13,7 @@
     </UserControl.DataContext>
 
     <UserControl.Resources>
-        <ResourceDictionary Source="pack://application:,,,/ModuleTools;component/MainContentStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SharedResources;component/Styles/MainContentStyles.xaml"/>
     </UserControl.Resources>
 
     <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">
@@ -30,7 +30,7 @@
 
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
                 <StackPanel.Resources>
-                    <ResourceDictionary Source="pack://application:,,,/ModuleTools;component/NavigationStyles.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/SharedResources;component/Styles/NavigationStyles.xaml"/>
                 </StackPanel.Resources>
 
                 <Button Name="Edit_bttn" Style="{StaticResource ResourceKey=NavigationButtonStyle}" Command="{Binding nocommand}" Content="Add/Edit"/>

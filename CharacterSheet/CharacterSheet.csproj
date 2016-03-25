@@ -192,6 +192,10 @@
       <Project>{8c2f9833-4a94-4706-983e-2db738e88af3}</Project>
       <Name>NavigationBarModule</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SharedResources\SharedResources.csproj">
+      <Project>{40aa4a26-d0c1-40f5-a8f1-09a12969b0f1}</Project>
+      <Name>SharedResources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SkillsModule\SkillsModule.csproj">
       <Project>{4dd8cd17-fd03-45f5-b980-379b27c22066}</Project>
       <Name>SkillsModule</Name>

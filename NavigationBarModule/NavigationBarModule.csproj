@@ -147,9 +147,9 @@
       <Project>{4383310f-5998-4d74-972a-c55f1617df2f}</Project>
       <Name>GearModule</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ModuleTools\ModuleTools.csproj">
-      <Project>{6f33588c-d90a-440b-bb32-32289581c938}</Project>
-      <Name>ModuleTools</Name>
+    <ProjectReference Include="..\SharedResources\SharedResources.csproj">
+      <Project>{40aa4a26-d0c1-40f5-a8f1-09a12969b0f1}</Project>
+      <Name>SharedResources</Name>
     </ProjectReference>
     <ProjectReference Include="..\SkillsModule\SkillsModule.csproj">
       <Project>{4dd8cd17-fd03-45f5-b980-379b27c22066}</Project>

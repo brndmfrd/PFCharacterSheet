@@ -1,6 +1,8 @@
 ﻿using System.Windows.Input;                 // ICommand
 using Microsoft.Practices.Prism.Regions;    // INavigationAware
-using ModuleTools;
+using SharedResources;
+using SharedResources.Delegates;
+using SharedResources.EventHandlers;
 
 namespace NavigationBarModule.ViewModels
 {

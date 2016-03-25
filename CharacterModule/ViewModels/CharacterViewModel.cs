@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Practices.Prism.Regions;
 using ActiveCharacter;
-using ModuleTools;
+using SharedResources.EventHandlers;
 using System.Linq; // keep 
 
 

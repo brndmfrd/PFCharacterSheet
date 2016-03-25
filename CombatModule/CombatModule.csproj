@@ -122,9 +122,9 @@
       <Project>{1f0df7a8-b569-4fbd-8bda-eb6bf2d5521d}</Project>
       <Name>CharacterDataObjects</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ModuleTools\ModuleTools.csproj">
-      <Project>{6f33588c-d90a-440b-bb32-32289581c938}</Project>
-      <Name>ModuleTools</Name>
+    <ProjectReference Include="..\SharedResources\SharedResources.csproj">
+      <Project>{40aa4a26-d0c1-40f5-a8f1-09a12969b0f1}</Project>
+      <Name>SharedResources</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Practices.Prism.Regions;
-using ModuleTools;
+using SharedResources;
+using SharedResources.EventHandlers;
 using ActiveCharacter;
 using SkillsModule.Model;
 using SkillsModule.View;

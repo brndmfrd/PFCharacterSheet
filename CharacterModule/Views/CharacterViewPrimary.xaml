@@ -11,9 +11,9 @@
     <UserControl.DataContext>
         <ViewModel:CharacterViewModel/>
     </UserControl.DataContext>
-    
+
     <UserControl.Resources>
-        <ResourceDictionary Source="pack://application:,,,/ModuleTools;component/MainContentStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/SharedResources;component/Styles/MainContentStyles.xaml"/>
     </UserControl.Resources>
 
     <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">

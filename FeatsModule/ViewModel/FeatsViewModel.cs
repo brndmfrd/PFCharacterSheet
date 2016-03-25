@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using Microsoft.Practices.Prism.Regions;
 using ActiveCharacter;
-using ModuleTools;
+using SharedResources;
+using SharedResources.EventHandlers;
 using FeatsModule.Model;
 using System.Linq;
 using System.Windows.Input;
