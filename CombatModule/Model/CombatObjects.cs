@@ -69,9 +69,9 @@ namespace CombatModule.Model
             var abilityBonus = MyCharacter.AbilityScores[Constants.Strength].AbilityModifier;
             foreach (var feat in MyCharacter.Feats)
             {
-                if (feat.Name == Constants.WeaponFiness)
+                if (feat.Name == Constants.WeaponFinesse)
                 {
-                    abilityBonus = MyCharacter.AbilityScores[Constants.Dextarity].AbilityModifier;
+                    abilityBonus = MyCharacter.AbilityScores[Constants.Dexterity].AbilityModifier;
                     break;
                 }
             }
@@ -108,9 +108,9 @@ namespace CombatModule.Model
             var abilityBonus = MyCharacter.AbilityScores[Constants.Strength].AbilityModifier;
             foreach (var feat in MyCharacter.Feats)
             {
-                if (feat.Name == Constants.WeaponFiness)
+                if (feat.Name == Constants.WeaponFinesse)
                 {
-                    abilityBonus = MyCharacter.AbilityScores[Constants.Dextarity].AbilityModifier;
+                    abilityBonus = MyCharacter.AbilityScores[Constants.Dexterity].AbilityModifier;
                     break;
                 }
             }

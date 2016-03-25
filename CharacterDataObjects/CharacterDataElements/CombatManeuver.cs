@@ -37,7 +37,7 @@ namespace CharacterDataObjects.CharacterDataElements
                 retval = 10;
                 retval += MyCharacter.Bab;
                 retval += MyCharacter.AbilityScores[Constants.Strength].Value;
-                retval += MyCharacter.AbilityScores[Constants.Dextarity].Value;
+                retval += MyCharacter.AbilityScores[Constants.Dexterity].Value;
                 retval += MyCharacter.Size.SizeModifier;
             }
 

@@ -15,8 +15,8 @@ namespace CharacterDataObjects.CharacterDataConstants
         public const string Hitpoints = "Hit Points";
 
         public const string Strength = "Strength";
-        public const string Dextarity = "Dextarity";
-        public const string Consistution = "Consistution";
+        public const string Dexterity = "Dexterity";
+        public const string Constitution = "Constitution";
         public const string Intelligence = "Intelligence";
         public const string Wisdom = "Wisdom";
         public const string Charisma = "Charisma";
@@ -48,7 +48,7 @@ namespace CharacterDataObjects.CharacterDataConstants
         public const string Reposition = "Reposition";
 
         
-        public const string WeaponFiness = "Weapon Finess";
+        public const string WeaponFinesse = "Weapon Finesse";
 
         //// -- Teh Skillz
         //public const string acrobatics = "Acrobatics";
