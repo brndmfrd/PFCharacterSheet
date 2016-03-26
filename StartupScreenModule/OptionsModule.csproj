@@ -147,6 +147,10 @@
       <Project>{40aa4a26-d0c1-40f5-a8f1-09a12969b0f1}</Project>
       <Name>SharedResources</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TestingTools\TestingTools.csproj">
+      <Project>{ff6eaa2f-cd95-4664-b511-fd2bdee0fc9b}</Project>
+      <Name>TestingTools</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

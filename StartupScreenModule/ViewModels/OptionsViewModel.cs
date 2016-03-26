@@ -5,6 +5,7 @@ using SharedResources.EventHandlers;
 using System.Windows.Input;                 // ICommand
 using Archivist;
 using System.Collections.Generic;
+using TestingTools;
 
 
 namespace OptionsModule.ViewModels
@@ -132,7 +133,14 @@ namespace OptionsModule.ViewModels
         {
         }
         public void OnNavigatedTo(NavigationContext navigationContext)
-        {           
+        {
+            LoadCharacterObjectsWithData someDude;
+
+            if (!LoadCharacterObjectsWithData.IhaveBeenBuilt)
+            {
+                someDude = new LoadCharacterObjectsWithData();
+                someDude.BuildUpNewCharacter();
+            }    
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
