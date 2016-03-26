@@ -13,6 +13,18 @@ namespace CharacterDataObjects.CharacterDataElements
         private string description;
         private List<string> specialProperties = new List<string>();
 
+        public string Name
+        {
+            get { return itemName; }
+            set { itemName = value; }
+        }
+
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
+
         //todo:accessors
     }
 }
