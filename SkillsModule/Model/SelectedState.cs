@@ -9,6 +9,6 @@ namespace SkillsModule.Model
 {
     public static class SelectedState
     {
-        public static Skill CurrentSelectedFeat = new Skill();
+        //public static Skill CurrentSelectedFeat = new Skill();
     }
 }

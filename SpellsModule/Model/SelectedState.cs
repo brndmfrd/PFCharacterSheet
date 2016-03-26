@@ -9,6 +9,6 @@ namespace SpellsModule.Model
 {
     public static class SelectedState
     {
-        public static Spell CurrentSelectedSpell = new Spell();
+        //public static Spell CurrentSelectedSpell = new Spell();
     }
 }
