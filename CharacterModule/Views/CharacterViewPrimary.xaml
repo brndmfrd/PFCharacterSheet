@@ -25,11 +25,13 @@
                      VerticalAlignment="Top">
                 <ListBox.Resources>
                     <CollectionViewSource x:Key="BI" Source="{Binding BasicInformation}"/>
+                    <CollectionViewSource x:Key="JC" Source="{Binding JobClasses}"/>
                 </ListBox.Resources>
 
                 <ListBox.ItemsSource>
                     <CompositeCollection>
                         <CollectionContainer Collection="{Binding Source={StaticResource BI}}"/>
+                        <CollectionContainer Collection="{Binding Source={StaticResource JC}}"/>
                     </CompositeCollection>
                 </ListBox.ItemsSource>
 
