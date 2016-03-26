@@ -12,7 +12,7 @@ namespace CharacterDataObjects.CharacterDataElements
         private string nameOfRace;
         private Enums.Size size; // let's not set size here. Possible to have a giant dwarf. 
 
-
+        public string Name { get { return nameOfRace; } set { nameOfRace = value; } }
 
     }
 }

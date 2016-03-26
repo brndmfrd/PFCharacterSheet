@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
-    xmlns:core="clr-namespace:System;assembly=mscorlib"
+             xmlns:core="clr-namespace:System;assembly=mscorlib"
              xmlns:ViewModel="clr-namespace:CharacterCreationModule.ViewModels"
              xmlns:local="clr-namespace:CharacterCreationModule.Enums"
              mc:Ignorable="d" 
@@ -17,33 +17,46 @@
         <ResourceDictionary Source="pack://application:,,,/SharedResources;component/Styles/MainContentStyles.xaml"/>
     </UserControl.Resources>
 
-    <StackPanel Orientation="Horizontal">
-
-        <StackPanel Orientation="Vertical">
+    <ScrollViewer Name="MainContentScrollViewer" VerticalScrollBarVisibility="Hidden">
+        <ListBox Name="MainContentListBox" 
+             Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+             ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
+             VerticalAlignment="Top"
+             PreviewMouseWheel="DataGrid_PreviewMouseWheel"
+                 Width="600">
             <Label Content="CHARACTER INFORMATION" Foreground="AliceBlue" />
-            <DataGrid Style="{StaticResource InputDataGridStyle}" ItemsSource="{Binding BasicInformation}">
+            <DataGrid 
+                Style="{StaticResource InputDataGridStyle}" 
+                ItemsSource="{Binding BasicInformation}" 
+                PreviewMouseWheel="DataGrid_PreviewMouseWheel" 
+                Width="600"
+                BorderThickness="0,3,0,3">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray"/>
-                    <DataGridTextColumn Header="Value" Binding="{Binding Value}" Foreground="Gray" MinWidth="500"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Foreground="Gray" Width="100"/>
+                    <DataGridTextColumn Header="Value" Binding="{Binding Value}" Foreground="Gray" Width="495"/>
                 </DataGrid.Columns>
             </DataGrid>
-        </StackPanel>
-
-        <StackPanel Orientation="Vertical">
 
             <Label Content="ABILITY SCORES" Foreground="AliceBlue" />
-            <DataGrid Style="{StaticResource InputDataGridStyle}" ItemsSource="{Binding Abilities}">
+            <DataGrid 
+                Style="{StaticResource InputDataGridStyle}" 
+                ItemsSource="{Binding Abilities}" 
+                PreviewMouseWheel="DataGrid_PreviewMouseWheel" 
+                Width="600"
+                BorderThickness="0,3,0,3">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Ability" Binding="{Binding Name}" Foreground="Gray"/>
                     <DataGridTextColumn Header="Score" Binding="{Binding Value}" Foreground="Gray"/>
                 </DataGrid.Columns>
             </DataGrid>
-            
-            
-            
+
             <Label Content="CLASS" Foreground="AliceBlue" />
-            <DataGrid Style="{StaticResource InputDataGridStyle}" ItemsSource="{Binding CharacterClasses}">
-                
+            <DataGrid 
+                Style="{StaticResource InputDataGridStyle}" 
+                ItemsSource="{Binding CharacterClasses}" 
+                PreviewMouseWheel="DataGrid_PreviewMouseWheel" 
+                Width="600"
+                BorderThickness="0,3,0,3">
                 <DataGrid.Resources>
                     <ObjectDataProvider x:Key="CharacterClassesEnumKey" MethodName="GetValues" ObjectType="{x:Type core:Enum}">
                         <ObjectDataProvider.MethodParameters>
@@ -51,19 +64,20 @@
                         </ObjectDataProvider.MethodParameters>
                     </ObjectDataProvider>
                 </DataGrid.Resources>
-                
+
                 <DataGrid.Columns>
                     <DataGridComboBoxColumn Header="Class" SelectedItemBinding="{Binding Name}" ItemsSource="{Binding Source={StaticResource CharacterClassesEnumKey}}"/>
-                    <DataGridTextColumn Header="Level" Binding="{Binding Level}" Foreground="Gray"/>
+                    <DataGridTextColumn Header="Level" Binding="{Binding Value}" Foreground="Gray"/>
                 </DataGrid.Columns>
             </DataGrid>
-            
-        </StackPanel>
 
-        <StackPanel>
             <Label Content="RACE" Foreground="AliceBlue" />
-            <DataGrid Style="{StaticResource InputDataGridStyle}" ItemsSource="{Binding Race}">
-
+            <DataGrid 
+                Style="{StaticResource InputDataGridStyle}" 
+                ItemsSource="{Binding Race}" 
+                PreviewMouseWheel="DataGrid_PreviewMouseWheel" 
+                Width="600"
+                BorderThickness="0,3,0,3">
                 <DataGrid.Resources>
                     <ObjectDataProvider x:Key="CharacterRacesEnumKey" MethodName="GetValues" ObjectType="{x:Type core:Enum}">
                         <ObjectDataProvider.MethodParameters>
@@ -73,20 +87,21 @@
                 </DataGrid.Resources>
 
                 <DataGrid.Columns>
-                    <DataGridComboBoxColumn Header="Class" SelectedItemBinding="{Binding Name}" ItemsSource="{Binding Source={StaticResource CharacterRacesEnumKey}}"/>
+                    <DataGridComboBoxColumn Header="Race" SelectedItemBinding="{Binding Name}" ItemsSource="{Binding Source={StaticResource CharacterRacesEnumKey}}"/>
                 </DataGrid.Columns>
             </DataGrid>
 
-
-
             <Label Content="LANGUAGES" Foreground="AliceBlue" />
-            <DataGrid Style="{StaticResource InputDataGridStyle}" ItemsSource="{Binding Languages}">
+            <DataGrid 
+                Style="{StaticResource InputDataGridStyle}" 
+                ItemsSource="{Binding Languages}" 
+                PreviewMouseWheel="DataGrid_PreviewMouseWheel" 
+                Width="600"
+                BorderThickness="0,3,0,3">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Languages" Binding="{Binding Name}" Foreground="Gray"/>
                 </DataGrid.Columns>
             </DataGrid>
-        </StackPanel>
-
-    </StackPanel>
-    
+        </ListBox>
+    </ScrollViewer>
 </UserControl>
