@@ -54,9 +54,9 @@
     <Compile Include="SaveCharacterFile.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ActiveCharacter\ActiveCharacter.csproj">
-      <Project>{ea7669d4-1e0c-43f1-b95d-7cb546946ba1}</Project>
-      <Name>ActiveCharacter</Name>
+    <ProjectReference Include="..\CharacterDataObjects\CharacterDataObjects.csproj">
+      <Project>{1f0df7a8-b569-4fbd-8bda-eb6bf2d5521d}</Project>
+      <Name>CharacterDataObjects</Name>
     </ProjectReference>
     <ProjectReference Include="..\SharedResources\SharedResources.csproj">
       <Project>{40aa4a26-d0c1-40f5-a8f1-09a12969b0f1}</Project>

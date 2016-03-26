@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.IO;
-using ActiveCharacter;
-
+using CharacterDataObjects;
 
 namespace Archivist
 {
@@ -41,21 +35,21 @@ namespace Archivist
         private static string jsonSkill()
         {
             string output = string.Empty;
-            output += JsonConvert.SerializeObject(Character.Skills, Formatting.None);
+            output += JsonConvert.SerializeObject(MyCharacter.Skills, Formatting.None);
             return output;
         }
 
         private static string jsonWealth()
         {
             string output = string.Empty;
-            output += JsonConvert.SerializeObject(Character.Gear, Formatting.None);
+            output += JsonConvert.SerializeObject(MyCharacter.Gear, Formatting.None);
             return output;
         }
 
         private static string jsonCharacterInfo()
         {
             string output = string.Empty;
-            output += JsonConvert.SerializeObject(Character.Information, Formatting.None);
+            output += JsonConvert.SerializeObject(MyCharacter.BasicCharacterInfo, Formatting.None);
             return output;
         }
 

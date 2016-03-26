@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Linq;
 using System.IO;
 using Newtonsoft.Json;
-using ActiveCharacter;
 using System.Collections.ObjectModel;
+using CharacterDataObjects;
+using CharacterDataObjects.CharacterDataElements;
 using log4net;
+using System.Collections.Generic;
 
 namespace Archivist
 {
@@ -31,7 +32,7 @@ namespace Archivist
                         try
                         {
                             // Out with the old...
-                            Character.Skills.Clear();
+                            MyCharacter.Skills.Clear();
 
                             // create a temp container
                             var x = new ObservableCollection<Skill>();
@@ -43,7 +44,7 @@ namespace Archivist
                             // directly assign to it; i.e.  Character.Skills = JsonConvert.DeserializeObject<ObservableCollection<Skill>>(line);
                             // we want to change our collection container, not replace it.
                             foreach(var elem in x){
-                                Character.Skills.Add(elem);
+                                MyCharacter.Skills.Add(elem);
                             }
                         }
                         catch (Exception ex)
@@ -57,12 +58,12 @@ namespace Archivist
 
                         try
                         {
-                            Character.Information.Clear();
-                            var x = new ObservableCollection<BasicInformation>();
-                            x = JsonConvert.DeserializeObject<ObservableCollection<BasicInformation>>(line);
+                            MyCharacter.BasicCharacterInfo.Clear();
+                            var x = new Dictionary<string, string>();
+                            x = JsonConvert.DeserializeObject<Dictionary<string, string>>(line);
                             foreach (var elem in x)
                             {
-                                Character.Information.Add(elem);
+                                MyCharacter.BasicCharacterInfo.Add(elem.Key, elem.Value);
                             }
                         }
                         catch (Exception ex)
@@ -76,12 +77,12 @@ namespace Archivist
 
                         try
                         {
-                            Character.Gear.Clear();
+                            MyCharacter.Gear.Clear();
                             var x = new ObservableCollection<Item>();
                             x = JsonConvert.DeserializeObject<ObservableCollection<Item>>(line);
                             foreach (var elem in x)
                             {
-                                Character.Gear.Add(elem);
+                                MyCharacter.Gear.Add(elem);
                             }
                         }
                         catch (Exception ex)

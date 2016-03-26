@@ -106,10 +106,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\ActiveCharacter\ActiveCharacter.csproj">
-      <Project>{ea7669d4-1e0c-43f1-b95d-7cb546946ba1}</Project>
-      <Name>ActiveCharacter</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CharacterDataObjects\CharacterDataObjects.csproj">
       <Project>{1f0df7a8-b569-4fbd-8bda-eb6bf2d5521d}</Project>
       <Name>CharacterDataObjects</Name>
