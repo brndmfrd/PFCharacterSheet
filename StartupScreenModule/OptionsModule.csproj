@@ -135,10 +135,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ActiveCharacter\ActiveCharacter.csproj">
-      <Project>{ea7669d4-1e0c-43f1-b95d-7cb546946ba1}</Project>
-      <Name>ActiveCharacter</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Archivist\Archivist.csproj">
       <Project>{16f70c24-fe0d-40f7-8db2-71142a023973}</Project>
       <Name>Archivist</Name>
