@@ -9,6 +9,13 @@ namespace FeatsModule.ViewModel
     {
         public IEnumerable<DisplayObject> Feats { get { return FeatObjects.Feats; } }
 
+        #region Public Methods
+        public void RefreshProperties()
+        {
+            RaisePropertyChangedEvent("Feats");
+        }
+        #endregion Public Methods
+
         // Listbox in primary view uses this accessor for what is has currently selected
         // Navigation allows the Aux view to 'refresh' and update based on the selected value
         //public Feat MySelectedItem
@@ -27,6 +34,7 @@ namespace FeatsModule.ViewModel
 
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
+            RefreshProperties();
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)

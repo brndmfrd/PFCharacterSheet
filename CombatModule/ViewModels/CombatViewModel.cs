@@ -21,7 +21,7 @@ namespace CombatModule.ViewModels
         {
             get { return CombatObjects.displayObjects; }
         }
-
+        
         /// <summary>
         /// Assumed to be the user-selected object in the Combat view screen.
         /// These are the 'VmDisplayObjects' presented to the user.
@@ -33,6 +33,13 @@ namespace CombatModule.ViewModels
             set { CombatObjects.CurrentSelectedObject = value; }
         }
         #endregion Properties
+
+        #region Public Methods
+        public void RefreshProperties()
+        {
+            RaisePropertyChangedEvent("VmDisplayObjects");
+        }       
+        #endregion Public Methods
 
         #region Commands
         public ICommand RollCheck { get { return new DelegateCommand(PerformRollCheck); } }
@@ -87,18 +94,6 @@ namespace CombatModule.ViewModels
         }
         #endregion Private Methods
 
-        #region Public Methods
-        /// <summary>
-        /// Tell the combat module to update the objects that are displayed. 
-        /// This should be invoked when a dependant value changes and needs to be updated immediatly
-        /// in the Combat UI.
-        /// </summary>
-        public void RaisePropertyChangedInCombat()
-        {
-            RaisePropertyChangedEvent("VmDisplayObjects");
-        }
-        #endregion Public Methods
-
         #region Navigaion
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
@@ -106,7 +101,7 @@ namespace CombatModule.ViewModels
         }
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-
+            RefreshProperties();
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {

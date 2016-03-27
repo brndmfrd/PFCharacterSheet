@@ -10,6 +10,12 @@ namespace GearModule.ViewModels
     {
         public IEnumerable<DisplayObject> Gear { get { return GearObjects.Gear; }}
 
+        #region Public Methods
+        public void RefreshProperties()
+        {
+            RaisePropertyChangedEvent("Gear");
+        }
+        #endregion Public Methods
         // Listbox in primary view uses this accessor for what is has currently selected
         // Navigation allows the Aux view to 'refresh' and update based on the selected value
         //public Item MySelectedItem
@@ -28,6 +34,7 @@ namespace GearModule.ViewModels
         }
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
+            RefreshProperties();
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
