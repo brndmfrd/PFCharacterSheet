@@ -40,6 +40,7 @@ namespace CharacterDataObjects.CharacterDataElements
 
 
         //todo: accessors
+        public string WeaponName { get { return weaponName; } set { weaponName = value; } }
 
         //todo: determine if total bonus (attk&dmg) should be here or do this calculation in 'Attack' class
     }

@@ -20,7 +20,7 @@ namespace CharacterDataObjects.CharacterDataElements
         private int touch;
         private int flatFooted;
         
-        private int Total;
+        public int Total { get { return total; } set { total = value; } }
         private int ArmorBonus;
         private int SheildBonus;
         private int DextarityModifier;

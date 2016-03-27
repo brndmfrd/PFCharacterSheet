@@ -19,5 +19,8 @@ namespace CharacterDataObjects.CharacterDataElements
         //todo: accessors
 
 
+        public string ItemName { get { return itemName; } set { itemName = value; } }
+        public int ArmorBonus { get { return armorBonus; } set { armorBonus = value; } }
+
     }
 }

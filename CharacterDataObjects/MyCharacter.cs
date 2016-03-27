@@ -108,10 +108,7 @@ namespace CharacterDataObjects
         /// <summary>
         /// The containing object for all job classes which have levels.
         /// </summary>
-        public static Dictionary<string, JobClass> JobClasses = new Dictionary<string, JobClass>
-        {
-            {"Demo Knight", new JobClass { Level = 12 } }
-        };
+        public static Dictionary<string, JobClass> JobClasses = new Dictionary<string, JobClass>();
 
         /// <summary>
         /// The character's total base attack bonus is a 
