@@ -14,8 +14,18 @@ namespace CharacterModule.ViewModels
         public IEnumerable<DisplayObject> AbilityScores { get { return CharacterObjects.AbilityScores; } }
         public IEnumerable<DisplayObject> JobClasses { get { return CharacterObjects.JobClasses; } }
         public IEnumerable<string> Languages { get { return MyCharacter.Languages; } }
-        public int PrimaryDisplayCount{get; private set;}
-        
+        //public int PrimaryDisplayCount{get; private set;}
+
+        #region Public Methods
+        public void RefreshProperties()
+        {
+            RaisePropertyChangedEvent("BasicInformation");
+            RaisePropertyChangedEvent("AbilityScores");
+            RaisePropertyChangedEvent("JobClasses");
+            RaisePropertyChangedEvent("Languages");
+        }
+        #endregion Public Methods
+
         #region Navigation
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
@@ -23,13 +33,13 @@ namespace CharacterModule.ViewModels
         }
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-
+            RefreshProperties();
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
             return true;
         }
-        #endregion Navigation0
+        #endregion Navigation
     }
 
 }
