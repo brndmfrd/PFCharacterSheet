@@ -19,7 +19,7 @@ namespace CombatModule.ViewModels
         /// </summary>
         public IEnumerable<DisplayObject> VmDisplayObjects
         {
-            get { return CombatObjects.displayObjects; }
+            get { return CombatObjects.DisplayObjects; }
         }
         
         /// <summary>

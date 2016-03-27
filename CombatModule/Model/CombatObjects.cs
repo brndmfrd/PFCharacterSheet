@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CharacterDataObjects;
 using System.Collections.ObjectModel;
-using SharedResources;
 using SharedResources.EventHandlers;
 using CharacterDataObjects.CharacterDataConstants;
 
@@ -18,6 +15,8 @@ namespace CombatModule.Model
         public string _value;
         public string _result;
 
+        public Func<string> CustomMethod;
+
         public string Name { get { return _name; } set { _name = value; RaisePropertyChangedEvent("Name"); } }
         public string Value { get { return _value; } set { _value = value; RaisePropertyChangedEvent("Value"); } }
         public string Result { get { return _result; } set { _result = value; RaisePropertyChangedEvent("Result"); } }
@@ -25,29 +24,64 @@ namespace CombatModule.Model
     
     public static class CombatObjects
     {
-        // todo: use a constants file
-        // Here we customize the data objects from MyCharacter to suit the needs of just the Combat Module
-        // Important to have three values in this combat module, "Name", "Value", and "Result"
-        // 'Name' will be the displayed name of the value the user looks at
-        // 'Value' will be the displayed current value associated with the element
-        // 'Result' is the placeholder value representing the last rolled result, such as the result of a fortitude save
+        /// <summary>
+        /// Unified display objects for the combat module
+        /// </summary>
         public static ObservableCollection<DisplayObject> displayObjects = new ObservableCollection<DisplayObject>
         {
-            new DisplayObject { Name = Constants.Hitpoints, Value = MyCharacter.HP.Total.ToString() },
+            new DisplayObject { Name = Constants.Hitpoints, CustomMethod = GetHp },
+            
+            new DisplayObject { Name = Constants.FullMeleeAttack, CustomMethod = GetFullAttackValues},
 
-            new DisplayObject { Name = Constants.FullMeleeAttack, Value = GetFullAttackValues() },
+            new DisplayObject { Name = Constants.BullRush, CustomMethod = GetCmb},
+            new DisplayObject { Name = Constants.Trip, CustomMethod = GetCmb },
+            new DisplayObject { Name = Constants.Disarm, CustomMethod = GetCmb },
+            new DisplayObject { Name = Constants.Sunder, CustomMethod = GetCmb },
+            new DisplayObject { Name = Constants.Reposition, CustomMethod = GetCmb },
 
-            new DisplayObject { Name = Constants.BullRush, Value = MyCharacter.Cmb.ToString()},
-            new DisplayObject { Name = Constants.Trip, Value = MyCharacter.Cmb.ToString() },
-            new DisplayObject { Name = Constants.Disarm, Value = MyCharacter.Cmb.ToString() },
-            new DisplayObject { Name = Constants.Sunder, Value = MyCharacter.Cmb.ToString() },
-            new DisplayObject { Name = Constants.Reposition, Value = MyCharacter.Cmb.ToString() },
-
-            new DisplayObject { Name = Constants.Fortitude, Value = MyCharacter.SavingThrows[Constants.Fortitude].Total.ToString()},
-            new DisplayObject { Name = Constants.Reflex, Value = MyCharacter.SavingThrows[Constants.Reflex].Total.ToString() },
-            new DisplayObject { Name = Constants.Will, Value = MyCharacter.SavingThrows[Constants.Will].Total.ToString() },
+            new DisplayObject { Name = Constants.Fortitude, CustomMethod = GetFort },
+            new DisplayObject { Name = Constants.Reflex, CustomMethod = GetRef },
+            new DisplayObject { Name = Constants.Will, CustomMethod = GetWill },
         };
-        
+
+        public static ObservableCollection<DisplayObject> DisplayObjects
+        {
+            get
+            {
+                foreach(var elem in displayObjects)
+                {
+                    elem.Value = elem.CustomMethod();
+                }
+
+                return displayObjects;
+            }
+        }
+
+        public static string GetCmb()
+        {
+            return MyCharacter.Cmb.ToString();
+        }
+
+        public static string GetHp()
+        {
+            return MyCharacter.HP.Total.ToString();
+        }
+
+        public static string GetFort()
+        {
+            return MyCharacter.SavingThrows[Constants.Fortitude].Total.ToString();
+        }
+
+        public static string GetRef()
+        {
+            return MyCharacter.SavingThrows[Constants.Reflex].Total.ToString();
+        }
+
+        public static string GetWill()
+        {
+            return MyCharacter.SavingThrows[Constants.Will].Total.ToString();
+        }
+
         // The object that is currently selected in the view 
         public static DisplayObject CurrentSelectedObject = new DisplayObject();
 

@@ -81,7 +81,7 @@ namespace TestingTools
             MyCharacter.Race.Name = "Dwarven";
             MyCharacter.Size.Size = Constants.Medium;
             MyCharacter.AC = new ArmorClass { Total = 25 };
-            MyCharacter.HP = new HitPoints { Current = 17 };
+            MyCharacter.HP = new HitPoints { Total = 17 };
             MyCharacter.Speed = new Movement { BaseSpeed = 5 };
             
             MyCharacter.JobClasses.Add(

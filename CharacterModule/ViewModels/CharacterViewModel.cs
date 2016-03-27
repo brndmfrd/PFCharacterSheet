@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Practices.Prism.Regions;
-using CharacterDataObjects;
 using CharacterModule.Model;
 using SharedResources.EventHandlers;
-using System.Linq;
 
 
 namespace CharacterModule.ViewModels

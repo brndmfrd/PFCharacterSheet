@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CharacterDataObjects.CharacterDataElements
+﻿namespace CharacterDataObjects.CharacterDataElements
 {
     public class Save
     {
@@ -15,13 +9,13 @@ namespace CharacterDataObjects.CharacterDataElements
 
         private string abilityScoreName;
         private int total = 0;
-        private int baseSave = 69;
+        private int baseSave = 0;
         private int magicModifier = 0;
         private int miscModifier = 0;
         private int tempModifier = 0;
 
         public int Total { get { return (total = baseSave + AbilityModifier + magicModifier + miscModifier + tempModifier); } }
-        public int BaseSave { get { return baseSave; } set { baseSave = value; } }
+        public int BaseSave { get { return baseSave; } set { baseSave = value; } } // base save, for all jobclasses, based on level of each job class, specific to each save (f/r/w)
         public int AbilityModifier { get { return MyCharacter.AbilityScores[abilityScoreName].AbilityModifier; } }
         public int MagicModifier { get { return magicModifier; } set { magicModifier = value; } }
         public int MiscModifier { get { return miscModifier; } set { miscModifier = value; } }
