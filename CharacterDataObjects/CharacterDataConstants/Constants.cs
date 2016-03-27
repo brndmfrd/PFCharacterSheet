@@ -75,43 +75,43 @@ namespace CharacterDataObjects.CharacterDataConstants
         public const string WeaponFinesse = "Weapon Finesse";
 
         //// -- Skills --
-        //public const string acrobatics = "Acrobatics";
-        //public const string appraise = "Appraise";
-        //public const string bluff = "Bluff";
-        //public const string climb = "Climb";
-        //public const string craft = "Craft";
-        //public const string diplomacy = "Diplomacy";
-        //public const string disableDevice = "Disable Device";
-        //public const string disguise = "Disguise";
-        //public const string escapeArtist = "Escape Artist";
-        //public const string fly = "Fly";
-        //public const string handleAnimal = "Handle Animal";
-        //public const string heal = "Heal";
-        //public const string intimidate = "Intimidate";
-        //public const string knowledgeArcana = "Knowledge Arcana";
-        //public const string knowledgeDungeoneering = "Knowledge Dungeoneering";
-        //public const string knowledgeEngineering = "Knowledge Engineering";
-        //public const string knowledgeGeography = "Knowledge Geography";
-        //public const string knowledgeHistory = "Knowledge History";
-        //public const string knowledgeLocal = "Knowledge Local";
-        //public const string knowledgeNature = "Knowledge Nature";
-        //public const string knowledgeNobility = "Knowledge Nobility";
-        //public const string knowledgePlanes = "Knowledge Planes";
-        //public const string knowledgeReligion = "Knowledge Religion";
-        //public const string linguistics = "Linguistics";
-        //public const string perception = "Perception";
-        //public const string perform = "Perform";
-        //public const string profession = "Profession";
-        //public const string ride = "Ride";
-        //public const string senseMotive = "Sense Motive";
-        //public const string sleightOfHand = "Sleight of Hand";
-        //public const string spellcraft = "Spellcraft";
-        //public const string stealth = "Stealth";
-        //public const string survival = "Survival";
-        //public const string swim = "Swim";
-        //public const string useMagicDevice = "Use Magic Device";
+        public const string Acrobatics = "Acrobatics";
+        public const string Appraise = "Appraise";
+        public const string Bluff = "Bluff";
+        public const string Climb = "Climb";
+        public const string Craft = "Craft";
+        public const string Diplomacy = "Diplomacy";
+        public const string DisableDevice = "Disable Device";
+        public const string Disguise = "Disguise";
+        public const string EscapeArtist = "Escape Artist";
+        public const string Fly = "Fly";
+        public const string HandleAnimal = "Handle Animal";
+        public const string Heal = "Heal";
+        public const string Intimidate = "Intimidate";
+        public const string KnowledgeArcana = "Knowledge Arcana";
+        public const string KnowledgeDungeoneering = "Knowledge Dungeoneering";
+        public const string KnowledgeEngineering = "Knowledge Engineering";
+        public const string KnowledgeGeography = "Knowledge Geography";
+        public const string KnowledgeHistory = "Knowledge History";
+        public const string KnowledgeLocal = "Knowledge Local";
+        public const string KnowledgeNature = "Knowledge Nature";
+        public const string KnowledgeNobility = "Knowledge Nobility";
+        public const string KnowledgePlanes = "Knowledge Planes";
+        public const string KnowledgeReligion = "Knowledge Religion";
+        public const string Linguistics = "Linguistics";
+        public const string Perception = "Perception";
+        public const string Perform = "Perform";
+        public const string Profession = "Profession";
+        public const string Ride = "Ride";
+        public const string SenseMotive = "Sense Motive";
+        public const string SleightOfHand = "Sleight of Hand";
+        public const string Spellcraft = "Spellcraft";
+        public const string Stealth = "Stealth";
+        public const string Survival = "Survival";
+        public const string Swim = "Swim";
+        public const string UseMagicDevice = "Use Magic Device";
 
-        
+
 
         ////-- Dat Kombat
         //public const string additionalHitPoints = "Hit Points";

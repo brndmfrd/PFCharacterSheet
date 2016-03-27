@@ -150,7 +150,7 @@ namespace CharacterDataObjects
         /// <summary>
         /// The character's current skills.
         /// </summary>
-        public static List<Skill> Skills = new List<Skill>();
+        public static Dictionary<string, Skill> Skills = new Dictionary<string, Skill>();
 
         /// <summary>
         /// The character's available feats.

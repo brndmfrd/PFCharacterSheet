@@ -18,13 +18,16 @@
 
     <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">
         <DockPanel>
-            <ListBox x:Name="SkillsListBox" Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+            <ListBox x:Name="SkillsListBox" 
+                     Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
                      ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
-                     SelectedItem="{Binding Path=MySelectedItem}"
-                     DockPanel.Dock="Top"
-                     VerticalAlignment="Top">
+                     SelectedItem="{Binding Path=MySelectedObject}">
+                <ListBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding RollCheck}"/>
+                </ListBox.InputBindings>
+                
                 <ListBox.Resources>
-                    <CollectionViewSource x:Key="SKILLS" Source="{Binding Skills}"/>
+                    <CollectionViewSource x:Key="SKILLS" Source="{Binding VmDisplayObjects}"/>
                 </ListBox.Resources>
             
                 <ListBox.ItemsSource>
@@ -37,11 +40,21 @@
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="250"/>
-                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="50"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock x:Name="SkillName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="SkillRanks" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="1" Foreground="#01C5BB" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick" 
+                                          Command="{Binding DataContext.RollCheck, ElementName=SkillsListBox}" 
+                                          CommandParameter="{Binding ElementName=SkillsListBox, Path=MySelectedObject}"/>
+                            </Grid.InputBindings>
+                            <TextBlock x:Name="SkillName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right"/>
+                            <TextBlock x:Name="SkillBonus" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="1" Grid.Row="0" Foreground="#01C5BB" Margin="2,0,0,0" HorizontalAlignment="Left"/>
+                            <TextBlock x:Name="SkillRollResult" Text="{Binding Path=Result, Mode=OneWay}" Grid.Column="2" Grid.Row="0" Foreground="Red" HorizontalAlignment="Right" />
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

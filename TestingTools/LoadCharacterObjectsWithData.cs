@@ -95,10 +95,10 @@ namespace TestingTools
 
             MyCharacter.Armor.Add(new ArmorClassItems { ItemName = "Studded Leather", ArmorBonus = 4 });
 
-            MyCharacter.Skills.Add(new Skill(Constants.Dexterity) { Name = "Acrobatics" , Ranks = 2 } );
-            MyCharacter.Skills.Add(new Skill(Constants.Intelligence) { Name = "Craft", Ranks = 4 });
-            MyCharacter.Skills.Add(new Skill(Constants.Strength) { Name = "Swim", Ranks = 2 });
-            MyCharacter.Skills.Add(new Skill(Constants.Wisdom) { Name = "Handle Animal", Ranks = 2 });
+            MyCharacter.Skills.Add(Constants.Acrobatics, new Skill(Constants.Dexterity) { Name = Constants.Acrobatics, Ranks = 2 } );
+            MyCharacter.Skills.Add(Constants.Craft, new Skill(Constants.Intelligence) { Name = Constants.Craft, Ranks = 4 });
+            MyCharacter.Skills.Add(Constants.Swim, new Skill(Constants.Strength) { Name = Constants.Swim, Ranks = 2 });
+            MyCharacter.Skills.Add(Constants.HandleAnimal, new Skill(Constants.Wisdom) { Name = Constants.HandleAnimal, Ranks = 2 });
 
             MyCharacter.Feats.Add(new Feat { Name = "Dodge" });
             MyCharacter.Feats.Add(new Feat { Name = "Mobility" });

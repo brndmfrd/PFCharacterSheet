@@ -44,7 +44,7 @@ namespace Archivist
                             // directly assign to it; i.e.  Character.Skills = JsonConvert.DeserializeObject<ObservableCollection<Skill>>(line);
                             // we want to change our collection container, not replace it.
                             foreach(var elem in x){
-                                MyCharacter.Skills.Add(elem);
+                                MyCharacter.Skills.Add(elem.Name, elem);
                             }
                         }
                         catch (Exception ex)

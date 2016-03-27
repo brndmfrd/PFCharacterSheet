@@ -14,7 +14,6 @@ namespace CharacterDataObjects.CharacterDataElements
         private string description;
         private string associatedAbility;
         private bool armorCheckPenalty;
-        private int totalBonus;
         private Dictionary<string, ushort> miscModifiers;
         #endregion Private
 
@@ -31,6 +30,11 @@ namespace CharacterDataObjects.CharacterDataElements
         /// The name of the skill
         /// </summary>
         public string Name { get { return skillName; } set { skillName = value; } }
+
+        /// <summary>
+        /// The name of the skill
+        /// </summary>
+        public int TotalValue { get { return GetTotalValue(); } }
 
         /// <summary>
         /// The number of ranks the player has added to skill
