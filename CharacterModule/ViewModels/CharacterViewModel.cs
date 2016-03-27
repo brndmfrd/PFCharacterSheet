@@ -13,8 +13,8 @@ namespace CharacterModule.ViewModels
         public IEnumerable<DisplayObject> BasicInformation { get { return CharacterObjects.BasicInfoObjects; } }
         public IEnumerable<DisplayObject> AbilityScores { get { return CharacterObjects.AbilityScores; } }
         public IEnumerable<DisplayObject> JobClasses { get { return CharacterObjects.JobClasses; } }
-        public IEnumerable<string> Languages { get { return MyCharacter.Languages; } }
-        //public int PrimaryDisplayCount{get; private set;}
+        public IEnumerable<DisplayObject> BlankSpace { get { return CharacterObjects.BlankSpace; } }
+        public IEnumerable<DisplayObject> Languages { get { return CharacterObjects.Languages; } }
 
         #region Public Methods
         public void RefreshProperties()

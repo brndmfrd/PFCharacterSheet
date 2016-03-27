@@ -35,16 +35,16 @@ namespace CharacterDataObjects
             {Constants.CharacterName, string.Empty },
             {Constants.PlayerName, string.Empty },
             {Constants.Alignment, string.Empty },
-            //{Constants.Alignment, string.Empty },// Size
-            //{Constants.Alignment, string.Empty },// Age
-            //{Constants.Alignment, string.Empty },// Race
-            //{Constants.Alignment, string.Empty },// Deity
-            //{Constants.Alignment, string.Empty },// Gender
-            //{Constants.Alignment, string.Empty },// Height
-            //{Constants.Alignment, string.Empty },// Weight
-            //{Constants.Alignment, string.Empty },// Eye Color
-            //{Constants.Alignment, string.Empty },// Hair Color
-            //{Constants.Alignment, string.Empty },// HomeLand
+            {Constants.Size, string.Empty },
+            {Constants.Age, string.Empty },
+            {Constants.Race, string.Empty },
+            {Constants.Deity, string.Empty },
+            {Constants.Gender, string.Empty },
+            {Constants.Height, string.Empty },
+            {Constants.Weight, string.Empty },
+            {Constants.Eyes, string.Empty },
+            {Constants.Hair, string.Empty },
+            {Constants.Homeland, string.Empty },
         };
 
         /// <summary>

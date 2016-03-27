@@ -18,32 +18,64 @@
 
     <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">
         <DockPanel>
-            <ListBox x:Name="AbilityScoresListBox" 
+            <ListBox x:Name="CharacterInfoListBox" DockPanel.Dock="Left"
                      Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
                      ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
-                     DockPanel.Dock="Top"
-                     VerticalAlignment="Top">
+                     VerticalAlignment="Top"
+                     Margin="2">
                 <ListBox.Resources>
                     <CollectionViewSource x:Key="BI" Source="{Binding BasicInformation}"/>
-                    <CollectionViewSource x:Key="JC" Source="{Binding JobClasses}"/>
+                    <CollectionViewSource x:Key="BS" Source="{Binding BlankSpace}"/>
+                    <CollectionViewSource x:Key="LN" Source="{Binding Languages}"/>
                 </ListBox.Resources>
-
                 <ListBox.ItemsSource>
                     <CompositeCollection>
                         <CollectionContainer Collection="{Binding Source={StaticResource BI}}"/>
-                        <CollectionContainer Collection="{Binding Source={StaticResource JC}}"/>
+                        <CollectionContainer Collection="{Binding Source={StaticResource BS}}"/>
+                        <CollectionContainer Collection="{Binding Source={StaticResource LN}}"/>
+                        <CollectionContainer Collection="{Binding Source={StaticResource BS}}"/>
                     </CompositeCollection>
                 </ListBox.ItemsSource>
-
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
+                        <Grid HorizontalAlignment="Left">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="250"/>
-                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="125"/>
+                                <ColumnDefinition Width="150"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" />
+                            <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="1" HorizontalAlignment="Left" Margin="2,0,0,0" Foreground="#01C5BB" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <ListBox x:Name="JobClassesListBox" DockPanel.Dock="Right"
+                     Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+                     ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
+                     HorizontalAlignment="Right"
+                     Margin="2">
+                <ListBox.Resources>
+                    <CollectionViewSource x:Key="JS" Source="{Binding JobClasses}"/>
+                    <CollectionViewSource x:Key="BS" Source="{Binding BlankSpace}"/>
+                    <CollectionViewSource x:Key="AS" Source="{Binding AbilityScores}"/>
+                </ListBox.Resources>
+                <ListBox.ItemsSource>
+                    <CompositeCollection>
+                        <CollectionContainer Collection="{Binding Source={StaticResource JS}}"/>
+                        <CollectionContainer Collection="{Binding Source={StaticResource BS}}"/>
+                        <CollectionContainer Collection="{Binding Source={StaticResource AS}}"/>
+                    </CompositeCollection>
+                </ListBox.ItemsSource>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalAlignment="Right">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" />
+                            <TextBlock x:Name="Value" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="1" HorizontalAlignment="Left" Margin="2,0,0,0" Foreground="#01C5BB" />
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

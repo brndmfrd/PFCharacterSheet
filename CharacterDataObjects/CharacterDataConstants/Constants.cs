@@ -8,9 +8,33 @@ namespace CharacterDataObjects.CharacterDataConstants
 {
     public class Constants
     {
+        // -- Character Information --
         public const string CharacterName = "Character Name";
         public const string PlayerName = "Player Name";
         public const string Alignment = "Alignment";
+        //// -- Character Information --
+        public const string Race = "Race";
+        public const string Size = "Size";
+        public const string Age = "Age";
+        public const string Deity = "Diety";
+        public const string Gender = "Gender";
+        public const string Height = "Height";
+        public const string Weight = "Weight";
+        public const string Eyes = "Eye Color";
+        public const string Hair = "Hair Color";
+        public const string Homeland = "Homeland";
+        //public const string Common = "Language: Common";
+        //public const string dwarven = "Language: Dwarven";
+        //public const string draconic = "Language: Draconic";
+        //public const string experiencePoints = "Experience Points";
+        //public const string barbarian = "Barbarian Levels";
+        //public const string bard = "Bard Levels";
+        //public const string cleric = "Cleric Levels";
+        //public const string druid = "Druid Levels";
+        //public const string fighter = "Fighter Levels";
+        //public const string ranger = "Ranger Levels";
+        //public const string sorcerer = "Sorcerer Levels";
+        //public const string wizard = "Wizard Levels";
 
         public const string Hitpoints = "Hit Points";
 
@@ -50,7 +74,7 @@ namespace CharacterDataObjects.CharacterDataConstants
         
         public const string WeaponFinesse = "Weapon Finesse";
 
-        //// -- Teh Skillz
+        //// -- Skills --
         //public const string acrobatics = "Acrobatics";
         //public const string appraise = "Appraise";
         //public const string bluff = "Bluff";
@@ -87,38 +111,7 @@ namespace CharacterDataObjects.CharacterDataConstants
         //public const string swim = "Swim";
         //public const string useMagicDevice = "Use Magic Device";
 
-        //// -- Teh Character Infoz
-        //public const string characterName = "Character Name";
-        //public const string playerName = "Player Name";
-        //public const string race = "Race";
-        //public const string size = "Size";
-        //public const string alignment = "Alignment";
-        //public const string age = "Age";
-        //public const string deity = "Diety";
-        //public const string gender = "Gender";
-        //public const string height = "Height";
-        //public const string weight = "Weight";
-        //public const string eyes = "Eye Color";
-        //public const string hair = "Hair Color";
-        //public const string homeland = "Homeland";
-        //public const string strength = "Strength";
-        //public const string dexterity = "Dexterity";
-        //public const string constitution = "Constitution";
-        //public const string intelligence = "Intelligence";
-        //public const string wisdom = "Wisdom";
-        //public const string charisma = "Charisma";
-        //public const string common = "Language: Common";
-        //public const string dwarven = "Language: Dwarven";
-        //public const string draconic = "Language: Draconic";
-        //public const string experiencePoints = "Experience Points";
-        //public const string barbarian = "Barbarian Levels";
-        //public const string bard = "Bard Levels";
-        //public const string cleric = "Cleric Levels";
-        //public const string druid = "Druid Levels";
-        //public const string fighter = "Fighter Levels";
-        //public const string ranger = "Ranger Levels";
-        //public const string sorcerer = "Sorcerer Levels";
-        //public const string wizard = "Wizard Levels";
+        
 
         ////-- Dat Kombat
         //public const string additionalHitPoints = "Hit Points";

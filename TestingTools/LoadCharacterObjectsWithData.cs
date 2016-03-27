@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CharacterDataObjects;
+﻿using CharacterDataObjects;
 using CharacterDataObjects.CharacterDataConstants;
 using CharacterDataObjects.CharacterDataElements;
 
@@ -20,12 +15,23 @@ namespace TestingTools
 
         public void BuildUpNewCharacter()
         {
-            MyCharacter.BasicCharacterInfo[Constants.CharacterName] = "Some Character name that iz coolz";
-            MyCharacter.BasicCharacterInfo[Constants.PlayerName] = "Playa Playa";
-            MyCharacter.BasicCharacterInfo[Constants.Alignment] = "Chaotic Good";
-                        
+            MyCharacter.BasicCharacterInfo[Constants.CharacterName] = "Duraxis";
+            MyCharacter.BasicCharacterInfo[Constants.PlayerName] = "Bryan";
+            MyCharacter.BasicCharacterInfo[Constants.Alignment] = "True Neutral";
+            MyCharacter.BasicCharacterInfo[Constants.Size] = Constants.Medium;
+            MyCharacter.BasicCharacterInfo[Constants.Age] = "32";
+            MyCharacter.BasicCharacterInfo[Constants.Race] = "Human";
+            MyCharacter.BasicCharacterInfo[Constants.Deity] = "Pelor";
+            MyCharacter.BasicCharacterInfo[Constants.Gender] = "Male";
+            MyCharacter.BasicCharacterInfo[Constants.Height] = "6'4''";
+            MyCharacter.BasicCharacterInfo[Constants.Weight] = "260 lbs";
+            MyCharacter.BasicCharacterInfo[Constants.Eyes] = "Brown";
+            MyCharacter.BasicCharacterInfo[Constants.Hair] = "Brown";
+            MyCharacter.BasicCharacterInfo[Constants.Homeland] = "Muskegon";
+
             MyCharacter.Languages.Add("Common");
             MyCharacter.Languages.Add("Dwarven");
+            MyCharacter.Languages.Add("Elvish");
 
 
             MyCharacter.AbilityScores[Constants.Strength] = new Ability
@@ -73,7 +79,7 @@ namespace TestingTools
 
 
             MyCharacter.Race.Name = "Dwarven";
-            MyCharacter.Size.Size = "Medium";
+            MyCharacter.Size.Size = Constants.Medium;
             MyCharacter.AC = new ArmorClass { Total = 25 };
             MyCharacter.HP = new HitPoints { Current = 17 };
             MyCharacter.Speed = new Movement { BaseSpeed = 5 };
@@ -84,7 +90,6 @@ namespace TestingTools
                     Level = 12
                 }
             );
-
 
             MyCharacter.Weapons.Add(new Weapon(Constants.Strength, Constants.Strength) { WeaponName = "Bastard Sword" } );
 

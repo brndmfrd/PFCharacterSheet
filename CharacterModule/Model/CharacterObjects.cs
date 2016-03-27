@@ -12,7 +12,7 @@ namespace CharacterModule.Model
         public string Name { get { return _name; } set { _name = value; RaisePropertyChangedEvent("Name"); } }
         public string Value { get { return _value; } set { _value = value; RaisePropertyChangedEvent("Value"); } }
     }
-
+    
     // Stage data to be displayed for the character module here 
     // Unify objects with a "Name" and a "Value" assumed by the UI to display titles and values 
     // of any object we wish to display.
@@ -32,6 +32,23 @@ namespace CharacterModule.Model
                 return tmp;
             }
         }
+
+        public static ObservableCollection<DisplayObject> Languages
+        {
+            get
+            {
+                var tmp = new ObservableCollection<DisplayObject>();
+
+                foreach (var elem in MyCharacter.Languages)
+                {
+                    tmp.Add(new DisplayObject { Name = "Language", Value = elem });
+                }
+
+                return tmp;
+            }
+        }
+
+        public static ObservableCollection<DisplayObject> BlankSpace = new ObservableCollection<DisplayObject>() { new DisplayObject { Name = " ", Value = " " } };
 
         public static ObservableCollection<DisplayObject> AbilityScores
         {

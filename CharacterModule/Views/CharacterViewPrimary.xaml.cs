@@ -23,6 +23,6 @@ namespace CharacterModule.Views
         public CharacterViewPrimary()
         {
             InitializeComponent();
-        }      
+        }
     }
 }

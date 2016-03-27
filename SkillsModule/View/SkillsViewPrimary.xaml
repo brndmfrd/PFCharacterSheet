@@ -41,7 +41,7 @@
                                 <ColumnDefinition Width="250"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock x:Name="SkillName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="SkillRanks" Text="{Binding Path=Ranks, Mode=OneWay}" Grid.Column="1" Foreground="#01C5BB" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <TextBlock x:Name="SkillRanks" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="1" Foreground="#01C5BB" HorizontalAlignment="Left" VerticalAlignment="Center" />
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
