@@ -44,6 +44,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Definitions.cs" />
     <Compile Include="Delegates\DelegateCommand.cs" />
     <Compile Include="EventHandlers\ObservableObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

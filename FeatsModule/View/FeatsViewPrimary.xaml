@@ -22,7 +22,7 @@
                      Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
                      ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
                      SelectedItem="{Binding Path=MySelectedItem}"
-                     DockPanel.Dock="Top"
+                     DockPanel.Dock="Left"
                      VerticalAlignment="Top">
                 <ListBox.Resources>
                     <CollectionViewSource x:Key="FEATS" Source="{Binding Feats}"/>
@@ -38,14 +38,24 @@
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="250"/>
-                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="150"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock x:Name="FeatName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="FeatName" TextWrapping="Wrap" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Right"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+
+            <TextBox x:Name="Description" 
+                     DockPanel.Dock="Right"
+                     VerticalAlignment="Top"
+                     Text="{Binding ElementName=FeatsListBox, Path=SelectedItem.Description, Mode=OneWay}" 
+                     Background="{x:Null}"
+                     Foreground="Teal"
+                     FontSize="12"
+                     TextWrapping="Wrap"
+                     />
         </DockPanel>
     </Border>
 </UserControl>
